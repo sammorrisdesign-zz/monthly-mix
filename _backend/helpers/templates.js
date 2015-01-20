@@ -5,7 +5,7 @@ var fs = require("fs");
 module.exports = {
     build: function(pageTemplate, variables) {
         var template = handlebars.compile(this.fetch().pages[pageTemplate]);
-        return this.fetch().layout.header + template(variables) + this.fetch().layout.footer;
+        this.write(this.fetch().layout.header + template(variables) + this.fetch().layout.footer);
     },
 
     fetch: function() {
@@ -26,5 +26,15 @@ module.exports = {
         require.extensions['.html'] = function (module, filename) {
             module.exports = fs.readFileSync(filename, 'utf8');
         };
+    },
+
+    write: function(input) {
+        fs.writeFile("../index.html", input, function(err) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("File Written");
+            }
+        });
     }
 }

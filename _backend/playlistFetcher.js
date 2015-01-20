@@ -11,4 +11,6 @@ require.extensions['.html'] = function (module, filename) {
     module.exports = fs.readFileSync(filename, 'utf8');
 };
 
-console.log(templates.build('index', { test: "hello again"}));
+templates.build('index', {
+    test: "hello again"
+});
