@@ -3,10 +3,13 @@ var handlebars = require("handlebars");
 var fs = require("fs");
 
 module.exports = {
-    fetch: function () {
-        require.extensions['.html'] = function (module, filename) {
-            module.exports = fs.readFileSync(filename, 'utf8');
-        };
+    build: function(pageTemplate, variables) {
+        var template = handlebars.compile(this.fetch().pages[pageTemplate]);
+        return this.fetch().layout.header + template(variables) + this.fetch().layout.footer;
+    },
+
+    fetch: function() {
+        this.requireSetup();
 
         return templates = {
             layout: {
@@ -16,6 +19,12 @@ module.exports = {
             pages: {
                 index: require("../../_template/pages/index.html")
             }
+        };
+    },
+
+    requireSetup: function() {
+        require.extensions['.html'] = function (module, filename) {
+            module.exports = fs.readFileSync(filename, 'utf8');
         };
     }
 }
