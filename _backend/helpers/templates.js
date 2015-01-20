@@ -2,13 +2,12 @@
 var handlebars = require("handlebars");
 var fs = require("fs");
 
-// External Files
-require.extensions['.html'] = function (module, filename) {
-    module.exports = fs.readFileSync(filename, 'utf8');
-};
-
 module.exports = {
-    init: function () {
+    fetch: function () {
+        require.extensions['.html'] = function (module, filename) {
+            module.exports = fs.readFileSync(filename, 'utf8');
+        };
+
         return templates = {
             layout: {
                 header: require("../../_template/layout/header.html"),
