@@ -6,4 +6,5 @@ node_modules
 
 .DS_Store
 
-.spotify-keys.json
+spotify-keys.json
+index.html
