@@ -19,6 +19,10 @@ module.exports = function(grunt) {
       css: {
         files: '_scss/**/*.scss',
         tasks: ['sass']
+      },
+      jekyll: {
+        files: ['_scss/**/*.scss', '_posts/*.*', '_layouts/*.*', '_includes/*.*', '_template/**/*.*', 'index.html', '_config.yml'],
+        tasks: ['shell']
       }
     },
     sass: {
@@ -36,14 +40,22 @@ module.exports = function(grunt) {
         config: 'scss/.scss-lint.yml'
       }
     },
+    shell: {
+      run: {
+        command: 'jekyll build',
+        options: {
+          nospawn: true
+        }
+      }
+    },
     browserSync: {
       bsFiles: {
-        src : 'assets/css/style.css'
+        src : './_site/*.*'
       },
       options: {
         watchTask: true,
         server: {
-          baseDir: "./"
+          baseDir: "./_site"
         }
       }
     }
@@ -54,6 +66,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-scss-lint');
   grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-shell');
 
   // Tasks
   grunt.registerTask('default', ['sass', 'scsslint', 'browserSync', 'watch']);
