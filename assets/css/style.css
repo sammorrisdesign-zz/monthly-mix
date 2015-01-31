@@ -214,7 +214,8 @@ table {
 
 html {
   font-family: Helvetica, sans-serif;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  background-color: aqua; }
 
 a {
   text-decoration: none; }

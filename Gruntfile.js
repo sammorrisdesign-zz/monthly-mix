@@ -13,36 +13,34 @@ module.exports = function(grunt) {
     // Task configuration.
     watch: {
       scsslint: {
-        files: '_scss/**/*.scss',
-        tasks: ['scsslint']
+        files: 'source/_scss/**/*.scss',
+        tasks: 'scsslint'
       },
       css: {
-        files: '_scss/**/*.scss',
-        tasks: ['sass']
+        files: 'source/_scss/**/*.scss',
+        tasks: 'sass'
       },
       jekyll: {
-        files: ['_scss/**/*.scss', '_posts/*.*', '_layouts/*.*', '_includes/*.*', '_template/**/*.*', 'index.html', '_config.yml'],
-        tasks: ['shell']
+        files: ['source/**/*', '!source/_site/**/*'],
+        tasks: 'shell'
       }
     },
     sass: {
       dist: {
         files: {
-            'assets/css/style.css' : '_scss/style.scss'
+            'source/assets/css/style.css' : 'source/_scss/style.scss'
         }
       }
     },
     scsslint: {
-      allFiles: [
-        '_scss/**/*.scss'
-      ],
+      allFiles: 'source/_scss/**/*.scss',
       options: {
-        config: 'scss/.scss-lint.yml'
+        config: 'source/scss/.scss-lint.yml'
       }
     },
     shell: {
       run: {
-        command: 'jekyll build',
+        command: 'cd source && jekyll build',
         options: {
           nospawn: true
         }
@@ -50,12 +48,12 @@ module.exports = function(grunt) {
     },
     browserSync: {
       bsFiles: {
-        src : './_site/*.*'
+        src : 'source/_site/**/*'
       },
       options: {
         watchTask: true,
         server: {
-          baseDir: "./_site"
+          baseDir: "source/_site"
         }
       }
     }
