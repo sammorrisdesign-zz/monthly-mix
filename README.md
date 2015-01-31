@@ -1,6 +1,5 @@
 # Monthly-mix
-Something with Spotify and Node
+Something with Soundcloud and Jekyll
 
-## Installation
-
-Rename `spotify-keys-example.json` to `spotify-keys.json` and enter your spotify api credentials.
+## Development
+Give it a bit of `grunt` to watch and serve it all
