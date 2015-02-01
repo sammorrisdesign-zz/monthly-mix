@@ -33,6 +33,18 @@ define([
             el = bonzo(qwery('#track-' + trackId));
             current = bonzo(qwery('.is-playing'));
 
+            // Set options for player
+            var myOptions = {
+                onload : function() {
+                    // Debug onfinish with this
+                    // sound.setPosition(this.duration - 3000);
+                },
+                onfinish : function(){
+                    next = bonzo(qwery('.is-playing')).next().attr('data-track-id');
+                    this.playTrack(next);
+                }.bind(this)
+            }
+
             if (sound) {
                 // Check if it's the same track
                 if (sound.url.split('/')[4] == trackId) {
@@ -52,10 +64,13 @@ define([
                 }
             // First time playing of new track
             } else {
-                SC.stream('/tracks/' + trackId, function(obj){
-                    obj.play();
-                    sound = obj;
-                    el.addClass('is-playing');
+                SC.whenStreamingReady(function() {
+                    var obj = SC.stream('/tracks/' + trackId, myOptions, function(obj){
+                        obj.play();
+                        sound = obj;
+                        el.addClass('is-playing');
+                    });
+                    sound.load();
                 });
             }
         }
