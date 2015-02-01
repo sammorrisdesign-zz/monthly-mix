@@ -10,7 +10,6 @@ define([
 
     return {
         init: function(d) {
-            console.log("Fonts");
             var h = qwery('html');
             h.className += ' wf-loading';
             var t = setTimeout(function() {
