@@ -10,6 +10,8 @@ define([
     qwery,
     loadJSON
 ) {
+    var sound;
+
     return {
         init: function() {
             loadJSON('/soundcloud-keys.json', function(data) {
@@ -28,10 +30,23 @@ define([
         },
 
         playTrack: function(trackId) {
-            SC.stream('/tracks/' + trackId, function(sound){
-                sound.play();
-                bonzo(qwery('#track-' + trackId)[0]).addClass('is-playing');
-            });
+            el = qwery('#track-' + trackId);
+
+            if (sound) {
+                if (bonzo(el).hasClass('is-playing')) {
+                    sound.pause();
+                    bonzo(el).removeClass('is-playing');
+                } else {
+                    sound.play();
+                    bonzo(el).addClass('is-playing');
+                }
+            } else {
+                SC.stream('/tracks/' + trackId, function(obj){
+                    obj.play();
+                    sound = obj;
+                    bonzo(el).addClass('is-playing');
+                });
+            }
         }
     }
 });
