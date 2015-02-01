@@ -1,6 +1,7 @@
 require 'soundcloud'
 require 'json'
 require 'open-uri'
+require 'rmagick'
 
 module Jekyll
     class Playlister < Liquid::Tag
@@ -16,7 +17,7 @@ module Jekyll
             playlist = client.get('/resolve', :url => playlist)
             playlist.tracks.each do |track|
                 image_grabber(track.artwork_url, track.id.to_s)
-                @list << "<li class='track' id='" + track.id.to_s + "'>" +
+                @list << "<li class='track' id='" + track.id.to_s + "' style='background-color:" + common_colour(@img_dest) + ";'>" +
                             "<img src='/" + @img_dest + "' />" +
                             "<span class='track__artist'>" + (track.user.username || "") + "</span><br />" +
                             "<span class='track__title'>" + track.title + "</span><br />" + track.permalink_url + "<br />" +
@@ -39,6 +40,27 @@ module Jekyll
                     file << open(url).read
                 end
             end
+        end
+
+        def common_colour(url)
+            img = Magick::Image.read(url).first
+            total = 0
+            avg = { :r => 0.0, :g => 0.0, :b => 0.0 }
+
+            img.quantize.color_histogram.each do |c,n|
+                avg[:r] += n * c.red
+                avg[:g] += n * c.green
+                avg[:b] += n * c.blue
+                total += n
+            end
+
+            avg.each_key do |c| 
+                avg[c] /= total
+                avg[c] = (avg[c] / Magick::QuantumRange * 255).to_i
+                puts avg[c]
+            end
+
+            return "rgb(#{avg[:r]},#{avg[:g]},#{avg[:b]})"
         end
 
         def render(context)
