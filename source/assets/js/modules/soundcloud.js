@@ -28,9 +28,9 @@ define([
         },
 
         playTrack: function(trackId) {
-            console.log("Playing" + trackId);
-            SC.stream("/tracks/" + trackId, function(sound){
+            SC.stream('/tracks/' + trackId, function(sound){
                 sound.play();
+                bonzo(qwery('#track-' + trackId)[0]).addClass('is-playing');
             });
         }
     }
