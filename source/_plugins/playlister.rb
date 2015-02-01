@@ -17,7 +17,7 @@ module Jekyll
             playlist = client.get('/resolve', :url => playlist)
             playlist.tracks.each do |track|
                 image_grabber(track.artwork_url, track.id.to_s)
-                @list << "<li class='track' id='" + track.id.to_s + "' style='background-color:" + common_colour(@img_dest) + ";'>" +
+                @list << "<li class='track' id='" + track.id.to_s + "' style='background-color:" + common_color(@img_dest) + ";'>" +
                             "<img src='/" + @img_dest + "' />" +
                             "<span class='track__artist'>" + (track.user.username || "") + "</span><br />" +
                             "<span class='track__title'>" + track.title + "</span><br />" + track.permalink_url + "<br />" +
@@ -39,24 +39,21 @@ module Jekyll
             end
         end
 
-        def common_colour(url)
-            img = Magick::Image.read(url).first
-            total = 0
-            avg = { :r => 0.0, :g => 0.0, :b => 0.0 }
+        def common_color(src)
+            img = Magick::Image.read(src).first
+            q = img.quantize(3, Magick::RGBColorspace)
+            palette = q.color_histogram.sort {|a, b| b[1] <=> a[1]}
+            palette = palette[0][0]
 
-            img.quantize.color_histogram.each do |c,n|
-                avg[:r] += n * c.red
-                avg[:g] += n * c.green
-                avg[:b] += n * c.blue
-                total += n
+            color = { :r => 0.0, :g => 0.0, :b => 0.0 }
+            color[:r] += palette.red
+            color[:g] += palette.green
+            color[:b] += palette.blue
+            color.each_key do |c|
+                color[c] = (color[c] / Magick::QuantumRange * 255).to_i
             end
 
-            avg.each_key do |c| 
-                avg[c] /= total
-                avg[c] = (avg[c] / Magick::QuantumRange * 255).to_i
-            end
-
-            return "rgb(#{avg[:r]},#{avg[:g]},#{avg[:b]})"
+            return "rgb(#{color[:r]},#{color[:g]},#{color[:b]})"
         end
 
         def render(context)
