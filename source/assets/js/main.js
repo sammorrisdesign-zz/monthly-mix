@@ -1,1 +1,11 @@
-// Place your javascripts here
+require([
+    'libs/bonzo',
+    'libs/qwery',
+    'modules/fonts'
+], function (
+    bonzo,
+    qwery,
+    fonts
+) {
+    fonts.init();
+});
