@@ -8,7 +8,7 @@ module Jekyll
         def initialize(tag_name, playlist, tokens)
             super
             # Register a client with Soundcloud
-            file = File.read("../soundcloud-keys.json")
+            file = File.read("soundcloud-keys.json")
             data_hash = JSON.parse(file)
             client = SoundCloud.new(:client_id => data_hash['id'])
             @list = ""
@@ -17,7 +17,7 @@ module Jekyll
             playlist = client.get('/resolve', :url => playlist)
             playlist.tracks.each do |track|
                 image_grabber(track.artwork_url, track.id.to_s)
-                @list << "<li class='track' id='" + track.id.to_s + "' style='background-color:" + common_color(@img_dest) + ";'>" +
+                @list << "<li class='track' data-track-id='" + track.id.to_s + "' style='background-color:" + common_color(@img_dest) + ";'>" +
                             "<img src='/" + @img_dest + "' />" +
                             "<span class='track__artist'>" + (track.user.username || "") + "</span><br />" +
                             "<span class='track__title'>" + track.title + "</span><br />" + track.permalink_url + "<br />" +

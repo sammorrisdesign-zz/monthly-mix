@@ -1,11 +1,20 @@
+requirejs.config({
+    paths: {
+        'sc': 'http://connect.soundcloud.com/sdk'
+    }
+});
+
 require([
     'libs/bonzo',
     'libs/qwery',
-    'modules/fonts'
+    'modules/fonts',
+    'modules/soundcloud'
 ], function (
     bonzo,
     qwery,
-    fonts
+    fonts,
+    soundcloud
 ) {
     fonts.init();
+    soundcloud.init();
 });
