@@ -32,10 +32,7 @@ module Jekyll
             @img_dest = "assets/images/artwork/" + id + ".jpg"
 
             # Check if image has already been downloaded before copying to assets folder
-            if File.exist?(@img_dest)
-                puts "We already have " + id
-            else
-                puts "GETTING" + id
+            if File.exist?(@img_dest) == false
                 open(@img_dest, 'wb') do |file|
                     file << open(url).read
                 end
@@ -57,7 +54,6 @@ module Jekyll
             avg.each_key do |c| 
                 avg[c] /= total
                 avg[c] = (avg[c] / Magick::QuantumRange * 255).to_i
-                puts avg[c]
             end
 
             return "rgb(#{avg[:r]},#{avg[:g]},#{avg[:b]})"
