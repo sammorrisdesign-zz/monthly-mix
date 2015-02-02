@@ -5,13 +5,9 @@ requirejs.config({
 });
 
 require([
-    'libs/bonzo',
-    'libs/qwery',
     'modules/fonts',
     'modules/soundcloud'
 ], function (
-    bonzo,
-    qwery,
     fonts,
     soundcloud
 ) {
