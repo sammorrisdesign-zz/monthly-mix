@@ -7,7 +7,7 @@ module Jekyll
   class Playlister < Generator
     def generate(site)
         site.posts.each do |post|
-            if (post.data['soundcloud'])
+            if (post.data['soundcloud'] && post.data['fetch'] === true)
                 post.content = render_playlist(post.data['soundcloud'])
             end
         end
