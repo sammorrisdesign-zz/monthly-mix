@@ -8,31 +8,34 @@ module Jekyll
     def generate(site)
         site.posts.each do |post|
             if (post.data['soundcloud'] && post.data['fetch'] === true)
-                post.content = render_playlist(post.data['soundcloud'])
+                render_playlist(post.data['soundcloud'])
             end
         end
     end
 
-    def render_playlist(playlist)
+    def render_playlist(url)
         # Register a client with Soundcloud
         file = File.read("soundcloud-keys.json")
         data_hash = JSON.parse(file)
         client = SoundCloud.new(:client_id => data_hash['id'])
-        @list = ""
+        @list = Array.new
 
-        # Get Playlist and render it
-        playlist = client.get('/resolve', :url => playlist)
-        @list << "<ul class='playlist'>"
-        playlist.tracks.each do |track|
+        # Get Playlist and render json
+        playlist = client.get('/resolve', :url => url)
+        playlist.tracks.each_with_index do |track, index|
             image_grabber(track.artwork_url, track.id.to_s)
-            @list << "<li class='track' id='track-" + track.id.to_s + "' data-track-id='" + track.id.to_s + "' style='background-color:" + common_color(@img_dest) + ";'>" +
-                        "<img src='/" + @img_dest + "' />" +
-                        "<span class='track__artist'>" + (track.user.username || "") + "</span><br />" +
-                        "<span class='track__title'>" + track.title + "</span><br />" + track.permalink_url + "<br />" +
-                     "</li>"
+            @list << {
+                :id     => track.id.to_s,
+                :artwork => @img_dest,
+                :colour => common_color(@img_dest),
+                :track  => track.title,
+                :artists => track.user.username,
+                :permalink => track.permalink_url
+            }
         end
-        @list << "</ul>"
-        return @list
+
+        File.write("_data/" + url.split("/")[-1] + ".json", JSON.pretty_generate(@list))
+        # return JSON.pretty_generate(@list)
     end
 
     def image_grabber(url, id)
