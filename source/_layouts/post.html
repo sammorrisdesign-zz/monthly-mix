@@ -9,7 +9,16 @@ layout: default
   </header>
 
   <article class="post-content">
-    {{ content }}
+    <ul class="playlist">
+    {% for track in site.data.january-2015 %}
+        <li class="track" id="track-{{ track.id }}" data-track-id="{{ track.id }}" style="background-color: {{ track.color }};">
+            <img src="/{{ track.artwork }}" />
+            <span class="track__artist">{{ track.artist }}</span><br />
+            <span class="track__title">{{ track.title }}</span><br />
+            <a href="{{ track.permalink }}">Soundcloud it</a>
+        </li>
+    {% endfor %}
+    </ul>
   </article>
 
 </div>

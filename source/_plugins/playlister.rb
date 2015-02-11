@@ -27,9 +27,9 @@ module Jekyll
             @list << {
                 :id     => track.id.to_s,
                 :artwork => @img_dest,
-                :colour => common_color(@img_dest),
-                :track  => track.title,
-                :artists => track.user.username,
+                :color => common_color(@img_dest),
+                :title  => track.title,
+                :artist => track.user.username,
                 :permalink => track.permalink_url
             }
         end
