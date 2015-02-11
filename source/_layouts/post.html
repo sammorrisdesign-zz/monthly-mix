@@ -10,7 +10,8 @@ layout: default
 
   <article class="post-content">
     <ul class="playlist">
-    {% for track in site.data.january-2015 %}
+    {% assign playlist = page.soundcloud | split: '/' %}
+    {% for track in site.data.[playlist.last] %}
         <li class="track" id="track-{{ track.id }}" data-track-id="{{ track.id }}" style="background-color: {{ track.color }};">
             <img src="/{{ track.artwork }}" />
             <span class="track__artist">{{ track.artist }}</span><br />
