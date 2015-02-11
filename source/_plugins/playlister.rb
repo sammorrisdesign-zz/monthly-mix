@@ -35,7 +35,6 @@ module Jekyll
         end
 
         File.write("_data/" + url.split("/")[-1] + ".json", JSON.pretty_generate(@list))
-        # return JSON.pretty_generate(@list)
     end
 
     def image_grabber(url, id)
