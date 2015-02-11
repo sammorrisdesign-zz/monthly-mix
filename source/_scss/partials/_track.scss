@@ -1,7 +1,7 @@
 .track {
     padding: 20px;
-}
 
-.track.is-playing {
-    border: 10px dashed black;
+    .is-playing {
+        border: 10px dashed #000;
+    }
 }
