@@ -35,7 +35,7 @@ module.exports = function(grunt) {
     scsslint: {
       allFiles: 'source/_scss/**/*.scss',
       options: {
-        config: 'source/scss/.scss-lint.yml'
+        config: 'source/_scss/.scss-lint.yml'
       }
     },
     shell: {
