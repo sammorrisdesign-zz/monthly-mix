@@ -1,7 +1,43 @@
+.playlist {
+    overflow: auto;
+    background-color: $c-light-grey;
+}
+
 .track {
-    padding: $g-gutter;
+    position: relative;
+    width: 50%;
+    padding-top: 50%;
+    float: left;
 
     .is-playing {
         border: 10px dashed #000;
     }
+}
+
+.track__info,
+.track__artwork {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.track__info {
+    z-index: 5;
+    padding: $g-gutter;
+    @include box-sizing(border-box);
+}
+
+.track__artist {
+    color: $c-white;
+    font-weight: bold;
+}
+
+.track__title {
+    color: rgba(#000, .6);
+}
+
+.track__permalink {
+    display: none;
 }

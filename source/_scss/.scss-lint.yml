@@ -20,7 +20,7 @@ linters:
   StringQuotes:
     style: double_quotes
 
-  NameFormat:
+  SelectorFormat:
     enabled: false
     convention: BEM
 
@@ -37,3 +37,6 @@ linters:
   DuplicateProperty:
     exclude:
       - 'base/_reset.scss'
+
+  DeclarationOrder:
+    enabled: false
