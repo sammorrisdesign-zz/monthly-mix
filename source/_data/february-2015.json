@@ -27,13 +27,22 @@
     "permalink": "http://soundcloud.com/burgerrecords/step-panther-it-came-from-the-heart"
   },
   {
-    "id": "189338417",
-    "artwork": "assets/images/artwork/189338417.jpg",
-    "color": "rgb(30,30,30)",
+    "id": "189137400",
+    "artwork": "assets/images/artwork/189137400.jpg",
+    "color": "rgb(237,99,151)",
     "contrast": "is-dark",
-    "title": "Tearing The Posters Down",
-    "artist": "Dick Diver",
-    "permalink": "http://soundcloud.com/chaptermusic/dick-diver-tearing-the-posters-down"
+    "title": "Multi-Love",
+    "artist": "Unknown Mortal Orchestra",
+    "permalink": "http://soundcloud.com/jagjaguwar/unknown-mortal-orchestra-multi-love"
+  },
+  {
+    "id": "190700038",
+    "artwork": "assets/images/artwork/190700038.jpg",
+    "color": "rgb(33,33,33)",
+    "contrast": "is-dark",
+    "title": "The Blacker The Berry",
+    "artist": "Kendrick Lamar",
+    "permalink": "http://soundcloud.com/hiphoperecords/kendrick-lamar-the-blacker-the-berry"
   },
   {
     "id": "189306949",
@@ -45,6 +54,15 @@
     "permalink": "http://soundcloud.com/twinpeaksdudes/twin-peaks-in-the-morning-in-the-evening"
   },
   {
+    "id": "189148968",
+    "artwork": "assets/images/artwork/189148968.jpg",
+    "color": "rgb(206,178,172)",
+    "contrast": "is-light",
+    "title": " Raising The Skate",
+    "artist": "Speedy Ortiz",
+    "permalink": "http://soundcloud.com/carparkrecords/speedy-ortiz-raising-the-skate"
+  },
+  {
     "id": "186228464",
     "artwork": "assets/images/artwork/186228464.jpg",
     "color": "rgb(253,253,253)",
@@ -54,13 +72,13 @@
     "permalink": "http://soundcloud.com/sluteverbff/open-wide"
   },
   {
-    "id": "189137400",
-    "artwork": "assets/images/artwork/189137400.jpg",
-    "color": "rgb(237,99,151)",
+    "id": "189338417",
+    "artwork": "assets/images/artwork/189338417.jpg",
+    "color": "rgb(30,30,30)",
     "contrast": "is-dark",
-    "title": "Multi-Love",
-    "artist": "Unknown Mortal Orchestra",
-    "permalink": "http://soundcloud.com/jagjaguwar/unknown-mortal-orchestra-multi-love"
+    "title": "Tearing The Posters Down",
+    "artist": "Dick Diver",
+    "permalink": "http://soundcloud.com/chaptermusic/dick-diver-tearing-the-posters-down"
   },
   {
     "id": "189360898",
@@ -144,15 +162,6 @@
     "permalink": "http://soundcloud.com/jimmy-whispers-1/heart-dont-know-1"
   },
   {
-    "id": "189148968",
-    "artwork": "assets/images/artwork/189148968.jpg",
-    "color": "rgb(206,178,172)",
-    "contrast": "is-light",
-    "title": " Raising The Skate",
-    "artist": "Speedy Ortiz",
-    "permalink": "http://soundcloud.com/carparkrecords/speedy-ortiz-raising-the-skate"
-  },
-  {
     "id": "190470773",
     "artwork": "assets/images/artwork/190470773.jpg",
     "color": "rgb(56,59,58)",
@@ -187,15 +196,6 @@
     "title": "MICK JENKINS- \"TIME\" [Prod. OnGaud]",
     "artist": "THE CSS",
     "permalink": "http://soundcloud.com/the-css/01-time-prod-ongaud"
-  },
-  {
-    "id": "190700038",
-    "artwork": "assets/images/artwork/190700038.jpg",
-    "color": "rgb(33,33,33)",
-    "contrast": "is-dark",
-    "title": "The Blacker The Berry",
-    "artist": "Kendrick Lamar",
-    "permalink": "http://soundcloud.com/hiphoperecords/kendrick-lamar-the-blacker-the-berry"
   },
   {
     "id": "190581954",
