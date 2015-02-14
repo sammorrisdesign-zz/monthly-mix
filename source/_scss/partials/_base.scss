@@ -14,3 +14,18 @@ a {
         text-decoration: underline;
     }
 }
+
+.title {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+}
+
+.sub {
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid $c-light-grey;
+}

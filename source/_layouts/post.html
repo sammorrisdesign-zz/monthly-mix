@@ -2,24 +2,24 @@
 layout: default
 ---
 <div class="post">
+    <div class="post-header">
+        <h1 class="post-title">{{ page.title }} {{ page.date | date: "%Y" }}</h1>
+        <div class="controls">
+            <h2>Play</h2>
+        </div>
+    </div>
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
-
-  <article class="post-content">
-    <ul class="playlist">
-    {% assign playlist = page.soundcloud | split: '/' %}
-    {% for track in site.data.[playlist.last] %}
-        <li class="track" id="track-{{ track.id }}" data-track-id="{{ track.id }}" style="background-color: {{ track.color }};">
-            <img src="/{{ track.artwork }}" />
-            <span class="track__artist">{{ track.artist }}</span><br />
-            <span class="track__title">{{ track.title }}</span><br />
-            <a href="{{ track.permalink }}">Soundcloud it</a>
-        </li>
-    {% endfor %}
-    </ul>
-  </article>
-
+    <article class="post-content">
+        <ul class="playlist">
+        {% assign playlist = page.soundcloud | split: '/' %}
+        {% for track in site.data.[playlist.last] %}
+            <li class="track" id="track-{{ track.id }}" data-track-id="{{ track.id }}" style="background-color: {{ track.color }};">
+                <img src="/{{ track.artwork }}" />
+                <span class="track__artist">{{ track.artist }}</span><br />
+                <span class="track__title">{{ track.title }}</span><br />
+                <a href="{{ track.permalink }}">Soundcloud it</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </article>
 </div>

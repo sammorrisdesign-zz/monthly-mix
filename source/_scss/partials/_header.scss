@@ -1,0 +1,16 @@
+header {
+    padding: $g-gutter;
+
+    .site-title {
+        font-weight: bold;
+        color: $c-black;
+    }
+
+    .description {
+        color: $c-grey;
+
+        a {
+            color: $c-black;
+        }
+    }
+}
