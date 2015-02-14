@@ -8,9 +8,19 @@
     width: 50%;
     padding-top: 50%;
     float: left;
+    overflow: hidden;
+    cursor: pointer;
 
-    .is-playing {
-        border: 10px dashed #000;
+    &:hover {
+        .track__info {
+            top: 10%;
+        }
+    }
+
+    &.is-playing {
+        .track__info {
+            top: 50%;
+        }
     }
 }
 
@@ -27,6 +37,7 @@
     z-index: 5;
     padding: $g-gutter;
     @include box-sizing(border-box);
+    @include transition(top .2s ease-in);
 }
 
 .track__artist {
