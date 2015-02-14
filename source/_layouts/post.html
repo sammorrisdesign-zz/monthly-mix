@@ -15,7 +15,7 @@ layout: default
         {% assign playlist = page.soundcloud | split: '/' %}
         {% for track in site.data.[playlist.last] %}
             <li class="track" id="track-{{ track.id }}" data-track-id="{{ track.id }}">
-                <div class="track__info" style="background-color: {{ track.color }};">
+                <div class="track__info {{ track.contrast }}" style="background-color: {{ track.color }};">
                     <span class="track__artist title">{{ track.artist }}</span><br />
                     <span class="track__title title">{{ track.title }}</span><br />
                     <a class="track__permalink" href="{{ track.permalink }}">Soundcloud it</a>

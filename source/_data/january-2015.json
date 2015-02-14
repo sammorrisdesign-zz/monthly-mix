@@ -3,22 +3,25 @@
     "id": "185884942",
     "artwork": "assets/images/artwork/185884942.jpg",
     "color": "rgb(193,181,170)",
-    "title": "Toro Y Moi - Empty Nesters",
-    "artist": "Carpark Records",
+    "contrast": "is-light",
+    "title": "Empty Nesters",
+    "artist": "Toro Y Moi",
     "permalink": "http://soundcloud.com/carparkrecords/toro-y-moi-empty-nesters"
   },
   {
     "id": "178722319",
     "artwork": "assets/images/artwork/178722319.jpg",
     "color": "rgb(162,117,160)",
-    "title": "Young Fathers - 'Soon Come Soon'",
-    "artist": "Big Dada Sound",
+    "contrast": "is-dark",
+    "title": "Soon Come Soon",
+    "artist": "Young Fathers",
     "permalink": "http://soundcloud.com/bigdadasound/young-fathers-soon-come-soon-3"
   },
   {
     "id": "188406094",
     "artwork": "assets/images/artwork/188406094.jpg",
     "color": "rgb(254,254,254)",
+    "contrast": "is-light",
     "title": "Pedestrian At Best",
     "artist": "Courtney Barnett",
     "permalink": "http://soundcloud.com/courtney-barnett-milk/pedestrian-at-best"
@@ -27,6 +30,7 @@
     "id": "186321115",
     "artwork": "assets/images/artwork/186321115.jpg",
     "color": "rgb(248,107,127)",
+    "contrast": "is-dark",
     "title": "In Vain",
     "artist": "MOVIE.",
     "permalink": "http://soundcloud.com/listentomovie/in-vain-3"
@@ -35,6 +39,7 @@
     "id": "185533328",
     "artwork": "assets/images/artwork/185533328.jpg",
     "color": "rgb(242,151,57)",
+    "contrast": "is-dark",
     "title": "First Light",
     "artist": "Django Django",
     "permalink": "http://soundcloud.com/djangodjango/first-light"
@@ -43,6 +48,7 @@
     "id": "184895628",
     "artwork": "assets/images/artwork/184895628.jpg",
     "color": "rgb(228,216,223)",
+    "contrast": "is-light",
     "title": "Off Peak Dreams",
     "artist": "Ghostpoet",
     "permalink": "http://soundcloud.com/ghostpoet/off-peak-dreams"
@@ -51,22 +57,25 @@
     "id": "184599429",
     "artwork": "assets/images/artwork/184599429.jpg",
     "color": "rgb(121,123,131)",
-    "title": "Aesop Rock - Cat Food",
-    "artist": "rhymesayers",
+    "contrast": "is-dark",
+    "title": "Cat Food",
+    "artist": "Aesop Rock",
     "permalink": "http://soundcloud.com/rhymesayers/aesop-rock-cat-food"
   },
   {
     "id": "179670551",
     "artwork": "assets/images/artwork/179670551.jpg",
     "color": "rgb(223,222,221)",
-    "title": "Chastity Belt - \"Time to Go Home\"",
-    "artist": "hardlyartrecords",
+    "contrast": "is-light",
+    "title": "Time to Go Home",
+    "artist": "Chastity Belt",
     "permalink": "http://soundcloud.com/hardlyartrecords/chastity-belt-time-to-go-home"
   },
   {
     "id": "185659357",
     "artwork": "assets/images/artwork/185659357.jpg",
     "color": "rgb(40,49,27)",
+    "contrast": "is-dark",
     "title": "Essay to write",
     "artist": "trust fund",
     "permalink": "http://soundcloud.com/trust-fund/essay-to-write"
@@ -75,14 +84,16 @@
     "id": "182844642",
     "artwork": "assets/images/artwork/182844642.jpg",
     "color": "rgb(135,143,55)",
-    "title": "Ryley Walker - \"Primrose Green\"",
-    "artist": "Dead Oceans",
+    "contrast": "is-dark",
+    "title": "Primrose Green",
+    "artist": "Ryley Walker",
     "permalink": "http://soundcloud.com/deadoceans/ryley-walker-primrose-green"
   },
   {
     "id": "130904324",
     "artwork": "assets/images/artwork/130904324.jpg",
     "color": "rgb(53,48,45)",
+    "contrast": "is-dark",
     "title": "The Highway",
     "artist": "Tunde Olaniran",
     "permalink": "http://soundcloud.com/tundeolaniran/the-highway-1"
@@ -91,30 +102,34 @@
     "id": "180789296",
     "artwork": "assets/images/artwork/180789296.jpg",
     "color": "rgb(29,29,28)",
-    "title": "Dick Diver - Waste The Alphabet",
-    "artist": "Chapter Music",
+    "contrast": "is-dark",
+    "title": "Waste The Alphabet",
+    "artist": "Dick Diver",
     "permalink": "http://soundcloud.com/chaptermusic/dick-diver-waste-the-alphabet"
   },
   {
     "id": "188260819",
     "artwork": "assets/images/artwork/188260819.jpg",
     "color": "rgb(20,20,20)",
-    "title": "Open Mike Eagle - Raps For When It's Just You And The Abyss",
-    "artist": "Mello Music Group",
+    "contrast": "is-dark",
+    "title": "Raps For When Its Just You And The Abyss",
+    "artist": "Open Mike Eagle",
     "permalink": "http://soundcloud.com/mellomusicgroup/open-mike-eagle-raps-for-when-its-just-you-and-the-abyss"
   },
   {
     "id": "184964202",
     "artwork": "assets/images/artwork/184964202.jpg",
     "color": "rgb(36,33,33)",
-    "title": "Action Bronson - Actin Crazy (Prod. By 40 and Omen)",
-    "artist": "ACTION BRONSON",
+    "contrast": "is-dark",
+    "title": "Actin Crazy (Prod. By 40 and Omen)",
+    "artist": "Action Bronson",
     "permalink": "http://soundcloud.com/actionbronson/action-bronson-actin-crazy"
   },
   {
     "id": "186984002",
     "artwork": "assets/images/artwork/186984002.jpg",
     "color": "rgb(171,155,153)",
+    "contrast": "is-dark",
     "title": "The Mountain Goats \"The Legend of Chavo Guerrero\"",
     "artist": "MergeRecords",
     "permalink": "http://soundcloud.com/mergerecords/the-mountain-goats-the-legend-of-chavo-guerrero"
@@ -123,6 +138,7 @@
     "id": "186693204",
     "artwork": "assets/images/artwork/186693204.jpg",
     "color": "rgb(62,67,70)",
+    "contrast": "is-dark",
     "title": "Lupe Fiasco/Mural /Tetsou & Youth January 20th",
     "artist": "I'm Chris Johnson",
     "permalink": "http://soundcloud.com/chris-johnson-361/lupe-fiasco-mural"
@@ -131,22 +147,25 @@
     "id": "171085572",
     "artwork": "assets/images/artwork/171085572.jpg",
     "color": "rgb(121,121,121)",
-    "title": "Viet Cong - \"Continental Shelf\"",
-    "artist": "Jagjaguwar",
+    "contrast": "is-dark",
+    "title": "Continental Shelf",
+    "artist": "Viet Cong",
     "permalink": "http://soundcloud.com/jagjaguwar/vietcong-continental-shelf"
   },
   {
     "id": "172419128",
     "artwork": "assets/images/artwork/172419128.jpg",
     "color": "rgb(120,83,81)",
-    "title": "The Go! Team - The Scene Between",
-    "artist": "Memphis Industries",
+    "contrast": "is-dark",
+    "title": "The Scene Between",
+    "artist": "The Go! Team",
     "permalink": "http://soundcloud.com/memphisindustries/the-go-team-the-scene-between"
   },
   {
     "id": "131615666",
     "artwork": "assets/images/artwork/131615666.jpg",
     "color": "rgb(26,26,26)",
+    "contrast": "is-dark",
     "title": "Where's your car Debbie?",
     "artist": "slaves (band)",
     "permalink": "http://soundcloud.com/slavesband/wheres-your-car-debbie-1"
@@ -155,14 +174,16 @@
     "id": "182271061",
     "artwork": "assets/images/artwork/182271061.jpg",
     "color": "rgb(237,233,230)",
-    "title": "Busdriver - #Aweday prod. by Fumitake Tamura/Bun",
-    "artist": "Busdriverse",
+    "contrast": "is-light",
+    "title": "#Aweday prod. by Fumitake Tamura/Bun",
+    "artist": "Busdriver",
     "permalink": "http://soundcloud.com/busdriver-of-hellfyre/busdriver-aweday-prod-by-fumitake-tamurabun"
   },
   {
     "id": "187356739",
     "artwork": "assets/images/artwork/187356739.jpg",
     "color": "rgb(91,92,96)",
+    "contrast": "is-dark",
     "title": "Mikal Cronin \"Made My Mind Up\"",
     "artist": "MergeRecords",
     "permalink": "http://soundcloud.com/mergerecords/mikal-cronin-made-my-mind-up"
@@ -171,30 +192,34 @@
     "id": "186172252",
     "artwork": "assets/images/artwork/186172252.jpg",
     "color": "rgb(65,163,220)",
-    "title": "Project Pablo - Movin' Out",
-    "artist": "1080pツ",
+    "contrast": "is-dark",
+    "title": "Movin Out",
+    "artist": "Project Pablo",
     "permalink": "http://soundcloud.com/1080pcollection/project-pablo-movin-out-2"
   },
   {
     "id": "175706523",
     "artwork": "assets/images/artwork/175706523.jpg",
     "color": "rgb(176,145,213)",
-    "title": "Girlpool - \"Alone at the Show\"",
-    "artist": "thelesigh",
+    "contrast": "is-dark",
+    "title": "Alone at the Show",
+    "artist": "Girlpool",
     "permalink": "http://soundcloud.com/thelesigh/girlpool-alone-at-the-show"
   },
   {
     "id": "185066597",
     "artwork": "assets/images/artwork/185066597.jpg",
     "color": "rgb(68,68,68)",
-    "title": "Twerps - I Don't Mind",
-    "artist": "Chapter Music",
+    "contrast": "is-dark",
+    "title": "I Dont Mind",
+    "artist": "Twerps",
     "permalink": "http://soundcloud.com/chaptermusic/twerps-i-dont-mind"
   },
   {
     "id": "187293272",
     "artwork": "assets/images/artwork/187293272.jpg",
     "color": "rgb(22,99,162)",
+    "contrast": "is-dark",
     "title": "Stone",
     "artist": "All We Are",
     "permalink": "http://soundcloud.com/thisisallweare/stone"
@@ -203,30 +228,34 @@
     "id": "186775833",
     "artwork": "assets/images/artwork/186775833.jpg",
     "color": "rgb(61,51,50)",
-    "title": "Lucern Raze - Someone Like You",
-    "artist": "BURGER RECORDS",
+    "contrast": "is-dark",
+    "title": "Someone Like You",
+    "artist": "Lucern Raze",
     "permalink": "http://soundcloud.com/burgerrecords/lucern-raze-someone-like-you"
   },
   {
     "id": "184874162",
     "artwork": "assets/images/artwork/184874162.jpg",
     "color": "rgb(51,129,71)",
-    "title": "Levitation Room - Loved",
-    "artist": "BURGER RECORDS",
+    "contrast": "is-dark",
+    "title": "Loved",
+    "artist": "Levitation Room",
     "permalink": "http://soundcloud.com/burgerrecords/levitation-room-loved"
   },
   {
     "id": "186653128",
     "artwork": "assets/images/artwork/186653128.jpg",
     "color": "rgb(57,65,54)",
-    "title": "Phantom Posse - She Gets Lonely (Feat. Makonnen)",
-    "artist": "brandonang",
+    "contrast": "is-dark",
+    "title": "She Gets Lonely (Feat. Makonnen)",
+    "artist": "Phantom Posse",
     "permalink": "http://soundcloud.com/brandonang/phantom-posse-she-gets-lonely"
   },
   {
     "id": "180167809",
     "artwork": "assets/images/artwork/180167809.jpg",
     "color": "rgb(137,45,80)",
+    "contrast": "is-dark",
     "title": "Lonely Boy and Girl",
     "artist": "Callum Pickard",
     "permalink": "http://soundcloud.com/callumpickard/lonely-boy-and-girl"
@@ -235,22 +264,25 @@
     "id": "187963669",
     "artwork": "assets/images/artwork/187963669.jpg",
     "color": "rgb(105,110,141)",
-    "title": "Diet Cig - Harvard",
-    "artist": "Father/Daughter Records",
+    "contrast": "is-dark",
+    "title": "Harvard",
+    "artist": "Diet Cig",
     "permalink": "http://soundcloud.com/fatherdaughter/diet-cig-harvard"
   },
   {
     "id": "185989038",
     "artwork": "assets/images/artwork/185989038.jpg",
     "color": "rgb(32,84,141)",
-    "title": "Apidae - Turning Tides",
-    "artist": "DumontDumont",
+    "contrast": "is-dark",
+    "title": "Turning Tides",
+    "artist": "Apidae",
     "permalink": "http://soundcloud.com/dumontdumont/apidae-turning-tides"
   },
   {
     "id": "187786548",
     "artwork": "assets/images/artwork/187786548.jpg",
     "color": "rgb(216,153,106)",
+    "contrast": "is-dark",
     "title": "Then What",
     "artist": "Balthazarband",
     "permalink": "http://soundcloud.com/balthazarband/then-what-1"
@@ -259,8 +291,9 @@
     "id": "185242985",
     "artwork": "assets/images/artwork/185242985.jpg",
     "color": "rgb(81,81,81)",
-    "title": "BADBADNOTGOOD & Ghostface Killah - Ray Gun (feat. DOOM)",
-    "artist": "BADBADNOTGOOD",
+    "contrast": "is-dark",
+    "title": "Ray Gun (feat. DOOM)",
+    "artist": "BADBADNOTGOOD & Ghostface Killah",
     "permalink": "http://soundcloud.com/badbadnotgood/badbadnotgood-ghostface-killah-ray-gun-feat-doom"
   }
 ]

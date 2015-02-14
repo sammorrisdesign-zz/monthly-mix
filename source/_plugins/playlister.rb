@@ -24,12 +24,14 @@ module Jekyll
         playlist = client.get('/resolve', :url => url)
         playlist.tracks.each_with_index do |track, index|
             image_grabber(track.artwork_url, track.id.to_s)
+            title_splitter(track.title, track.user.username)
             @list << {
                 :id     => track.id.to_s,
                 :artwork => @img_dest,
                 :color => common_color(@img_dest),
-                :title  => track.title,
-                :artist => track.user.username,
+                :contrast => contrast_color(@color),
+                :title  => @title,
+                :artist => @username,
                 :permalink => track.permalink_url
             }
         end
@@ -51,6 +53,17 @@ module Jekyll
         end
     end
 
+    def title_splitter(title, username)
+        if title.include? " - "
+            # Format titles if on a record label account (and remove quotation marks)
+            @title = title.split(" - ")[1].gsub /["']/, ''
+            @username = title.split(" - ")[0]
+        else
+            @title = title
+            @username = username
+        end
+    end
+
     def common_color(src)
         # Open image and find most frequently appearing colo(u)rs
         img = Magick::Image.read(src).first
@@ -67,7 +80,18 @@ module Jekyll
             color[c] = (color[c] / Magick::QuantumRange * 255).to_i
         end
 
-        return "rgb(#{color[:r]},#{color[:g]},#{color[:b]})"
+        @color = "rgb(#{color[:r]},#{color[:g]},#{color[:b]})"
+        return @color
+    end
+
+    def contrast_color(rgb)
+        rgb = rgb.gsub /[rgb()]/, ''
+        r = rgb.split(',')[0].to_i
+        g = rgb.split(',')[1].to_i
+        b = rgb.split(',')[2].to_i
+        yiq = ((r*299)+(g*587)+(b*114)) / 1000
+        # return yiq
+        return (yiq >= 170) ? 'is-light' : 'is-dark';
     end
   end
 end

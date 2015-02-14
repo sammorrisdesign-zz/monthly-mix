@@ -53,6 +53,10 @@
 .track__artist {
     color: $c-white;
     font-weight: bold;
+
+    .is-light & {
+        color: $c-black;
+    }
 }
 
 .track__title {
