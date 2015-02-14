@@ -1,10 +1,12 @@
 header {
     padding: $g-gutter;
+    overflow: auto;
 
     @include mq(tablet) {
         position: fixed;
         z-index: 10;
         width: 25%;
+        min-height: 100%;
     }
 
     @include mq(wide) {
@@ -18,9 +20,24 @@ header {
 
     .description {
         color: $c-grey;
+        float: left;
+
+        @include mq($until: tablet) {
+            width: 80%;
+        }
 
         a {
             color: $c-black;
+        }
+    }
+
+    .powered-by {
+        float: right;
+
+        @include mq(tablet) {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
         }
     }
 }
