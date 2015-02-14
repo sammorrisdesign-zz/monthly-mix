@@ -7,6 +7,11 @@ html {
     font-size: 62.5%;
 }
 
+body,
+html {
+    height: 100%;
+}
+
 a {
     text-decoration: none;
 
@@ -21,13 +26,23 @@ hr {
 }
 
 .title {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
+    font-size: 1.6rem;
+    line-height: 2rem;
+
+    @include mq(mobile) {
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+    }
 }
 
 .sub {
-    font-size: 1.6rem;
-    line-height: 2.2rem;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+
+    @include mq(mobile) {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+    }
 }
 
 .input {
