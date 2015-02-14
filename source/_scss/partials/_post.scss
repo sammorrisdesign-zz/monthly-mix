@@ -1,0 +1,17 @@
+.post-header {
+    overflow: auto;
+    padding: $g-gutter;
+    background-color: $c-black;
+    color: $c-white;
+}
+
+.post-title {
+    float: left;
+    font-weight: bold;
+}
+
+.controls {
+    width: 50%;
+    float: right;
+    text-align: right;
+}

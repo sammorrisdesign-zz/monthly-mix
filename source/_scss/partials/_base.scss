@@ -15,6 +15,11 @@ a {
     }
 }
 
+hr {
+    border: 0;
+    border-top: 1px solid $c-light-grey;
+}
+
 .title {
     font-size: 2.4rem;
     line-height: 2.8rem;
@@ -22,10 +27,19 @@ a {
 
 .sub {
     font-size: 1.6rem;
-    line-height: 2rem;
+    line-height: 2.2rem;
 }
 
-hr {
-    border: 0;
-    border-top: 1px solid $c-light-grey;
+.input {
+    display: inline-block;
+    border: 2px solid $c-white;
+    padding: 5px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 6px;
+
+    &:hover {
+        background-color: $c-white;
+        color: $c-black;
+    }
 }
