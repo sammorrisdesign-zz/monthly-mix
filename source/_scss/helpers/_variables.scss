@@ -9,3 +9,10 @@ $c-black: #333;
 
 // Spacing
 $g-gutter: 20px;
+
+// Breakpoints
+$mq-breakpoints: (
+    mobile:  480px,
+    tablet:  740px,
+    wide:   1200px
+);

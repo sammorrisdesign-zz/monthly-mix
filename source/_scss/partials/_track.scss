@@ -11,6 +11,16 @@
     overflow: hidden;
     cursor: pointer;
 
+    @include mq(tablet) {
+        width: 33.3333%;
+        padding-top: 33.3333%;
+    }
+
+    @include mq(wide) {
+        width: 25%;
+        padding-top: 25%;
+    }
+
     &:hover {
         .track__info {
             top: 10%;

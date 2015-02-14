@@ -1,6 +1,16 @@
 header {
     padding: $g-gutter;
 
+    @include mq(tablet) {
+        position: fixed;
+        z-index: 10;
+        width: 25%;
+    }
+
+    @include mq(wide) {
+        width: 20%;
+    }
+
     .site-title {
         font-weight: bold;
         color: $c-black;
