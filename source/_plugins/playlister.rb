@@ -78,6 +78,9 @@ module Jekyll
         color[:b] += palette.blue
         color.each_key do |c|
             color[c] = (color[c] / Magick::QuantumRange * 255).to_i
+            if color[c] < 30
+                color[c] = 30
+            end
         end
 
         @color = "rgb(#{color[:r]},#{color[:g]},#{color[:b]})"

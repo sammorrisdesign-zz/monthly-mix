@@ -74,7 +74,7 @@
   {
     "id": "185659357",
     "artwork": "assets/images/artwork/185659357.jpg",
-    "color": "rgb(40,49,27)",
+    "color": "rgb(40,49,30)",
     "contrast": "is-dark",
     "title": "Essay to write",
     "artist": "trust fund",
@@ -101,7 +101,7 @@
   {
     "id": "180789296",
     "artwork": "assets/images/artwork/180789296.jpg",
-    "color": "rgb(29,29,28)",
+    "color": "rgb(30,30,30)",
     "contrast": "is-dark",
     "title": "Waste The Alphabet",
     "artist": "Dick Diver",
@@ -110,7 +110,7 @@
   {
     "id": "188260819",
     "artwork": "assets/images/artwork/188260819.jpg",
-    "color": "rgb(20,20,20)",
+    "color": "rgb(30,30,30)",
     "contrast": "is-dark",
     "title": "Raps For When Its Just You And The Abyss",
     "artist": "Open Mike Eagle",
@@ -164,7 +164,7 @@
   {
     "id": "131615666",
     "artwork": "assets/images/artwork/131615666.jpg",
-    "color": "rgb(26,26,26)",
+    "color": "rgb(30,30,30)",
     "contrast": "is-dark",
     "title": "Where's your car Debbie?",
     "artist": "slaves (band)",
@@ -218,7 +218,7 @@
   {
     "id": "187293272",
     "artwork": "assets/images/artwork/187293272.jpg",
-    "color": "rgb(22,99,162)",
+    "color": "rgb(30,99,162)",
     "contrast": "is-dark",
     "title": "Stone",
     "artist": "All We Are",

@@ -29,7 +29,7 @@
   {
     "id": "189338417",
     "artwork": "assets/images/artwork/189338417.jpg",
-    "color": "rgb(29,28,28)",
+    "color": "rgb(30,30,30)",
     "contrast": "is-dark",
     "title": "Tearing The Posters Down",
     "artist": "Dick Diver",
@@ -57,7 +57,7 @@
     "id": "189137400",
     "artwork": "assets/images/artwork/189137400.jpg",
     "color": "rgb(237,99,151)",
-    "contrast": "is-light",
+    "contrast": "is-dark",
     "title": "Multi-Love",
     "artist": "Unknown Mortal Orchestra",
     "permalink": "http://soundcloud.com/jagjaguwar/unknown-mortal-orchestra-multi-love"
@@ -102,7 +102,7 @@
     "id": "176339553",
     "artwork": "assets/images/artwork/176339553.jpg",
     "color": "rgb(237,130,122)",
-    "contrast": "is-light",
+    "contrast": "is-dark",
     "title": "\"No News From Home\" by Houndstooth",
     "artist": "NoQuarterRex",
     "permalink": "http://soundcloud.com/noquarterrex/no-news-from-home-by-houndstooth-1"
@@ -128,7 +128,7 @@
   {
     "id": "188318822",
     "artwork": "assets/images/artwork/188318822.jpg",
-    "color": "rgb(254,33,16)",
+    "color": "rgb(254,33,30)",
     "contrast": "is-dark",
     "title": "Iron Rose (feat. MF Doom)",
     "artist": "Cannibal Ox",
