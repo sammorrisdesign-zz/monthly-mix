@@ -93,8 +93,14 @@ module Jekyll
         g = rgb.split(',')[1].to_i
         b = rgb.split(',')[2].to_i
         yiq = ((r*299)+(g*587)+(b*114)) / 1000
-        # return yiq
-        return (yiq >= 170) ? 'is-light' : 'is-dark';
+
+        if yiq >= 170
+            return 'is-light'
+        elsif yiq <= 40
+            return 'is-very-dark'
+        else
+            return 'is-dark'
+        end
     end
   end
 end

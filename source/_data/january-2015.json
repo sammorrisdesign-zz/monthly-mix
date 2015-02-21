@@ -102,7 +102,7 @@
     "id": "180789296",
     "artwork": "assets/images/artwork/180789296.jpg",
     "color": "rgb(30,30,30)",
-    "contrast": "is-dark",
+    "contrast": "is-very-dark",
     "title": "Waste The Alphabet",
     "artist": "Dick Diver",
     "permalink": "http://soundcloud.com/chaptermusic/dick-diver-waste-the-alphabet"
@@ -111,7 +111,7 @@
     "id": "188260819",
     "artwork": "assets/images/artwork/188260819.jpg",
     "color": "rgb(30,30,30)",
-    "contrast": "is-dark",
+    "contrast": "is-very-dark",
     "title": "Raps For When Its Just You And The Abyss",
     "artist": "Open Mike Eagle",
     "permalink": "http://soundcloud.com/mellomusicgroup/open-mike-eagle-raps-for-when-its-just-you-and-the-abyss"
@@ -120,7 +120,7 @@
     "id": "184964202",
     "artwork": "assets/images/artwork/184964202.jpg",
     "color": "rgb(36,33,33)",
-    "contrast": "is-dark",
+    "contrast": "is-very-dark",
     "title": "Actin Crazy (Prod. By 40 and Omen)",
     "artist": "Action Bronson",
     "permalink": "http://soundcloud.com/actionbronson/action-bronson-actin-crazy"
@@ -165,7 +165,7 @@
     "id": "131615666",
     "artwork": "assets/images/artwork/131615666.jpg",
     "color": "rgb(30,30,30)",
-    "contrast": "is-dark",
+    "contrast": "is-very-dark",
     "title": "Where's your car Debbie?",
     "artist": "slaves (band)",
     "permalink": "http://soundcloud.com/slavesband/wheres-your-car-debbie-1"
@@ -214,15 +214,6 @@
     "title": "I Dont Mind",
     "artist": "Twerps",
     "permalink": "http://soundcloud.com/chaptermusic/twerps-i-dont-mind"
-  },
-  {
-    "id": "187293272",
-    "artwork": "assets/images/artwork/187293272.jpg",
-    "color": "rgb(30,99,162)",
-    "contrast": "is-dark",
-    "title": "Stone",
-    "artist": "All We Are",
-    "permalink": "http://soundcloud.com/thisisallweare/stone"
   },
   {
     "id": "186775833",

@@ -61,6 +61,10 @@
 
 .track__title {
     color: rgba(#000, .6);
+
+    .is-very-dark & {
+        color: rgba(#fff, .8);
+    }
 }
 
 .track__permalink {
