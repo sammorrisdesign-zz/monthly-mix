@@ -39,6 +39,10 @@
 
     &.is-playing {
         .track__info {
+            top: 100%;
+        }
+
+        &:hover .track__info {
             top: 50%;
         }
     }
