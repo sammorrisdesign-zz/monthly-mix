@@ -29,6 +29,14 @@ define([
             }.bind(this));
         },
 
+        loadingState: function(target, state) {
+            if (state === true) {
+                target.addClass("is-loading");
+            } else {
+                target.removeClass("is-loading");
+            }
+        },
+
         playTrack: function(trackId) {
             el = bonzo(qwery('#track-' + trackId));
             current = bonzo(qwery('.is-playing'));
@@ -42,6 +50,12 @@ define([
                 onfinish : function(){
                     next = bonzo(qwery('.is-playing')).next().attr('data-track-id');
                     this.playTrack(next);
+                }.bind(this),
+                onbufferchange: function() {
+                    this.loadingState(el, sound.playState);
+                }.bind(this),
+                onplay: function() {
+                    this.loadingState(el, true);
                 }.bind(this)
             }
 

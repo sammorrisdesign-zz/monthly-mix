@@ -3,6 +3,16 @@
     background-color: $c-light-grey;
 }
 
+@include keyframes(flash) {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+
+    25%, 75% {
+        opacity: .5;
+    }
+}
+
 .track {
     position: relative;
     width: 50%;
@@ -30,6 +40,13 @@
     &.is-playing {
         .track__info {
             top: 50%;
+        }
+    }
+
+    &.is-loading.is-playing {
+        .track__artist,
+        .track__title {
+            @include animation(flash 5s infinite);
         }
     }
 }
