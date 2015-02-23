@@ -55,7 +55,7 @@ define([
                         sound.play();
                         el.addClass('is-playing');
                     }
-                // If not, destory old track and start again
+                // If not, destroy old track and start again
                 } else {
                     sound.stop();
                     current.removeClass('is-playing');
