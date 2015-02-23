@@ -37,6 +37,14 @@ define([
             }
         },
 
+        onPlay: function(target) {
+            target.addClass('is-playing');
+        },
+
+        onStop: function(target) {
+            target.removeClass('is-playing');
+        },
+
         playTrack: function(trackId) {
             el = bonzo(qwery('#track-' + trackId));
             current = bonzo(qwery('.is-playing'));
@@ -64,25 +72,26 @@ define([
                 if (sound.url.split('/')[4] == trackId) {
                     if (el.hasClass('is-playing')) {
                         sound.pause();
-                        el.removeClass('is-playing');
+                        this.onStop(el);
                     } else {
                         sound.play();
-                        el.addClass('is-playing');
+                        this.onPlay(el);
                     }
                 // If not, destroy old track and start again
                 } else {
                     sound.stop();
-                    current.removeClass('is-playing');
+                    this.onStop(current);
                     sound = undefined;
                     this.playTrack(trackId);
                 }
             // First time playing of new track
             } else {
+                context = this;
                 SC.whenStreamingReady(function() {
                     var obj = SC.stream('/tracks/' + trackId, myOptions, function(obj){
                         obj.play();
                         sound = obj;
-                        el.addClass('is-playing');
+                        context.onPlay(el);
                     });
                     sound.load();
                 });

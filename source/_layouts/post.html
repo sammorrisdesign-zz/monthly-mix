@@ -2,10 +2,22 @@
 layout: default
 ---
 <div class="post">
-    <div class="post-header">
+    <div class="post-header post-header--month">
         <h1 class="post-title title">Playlist for {{ page.title }} {{ page.date | date: "%Y" }}</h1>
         <div class="controls">
             <div class="controls-audio input sub">Play</div>
+            <div class="controls-soundcloud input sub">Open in Soundcloud</div>
+        </div>
+    </div>
+
+    <div class="post-header post-header--now-playing">
+        <h1 class="post-title title">
+            <span class="post-title__artist">Track Artist</span>
+            <span class="post-title__track">Track Title</span>
+        </h1>
+        <div class="controls">
+            <div class="controls-audio input sub">Pause</div>
+            <div class="controls-skip input sub">Skip</div>
             <div class="controls-soundcloud input sub">Open in Soundcloud</div>
         </div>
     </div>
