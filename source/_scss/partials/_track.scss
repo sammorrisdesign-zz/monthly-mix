@@ -48,6 +48,10 @@
     }
 
     &.is-loading.is-playing {
+        .track__info {
+            top: 50%;
+        }
+
         .track__artist,
         .track__title {
             @include animation(flash 5s infinite);
