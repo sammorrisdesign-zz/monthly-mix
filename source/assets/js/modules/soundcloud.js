@@ -39,7 +39,7 @@ define([
 
         onPlay: function(target) {
             target.addClass('is-playing');
-            this.updateNowPlaying(target);
+            this.updateNowPlaying();
         },
 
         onStop: function(target) {
@@ -55,11 +55,12 @@ define([
             }
         },
 
-        updateNowPlaying: function(target) {
+        updateNowPlaying: function() {
             track = this.getNowPlayingInfo();
 
             bonzo(qwery('.post-header--now-playing .post-title__track')).text(track['title']);
             bonzo(qwery('.post-header--now-playing .post-title__artist')).text(track['artist']);
+            bonzo(qwery('.post-header--now-playing')).attr("style", track['color']);
         },
 
         playTrack: function(trackId) {
