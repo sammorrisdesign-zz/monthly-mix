@@ -49,9 +49,9 @@ define([
         getNowPlayingInfo: function() {
             return {
                 "id"    : bonzo(qwery('.is-playing')).attr('data-track-id'),
-                "color" : bonzo(qwery('.is-playing .track__info')).attr('style'),
-                "title" : qwery('.is-playing .track__title')[0].textContent,
-                "artist": qwery('.is-playing .track__artist')[0].textContent
+                "color" : bonzo(qwery('.is-playing .playlist__entry__info')).attr('style'),
+                "title" : qwery('.is-playing .playlist__entry__title')[0].textContent,
+                "artist": qwery('.is-playing .playlist__entry__artist')[0].textContent
             }
         },
 
