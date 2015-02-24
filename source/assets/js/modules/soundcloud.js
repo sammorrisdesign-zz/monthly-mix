@@ -39,10 +39,27 @@ define([
 
         onPlay: function(target) {
             target.addClass('is-playing');
+            this.updateNowPlaying(target);
         },
 
         onStop: function(target) {
             target.removeClass('is-playing');
+        },
+
+        getNowPlayingInfo: function() {
+            return {
+                "id"    : bonzo(qwery('.is-playing')).attr('data-track-id'),
+                "color" : bonzo(qwery('.is-playing .track__info')).attr('style'),
+                "title" : qwery('.is-playing .track__title')[0].textContent,
+                "artist": qwery('.is-playing .track__artist')[0].textContent
+            }
+        },
+
+        updateNowPlaying: function(target) {
+            track = this.getNowPlayingInfo();
+
+            bonzo(qwery('.post-header--now-playing .post-title__track')).text(track['title']);
+            bonzo(qwery('.post-header--now-playing .post-title__artist')).text(track['artist']);
         },
 
         playTrack: function(trackId) {
