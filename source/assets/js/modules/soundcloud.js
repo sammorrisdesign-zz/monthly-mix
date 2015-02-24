@@ -24,7 +24,7 @@ define([
         },
 
         bindEvents: function() {
-            bean.on(document.body, 'click', '.track', function(e) {
+            bean.on(document.body, 'click', '.playlist__entry', function(e) {
                 this.playTrack(e.currentTarget.dataset.trackId);
             }.bind(this));
         },
@@ -64,7 +64,7 @@ define([
         },
 
         playTrack: function(trackId) {
-            el = bonzo(qwery('#track-' + trackId));
+            el = bonzo(qwery('#playlist__entry--' + trackId));
             current = bonzo(qwery('.is-playing'));
 
             // Set options for player

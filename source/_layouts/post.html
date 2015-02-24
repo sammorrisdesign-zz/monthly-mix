@@ -26,13 +26,13 @@ layout: default
         <ul class="playlist">
         {% assign playlist = page.soundcloud | split: '/' %}
         {% for track in site.data.[playlist.last] %}
-            <li class="track" id="track-{{ track.id }}" data-track-id="{{ track.id }}">
-                <div class="track__info {{ track.contrast }}" style="background-color: {{ track.color }};">
-                    <span class="track__artist title">{{ track.artist }}</span><br />
-                    <span class="track__title title">{{ track.title }}</span><br />
-                    <a class="track__permalink" href="{{ track.permalink }}">Soundcloud it</a>
+            <li class="playlist__entry" id="playlist__entry--{{ track.id }}" data-track-id="{{ track.id }}">
+                <div class="playlist__entry__info {{ track.contrast }}" style="background-color: {{ track.color }};">
+                    <span class="playlist__entry__artist track__artist title">{{ track.artist }}</span><br />
+                    <span class="playlist__entry__title track__title title">{{ track.title }}</span><br />
+                    <a class="playlist__entry__permalink" href="{{ track.permalink }}">Soundcloud it</a>
                 </div>
-                <img class="track__artwork" src="/{{ track.artwork }}" />
+                <img class="playlist__entry__artwork" src="/{{ track.artwork }}" />
             </li>
         {% endfor %}
         </ul>
