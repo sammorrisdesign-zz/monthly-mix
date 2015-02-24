@@ -27,13 +27,19 @@ define([
             bean.on(document.body, 'click', '.playlist__entry', function(e) {
                 this.playTrack(e.currentTarget.dataset.trackId);
             }.bind(this));
-            bean.on(document.body, 'click', '.controls__audio', function(e) {
-                this.controls();
+            bean.on(document.body, 'click', '.controls-audio', function(e) {
+                this.controlsPlay();
             }.bind(this));
         },
 
-        controls: function() {
-            state = bonzo(qwery('.post')).attr('data-state');
+        controlsPlay: function() {
+            id = bonzo(qwery('.post')).attr('data-current-track');
+
+            if (id) {
+                this.playTrack(id);
+            } else {
+                this.playTrack(bonzo(qwery('.playlist__entry')).attr('data-track-id'))
+            }
         },
 
         loadingState: function(target, state) {
@@ -68,6 +74,7 @@ define([
         updateNowPlaying: function() {
             track = this.getNowPlayingInfo();
 
+            bonzo(qwery('.post')).attr('data-current-track', track['id']);
             bonzo(qwery('.post-header--now-playing')).removeClass('is-dark is-light is-very-dark').addClass(track['contrast']).attr("style", track['color']);
             bonzo(qwery('.post-header--now-playing .post-title__track-artist')).text(track['artist']);
             bonzo(qwery('.post-header--now-playing .post-title__track-title')).text(track['title']);
