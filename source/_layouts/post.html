@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="post">
+<div class="post" data-state="is-stopped">
     <div class="post-header post-header--month">
         <h1 class="post-title title">Playlist for {{ page.title }} {{ page.date | date: "%Y" }}</h1>
         <div class="controls">
@@ -16,7 +16,10 @@ layout: default
             <span class="post-title__track-title track__title">Track Title</span>
         </h1>
         <div class="controls">
-            <div class="controls-audio input sub">Pause</div>
+            <div class="controls-audio input sub">
+                <span class="controls-audio__pause">Pause</span>
+                <span class="controls-audio__play">Play</span>
+            </div>
             <div class="controls-skip input sub">Skip</div>
             <div class="controls-soundcloud input sub">Open in Soundcloud</div>
         </div>

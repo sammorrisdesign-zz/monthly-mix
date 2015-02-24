@@ -27,6 +27,13 @@ define([
             bean.on(document.body, 'click', '.playlist__entry', function(e) {
                 this.playTrack(e.currentTarget.dataset.trackId);
             }.bind(this));
+            bean.on(document.body, 'click', '.controls__audio', function(e) {
+                this.controls();
+            }.bind(this));
+        },
+
+        controls: function() {
+            state = bonzo(qwery('.post')).attr('data-state');
         },
 
         loadingState: function(target, state) {
@@ -39,10 +46,12 @@ define([
 
         onPlay: function(target) {
             target.addClass('is-playing');
+            bonzo(qwery('.post')).attr('data-state', 'is-playing');
             this.updateNowPlaying();
         },
 
         onStop: function(target) {
+            bonzo(qwery('.post')).attr('data-state', 'is-stopped');
             target.removeClass('is-playing');
         },
 
