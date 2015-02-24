@@ -50,6 +50,7 @@ define([
             return {
                 "id"    : bonzo(qwery('.is-playing')).attr('data-track-id'),
                 "color" : bonzo(qwery('.is-playing .playlist__entry__info')).attr('style'),
+                "contrast" : bonzo(qwery('.is-playing')).attr('data-track-contrast'),
                 "title" : qwery('.is-playing .playlist__entry__title')[0].textContent,
                 "artist": qwery('.is-playing .playlist__entry__artist')[0].textContent
             }
@@ -58,9 +59,9 @@ define([
         updateNowPlaying: function() {
             track = this.getNowPlayingInfo();
 
-            bonzo(qwery('.post-header--now-playing .post-title__track')).text(track['title']);
-            bonzo(qwery('.post-header--now-playing .post-title__artist')).text(track['artist']);
-            bonzo(qwery('.post-header--now-playing')).attr("style", track['color']);
+            bonzo(qwery('.post-header--now-playing')).removeClass('is-dark is-light is-very-dark').addClass(track['contrast']).attr("style", track['color']);
+            bonzo(qwery('.post-header--now-playing .post-title__track-artist')).text(track['artist']);
+            bonzo(qwery('.post-header--now-playing .post-title__track-title')).text(track['title']);
         },
 
         playTrack: function(trackId) {
