@@ -30,6 +30,9 @@ define([
             bean.on(document.body, 'click', '.controls-audio', function(e) {
                 this.controlsPlay();
             }.bind(this));
+            bean.on(document.body, 'click', '.controls-skip', function(e) {
+                this.controlsSkip();
+            }.bind(this));
         },
 
         controlsPlay: function() {
@@ -40,6 +43,10 @@ define([
             } else {
                 this.playTrack(bonzo(qwery('.playlist__entry')).attr('data-track-id'))
             }
+        },
+
+        controlsSkip: function() {
+            this.playTrack(bonzo(qwery('.is-playing')).next().attr('data-track-id'));
         },
 
         loadingState: function(target, state) {
