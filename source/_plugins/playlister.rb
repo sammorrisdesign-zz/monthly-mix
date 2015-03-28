@@ -58,6 +58,10 @@ module Jekyll
             # Format titles if on a record label account (and remove quotation marks)
             @title = title.split(" - ")[1].gsub /["']/, ''
             @username = title.split(" - ")[0]
+        elsif title.include? " // "
+            # For Capture Tracks tracks
+            @title = title.split(" // ")[1]
+            @username = title.split(" // ")[0]
         else
             @title = title
             @username = username
