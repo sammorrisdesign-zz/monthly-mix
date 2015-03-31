@@ -83,6 +83,7 @@ define([
 
             bonzo(qwery('.post')).attr('data-current-track', track['id']);
             bonzo(qwery('.controls')).removeClass('is-dark is-light is-very-dark').addClass(track['contrast']).attr("style", track['color']);
+            bonzo(qwery('.playlist')).attr("style", track['color'].replace(')', ', 0.2)').replace('rgb', 'rgba'));
             bonzo(qwery('.controls .controls__title__track-artist')).text(track['artist']);
             bonzo(qwery('.controls .controls__title__track-title')).text(track['title']);
         },
