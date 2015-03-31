@@ -1,17 +1,49 @@
 ---
 layout: default
 ---
+<header class="site-header header">
+    {% include navigation.html %}
+</header>
 
 <div class="home">
+    <div class="home-header">
+        <h1 class="home-header__title super-title">Monthly Mix</h1>
+        <h3 class="home-header__tagline sub">Going to loud places to search for someone</h3>
+    </div>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+    <div id="playlists" class="home-playlists">
+        <h2 class="home-title home-title--playlists title">Playlists</h2>
+        {% for post in site.posts %}
+        <ul class="home-playlists__list">
+            <li class="home-playlists__item">
+                <a href="{{ post.url | prepend: site.baseurl }}">
+                    <p class="home-playlists__time">1h 32m</p>
+                    <h3 class="sub">{{ post.title }}</h3>
+                    <p class="home-playlists__description">Including bands, bands bands and bands</p>
+                </a>
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
 
+    <div id="subscribe" class="home-subscribe">
+        <h2 class="home-title home-title--subscribe title">Subscribe</h2>
+        <form method="post" action="URL">
+            <input class="home-subscribe__input" type="text" name="email" value="Your email address"/>
+            <input class="home-subscribe__button" type="submit" name="submit" value="Subscribe" />
+        </form>
+    </div>
+
+    <hr />
+
+    <div id="about" class="home-about">
+        <h2 class="home-title home-title--about title">About</h2>
+        <div class="home-about__body">
+            <p><strong>Here's an example of a question as part of the About page?</strong> Here's where the answer would go if I had an actual question this part is probably a little longer than the actual quesiton though which is why I'm still typing nonsense.</p>
+            <p><strong>Here's an example of a question as part of the About page?</strong> Here's where the answer would go if I had an actual question this part is probably a little longer than the actual quesiton though which is why I'm still typing nonsense.</p>
+            <p><strong>Here's an example of a question as part of the About page?</strong> Here's where the answer would go if I had an actual question this part is probably a little longer than the actual quesiton though which is why I'm still typing nonsense.</p>
+            <p><strong>Here's an example of a question as part of the About page?</strong> Here's where the answer would go if I had an actual question this part is probably a little longer than the actual quesiton though which is why I'm still typing nonsense.</p>
+            <p><strong>Here's an example of a question as part of the About page?</strong> Here's where the answer would go if I had an actual question this part is probably a little longer than the actual quesiton though which is why I'm still typing nonsense.</p>
+        </div>
+    </div>
 </div>

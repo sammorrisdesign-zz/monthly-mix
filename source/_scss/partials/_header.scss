@@ -4,11 +4,13 @@
     overflow: auto;
     background-color: $c-white;
 
-    @include mq(tablet) {
-        position: fixed;
-        z-index: 10;
-        width: 50%;
-        min-height: 100%;
+    &.header--post {
+        @include mq(tablet) {
+            position: fixed;
+            z-index: 10;
+            width: 50%;
+            min-height: 100%;
+        }
     }
 
     .header__block {
