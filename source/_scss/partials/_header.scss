@@ -1,4 +1,5 @@
-header {
+.header {
+    position: relative;
     padding: $g-gutter;
     overflow: auto;
     background-color: $c-white;
@@ -10,22 +11,24 @@ header {
         min-height: 100%;
     }
 
-    .site-title {
-        font-weight: bold;
-        color: $c-black;
+    .header__block {
+        @include mq($until: tablet) {
+            margin-top: 40px;
+        }
+
+        @include mq(tablet) {
+            position: absolute;
+            top: 34%;
+            left: 0;
+            right: 0;
+        }
     }
 
-    .description {
-        color: $c-grey;
-        float: left;
-
-        @include mq($until: tablet) {
-            width: 80%;
-        }
-
-        a {
-            color: $c-black;
-        }
+    .site-title,
+    .post-title {
+        text-align: center;
+        font-weight: bold;
+        color: $c-black;
     }
 
     .powered-by {

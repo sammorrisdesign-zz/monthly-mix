@@ -20,6 +20,16 @@ hr {
     border-top: 1px solid $c-light-grey;
 }
 
+.super-title {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+
+    @include mq(mobile) {
+        font-size: 6.2rem;
+        line-height: 7.0rem;
+    }
+}
+
 .title {
     font-size: 1.6rem;
     line-height: 2rem;

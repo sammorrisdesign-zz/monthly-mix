@@ -1,0 +1,5 @@
+.navigation {
+    @include flex-display;
+    @include justify-content(space-between);
+    font-weight: bold;
+}
