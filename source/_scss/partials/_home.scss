@@ -3,6 +3,10 @@
     margin: 0 auto;
 }
 
+.home-title {
+    font-weight: bold;
+}
+
 .home-header {
     padding: 120px 0;
     text-align: center;
@@ -13,3 +17,22 @@
     margin-bottom: 10px;
 }
 
+.home-playlists__list {
+    overflow: auto;
+}
+
+.home-playlists__item {
+    width: 33%;
+    float: left;
+    text-align: center;
+    padding: $g-gutter 0;
+}
+
+.home-playlists__title {
+    font-weight: bold;
+    margin-bottom: $g-gutter;
+}
+
+.home-playlists__description {
+    padding: 0 $g-gutter;
+}

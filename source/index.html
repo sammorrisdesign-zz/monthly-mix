@@ -18,17 +18,24 @@ layout: default
     <div id="playlists" class="home-playlists">
         <div class="container">
             <h2 class="home-title home-title--playlists title">Playlists</h2>
-            {% for post in site.posts %}
+            <hr />
             <ul class="home-playlists__list">
+                {% for post in site.posts %}
                 <li class="home-playlists__item">
                     <a href="{{ post.url | prepend: site.baseurl }}">
-                        <p class="home-playlists__time">1h 32m</p>
-                        <h3 class="sub">{{ post.title }}</h3>
-                        <p class="home-playlists__description">Including bands, bands bands and bands</p>
+                        <p class="home-playlists__time sub">1h 32m</p>
+                        <h3 class="home-playlists__title title">{{ post.title }}</h3>
+                        <p class="home-playlists__description sub">Featuring
+                            {% assign playlist = post.soundcloud | split: '/' %}
+                            {% for track in site.data.[playlist.last] limit:5 %}
+                                {{ track.artist }}{% if forloop.index != 5 %},{% endif %}
+                            {% endfor %}
+                            and {{ site.data.[playlist.last].size | minus: 5}} others.
+                        </p>
                     </a>
                 </li>
+                {% endfor %}
             </ul>
-            {% endfor %}
         </div>
     </div>
 
