@@ -1,10 +1,6 @@
 .post {
     @include mq(tablet) {
-        margin-left: 25%;
-    }
-
-    @include mq(wide) {
-        margin-left: 20%;
+        margin-left: 50%;
     }
 }
 
