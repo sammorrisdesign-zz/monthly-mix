@@ -106,9 +106,11 @@ define([
                     this.playTrack(next);
                 }.bind(this),
                 onbufferchange: function() {
+                    console.log("buffer");
                     this.loadingState(el, sound.playState);
                 }.bind(this),
                 onplay: function() {
+                    console.log("on play");
                     this.loadingState(el, true);
                 }.bind(this)
             }
@@ -122,6 +124,7 @@ define([
                     } else {
                         sound.play();
                         this.onPlay(el);
+                        this.loadingState(el, sound.playState);
                     }
                 // If not, destroy old track and start again
                 } else {
