@@ -16,3 +16,13 @@
     float: right;
     text-align: right;
 }
+
+.audio-controls {
+    body[data-state="is-stopped"] & .audio-controls__pause {
+        display: none;
+    }
+
+    body[data-state="is-playing"] & .audio-controls__play {
+        display: none;
+    }
+}

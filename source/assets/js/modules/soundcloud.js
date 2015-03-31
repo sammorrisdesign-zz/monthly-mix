@@ -27,10 +27,10 @@ define([
             bean.on(document.body, 'click', '.playlist__entry', function(e) {
                 this.playTrack(e.currentTarget.dataset.trackId);
             }.bind(this));
-            bean.on(document.body, 'click', '.controls-audio', function(e) {
+            bean.on(document.body, 'click', '.audio-controls', function(e) {
                 this.controlsPlay();
             }.bind(this));
-            bean.on(document.body, 'click', '.controls-skip', function(e) {
+            bean.on(document.body, 'click', '.controls__buttons__skip', function(e) {
                 this.controlsSkip();
             }.bind(this));
         },
@@ -59,12 +59,12 @@ define([
 
         onPlay: function(target) {
             target.addClass('is-playing');
-            bonzo(qwery('.post')).attr('data-state', 'is-playing');
+            bonzo(qwery('body')).attr('data-state', 'is-playing');
             this.updateNowPlaying();
         },
 
         onStop: function(target) {
-            bonzo(qwery('.post')).attr('data-state', 'is-stopped');
+            bonzo(qwery('body')).attr('data-state', 'is-stopped');
             target.removeClass('is-playing');
         },
 
