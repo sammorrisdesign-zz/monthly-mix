@@ -3,12 +3,14 @@ define([
     'libs/bonzo',
     'libs/qwery',
     'utils/loadJSON',
+    'utils/scroller',
     'sc'
 ], function(
     bean,
     bonzo,
     qwery,
-    loadJSON
+    loadJSON,
+    scroller
 ) {
     var sound;
 
@@ -59,6 +61,7 @@ define([
 
         onPlay: function(target) {
             target.addClass('is-playing');
+            scroller.scrollToElement(target, 1000, 'easeInQuad')
             bonzo(qwery('body')).attr('data-state', 'is-playing');
             this.updateNowPlaying();
         },
