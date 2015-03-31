@@ -1,6 +1,14 @@
 ---
 layout: default
 ---
+<header class="site-header">
+    {% include navigation.html %}
+    <a class="site-title title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <hr />
+    {% include description.html %}
+    <img class="powered-by" src="{{ site.baseurl }}/assets/images/soundcloud.jpg" />
+</header>
+
 <div class="post">
     <article class="post-content">
         <ul class="playlist">
