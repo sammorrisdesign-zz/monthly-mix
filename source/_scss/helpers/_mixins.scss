@@ -1,3 +1,17 @@
-// @mixin example($variable) {
-//     display: $variable;
-// }
+@mixin playlist-layout() {
+    @for $i from 1 through 5 {
+        &.horizontal--#{$i} {
+            margin-left: 5% * $i;
+        }
+    }
+
+    @for $i from 1 through 2 {
+        &.vertical--#{$i} {
+            margin-top: -20px * $i;
+        }
+    }
+
+    &.clear {
+        clear: both;
+    }
+}

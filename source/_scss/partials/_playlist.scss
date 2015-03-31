@@ -1,5 +1,5 @@
 .playlist {
-    overflow: auto;
+    overflow: hidden;
     background-color: $c-light-grey;
     margin-bottom: $g-now-playing;
 }
@@ -16,21 +16,13 @@
 
 .playlist__entry {
     position: relative;
-    width: 50%;
-    padding-top: 50%;
     float: left;
+    width: 35%;
+    padding-top: 35%;
     overflow: hidden;
     cursor: pointer;
-
-    @include mq(tablet) {
-        width: 33.3333%;
-        padding-top: 33.3333%;
-    }
-
-    @include mq(wide) {
-        width: 25%;
-        padding-top: 25%;
-    }
+    margin: $g-gutter;
+    @include playlist-layout;
 
     &:hover {
         .track__info {
