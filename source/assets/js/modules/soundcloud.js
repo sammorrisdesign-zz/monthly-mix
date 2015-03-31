@@ -92,8 +92,6 @@ define([
         },
         
         updateProgressBar: function(duration, position) {
-            console.log(duration);
-            console.log(position);
             bonzo(qwery('.progress-bar__current')).attr('style', 'width:' + (position / duration) * 100 + '%;')
         },
 
