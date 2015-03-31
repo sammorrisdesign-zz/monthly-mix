@@ -6,6 +6,14 @@
     padding: $g-gutter;
     background-color: $c-black;
     color: $c-white;
+
+    &.is-light {
+        color: $c-black;
+
+        .input {
+            border-color: $c-black;
+        }
+    }
 }
 
 .controls__title {
