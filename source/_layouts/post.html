@@ -2,29 +2,6 @@
 layout: default
 ---
 <div class="post" data-state="is-stopped">
-    <div class="post-header post-header--month">
-        <h1 class="post-title title">Playlist for {{ page.title }} {{ page.date | date: "%Y" }}</h1>
-        <div class="controls">
-            <div class="controls-audio input sub">Play</div>
-            <div class="controls-soundcloud input sub">Open in Soundcloud</div>
-        </div>
-    </div>
-
-    <div class="post-header post-header--now-playing">
-        <h1 class="post-title title">
-            <span class="post-title__track-artist track__artist">Track Artist</span>
-            <span class="post-title__track-title track__title">Track Title</span>
-        </h1>
-        <div class="controls">
-            <div class="controls-audio input sub">
-                <span class="controls-audio__pause">Pause</span>
-                <span class="controls-audio__play">Play</span>
-            </div>
-            <div class="controls-skip input sub">Skip</div>
-            <div class="controls-soundcloud input sub">Open in Soundcloud</div>
-        </div>
-    </div>
-
     <article class="post-content">
         <ul class="playlist">
         {% assign playlist = page.soundcloud | split: '/' %}
@@ -40,4 +17,19 @@ layout: default
         {% endfor %}
         </ul>
     </article>
+</div>
+
+<div class="controls">
+    <h1 class="controls__title title">
+        <span class="controls__title__track-artist track__artist">Track Artist</span>
+        <span class="controls__title__track-title track__title">Track Title</span>
+    </h1>
+    <div class="controls__buttons">
+        <div class="audio-controls input sub">
+            <span class="audio-controls__pause">Pause</span>
+            <span class="audio-controls__play">Play</span>
+        </div>
+        <div class="controls__buttons__skip input sub">Skip</div>
+        <div class="controls__buttons__soundcloud input sub">Open in Soundcloud</div>
+    </div>
 </div>

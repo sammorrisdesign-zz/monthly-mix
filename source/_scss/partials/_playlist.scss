@@ -1,6 +1,7 @@
 .playlist {
     overflow: auto;
     background-color: $c-light-grey;
+    margin-bottom: $g-now-playing;
 }
 
 @include keyframes(flash) {

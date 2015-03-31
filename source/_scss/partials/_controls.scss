@@ -1,0 +1,18 @@
+.controls {
+    position: fixed;
+    z-index: 20;
+    bottom: 0;
+    width: 100%;
+    padding: $g-gutter;
+    background-color: $c-black;
+    color: $c-white;
+}
+
+.controls__title {
+    float: left;
+}
+
+.controls__buttons {
+    float: right;
+    text-align: right;
+}

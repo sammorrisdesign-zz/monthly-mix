@@ -34,7 +34,7 @@ header {
         @include mq(tablet) {
             position: absolute;
             right: 20px;
-            bottom: 20px;
+            bottom: 20px + $g-now-playing;
         }
     }
 }

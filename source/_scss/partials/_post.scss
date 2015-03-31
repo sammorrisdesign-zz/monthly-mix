@@ -3,29 +3,3 @@
         margin-left: 50%;
     }
 }
-
-.post-header {
-    overflow: auto;
-    padding: $g-gutter;
-    background-color: $c-black;
-    color: $c-white;
-}
-
-.post-title {
-    float: left;
-    font-weight: bold;
-}
-
-.controls {
-    width: 50%;
-    float: right;
-    text-align: right;
-
-    .post[data-state="is-stopped"] & .controls-audio__pause {
-        display: none;
-    }
-
-    .post[data-state="is-playing"] & .controls-audio__play {
-        display: none;
-    }
-}
