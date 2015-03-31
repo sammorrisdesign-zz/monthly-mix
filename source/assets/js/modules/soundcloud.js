@@ -90,6 +90,12 @@ define([
             bonzo(qwery('.controls .controls__title__track-artist')).text(track['artist']);
             bonzo(qwery('.controls .controls__title__track-title')).text(track['title']);
         },
+        
+        updateProgressBar: function(duration, position) {
+            console.log(duration);
+            console.log(position);
+            bonzo(qwery('.progress-bar__current')).attr('style', 'width:' + (position / duration) * 100 + '%;')
+        },
 
         playTrack: function(trackId) {
             el = bonzo(qwery('#playlist__entry--' + trackId));
@@ -106,11 +112,12 @@ define([
                     this.playTrack(next);
                 }.bind(this),
                 onbufferchange: function() {
-                    console.log("buffer");
                     this.loadingState(el, sound.playState);
                 }.bind(this),
+                whileplaying: function() {
+                    this.updateProgressBar(sound.durationEstimate, sound.position);
+                }.bind(this),
                 onplay: function() {
-                    console.log("on play");
                     this.loadingState(el, true);
                 }.bind(this)
             }
