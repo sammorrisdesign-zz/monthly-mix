@@ -48,14 +48,13 @@ layout: default
     <div id="subscribe" class="home-subscribe">
         <div class="container">
             <h2 class="home-title home-title--subscribe title">Subscribe</h2>
-            <form method="post" action="URL">
-                <input class="home-subscribe__input" type="text" name="email" value="Your email address"/>
-                <input class="home-subscribe__button" type="submit" name="submit" value="Subscribe" />
-            </form>
+            <div class="home-subscribe__content">
+                <p class="home-subscribe__description sub">Get the latest playlist delivered to your inbox. No spam.</p>
+                {% include sign-up.html %}
+            </div>
         </div>
+        <hr />
     </div>
-
-    <hr class="container" />
 
     <div id="about" class="home-about">
         <div class="container">

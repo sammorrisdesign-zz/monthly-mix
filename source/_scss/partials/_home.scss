@@ -5,6 +5,8 @@
 
 .home-title {
     font-weight: bold;
+    width: 33%;
+    display: inline-block;
 }
 
 .home-header {
@@ -25,7 +27,7 @@
     width: 33%;
     float: left;
     text-align: center;
-    padding: $g-gutter 0;
+    padding: $g-gutter * 2 0;
 }
 
 .home-playlists__title {
@@ -35,4 +37,29 @@
 
 .home-playlists__description {
     padding: 0 $g-gutter;
+}
+
+.home-subscribe,
+.home-about {
+    overflow: auto;
+    padding: $g-gutter 0;
+    background-color: $c-light-grey;
+}
+
+.home-title--subscribe,
+.home-title--about {
+    float: left;
+}
+
+.home-subscribe__content {
+    float: left;
+    width: 66%;
+}
+
+.home-subscribe__description {
+    padding: 6px 0;
+}
+
+.home-about {
+    display: none;
 }
