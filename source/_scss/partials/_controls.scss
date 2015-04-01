@@ -6,13 +6,17 @@
     padding: $g-gutter;
     background-color: $c-black;
     color: $c-white;
-    @include transition(color 1s, background-color 1s);
+    @include transition(color 1s, background-color 1s, fill 1s);
 
     &.is-light {
         color: $c-black;
 
         .input {
             border-color: $c-black;
+        }
+
+        svg path {
+            fill: $c-black;
         }
     }
 
@@ -28,7 +32,22 @@
             &:hover {
                 background-color: inherit;
                 color: inherit;
+
+                svg path {
+                    fill: $c-white;
+                }
             }
+        }
+    }
+
+    svg {
+        height: 1em;
+        width: 1em;
+        margin-right: 0.2em;
+        margin-bottom: -0.1em;
+
+        path {
+            fill: $c-white;
         }
     }
 }

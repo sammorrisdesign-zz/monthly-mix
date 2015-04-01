@@ -62,6 +62,10 @@ hr {
     &:hover {
         background-color: $c-white;
         color: $c-black;
+
+        svg path {
+            fill: $c-black;
+        }
     }
 }
 
