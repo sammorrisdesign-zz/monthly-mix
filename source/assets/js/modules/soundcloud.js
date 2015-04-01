@@ -33,7 +33,7 @@ define([
                 this.controlsPlay();
             }.bind(this));
             bean.on(document.body, 'click', '.controls__buttons__skip', function(e) {
-                this.controlsSkip();
+                this.onSkip();
             }.bind(this));
         },
 
@@ -45,10 +45,6 @@ define([
             } else {
                 this.playTrack(bonzo(qwery('.playlist__entry')).attr('data-track-id'))
             }
-        },
-
-        controlsSkip: function() {
-            this.playTrack(bonzo(qwery('.is-playing')).next().attr('data-track-id'));
         },
 
         loadingState: function(target, state) {
@@ -64,6 +60,16 @@ define([
             scroller.scrollToElement(target, 1000, 'easeInQuad')
             bonzo(qwery('body')).attr('data-state', 'is-playing');
             this.updateNowPlaying();
+        },
+
+        onSkip: function() {
+            next = bonzo(qwery('.is-playing')).next().attr('data-track-id');
+            if (next) {
+                this.playTrack(next)
+            } else {
+                first = bonzo(qwery('.playlist__entry')[0]).attr('data-track-id');
+                this.playTrack(first);
+            }
         },
 
         onStop: function(target) {
@@ -106,8 +112,7 @@ define([
                     // sound.setPosition(this.duration - 3000);
                 },
                 onfinish : function(){
-                    next = bonzo(qwery('.is-playing')).next().attr('data-track-id');
-                    this.playTrack(next);
+                    this.onSkip();
                 }.bind(this),
                 onbufferchange: function() {
                     this.loadingState(el, sound.playState);
