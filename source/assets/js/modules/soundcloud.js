@@ -33,7 +33,9 @@ define([
                 this.controlsPlay();
             }.bind(this));
             bean.on(document.body, 'click', '.controls__buttons__skip', function(e) {
-                this.onSkip();
+                if (bonzo(qwery('.controls')).hasClass('is-default') == false) {
+                    this.onSkip();
+                }
             }.bind(this));
         },
 
@@ -91,7 +93,7 @@ define([
             track = this.getNowPlayingInfo();
             bonzo(qwery('.is-changable')).attr("style", track['color'].replace('background-', ''));
             bonzo(qwery('.post')).attr('data-current-track', track['id']);
-            bonzo(qwery('.controls')).removeClass('is-dark is-light is-very-dark').addClass(track['contrast']).attr("style", track['color']);
+            bonzo(qwery('.controls')).removeClass('is-dark is-light is-very-dark is-default').addClass(track['contrast']).attr("style", track['color']);
             bonzo(qwery('.playlist')).attr("style", track['color'].replace(')', ', 0.2)').replace('rgb', 'rgba'));
             bonzo(qwery('.controls .controls__title__track-artist')).text(track['artist']);
             bonzo(qwery('.controls .controls__title__track-title')).text(track['title']);

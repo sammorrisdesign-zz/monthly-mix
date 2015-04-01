@@ -29,13 +29,13 @@ layout: default
     </article>
 </div>
 
-<div class="controls">
+<div class="controls is-default">
     <div class="progress-bar">
         <div class="progress-bar__current"></div>
     </div>
     <h1 class="controls__title title">
-        <span class="controls__title__track-artist track__artist">Track Artist</span>
-        <span class="controls__title__track-title track__title">Track Title</span>
+        <span class="controls__title__track-artist track__artist"></span>
+        <span class="controls__title__track-title track__title">{{ page.title }} {{ page.date | date: "%Y" }}</span>
     </h1>
     <div class="controls__buttons">
         <div class="audio-controls input sub">

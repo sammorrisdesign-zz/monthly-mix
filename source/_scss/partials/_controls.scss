@@ -14,6 +14,22 @@
             border-color: $c-black;
         }
     }
+
+    &.is-default {
+        .controls__title__track-title {
+            color: $c-light-grey;
+        }
+
+        .controls__buttons__skip,
+        .controls__buttons__soundcloud {
+            opacity: .2;
+
+            &:hover {
+                background-color: inherit;
+                color: inherit;
+            }
+        }
+    }
 }
 
 .controls__title {
