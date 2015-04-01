@@ -120,6 +120,39 @@
 }
 
 /**
+ * `column-count` prefixer. Uses `rem` if defined.
+ * 
+ * @group css3
+ */
+@mixin column-count($value) {
+    -webkit-column-count: $value;
+    -moz-column-count: $value;
+    column-count: $value;
+}
+
+/**
+ * `column-count` prefixer. Uses `rem` if defined.
+ * 
+ * @group css3
+ */
+@mixin column-gap($value) {
+    -webkit-column-gap: $value;
+    -moz-column-gap: $value;
+    column-gap: $value;
+}
+
+/**
+ * `column-break-inside` prefixer. Uses `rem` if defined.
+ * 
+ * @group css3
+ */
+@mixin column-break-inside($value) {
+    -webkit-column-break-inside: $value;
+    page-break-inside: $value;
+    break-inside: $value;
+}
+
+/**
  * `flex` prefixer.
  *
  * @param {Number}          $flex-grow   (0)

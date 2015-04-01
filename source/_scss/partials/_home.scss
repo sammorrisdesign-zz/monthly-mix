@@ -42,7 +42,7 @@
 .home-subscribe,
 .home-about {
     overflow: auto;
-    padding: $g-gutter 0;
+    padding: $g-gutter * 2 0;
     background-color: $c-light-grey;
 }
 
@@ -60,6 +60,32 @@
     padding: 6px 0;
 }
 
+.home-subscribe .container {
+    overflow: auto;
+    padding-bottom: $g-gutter * 2;
+    border-bottom: 1px solid darken($c-light-grey, 10%);
+}
+
 .home-about {
-    display: none;
+    padding-top: 0;
+}
+
+.home-about__body {
+    width: 66%;
+    float: left;
+    color: $c-grey;
+    @include column-count(2);
+    @include column-gap($g-gutter);
+
+    strong {
+        display: block;
+        font-weight: bold;
+        color: $c-black;
+    }
+
+    p {
+        display: block;
+        margin-bottom: 1em;
+        @include column-break-inside(avoid)
+    }
 }
