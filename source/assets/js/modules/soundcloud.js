@@ -83,7 +83,7 @@ define([
 
         updateNowPlaying: function() {
             track = this.getNowPlayingInfo();
-
+            bonzo(qwery('.is-changable')).attr("style", track['color'].replace('background-', ''));
             bonzo(qwery('.post')).attr('data-current-track', track['id']);
             bonzo(qwery('.controls')).removeClass('is-dark is-light is-very-dark').addClass(track['contrast']).attr("style", track['color']);
             bonzo(qwery('.playlist')).attr("style", track['color'].replace(')', ', 0.2)').replace('rgb', 'rgba'));

@@ -5,7 +5,7 @@ layout: default
     {% include navigation.html %}
 
     <div class="header__block">
-        <h1 class="site-title title" href="{{ site.baseurl }}/">{{ site.title }}</h1>
+        <h1 class="site-title title"><a class="is-changable" href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
         <h2 class="post-title super-title">{{ page.title }} {{ page.date | date: "%Y" }}</h2>
     </div>
     <img class="powered-by" src="{{ site.baseurl }}/assets/images/soundcloud.jpg" />
