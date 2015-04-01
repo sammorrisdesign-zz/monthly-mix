@@ -1,5 +1,6 @@
 .sign-up {
     @include flex-display;
+    @include justify-content(space-between);
 }
 
 .sign-up__input {
