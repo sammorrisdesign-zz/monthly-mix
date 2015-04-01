@@ -96,3 +96,8 @@
         @include column-break-inside(avoid)
     }
 }
+
+.home-credit {
+    padding: $g-gutter 0;
+    color: $c-grey;
+}
