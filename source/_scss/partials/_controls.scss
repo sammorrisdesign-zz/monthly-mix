@@ -8,8 +8,20 @@
     color: $c-white;
     @include transition(color 1s, background-color 1s, fill 1s);
 
+    a {
+        color: $c-white;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
     &.is-light {
         color: $c-black;
+
+        a {
+            color: $c-black;
+        }
 
         .input {
             border-color: $c-black;

@@ -85,12 +85,14 @@ define([
                 "color" : bonzo(qwery('.is-playing .playlist__entry__info')).attr('style'),
                 "contrast" : bonzo(qwery('.is-playing')).attr('data-track-contrast'),
                 "title" : qwery('.is-playing .playlist__entry__title')[0].textContent,
-                "artist": qwery('.is-playing .playlist__entry__artist')[0].textContent
+                "artist": qwery('.is-playing .playlist__entry__artist')[0].textContent,
+                "permalink" : bonzo(qwery('.is-playing')).attr('data-track-permalink')
             }
         },
 
         updateNowPlaying: function() {
             track = this.getNowPlayingInfo();
+            bonzo(qwery('.controls__buttons__soundcloud a')).attr('href', track['permalink']);
             bonzo(qwery('.is-changable')).attr("style", track['color'].replace('background-', ''));
             bonzo(qwery('.post')).attr('data-current-track', track['id']);
             bonzo(qwery('.controls')).removeClass('is-dark is-light is-very-dark is-default').addClass(track['contrast']).attr("style", track['color']);
