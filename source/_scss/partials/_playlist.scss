@@ -2,6 +2,7 @@
     overflow: hidden;
     background-color: $c-light-grey;
     margin-bottom: $g-now-playing;
+    @include transition(background-color 1s);
 }
 
 @include keyframes(flash) {

@@ -6,6 +6,7 @@
     padding: $g-gutter;
     background-color: $c-black;
     color: $c-white;
+    @include transition(color 1s, background-color 1s);
 
     &.is-light {
         color: $c-black;
