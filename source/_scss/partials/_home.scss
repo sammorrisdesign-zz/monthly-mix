@@ -51,6 +51,18 @@
     float: left;
 }
 
+.home-subscribe {
+    .container {
+        overflow: auto;
+        padding-bottom: $g-gutter * 2;
+        border-bottom: 1px solid darken($c-light-grey, 10%);
+    }
+
+    .sign-up__input {
+        border-color: darken($c-light-grey, 10%);
+    }
+}
+
 .home-subscribe__content {
     float: left;
     width: 66%;
@@ -58,12 +70,7 @@
 
 .home-subscribe__description {
     padding: 6px 0;
-}
-
-.home-subscribe .container {
-    overflow: auto;
-    padding-bottom: $g-gutter * 2;
-    border-bottom: 1px solid darken($c-light-grey, 10%);
+    color: $c-grey;
 }
 
 .home-about {
