@@ -21,12 +21,18 @@ layout: default
             <hr />
             <ul class="home-playlists__list">
                 {% for post in site.posts %}
+                {% assign playlist = post.soundcloud | split: '/' %}
                 <li class="home-playlists__item">
                     <a href="{{ post.url | prepend: site.baseurl }}">
-                        <p class="home-playlists__time sub">1h 32m</p>
+                        <p class="home-playlists__time sub">
+                            {% assign duration = 0 %}
+                            {% for track in site.data.[playlist.last] %}
+                            {% assign duration = duration | plus: track.duration %}
+                            {% endfor %}
+                            {% totalduration duration %}
+                        </p>
                         <h3 class="home-playlists__title title">{{ post.title }}</h3>
                         <p class="home-playlists__description sub">Featuring
-                            {% assign playlist = post.soundcloud | split: '/' %}
                             {% for track in site.data.[playlist.last] limit:5 %}
                                 {{ track.artist }}{% if forloop.index != 5 %},{% endif %}
                             {% endfor %}

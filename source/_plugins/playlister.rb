@@ -32,7 +32,8 @@ module Jekyll
                 :contrast => contrast_color(@color),
                 :title  => @title,
                 :artist => @username,
-                :permalink => track.permalink_url
+                :permalink => track.permalink_url,
+                :duration => track.duration
             }
         end
 
