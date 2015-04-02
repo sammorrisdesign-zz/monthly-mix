@@ -3,6 +3,22 @@
     margin: 0 auto;
 }
 
+.home {
+    padding-top: $g-now-playing;
+
+    // Compensation for fixed navigation
+    .home-title {
+        padding-top: $g-now-playing + $g-gutter;
+        margin-top: -($g-now-playing + $g-gutter);
+    }
+}
+
+.header--home {
+    position: fixed;
+    width: 100%;
+    padding: 27px $g-gutter;
+}
+
 .home-title {
     font-weight: bold;
     width: 33%;

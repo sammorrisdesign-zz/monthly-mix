@@ -48,3 +48,7 @@ linters:
   NestingDepth:
     exclude:
       - 'partials/_controls.scss'
+
+  SpaceAfterComma:
+    exclude:
+      - 'partials/_home-shapes.scss'

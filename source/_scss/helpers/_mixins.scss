@@ -1,13 +1,13 @@
 @mixin playlist-layout() {
     @for $i from 1 through 5 {
         &.horizontal--#{$i} {
-            margin-left: 5% * $i;
+            margin-left: 3% * $i;
         }
     }
 
-    @for $i from 1 through 2 {
+    @for $i from 1 through 4 {
         &.vertical--#{$i} {
-            margin-top: -20px * $i;
+            margin-top: -10px * $i;
         }
     }
 

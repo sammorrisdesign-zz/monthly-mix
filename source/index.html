@@ -13,11 +13,37 @@ layout: default
             <h1 class="home-header__title super-title">Monthly Mix</h1>
             <h3 class="home-header__tagline sub">Going to loud places to search for someone</h3>
         </div>
+        <div class="home-shapes">
+            {% svg shapes-01 %}
+            {% svg shapes-02 %}
+            {% svg shapes-03 %}
+            {% svg shapes-04 %}
+            {% svg shapes-05 %}
+            {% svg shapes-06 %}
+            {% svg shapes-07 %}
+            {% svg shapes-08 %}
+            {% svg shapes-01 %}
+            {% svg shapes-02 %}
+            {% svg shapes-03 %}
+            {% svg shapes-04 %}
+            {% svg shapes-05 %}
+            {% svg shapes-06 %}
+            {% svg shapes-07 %}
+            {% svg shapes-08 %}
+            {% svg shapes-01 %}
+            {% svg shapes-02 %}
+            {% svg shapes-03 %}
+            {% svg shapes-04 %}
+            {% svg shapes-05 %}
+            {% svg shapes-06 %}
+            {% svg shapes-07 %}
+            {% svg shapes-08 %}
+        </div>
     </div>
 
-    <div id="playlists" class="home-playlists">
+    <div class="home-playlists">
         <div class="container">
-            <h2 class="home-title home-title--playlists title">Playlists</h2>
+            <h2 class="home-title home-title--playlists title" id="playlists">Playlists</h2>
             <hr />
             <ul class="home-playlists__list">
                 {% for post in site.posts %}
@@ -45,9 +71,9 @@ layout: default
         </div>
     </div>
 
-    <div id="subscribe" class="home-subscribe">
+    <div class="home-subscribe">
         <div class="container">
-            <h2 class="home-title home-title--subscribe title">Subscribe</h2>
+            <h2 id="subscribe" class="home-title home-title--subscribe title">Subscribe</h2>
             <div class="home-subscribe__content">
                 <p class="home-subscribe__description sub">Get the latest playlist delivered to your inbox. No spam.</p>
                 {% include sign-up.html %}
@@ -55,9 +81,9 @@ layout: default
         </div>
     </div>
 
-    <div id="about" class="home-about">
+    <div class="home-about">
         <div class="container">
-            <h2 class="home-title home-title--about title">About</h2>
+            <h2 id="about" class="home-title home-title--about title">About</h2>
             <div class="home-about__body sub">
                 <p><strong>Here's an example of a question as part of the About page?</strong> Here's where the answer would go if I had an actual question this part is probably a little longer than the actual quesiton though which is why I'm still typing nonsense.</p>
                 <p><strong>Here's an example of a question as part of the About page?</strong> Here's where the answer would go if I had an actual question this part is probably a little longer than the actual quesiton though which is why I'm still typing nonsense.</p>
