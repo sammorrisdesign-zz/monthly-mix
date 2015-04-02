@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body data-state="is-stopped">
+  <body data-bootstrap="{% if page.javascript == "home" %}home{% else %}playlist{% endif %}" data-state="is-stopped">
 
     {{ content }}
 
