@@ -15,8 +15,10 @@
 
 .header--home {
     position: fixed;
+    z-index: 10;
     width: 100%;
     padding: 27px $g-gutter;
+    background: transparent;
 }
 
 .home-title {
@@ -28,6 +30,11 @@
 .home-header {
     padding: 120px 0;
     text-align: center;
+
+    .container {
+        position: relative;
+        z-index: 5;
+    }
 }
 
 .home-header__title {
