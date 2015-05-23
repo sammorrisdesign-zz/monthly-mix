@@ -68,19 +68,17 @@
     padding: 0 $g-gutter;
 }
 
-.home-subscribe {
-    overflow: auto;
-    padding: $g-gutter * 2 0;
-    background-color: $c-black;
-    color: $c-white;
-}
-
 .home-title--subscribe,
 .home-title--about {
     float: left;
 }
 
 .home-subscribe {
+    overflow: auto;
+    padding: $g-gutter * 2 0;
+    background-color: $c-black;
+    color: $c-white;
+
     .container {
         overflow: auto;
         padding-bottom: $g-gutter * 2;

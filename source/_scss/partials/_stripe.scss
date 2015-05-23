@@ -2,7 +2,7 @@ $animation-height: 5px;
 
 @keyframes stripeBounce {
     from {
-        transform: scale(1, 0.5);
+        transform: scale(1, .5);
     }
 
     to {
@@ -18,7 +18,7 @@ $animation-height: 5px;
     display: table-cell;
     height: 1px + $animation-height;
     transition: all .3s ease-in;
-    transform: scale(1, 0.3);
+    transform: scale(1, .3);
     transform-origin: bottom center;
 
     body[data-state="is-playing"] & {
@@ -26,7 +26,7 @@ $animation-height: 5px;
 
         @for $block from 1 through 40 {
             &.stripe__block--#{$block} {
-                animation-delay: (random(100) / 100) + s
+                animation-delay: (random(100) / 100) + s;
             }
         }
     }

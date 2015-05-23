@@ -42,8 +42,7 @@ linters:
     enabled: false
 
   QualifyingElement:
-    exclude:
-      - 'partials/_controls.scss'
+    enabled: false
 
   NestingDepth:
     exclude:
