@@ -73,6 +73,12 @@
     text-align: right;
 }
 
+.controls__title,
+.controls__buttons {
+    position: relative;
+    z-index: 20;
+}
+
 .audio-controls {
     body[data-state="is-stopped"] & .audio-controls__pause {
         display: none;
@@ -86,12 +92,12 @@
 .progress-bar {
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    background-color: rgba($c-white, .2);
+    right: 0;
 }
 
 .progress-bar__current {
-    height: 2px;
     background-color: rgba($c-black, .6);
+    height: 100%;
 }
