@@ -4,7 +4,7 @@ define([
     Parallax
 ) {
     function init() {
-        Parallax.init();
+        // Parallax.init();
     }
 
     return {
