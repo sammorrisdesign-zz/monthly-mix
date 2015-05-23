@@ -1,5 +1,7 @@
 /*global module:false*/
 module.exports = function(grunt) {
+  require('jit-grunt')(grunt);
+  grunt.loadNpmTasks('grunt-scss-lint');
 
   // Project configuration.
   grunt.initConfig({
@@ -14,7 +16,7 @@ module.exports = function(grunt) {
     watch: {
       scsslint: {
         files: 'source/_scss/**/*.scss',
-        tasks: 'scsslint'
+        tasks: ['scsslint', 'autoprefixer']
       },
       css: {
         files: 'source/_scss/**/*.scss',
@@ -30,6 +32,11 @@ module.exports = function(grunt) {
         files: {
             'source/assets/css/style.css' : 'source/_scss/style.scss'
         }
+      }
+    },
+    autoprefixer: {
+      dist: {
+        src: 'source/assets/css/style.css'
       }
     },
     scsslint: {
@@ -58,13 +65,6 @@ module.exports = function(grunt) {
       }
     }
   });
-
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-scss-lint');
-  grunt.loadNpmTasks('grunt-browser-sync');
-  grunt.loadNpmTasks('grunt-shell');
 
   // Tasks
   grunt.registerTask('default', ['sass', 'scsslint', 'browserSync', 'watch']);
