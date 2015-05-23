@@ -1,0 +1,33 @@
+$animation-height: 5px;
+
+@keyframes stripeBounce {
+    from {
+        transform: scale(1, 0.5);
+    }
+
+    to {
+        transform: scale(1, 1);
+    }
+}
+
+.stripe {
+    display: table;
+}
+
+.stripe__block {
+    display: table-cell;
+    height: 1px + $animation-height;
+    transition: all .3s ease-in;
+    transform: scale(1, 0.3);
+    transform-origin: bottom center;
+
+    body[data-state="is-playing"] & {
+        animation: stripeBounce .3s infinite ease alternate;
+
+        @for $block from 1 through 40 {
+            &.stripe__block--#{$block} {
+                animation-delay: (random(100) / 100) + s
+            }
+        }
+    }
+}

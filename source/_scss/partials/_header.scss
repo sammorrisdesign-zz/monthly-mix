@@ -28,6 +28,8 @@
 
     .site-title,
     .post-title {
+        position: relative;
+        z-index: 5;
         text-align: center;
         font-weight: bold;
         color: $c-black;
@@ -41,5 +43,10 @@
             right: 20px;
             bottom: 20px + $g-now-playing;
         }
+    }
+    
+    .stripe {
+        width: 300px;
+        margin: 20px auto;
     }
 }
