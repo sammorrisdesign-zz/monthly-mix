@@ -28,8 +28,10 @@
 }
 
 .home-header {
-    padding: 120px 0;
+    padding: 180px 0;
     text-align: center;
+    background: $c-light-grey;
+    margin-top: -$g-now-playing;
 
     .container {
         position: relative;
@@ -40,6 +42,10 @@
 .home-header__title {
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+.home-playlists {
+    padding: $g-gutter * 2 0;
 }
 
 .home-playlists__list {
@@ -62,11 +68,11 @@
     padding: 0 $g-gutter;
 }
 
-.home-subscribe,
-.home-about {
+.home-subscribe {
     overflow: auto;
     padding: $g-gutter * 2 0;
-    background-color: $c-light-grey;
+    background-color: $c-black;
+    color: $c-white;
 }
 
 .home-title--subscribe,
@@ -78,11 +84,18 @@
     .container {
         overflow: auto;
         padding-bottom: $g-gutter * 2;
-        border-bottom: 1px solid darken($c-light-grey, 10%);
     }
 
     .sign-up__input {
-        border-color: darken($c-light-grey, 10%);
+        border-color: $c-grey;
+        color: $c-grey;
+        background-color: transparent;
+    }
+    
+    .sign-up__button {
+        border-color: $c-white;
+        background-color: transparent;
+        color: $c-white;
     }
 }
 
@@ -92,12 +105,13 @@
 }
 
 .home-subscribe__description {
-    padding: 6px 0;
-    color: $c-grey;
+    padding: 6px 0 12px;
 }
 
 .home-about {
     padding-top: 0;
+    overflow: auto;
+    padding: $g-gutter * 2 0;
 }
 
 .home-about__body {
@@ -123,4 +137,5 @@
 .home-credit {
     padding: $g-gutter 0;
     color: $c-grey;
+    background-color: $c-light-grey;
 }
