@@ -27,7 +27,7 @@
     @include playlist-layout;
 
     &:hover {
-        .track__info {
+        .playlist__entry__info {
             top: 10%;
         }
     }
@@ -52,17 +52,6 @@
             @include animation(flash 5s infinite);
         }
     }
-}
-
-.playlist__entry__hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 4;
-    background-color: rgba(255, 255, 255, .1);
-    display: none;
 }
 
 .playlist__entry__info,
