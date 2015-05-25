@@ -15,3 +15,13 @@
         clear: both;
     }
 }
+
+@mixin home-header($variant, $top, $left, $size, $color) {
+    .home-header__block--#{$variant} {
+        top: $top;
+        left: $left;
+        width: $size;
+        padding-bottom: $size;
+        background-color: $color;
+    }
+}
