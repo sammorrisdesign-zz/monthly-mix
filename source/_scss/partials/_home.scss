@@ -35,6 +35,11 @@
     text-align: center;
     background: $c-light-grey;
     margin-top: -$g-now-playing;
+
+    .container {
+        position: relative;
+        z-index: 10;
+    }
 }
 
 .home-header__title {
@@ -42,20 +47,19 @@
     margin-bottom: 10px;
 }
 
-.home-header__block {
+.home-header__canvas {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
 }
 
-@include home-header(1, -2%, -2%, 20%, $c-light-blue);
-@include home-header(2, 15%, 14%, 20%, $c-purple);
-@include home-header(3, -10%, 40%, 20%, $c-blue);
-@include home-header(4, 50%, 5%, 20%, $c-mid-grey);
-@include home-header(5, 5%, 66%, 20%, $c-yellow);
-@include home-header(6, 21%, 81%, 20%, $c-orange);
-@include home-header(7, 70%, 72%, 20%, $c-purple-grey);
-@include home-header(8, 50%, 42%, 20%, $c-green);
+.home-recent {
+    padding: $g-gutter * 2 0;
+}
 
 .home-playlists {
     padding: $g-gutter * 2 0;

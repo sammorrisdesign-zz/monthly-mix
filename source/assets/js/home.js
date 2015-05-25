@@ -1,10 +1,10 @@
 define([
-    'modules/parallax'
+    'modules/canvas'
 ], function(
-    Parallax
+    Canvas
 ) {
     function init() {
-        // Parallax.init();
+        Canvas.init();
     }
 
     return {
