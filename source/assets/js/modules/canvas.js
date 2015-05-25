@@ -7,7 +7,7 @@ define([
     var x = 0;
     var y = 0;
     var noOfDrops = 10;
-    var size = 150;
+    var size = 200;
     var fallingDrops = [];
     var canvas;
     var colour = ['#9bd5e0', '#c44f85', '#e2e2e2', '#7ecac6', '#5db456', '#e6d35f', '#fc7c62', '#797379', '#dedede', '#333', '#b51717'];
@@ -22,13 +22,13 @@ define([
 
             if (canvas.getContext) {
                 ctx = canvas.getContext('2d');
-                setInterval(this.draw, 36);
+                setInterval(this.draw, 25);
 
                 for (var i = 0; i < noOfDrops; i++) {
                     var fallingDr = new Object();
                     fallingDr["x"] =  Math.floor(Math.random() * (canvas.width + size)) - size;
-                    fallingDr["y"] = Math.floor(Math.random() * canvas.height) - size;
-                    fallingDr["speed"] = 5 + Math.random() * 10;
+                    fallingDr["y"] = Math.floor(Math.random() * canvas.height);
+                    fallingDr["speed"] = 5 + Math.random() * 8;
                     fallingDr["fill"] = colour[i];
                     fallingDrops.push(fallingDr);
                 }
