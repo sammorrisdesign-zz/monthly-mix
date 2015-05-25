@@ -108,5 +108,105 @@
     "artist": "Ben Negative",
     "permalink": "http://soundcloud.com/ben-negative/even-tho",
     "duration": 245208
+  },
+  {
+    "id": "206420134",
+    "artwork": "assets/images/artwork/206420134.jpg",
+    "color": "rgb(76,80,136)",
+    "contrast": "is-dark",
+    "title": "I Know Theres Gonna Be (Good Times) ft. Young Thug",
+    "artist": "Jamie xx",
+    "permalink": "http://soundcloud.com/dominik-ukawski/i-know-theres-gonna-be-good",
+    "duration": 177257
+  },
+  {
+    "id": "206387368",
+    "artwork": "assets/images/artwork/206387368.jpg",
+    "color": "rgb(105,104,103)",
+    "contrast": "is-dark",
+    "title": "Dream Lover",
+    "artist": "Destroyer",
+    "permalink": "http://soundcloud.com/destroyerband/dream-lover",
+    "duration": 228931
+  },
+  {
+    "id": "198783364",
+    "artwork": "assets/images/artwork/198783364.jpg",
+    "color": "rgb(90,88,52)",
+    "contrast": "is-dark",
+    "title": "Survival",
+    "artist": "Adult Mom",
+    "permalink": "http://soundcloud.com/tinyengines/adult-mom-survival",
+    "duration": 169732
+  },
+  {
+    "id": "203407092",
+    "artwork": "assets/images/artwork/203407092.jpg",
+    "color": "rgb(218,215,210)",
+    "contrast": "is-light",
+    "title": "Inhale Exhale (new EP February 15 out now)",
+    "artist": "Nao",
+    "permalink": "http://soundcloud.com/thisnao/nao-inhale-exhale",
+    "duration": 185225
+  },
+  {
+    "id": "198934682",
+    "artwork": "assets/images/artwork/198934682.jpg",
+    "color": "rgb(132,153,154)",
+    "contrast": "is-dark",
+    "title": "Baby, Im Going Away",
+    "artist": "The Holydrug Couple",
+    "permalink": "http://soundcloud.com/sacredbones/the-holydrug-couple-baby-im-going-away",
+    "duration": 235568
+  },
+  {
+    "id": "206104528",
+    "artwork": "assets/images/artwork/206104528.jpg",
+    "color": "rgb(30,30,30)",
+    "contrast": "is-very-dark",
+    "title": "Bust No Moves feat. CUZ",
+    "artist": "Run The Jewels",
+    "permalink": "http://soundcloud.com/massappealrecs/run-the-jewels-bust-no-moves-feat-cuz",
+    "duration": 193298
+  },
+  {
+    "id": "89938403",
+    "artwork": "assets/images/artwork/89938403.jpg",
+    "color": "rgb(240,174,36)",
+    "contrast": "is-light",
+    "title": "In Other Words",
+    "artist": "SHOPPING",
+    "permalink": "http://soundcloud.com/shoppingband/in-other-words-1",
+    "duration": 192800
+  },
+  {
+    "id": "206555217",
+    "artwork": "assets/images/artwork/206555217.jpg",
+    "color": "rgb(216,216,213)",
+    "contrast": "is-light",
+    "title": "Between The Channels",
+    "artist": "J Fernandez",
+    "permalink": "http://soundcloud.com/joyful-noise-recordings/j-fernandez-between-the-channels-1",
+    "duration": 236560
+  },
+  {
+    "id": "206419080",
+    "artwork": "assets/images/artwork/206419080.jpg",
+    "color": "rgb(227,223,220)",
+    "contrast": "is-light",
+    "title": "Cheerlessness",
+    "artist": "Institute",
+    "permalink": "http://soundcloud.com/sacredbones/institute-cheerlessness",
+    "duration": 241392
+  },
+  {
+    "id": "204986116",
+    "artwork": "assets/images/artwork/204986116.jpg",
+    "color": "rgb(211,204,189)",
+    "contrast": "is-light",
+    "title": "Still Life",
+    "artist": "Spirit Club",
+    "permalink": "http://soundcloud.com/ghost-ramp/spirit-club-still-life",
+    "duration": 187941
   }
 ]
