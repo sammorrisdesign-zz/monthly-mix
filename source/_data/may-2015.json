@@ -10,6 +10,16 @@
     "duration": 156513
   },
   {
+    "id": "200337518",
+    "artwork": "assets/images/artwork/200337518.jpg",
+    "color": "rgb(35,37,37)",
+    "contrast": "is-very-dark",
+    "title": "Call It Off",
+    "artist": "Shamir",
+    "permalink": "http://soundcloud.com/abner-freitas-3/shamir-call-it-off",
+    "duration": 168112
+  },
+  {
     "id": "203997573",
     "artwork": "assets/images/artwork/203997573.jpg",
     "color": "rgb(56,88,51)",
@@ -20,34 +30,24 @@
     "duration": 214040
   },
   {
-    "id": "203245685",
-    "artwork": "assets/images/artwork/203245685.jpg",
-    "color": "rgb(254,254,254)",
+    "id": "89938403",
+    "artwork": "assets/images/artwork/89938403.jpg",
+    "color": "rgb(240,174,36)",
     "contrast": "is-light",
-    "title": "Auntie Pearls House",
-    "artist": "Golden Rules",
-    "permalink": "http://soundcloud.com/lexrecords/golden-rules-auntie-pearls-house",
-    "duration": 185669
+    "title": "In Other Words",
+    "artist": "SHOPPING",
+    "permalink": "http://soundcloud.com/shoppingband/in-other-words-1",
+    "duration": 192800
   },
   {
-    "id": "202973107",
-    "artwork": "assets/images/artwork/202973107.jpg",
-    "color": "rgb(81,94,92)",
+    "id": "206420134",
+    "artwork": "assets/images/artwork/206420134.jpg",
+    "color": "rgb(76,80,136)",
     "contrast": "is-dark",
-    "title": "Lately [prod. by Mic Kellogg]",
-    "artist": "WebsterX",
-    "permalink": "http://soundcloud.com/websterx/lately-prod-by-mic-kellogg",
-    "duration": 240636
-  },
-  {
-    "id": "202866111",
-    "artwork": "assets/images/artwork/202866111.jpg",
-    "color": "rgb(30,30,75)",
-    "contrast": "is-very-dark",
-    "title": "Let You",
-    "artist": "NOSAJ THING",
-    "permalink": "http://soundcloud.com/nosajthing/let-you",
-    "duration": 174357
+    "title": "I Know Theres Gonna Be (Good Times) ft. Young Thug",
+    "artist": "Jamie xx",
+    "permalink": "http://soundcloud.com/dominik-ukawski/i-know-theres-gonna-be-good",
+    "duration": 177257
   },
   {
     "id": "202499624",
@@ -58,16 +58,6 @@
     "artist": "Jeremih",
     "permalink": "http://soundcloud.com/chancetherapper/jeremih-planes-remix-lido-the-social-experiment",
     "duration": 240139
-  },
-  {
-    "id": "204158964",
-    "artwork": "assets/images/artwork/204158964.jpg",
-    "color": "rgb(234,234,234)",
-    "contrast": "is-light",
-    "title": "Seven Sisters",
-    "artist": "RealLies",
-    "permalink": "http://soundcloud.com/real_lies/seven-sisters",
-    "duration": 186975
   },
   {
     "id": "202965984",
@@ -100,6 +90,16 @@
     "duration": 159282
   },
   {
+    "id": "202973107",
+    "artwork": "assets/images/artwork/202973107.jpg",
+    "color": "rgb(81,94,92)",
+    "contrast": "is-dark",
+    "title": "Lately [prod. by Mic Kellogg]",
+    "artist": "WebsterX",
+    "permalink": "http://soundcloud.com/websterx/lately-prod-by-mic-kellogg",
+    "duration": 240636
+  },
+  {
     "id": "206384777",
     "artwork": "assets/images/artwork/206384777.jpg",
     "color": "rgb(128,58,57)",
@@ -110,14 +110,14 @@
     "duration": 245208
   },
   {
-    "id": "206420134",
-    "artwork": "assets/images/artwork/206420134.jpg",
-    "color": "rgb(76,80,136)",
-    "contrast": "is-dark",
-    "title": "I Know Theres Gonna Be (Good Times) ft. Young Thug",
-    "artist": "Jamie xx",
-    "permalink": "http://soundcloud.com/dominik-ukawski/i-know-theres-gonna-be-good",
-    "duration": 177257
+    "id": "203245685",
+    "artwork": "assets/images/artwork/203245685.jpg",
+    "color": "rgb(254,254,254)",
+    "contrast": "is-light",
+    "title": "Auntie Pearls House",
+    "artist": "Golden Rules",
+    "permalink": "http://soundcloud.com/lexrecords/golden-rules-auntie-pearls-house",
+    "duration": 185669
   },
   {
     "id": "206387368",
@@ -130,6 +130,16 @@
     "duration": 228931
   },
   {
+    "id": "204158964",
+    "artwork": "assets/images/artwork/204158964.jpg",
+    "color": "rgb(234,234,234)",
+    "contrast": "is-light",
+    "title": "Seven Sisters",
+    "artist": "RealLies",
+    "permalink": "http://soundcloud.com/real_lies/seven-sisters",
+    "duration": 186975
+  },
+  {
     "id": "198783364",
     "artwork": "assets/images/artwork/198783364.jpg",
     "color": "rgb(90,88,52)",
@@ -138,6 +148,16 @@
     "artist": "Adult Mom",
     "permalink": "http://soundcloud.com/tinyengines/adult-mom-survival",
     "duration": 169732
+  },
+  {
+    "id": "202866111",
+    "artwork": "assets/images/artwork/202866111.jpg",
+    "color": "rgb(30,30,75)",
+    "contrast": "is-very-dark",
+    "title": "Let You",
+    "artist": "NOSAJ THING",
+    "permalink": "http://soundcloud.com/nosajthing/let-you",
+    "duration": 174357
   },
   {
     "id": "203407092",
@@ -168,16 +188,6 @@
     "artist": "Run The Jewels",
     "permalink": "http://soundcloud.com/massappealrecs/run-the-jewels-bust-no-moves-feat-cuz",
     "duration": 193298
-  },
-  {
-    "id": "89938403",
-    "artwork": "assets/images/artwork/89938403.jpg",
-    "color": "rgb(240,174,36)",
-    "contrast": "is-light",
-    "title": "In Other Words",
-    "artist": "SHOPPING",
-    "permalink": "http://soundcloud.com/shoppingband/in-other-words-1",
-    "duration": 192800
   },
   {
     "id": "206555217",
