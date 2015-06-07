@@ -1,0 +1,5 @@
+<ul class="stripe">
+    {% for track in site.data.[playlist.last] %}
+        <li class="stripe__block stripe__block--{{ forloop.index }}" style="background-color: {{ track.color }};"></li>
+    {% endfor %}
+</ul>

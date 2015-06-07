@@ -8,6 +8,7 @@
         {% totalduration duration %}
     </p>
     <h3 class="home-playlists__title title">{{ post.title }}</h3>
+    {% include stripe.html %}
     <p class="home-playlists__description sub">Featuring
         {% for track in site.data.[playlist.last] limit:5 %}
             {{ track.artist }}{% if forloop.index != 5 %},{% endif %}

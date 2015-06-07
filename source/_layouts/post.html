@@ -8,11 +8,7 @@ layout: default
     <div class="header__block">
         <h1 class="site-title title"><a class="is-changable" href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
         <h2 class="post-title super-title">{{ page.title }} {{ page.date | date: "%Y" }}</h2>
-        <ul class="stripe">
-            {% for track in site.data.[playlist.last] %}
-                <li class="stripe__block stripe__block--{{ forloop.index }}" style="background-color: {{ track.color }};"></li>
-            {% endfor %}
-        </ul>
+        {% include stripe.html %}
     </div>
     <img class="powered-by" src="{{ site.baseurl }}/assets/images/soundcloud.jpg" />
 </header>

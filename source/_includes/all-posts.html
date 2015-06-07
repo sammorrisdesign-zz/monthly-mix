@@ -1,6 +1,8 @@
 {% for post in site.posts %}
 {% if forloop.first %}
 {% else %}
+    <li class="home-playlists__item">
     {% include post.html %}
+    </li>
 {% endif %}
 {% endfor %}
