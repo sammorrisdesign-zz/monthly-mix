@@ -28,7 +28,7 @@ define([
                     var fallingDr = new Object();
                     fallingDr["x"] =  Math.floor(Math.random() * (canvas.width + size)) - size;
                     fallingDr["y"] = Math.floor(Math.random() * canvas.height);
-                    fallingDr["speed"] = 5 + Math.random() * 8;
+                    fallingDr["speed"] = 1 + Math.random() * 8;
                     fallingDr["fill"] = colour[i];
                     fallingDrops.push(fallingDr);
                 }
