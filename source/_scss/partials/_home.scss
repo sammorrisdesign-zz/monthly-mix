@@ -57,10 +57,6 @@
     height: 100%;
 }
 
-.home-recent {
-    padding: $g-gutter * 2 0;
-}
-
 .home-playlists {
     padding: $g-gutter * 2 0;
     background: $c-light-grey;
@@ -70,23 +66,70 @@
     overflow: auto;
 }
 
+.home-playlists__time {
+    color: $c-grey;
+}
+
 .home-playlists__item {
     width: 33%;
     float: left;
     text-align: center;
     padding: $g-gutter * 2 0;
+
+    .stripe {
+        width: 80%;
+        margin: $g-gutter / 2 auto;
+    }
 }
 
 .home-playlists__title {
     font-size: 32px;
     font-weight: bold;
-    margin-bottom: $g-gutter;
 }
 
 .home-playlists__description {
     padding: 0 $g-gutter;
+    color: $c-grey;
 }
 
+.home-recent {
+    overflow: auto;
+    padding: $g-gutter * 2 0;
+
+    .home-playlists__title {
+        font-size: 48px;
+        margin: 4px 0 0 -3px;
+    }
+
+    .stripe {
+        width: 100%;
+        margin: $g-gutter 0;
+    }
+
+    .home-playlists__description {
+        padding-left: 0;
+    }
+
+    .input {
+        border-color: $c-black;
+        margin-left: 0;
+        margin-top: $g-gutter / 2;
+
+        svg {
+            height: 1em;
+            width: 1em;
+            margin-right: .2em;
+            margin-bottom: -.1em;
+        }
+    }
+}
+
+.home-recent__content {
+    float: left;
+    width: 66%;
+}
+
+.home-title--recent,
 .home-title--subscribe,
 .home-title--about {
     float: left;

@@ -7,7 +7,7 @@
         {% endfor %}
         {% totalduration duration %}
     </p>
-    <h3 class="home-playlists__title title">{{ post.title }}</h3>
+    <h3 class="home-playlists__title title">{{ post.title }} {{ post.date | date: "%Y" }}</h3>
     {% include stripe.html %}
     <p class="home-playlists__description sub">Featuring
         {% for track in site.data.[playlist.last] limit:5 %}
