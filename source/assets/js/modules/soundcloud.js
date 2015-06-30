@@ -27,6 +27,7 @@ define([
 
         bindEvents: function() {
             bean.on(document.body, 'click', '.playlist__entry', function(e) {
+                console.log("manual click");
                 this.playTrack(e.currentTarget.dataset.trackId);
             }.bind(this));
             bean.on(document.body, 'click', '.audio-controls', function(e) {
@@ -57,17 +58,22 @@ define([
             }
         },
 
+        scrollToTrack: function(target) {
+            console.log("hey");
+            scroller.scrollToElement(el, 1000, 'easeInQuad');
+        },
+
         onPlay: function(target) {
             target.addClass('is-playing');
-            scroller.scrollToElement(target, 1000, 'easeInQuad')
             bonzo(qwery('body')).attr('data-state', 'is-playing');
             this.updateNowPlaying();
         },
 
         onSkip: function() {
+            console.log("on skip");
             next = bonzo(qwery('.is-playing')).next().attr('data-track-id');
             if (next) {
-                this.playTrack(next)
+                this.playTrack(next, true);
             } else {
                 first = bonzo(qwery('.playlist__entry')[0]).attr('data-track-id');
                 this.playTrack(first);
@@ -106,10 +112,7 @@ define([
             bonzo(qwery('.progress-bar__current')).attr('style', 'width:' + (position / duration) * 100 + '%;')
         },
 
-        playTrack: function(trackId) {
-            el = bonzo(qwery('#playlist__entry--' + trackId));
-            current = bonzo(qwery('.is-playing'));
-
+        newTrack: function(trackId, scrollTo) {
             // Set options for player
             var myOptions = {
                 onload : function() {
@@ -130,6 +133,25 @@ define([
                 }.bind(this)
             }
 
+            context = this;
+            SC.whenStreamingReady(function() {
+                var obj = SC.stream('/tracks/' + trackId, myOptions, function(obj){
+                    obj.play();
+                    sound = obj;
+                    context.onPlay(el);
+                    if (scrollTo) {
+                        context.scrollToTrack(el);
+                    }
+                });
+                sound.load();
+            });
+        },
+
+        playTrack: function(trackId, scrollTo) {
+            scrollTo = scrollTo || false;
+            el = bonzo(qwery('#playlist__entry--' + trackId));
+            current = bonzo(qwery('.is-playing'));
+
             if (sound) {
                 // Check if it's the same track
                 if (sound.url.split('/')[4] == trackId) {
@@ -139,6 +161,9 @@ define([
                     } else {
                         sound.play();
                         this.onPlay(el);
+                        if (scrollTo) {
+                            this.scrollToTrack(el);
+                        }
                         this.loadingState(el, sound.playState);
                     }
                 // If not, destroy old track and start again
@@ -146,19 +171,10 @@ define([
                     sound.stop();
                     this.onStop(current);
                     sound = undefined;
-                    this.playTrack(trackId);
+                    this.newTrack(trackId, scrollTo);
                 }
-            // First time playing of new track
             } else {
-                context = this;
-                SC.whenStreamingReady(function() {
-                    var obj = SC.stream('/tracks/' + trackId, myOptions, function(obj){
-                        obj.play();
-                        sound = obj;
-                        context.onPlay(el);
-                    });
-                    sound.load();
-                });
+                this.newTrack(trackId, scrollTo);
             }
         }
     }
