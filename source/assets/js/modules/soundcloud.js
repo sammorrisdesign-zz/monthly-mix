@@ -27,7 +27,6 @@ define([
 
         bindEvents: function() {
             bean.on(document.body, 'click', '.playlist__entry', function(e) {
-                console.log("manual click");
                 this.playTrack(e.currentTarget.dataset.trackId);
             }.bind(this));
             bean.on(document.body, 'click', '.audio-controls', function(e) {
@@ -59,7 +58,6 @@ define([
         },
 
         scrollToTrack: function(target) {
-            console.log("hey");
             scroller.scrollToElement(el, 1000, 'easeInQuad');
         },
 
@@ -70,7 +68,6 @@ define([
         },
 
         onSkip: function() {
-            console.log("on skip");
             next = bonzo(qwery('.is-playing')).next().attr('data-track-id');
             if (next) {
                 this.playTrack(next, true);
