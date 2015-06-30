@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "June"
+date:   2015-06-10 20:15:00
+soundcloud: https://soundcloud.com/sam-morris-30/sets/june-2015
+fetch: true
+artist-206759082: Negative Scanner
+title-206759082: Would You Rather
+---
