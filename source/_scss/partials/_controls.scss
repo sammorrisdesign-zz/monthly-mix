@@ -22,6 +22,12 @@
         @include transition(color 0.5s, background-color 0.5s, fill 0.5s);
     }
 
+    .input {
+        &:hover {
+            background-color: $c-white !important;
+        }
+    }
+
     &.is-light {
         color: $c-black;
 
@@ -31,6 +37,19 @@
 
         .input {
             border-color: $c-black;
+
+            &:hover {
+                color: $c-white;
+                background-color: $c-black !important;
+
+                svg path {
+                    fill: $c-white;
+                }
+            }
+
+            a:hover {
+                color: $c-white;
+            }
         }
 
         svg path {
