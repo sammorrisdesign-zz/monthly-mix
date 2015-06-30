@@ -1,0 +1,10 @@
+# Site settings
+title: Monthly Mix
+email: mail@sammorrisdesign.co.uk
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://www.monthly.mx" # the base hostname & protocol for your site
+permalink: /:year/:title/
+
+# Build settings
+highlighter: true
+markdown: kramdown
