@@ -77,6 +77,10 @@
         width: 80%;
         margin: $g-gutter / 2 auto;
     }
+
+    a:hover {
+        text-decoration: none;
+    }
 }
 
 .home-playlists__title {
@@ -125,6 +129,19 @@
 .home-recent__content {
     float: left;
     width: 66%;
+
+    a:hover {
+        text-decoration: none;
+        
+        ~ .input {
+            background-color: $c-black;
+            color: $c-white;
+
+            svg path {
+                fill: $c-white;
+            }
+        }
+    }
 }
 
 .home-title--recent,

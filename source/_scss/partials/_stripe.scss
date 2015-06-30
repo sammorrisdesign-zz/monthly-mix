@@ -30,4 +30,12 @@ $animation-height: 5px;
             }
         }
     }
+
+    .home a:hover & {
+        @for $block from 1 through 40 {
+            &.stripe__block--#{$block} {
+                transform: scale(1, ((random(50) / 100) + .5));
+            }
+        }
+    }
 }
