@@ -1,6 +1,8 @@
 .sass-cache
 style.css
 style.css.map
+style.min.css
+
 main.min.js
 
 node_modules

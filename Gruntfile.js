@@ -14,13 +14,9 @@ module.exports = function(grunt) {
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
     watch: {
-      scsslint: {
-        files: 'source/_scss/**/*.scss',
-        tasks: ['scsslint', 'autoprefixer']
-      },
       css: {
         files: 'source/_scss/**/*.scss',
-        tasks: 'sass'
+        tasks: ['sass', 'autoprefixer', 'cssmin']
       },
       js: {
         files: 'source/_js/**/*.js',
@@ -43,10 +39,11 @@ module.exports = function(grunt) {
         src: 'source/assets/css/style.css'
       }
     },
-    scsslint: {
-      allFiles: 'source/_scss/**/*.scss',
-      options: {
-        config: 'source/_scss/.scss-lint.yml'
+    cssmin: {
+      target: {
+        files: [{
+          'source/assets/css/style.min.css' : 'source/assets/css/style.css'
+        }]
       }
     },
     shell: {
@@ -85,6 +82,5 @@ module.exports = function(grunt) {
   });
 
   // Tasks
-  grunt.registerTask('default', ['sass', 'scsslint', 'browserSync', 'watch']);
-  grunt.registerTask('sans-lint', ['sass', 'browserSync', 'watch:css']);
+  grunt.registerTask('default', ['sass', 'browserSync', 'watch']);
 };
