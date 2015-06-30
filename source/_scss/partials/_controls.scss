@@ -6,14 +6,20 @@
     padding: $g-gutter;
     background-color: $c-black;
     color: $c-white;
-    @include transition(color 1s, background-color 1s, fill 1s);
+    @include transition(color 0.5s, background-color 0.5s, fill 0.5s);
 
     a {
         color: $c-white;
 
         &:hover {
+            color: $c-black;
             text-decoration: none;
         }
+    }
+
+    .input,
+    svg path {
+        @include transition(color 0.5s, background-color 0.5s, fill 0.5s);
     }
 
     &.is-light {
@@ -40,14 +46,25 @@
         .controls__buttons__skip,
         .controls__buttons__soundcloud {
             opacity: .2;
-
+            
             &:hover {
-                background-color: inherit;
-                color: inherit;
+                background-color: $c-black;
+                color: $c-white;
+                cursor: default;
+            }
+        }
 
+        .controls__buttons__skip {
+            &:hover {
                 svg path {
                     fill: $c-white;
                 }
+            }
+        }
+
+        .controls__buttons__soundcloud {
+            a:hover {
+                color: $c-white;
             }
         }
     }
