@@ -110,9 +110,15 @@ define([
         },
 
         newTrack: function(trackId, scrollTo) {
+            context = this;
+
             // Set options for player
             var myOptions = {
                 onload : function() {
+                    // readyState 2 means failed or error in fetching track
+                    if (this.readyState == 2) {
+                        context.onSkip();
+                    }
                     // Debug onfinish with this
                     // sound.setPosition(this.duration - 3000);
                 },
@@ -125,12 +131,14 @@ define([
                 whileplaying: function() {
                     this.updateProgressBar(sound.durationEstimate, sound.position);
                 }.bind(this),
+                ondataerror: function() {
+                    console.log("errorz");
+                },
                 onplay: function() {
                     this.loadingState(el, true);
                 }.bind(this)
             }
 
-            context = this;
             SC.whenStreamingReady(function() {
                 var obj = SC.stream('/tracks/' + trackId, myOptions, function(obj){
                     obj.play();
