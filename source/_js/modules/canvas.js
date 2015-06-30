@@ -14,11 +14,7 @@ define([
 
     return {
         init: function() {
-            canvas = document.getElementsByClassName('home-header__canvas')[0];
-            canvas.style.width = '100%';
-            canvas.style.height = '100%';
-            canvas.width  = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
+            this.setCanvas();
 
             if (canvas.getContext) {
                 ctx = canvas.getContext('2d');
@@ -33,6 +29,21 @@ define([
                     fallingDrops.push(fallingDr);
                 }
             }
+            this.bindings();
+        },
+
+        bindings: function() {
+            window.onresize = function() {
+                this.setCanvas();
+            }.bind(this);
+        },
+
+        setCanvas: function() {
+            canvas = document.getElementsByClassName('home-header__canvas')[0];
+            canvas.style.width = '100%';
+            canvas.style.height = '100%';
+            canvas.width  = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
         },
 
         draw: function() {
