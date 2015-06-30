@@ -134,7 +134,12 @@
 }
 
 .progress-bar__current {
-    background-color: rgba($c-black, .6);
+    background-color: rgba($c-white, .2);
     height: 100%;
     width: 0%;
+    transition: width 0.2s linear;
+
+    .is-light & {
+        background-color: rgba($c-black, .2);
+    }
 }
