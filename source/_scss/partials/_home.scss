@@ -5,6 +5,12 @@
 
 .home {
     padding-top: $g-now-playing;
+    background-color: $c-light-grey;
+
+    > div {
+        position: relative;
+        z-index: 4;
+    }
 
     // Compensation for fixed navigation
     .home-title {
@@ -32,8 +38,8 @@
     position: relative;
     z-index: 5;
     padding: 180px 0;
+    padding: 36vh 0;
     text-align: center;
-    background: $c-light-grey;
     margin-top: -$g-now-playing;
 
     .container {
@@ -47,19 +53,10 @@
     margin-bottom: 10px;
 }
 
-.home-header__canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-}
-
 .home-playlists {
+    margin-bottom: 300px;
     padding: $g-gutter * 2 0;
-    background: $c-light-grey;
+    background-color: $c-white;
 }
 
 .home-playlists__list {
@@ -95,6 +92,7 @@
 .home-recent {
     overflow: auto;
     padding: $g-gutter * 2 0;
+    background-color: $c-white;
 
     .home-playlists__title {
         font-size: 48px;
@@ -172,6 +170,7 @@
     padding-top: 0;
     overflow: auto;
     padding: $g-gutter * 2 0;
+    background-color: $c-white;
 }
 
 .home-about__body {
@@ -199,7 +198,16 @@
 }
 
 .home-credit {
-    padding: $g-gutter 0;
+    padding: $g-gutter 0 300px;
     color: $c-grey;
-    background-color: $c-light-grey;
+}
+
+.home-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
 }

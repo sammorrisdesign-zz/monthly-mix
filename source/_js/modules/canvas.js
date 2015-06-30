@@ -39,7 +39,7 @@ define([
         },
 
         setCanvas: function() {
-            canvas = document.getElementsByClassName('home-header__canvas')[0];
+            canvas = document.getElementsByClassName('home-canvas')[0];
             canvas.style.width = '100%';
             canvas.style.height = '100%';
             canvas.width  = canvas.offsetWidth;
