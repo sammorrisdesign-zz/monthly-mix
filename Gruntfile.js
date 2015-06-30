@@ -22,6 +22,10 @@ module.exports = function(grunt) {
         files: 'source/_scss/**/*.scss',
         tasks: 'sass'
       },
+      js: {
+        files: 'source/_js/**/*.js',
+        tasks: 'requirejs'
+      },
       jekyll: {
         files: ['source/**/*', '!source/_site/**/*'],
         tasks: 'shell'
@@ -50,6 +54,20 @@ module.exports = function(grunt) {
         command: 'cd source && jekyll build',
         options: {
           nospawn: true
+        }
+      }
+    },
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: 'source/_js/',
+          config: 'source/_js/config.js',
+          name: 'main',
+          paths: {
+            "sc": 'http://connect.soundcloud.com/sdk'
+          },
+          out: 'source/assets/js/main.js',
+          findNestedDependencies: true
         }
       }
     },
