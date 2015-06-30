@@ -1,6 +1,7 @@
 .sass-cache
 style.css
 style.css.map
+main.min.js
 
 node_modules
 
@@ -9,3 +10,4 @@ node_modules
 soundcloud-keys.json
 
 _site
+

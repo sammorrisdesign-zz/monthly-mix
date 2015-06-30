@@ -66,7 +66,7 @@ module.exports = function(grunt) {
           paths: {
             "sc": 'http://connect.soundcloud.com/sdk'
           },
-          out: 'source/assets/js/main.js',
+          out: 'source/assets/js/main.min.js',
           findNestedDependencies: true
         }
       }
