@@ -8,12 +8,12 @@ module Jekyll
     def generate(site)
         site.posts.each do |post|
             if (post.data['soundcloud'] && post.data['fetch'] === true)
-                render_playlist(post.data['soundcloud'])
+                render_playlist(post)
             end
         end
     end
 
-    def render_playlist(url)
+    def render_playlist(post)
         # Register a client with Soundcloud
         file = File.read("soundcloud-keys.json")
         data_hash = JSON.parse(file)
@@ -21,7 +21,7 @@ module Jekyll
         @list = Array.new
 
         # Get Playlist and render json
-        playlist = client.get('/resolve', :url => url)
+        playlist = client.get('/resolve', :url => post.data['soundcloud'])
         playlist.tracks.each_with_index do |track, index|
             image_grabber(track.artwork_url, track.id.to_s)
             title_splitter(track.title, track.user.username)
@@ -30,14 +30,14 @@ module Jekyll
                 :artwork => @img_dest,
                 :color => common_color(@img_dest),
                 :contrast => contrast_color(@color),
-                :title  => @title,
-                :artist => @username,
+                :title  => post.data['title-' + track.id.to_s] || @title,
+                :artist => post.data['artist-' + track.id.to_s] || @username,
                 :permalink => track.permalink_url,
                 :duration => track.duration
             }
         end
 
-        File.write("_data/" + url.split("/")[-1] + ".json", JSON.pretty_generate(@list))
+        File.write("_data/" + post.data['soundcloud'].split("/")[-1] + ".json", JSON.pretty_generate(@list))
     end
 
     def image_grabber(url, id)
