@@ -10,6 +10,11 @@
     color: $c-light-grey;
     @include flex(1);
     @include flex-basis(75%);
+
+    &.is-focused {
+        border-color: $c-white;
+        color: $c-white;
+    }
 }
 
 .sign-up__button {
