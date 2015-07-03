@@ -239,6 +239,10 @@
 .home-credit {
     padding: $g-gutter 0 300px;
     color: $c-grey;
+
+    a {
+        text-decoration: underline;
+    }
 }
 
 .home-canvas {
