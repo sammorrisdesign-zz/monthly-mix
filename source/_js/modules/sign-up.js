@@ -11,6 +11,7 @@ define([
     var defaultValue = bonzo(qwery('.sign-up__input')).attr('value');
 
     return {
+        init: function() {
             this.bindEvents();
         },
 

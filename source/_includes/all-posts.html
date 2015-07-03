@@ -2,7 +2,19 @@
 {% if forloop.first %}
 {% else %}
     <li class="home-playlists__item">
-    {% include post.html %}
+        {% assign playlist = post.soundcloud | split: '/' %}
+        <a href="{{ post.url | prepend: site.baseurl }}">
+            <div class="home-playlists__table">
+                <h3 class="home-playlists__title sub">{{ post.title }} {{ post.date | date: "%Y" }}</h3>
+                <p class="home-playlists__time sub">
+                    {% include duration.html %}
+                </p>
+                <p class="home-playlists__track-count sub">
+                    {{ site.data.[playlist.last].size }} tracks
+                </p>
+            </div>
+            {% include stripe.html %}
+        </a>
     </li>
 {% endif %}
 {% endfor %}

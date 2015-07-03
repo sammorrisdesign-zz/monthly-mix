@@ -1,7 +1,19 @@
 {% assign post = site.posts.first %}
-{% include post.html %}
-<!--
-<a href="{{ post.url | prepend: site.baseurl }}" class="audio-controls input sub">
-        <span class="audio-controls__play"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M5 0l22 16L5 32z"></path></svg> Play</span>
+{% assign playlist = post.soundcloud | split: '/' %}
+<a href="{{ post.url | prepend: site.baseurl }}">
+    <p class="home-playlists__time sub">
+        {% assign duration = 0 %}
+        {% for track in site.data.[playlist.last] %}
+        {% assign duration = duration | plus: track.duration %}
+        {% endfor %}
+        {% totalduration duration %}
+    </p>
+    <h3 class="home-playlists__title title">{{ post.title }} {{ post.date | date: "%Y" }}</h3>
+    {% include stripe.html %}
+    <p class="home-playlists__description sub">Featuring
+    {% for track in site.data.[playlist.last] limit:5 %}
+        {{ track.artist }}{% if forloop.index != 5 %},{% endif %}
+    {% endfor %}
+    and {{ site.data.[playlist.last].size | minus: 5}} others.
+    </p>
 </a>
--->
