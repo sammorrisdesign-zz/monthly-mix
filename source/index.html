@@ -21,7 +21,7 @@ javascript: home
     <div class="home-recent">
         <div class="home-recent__background" {% include first-post-color.html %}></div>
         <div class="container">
-            <h2 class="home-title home-title--recent title">Latest Playlist</h2>
+            <h2 class="home-title home-title--recent title" id="playlists">Latest Playlist</h2>
             <div class="home-recent__content">
                 {% include first-post.html %}
             </div>
@@ -30,7 +30,7 @@ javascript: home
 
     <div class="home-playlists">
         <div class="container">
-            <h2 class="home-title home-title--playlists title" id="playlists">Archive</h2>
+            <h2 class="home-title home-title--playlists title">Archive</h2>
             <ul class="home-playlists__list">
                 {% include all-posts.html %}
             </ul>

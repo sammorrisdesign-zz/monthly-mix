@@ -53,8 +53,8 @@
 
     // Compensation for fixed navigation
     .home-title {
-        padding-top: $g-now-playing + $g-gutter;
-        margin-top: -($g-now-playing + $g-gutter);
+        padding-top: 112px;
+        margin-top: -112px;
     }
 }
 

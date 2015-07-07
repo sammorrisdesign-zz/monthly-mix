@@ -1,13 +1,16 @@
 define([
     'modules/canvas',
-    'modules/sign-up'
+    'modules/sign-up',
+    'modules/header-scrolling'
 ], function(
     Canvas,
-    SignUp
+    SignUp,
+    HeaderScrolling
 ) {
     function init() {
         Canvas.init();
         SignUp.init();
+        HeaderScrolling.init();
     }
 
     return {
