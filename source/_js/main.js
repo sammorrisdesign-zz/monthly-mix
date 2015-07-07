@@ -5,11 +5,14 @@ requirejs.config({
 });
 
 require([
-    'modules/fonts'
+    'modules/fonts',
+    'modules/go-squared'
 ], function (
-    fonts
+    fonts,
+    goSquared
 ) {
     fonts.init();
+    goSquared.init();
 
     var bootstrap = document.body.getAttribute('data-bootstrap');
 
