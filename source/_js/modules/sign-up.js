@@ -1,9 +1,7 @@
 define([
-    'libs/bean',
     'libs/bonzo',
     'libs/qwery'
 ], function(
-    bean,
     bonzo,
     qwery
 ) {
