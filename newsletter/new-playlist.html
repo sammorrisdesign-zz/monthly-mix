@@ -4,7 +4,49 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Monthly Mix</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+<style type="text/css">
+	@media only screen and (max-width: 480px){
+		table[id=canspamBar] td{
+			font-size:14px !important;
+		}
+
+}	@media only screen and (max-width: 480px){
+		table[id=canspamBar] td a{
+			display:block !important;
+			margin-top:10px !important;
+		}
+
+}	@media only screen and (max-width: 480px){
+		.image{
+			height:auto !important;
+			max-width:600px !important;
+			width:100% !important;
+		}
+
+}	/*
+	@tab Page
+	@section Style
+	@tip Set the styling for all links
+	@style links
+	*/
+		a{
+			/*@editable*/color:#bf2571;
+			text-decoration:underline;
+		}
+	/*
+	@tab Page
+	@section Style
+	@tip Set the styling for the header
+	@style header
+	*/
+		#header{
+			/*@editable*/background-color:#bf2571;
+		}
+		html,body{
+			margin:0;
+			padding:0;
+		}
+</style></head>
 
 <body bgcolor="#f1f1f1">
     <table id="header" bgcolor="#bf2571" align="center" cellpadding="10" cellspacing="0" width="100%" style="color: #ffffff; border-collapse: collapse;">
@@ -12,7 +54,7 @@
             <td>
             </td>
             <td width="600px" style="max-width: 600px;">
-                <img src="https://gallery.mailchimp.com/601418a0f4a6ec9cf7535ad2e/images/f034106b-e749-4143-bf70-b6bd40ed5459.png" style="margin: 10px 0 6px;" />
+                <img src="https://gallery.mailchimp.com/601418a0f4a6ec9cf7535ad2e/images/f034106b-e749-4143-bf70-b6bd40ed5459.png" style="margin: 10px 0 6px;">
             </td>
             <td>
             </td>
@@ -34,8 +76,7 @@
             <td>
             </td>
             <td width="600px" style="max-width: 600px;">
-                <p>Hey *|FNAME|*</p>
-                <div mc:edit="body" style="margin-bottom: 1em;">
+                <div mc:edit="body" style="margin: 1em 0;">
                     Put some text in herasdfasdfasdfasdfadsfasdfasdfe
                 </div>
             </td>
@@ -44,7 +85,7 @@
         </tr>
     </table>
     <center>
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="canspamBarWrapper" style="background-color:#F1F1F1;" >
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="canspamBarWrapper" style="background-color:#F1F1F1;">
             <tr>
                 <td align="center" valign="top" style="padding-top:20px; padding-bottom:20px;">
                     <table border="0" cellpadding="0" cellspacing="0" id="canspamBar">
@@ -62,44 +103,7 @@
                 </td>
             </tr>
         </table>
-        <style type="text/css">
-            @media only screen and (max-width: 480px){
-                table[id="canspamBar"] td{font-size:14px !important;}
-                table[id="canspamBar"] td a{display:block !important; margin-top:10px !important;}
-                .image {
-                    height:auto !important;
-                    max-width:600px !important;
-                    width: 100% !important;
-                }
-            }
-
-           /**
-            * @tab Page
-            * @section Style
-            * @tip Set the styling for all links
-            * @style links
-            */
-            a {
-                /*@editable*/ color: #bf2571;
-                text-decoration: underline;
-            }
-
-           /**
-            * @tab Page
-            * @section Style
-            * @tip Set the styling for the header
-            * @style header
-            */
-            #header {
-                /*@editable*/ background-color: #bf2571;
-            }
-            
-            html,
-            body {
-            	margin: 0;
-                padding: 0;
-            }
-        </style>
+        
     </center>
 </body>
 </html>
