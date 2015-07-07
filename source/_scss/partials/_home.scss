@@ -96,11 +96,6 @@
     margin-bottom: 300px;
     padding: $g-gutter * 2 0;
     background-color: $c-white;
-
-    .container {
-        border-top: 1px solid $c-light-grey;
-        padding-top: $g-gutter / 2;
-    }
 }
 
 .home-playlists__list {
@@ -157,6 +152,20 @@
     overflow: auto;
     padding: $g-gutter * 2 0;
     background-color: $c-white;
+
+    .home-recent__background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: .2;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
 
     .home-playlists__title {
         font-size: 48px;
