@@ -12,7 +12,7 @@ define([
     loadJSON,
     scroller
 ) {
-    var sound;
+    var sound, defaultTitle;
 
     return {
         init: function() {
@@ -22,6 +22,7 @@ define([
                 });
             });
 
+            defaultTitle = document.title;
             this.bindEvents();
         },
 
@@ -65,6 +66,7 @@ define([
             target.addClass('is-playing');
             bonzo(qwery('body')).attr('data-state', 'is-playing');
             this.updateNowPlaying();
+            this.setPageTitle();
         },
 
         onSkip: function() {
@@ -80,6 +82,7 @@ define([
         onStop: function(target) {
             bonzo(qwery('body')).attr('data-state', 'is-stopped');
             target.removeClass('is-playing');
+            this.resetPageTitle();
         },
 
         getNowPlayingInfo: function() {
@@ -104,7 +107,16 @@ define([
             bonzo(qwery('.controls .controls__title__track-artist')).text(track['artist']);
             bonzo(qwery('.controls .controls__title__track-title')).text(track['title']);
         },
-        
+
+        setPageTitle: function() {
+            track = this.getNowPlayingInfo();
+            document.title = track.artist + " - \"" + track.title + "\" on " + defaultTitle;
+        },
+
+        resetPageTitle: function() {
+            document.title = defaultTitle;
+        },
+
         updateProgressBar: function(duration, position) {
             bonzo(qwery('.progress-bar__current')).attr('style', 'width:' + (position / duration) * 100 + '%;')
         },
