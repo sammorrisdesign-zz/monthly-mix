@@ -37,6 +37,11 @@ hr {
     line-height: 2rem;
 
     @include mq(mobile) {
+        font-size: 2rem;
+        line-height: 2.6rem;
+    }
+
+    @include mq(wide) {
         font-size: 2.4rem;
         line-height: 3.2rem;
     }
