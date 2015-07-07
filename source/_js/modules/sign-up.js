@@ -16,12 +16,12 @@ define([
         },
 
         bindEvents: function() {
-            bean.on(document.body, 'focusin', '.sign-up__input', function(e) {
+            document.getElementsByClassName("sign-up__input")[0].onfocus = function () {
                 this.focusIn();
-            }.bind(this));
-            bean.on(document.body, 'focusout', '.sign-up__input', function(e) {
+            }.bind(this);
+            document.getElementsByClassName("sign-up__input")[0].onblur = function () {
                 this.focusOut();
-            }.bind(this));
+            }.bind(this);
         },
 
         focusIn: function() {
