@@ -7,6 +7,7 @@
     margin-right: 2px;
     border: 1px solid $c-light-grey;
     padding: 5px 10px;
+    border-radius: 0;
     color: $c-light-grey;
     @include flex(1);
     @include flex-basis(75%);
@@ -19,6 +20,7 @@
 
 .sign-up__button {
     border: 2px solid $c-black;
+    border-radius: 0;
     padding: 4px 9px;
     color: $c-black;
     font-weight: bold;

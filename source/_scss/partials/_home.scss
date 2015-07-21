@@ -1,6 +1,7 @@
 .container {
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 @keyframes background {
@@ -63,23 +64,36 @@
     z-index: 10;
     overflow: hidden;
     width: 100%;
-    padding: 27px $g-gutter;
+    padding: 20px 0;
     background: transparent;
 }
 
 .home-title {
     font-weight: bold;
-    width: 33%;
-    display: inline-block;
+
+    &.title {
+        @include mq($until: tablet) {
+            margin-bottom: $g-gutter / 2;
+        }
+
+        @include mq(tablet) {
+            width: 33%;
+            display: inline-block;
+            float: left;
+        }
+    }
 }
 
 .home-header {
     position: relative;
     z-index: 5;
-    padding: 180px 0;
-    padding: 36vh 0;
+    padding: 100px 0;
     text-align: center;
     margin-top: -$g-now-playing;
+
+    @include mq(tablet) {
+        padding: 36vh 0;
+    }
 
     .container {
         position: relative;
@@ -93,9 +107,14 @@
 }
 
 .home-playlists {
-    margin-bottom: 300px;
-    padding: $g-gutter * 2 0;
+    margin-bottom: 160px;
     background-color: $c-white;
+    padding: $g-gutter 0;
+
+    @include mq(tablet) {
+        padding: $g-gutter * 2 0;
+        margin-bottom: 300px;
+    }
 }
 
 .home-playlists__list {
@@ -143,6 +162,12 @@
     font-weight: bold;
 }
 
+.home-playlists__time {
+    @include mq($until: tablet) {
+        display: none;
+    }
+}
+
 .home-playlists__description {
     padding: 0 $g-gutter;
     color: $c-grey;
@@ -150,8 +175,12 @@
 
 .home-recent {
     overflow: auto;
-    padding: $g-gutter * 2 0;
     background-color: $c-white;
+    padding: $g-gutter 0;
+
+    @include mq(tablet) {
+        padding: $g-gutter * 2 0;
+    }
 
     .home-recent__background {
         position: absolute;
@@ -168,8 +197,12 @@
     }
 
     .home-playlists__title {
-        font-size: 48px;
+        font-size: 3.4rem;
         margin: 4px 0 0 -3px;
+
+        @include mq(tablet) {
+            font-size: 4.8rem;
+        }
     }
 
     .stripe {
@@ -196,8 +229,10 @@
 }
 
 .home-recent__content {
-    float: left;
-    width: 66%;
+    @include mq(tablet) {
+        float: left;
+        width: 66%;
+    }
 
     a:hover {
         text-decoration: none;
@@ -213,22 +248,22 @@
     }
 }
 
-.home-title--recent,
-.home-title--subscribe,
-.home-title--about,
-.home-title--playlists {
-    float: left;
-}
-
 .home-subscribe {
     overflow: auto;
-    padding: $g-gutter * 2 0;
     background-color: $c-black;
     color: $c-white;
+    padding: $g-gutter 0;
+
+    @include mq(tablet) {
+        padding: $g-gutter * 2 0;
+    }
 
     .container {
         overflow: auto;
-        padding-bottom: $g-gutter * 2;
+
+        @include mq(tablet) {
+            padding-bottom: $g-gutter * 2;
+        }
     }
 
     .sign-up__input {
@@ -245,27 +280,40 @@
 }
 
 .home-subscribe__content {
-    float: left;
-    width: 66%;
+    @include mq(tablet) {
+        float: left;
+        width: 66%;
+    }
 }
 
 .home-subscribe__description {
-    padding: 6px 0 12px;
+    padding: 0 0 12px;
+
+    @include mq(tablet) {
+        padding-top: 6px;
+    }
 }
 
 .home-about {
     padding-top: 0;
     overflow: auto;
-    padding: $g-gutter * 2 0;
+    padding: $g-gutter 0;
     background-color: $c-white;
+
+    @include mq(tablet) {
+        padding: $g-gutter * 2 0;
+    }
 }
 
 .home-about__body {
-    width: 66%;
-    float: left;
     color: $c-grey;
-    @include column-count(2);
-    @include column-gap($g-gutter);
+
+    @include mq(tablet) {
+        width: 66%;
+        float: left;
+        @include column-count(2);
+        @include column-gap($g-gutter);
+    }
 
     strong {
         display: block;
@@ -285,8 +333,12 @@
 }
 
 .home-credit {
-    padding: $g-gutter 0 300px;
+    padding: $g-gutter 0 160px;
     color: $c-grey;
+
+    @include mq(tablet) {
+        padding-bottom: 300px;
+    }
 
     a {
         text-decoration: underline;
