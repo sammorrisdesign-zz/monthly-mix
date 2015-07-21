@@ -19,12 +19,17 @@
 .playlist__entry {
     position: relative;
     float: left;
-    width: 35%;
-    padding-top: 35%;
+    width: 40%;
+    padding-top: 40%;
     overflow: hidden;
     cursor: pointer;
     margin: $g-gutter;
     @include playlist-layout;
+
+    @include mq(tablet) {
+        width: 35%;
+        padding-top: 35%;
+    }
 
     &:hover {
         .playlist__entry__info {
