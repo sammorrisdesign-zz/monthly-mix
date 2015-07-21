@@ -2,10 +2,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <title>{{ site.title }} {% if page.title %} for {{ page.title }} {{ page.date | date: "%Y" }}{% endif %}</title>
     <meta name="description" content="{{ site.description }}">
 
+    <!-- Styles -->
     <link rel="stylesheet" href="/{{ "assets/css/style.css" | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" href="/{{ "assets/images/apple-touch-icon-precomposed.png" | prepend: site.baseurl }}" />
+    <link rel="shortcut icon" href="/{{ "assets/images/favicon.png" | prepend: site.baseurl }}" />
 </head>
