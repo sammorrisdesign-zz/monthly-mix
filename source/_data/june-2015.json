@@ -1,43 +1,23 @@
 [
   {
-    "id": "208171923",
-    "artwork": "assets/images/artwork/208171923.jpg",
-    "color": "rgb(161,33,51)",
+    "id": "210910118",
+    "artwork": "assets/images/artwork/210910118.jpg",
+    "color": "rgb(74,80,63)",
     "contrast": "is-dark",
-    "title": "Reticence",
-    "artist": "Girls Names",
-    "permalink": "http://soundcloud.com/tough-love/girls-names-reticence-1",
-    "duration": 242099
+    "title": "Them Changes",
+    "artist": "Thundercat",
+    "permalink": "http://soundcloud.com/brainfeeder/thundercat-them-changes",
+    "duration": 187289
   },
   {
-    "id": "206759082",
-    "artwork": "assets/images/artwork/206759082.jpg",
-    "color": "rgb(241,239,237)",
-    "contrast": "is-light",
-    "title": "Would You Rather",
-    "artist": "Negative Scanner",
-    "permalink": "http://soundcloud.com/troubleinmind/trouble-in-mind-records-negative-scanner-would-you-rather",
-    "duration": 193925
-  },
-  {
-    "id": "207664602",
-    "artwork": "assets/images/artwork/207664602.jpg",
-    "color": "rgb(216,53,51)",
-    "contrast": "is-dark",
-    "title": "Amanda Berry",
-    "artist": "DULL TOOLS",
-    "permalink": "http://soundcloud.com/dull-tools/amanda-berry",
-    "duration": 249675
-  },
-  {
-    "id": "208818317",
-    "artwork": "assets/images/artwork/208818317.jpg",
-    "color": "rgb(69,32,30)",
-    "contrast": "is-dark",
-    "title": "Right Back Feat De La Soul",
-    "artist": "Official SlumVillage",
-    "permalink": "http://soundcloud.com/official-slumvillage/right-back-feat-de-la-soul",
-    "duration": 151471
+    "id": "190740120",
+    "artwork": "assets/images/artwork/190740120.jpg",
+    "color": "rgb(41,37,38)",
+    "contrast": "is-very-dark",
+    "title": "Eye Light",
+    "artist": "Crackazat",
+    "permalink": "http://soundcloud.com/localtalk/crackazat-eye-light",
+    "duration": 120121
   },
   {
     "id": "209332281",
@@ -50,76 +30,6 @@
     "duration": 159440
   },
   {
-    "id": "202208563",
-    "artwork": "assets/images/artwork/202208563.jpg",
-    "color": "rgb(127,95,60)",
-    "contrast": "is-dark",
-    "title": "Gold",
-    "artist": "Adrian Lau",
-    "permalink": "http://soundcloud.com/adrianlau/gold",
-    "duration": 190450
-  },
-  {
-    "id": "208639972",
-    "artwork": "assets/images/artwork/208639972.jpg",
-    "color": "rgb(30,30,30)",
-    "contrast": "is-very-dark",
-    "title": "Talk",
-    "artist": "Bob Moses",
-    "permalink": "http://soundcloud.com/the-bob-moses/talk",
-    "duration": 409115
-  },
-  {
-    "id": "196360908",
-    "artwork": "assets/images/artwork/196360908.jpg",
-    "color": "rgb(128,133,95)",
-    "contrast": "is-dark",
-    "title": "valet 'nature'",
-    "artist": "kranky",
-    "permalink": "http://soundcloud.com/kranky/valet-nature",
-    "duration": 258112
-  },
-  {
-    "id": "209583233",
-    "artwork": "assets/images/artwork/209583233.jpg",
-    "color": "rgb(51,30,30)",
-    "contrast": "is-very-dark",
-    "title": "Let The Record Spin (feat Raekwon)",
-    "artist": "Linear Labs",
-    "permalink": "http://soundcloud.com/linearlabs/let-the-record-spin-feat-raekwon",
-    "duration": 193793
-  },
-  {
-    "id": "208586721",
-    "artwork": "assets/images/artwork/208586721.jpg",
-    "color": "rgb(30,70,81)",
-    "contrast": "is-dark",
-    "title": "Premiere: Stray 'Branflakes'",
-    "artist": "Mixmag",
-    "permalink": "http://soundcloud.com/mixmag-1/premiere-stray-branflakes",
-    "duration": 198470
-  },
-  {
-    "id": "206174972",
-    "artwork": "assets/images/artwork/206174972.jpg",
-    "color": "rgb(215,73,76)",
-    "contrast": "is-dark",
-    "title": "Music Box",
-    "artist": "Fake Blood",
-    "permalink": "http://soundcloud.com/fake-blood/2-fake-blood-music-box-master",
-    "duration": 293460
-  },
-  {
-    "id": "207316078",
-    "artwork": "assets/images/artwork/207316078.jpg",
-    "color": "rgb(254,254,254)",
-    "contrast": "is-light",
-    "title": "Temptation (LIMITED TIME FREE DOWNLOAD!)",
-    "artist": "BLANC90",
-    "permalink": "http://soundcloud.com/maincoursemedia/blanc90-temptation",
-    "duration": 405275
-  },
-  {
     "id": "210168386",
     "artwork": "assets/images/artwork/210168386.jpg",
     "color": "rgb(56,31,30)",
@@ -130,34 +40,44 @@
     "duration": 224751
   },
   {
-    "id": "210910118",
-    "artwork": "assets/images/artwork/210910118.jpg",
-    "color": "rgb(74,80,63)",
-    "contrast": "is-dark",
-    "title": "Them Changes",
-    "artist": "Thundercat",
-    "permalink": "http://soundcloud.com/brainfeeder/thundercat-them-changes",
-    "duration": 187289
-  },
-  {
-    "id": "210810870",
-    "artwork": "assets/images/artwork/210810870.jpg",
-    "color": "rgb(67,51,39)",
-    "contrast": "is-dark",
-    "title": "Cascading Green Digits prod. by Driver and Taurus Scott",
-    "artist": "Busdriver",
-    "permalink": "http://soundcloud.com/driverdriverdriverdriverdriverdriverdriverdriver/cascading-green-digits-prod-by-driver-and-taurus-scott",
-    "duration": 314360
-  },
-  {
     "id": "209846738",
     "artwork": "assets/images/artwork/209846738.jpg",
     "color": "rgb(36,70,94)",
     "contrast": "is-dark",
-    "title": "Boiler Room Debuts",
-    "artist": "Clap! Clap! \"Fever\"",
+    "title": "Fever",
+    "artist": "Clap! Clap!",
     "permalink": "http://soundcloud.com/platform/clap-clap-fever-boiler-room-debuts",
     "duration": 157323
+  },
+  {
+    "id": "212872823",
+    "artwork": "assets/images/artwork/212872823.jpg",
+    "color": "rgb(201,104,102)",
+    "contrast": "is-dark",
+    "title": "Bird Bath Math",
+    "artist": "Honey Radar",
+    "permalink": "http://soundcloud.com/staleheat/honey-radar-bird-bath-math",
+    "duration": 136737
+  },
+  {
+    "id": "211754136",
+    "artwork": "assets/images/artwork/211754136.jpg",
+    "color": "rgb(106,36,30)",
+    "contrast": "is-dark",
+    "title": "Burning Sugar",
+    "artist": "SILICON",
+    "permalink": "http://soundcloud.com/weirdworldrecordco/silicon-burning-sugar-1",
+    "duration": 207849
+  },
+  {
+    "id": "209583233",
+    "artwork": "assets/images/artwork/209583233.jpg",
+    "color": "rgb(51,30,30)",
+    "contrast": "is-very-dark",
+    "title": "Let The Record Spin (feat Raekwon)",
+    "artist": "Ghostface Killah",
+    "permalink": "http://soundcloud.com/linearlabs/let-the-record-spin-feat-raekwon",
+    "duration": 193793
   },
   {
     "id": "211590791",
@@ -170,16 +90,6 @@
     "duration": 214406
   },
   {
-    "id": "211294852",
-    "artwork": "assets/images/artwork/211294852.jpg",
-    "color": "rgb(252,248,249)",
-    "contrast": "is-light",
-    "title": "time travel (carmack remix)",
-    "artist": "duckwrth",
-    "permalink": "http://soundcloud.com/forwardthinkers/duckwrth-time-travel-carmack-remix",
-    "duration": 235907
-  },
-  {
     "id": "211651597",
     "artwork": "assets/images/artwork/211651597.jpg",
     "color": "rgb(235,116,30)",
@@ -188,5 +98,35 @@
     "artist": "JNTHN STEIN",
     "permalink": "http://soundcloud.com/jnthnstein/repo-feat-snatra",
     "duration": 209025
+  },
+  {
+    "id": "207841898",
+    "artwork": "assets/images/artwork/207841898.jpg",
+    "color": "rgb(208,197,180)",
+    "contrast": "is-light",
+    "title": "Tick (Single)",
+    "artist": "Weaves",
+    "permalink": "http://soundcloud.com/buzzrecords/weaves-tick-single",
+    "duration": 175167
+  },
+  {
+    "id": "202208563",
+    "artwork": "assets/images/artwork/202208563.jpg",
+    "color": "rgb(127,95,60)",
+    "contrast": "is-dark",
+    "title": "Gold",
+    "artist": "Adrian Lau",
+    "permalink": "http://soundcloud.com/adrianlau/gold",
+    "duration": 190450
+  },
+  {
+    "id": "212513330",
+    "artwork": "assets/images/artwork/212513330.jpg",
+    "color": "rgb(154,122,111)",
+    "contrast": "is-dark",
+    "title": "Just Due (ft. Homeboy Sandman & Miz Korona)",
+    "artist": "Finale",
+    "permalink": "http://soundcloud.com/mellomusicgroup/finale-just-due-prod-oddisee",
+    "duration": 234783
   }
 ]

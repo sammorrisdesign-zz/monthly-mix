@@ -6,4 +6,8 @@ soundcloud: https://soundcloud.com/sam-morris-30/sets/june-2015
 fetch: false
 artist-206759082: Negative Scanner
 title-206759082: Would You Rather
+artist-209846738: Clap! Clap!
+title-209846738: Fever
+artist-209583233: Ghostface Killah
+title-212513330: Just Due (ft. Homeboy Sandman & Miz Korona)
 ---
