@@ -1,21 +1,11 @@
 [
   {
-    "id": "197701603",
-    "artwork": "assets/images/artwork/197701603.jpg",
-    "color": "rgb(227,81,87)",
-    "contrast": "is-dark",
-    "title": "Loud Places feat. Romy Madley Croft",
-    "artist": "Jamie xx",
-    "permalink": "http://soundcloud.com/detailsofmylifenet/xx-1",
-    "duration": 218350
-  },
-  {
     "id": "193829854",
     "artwork": "assets/images/artwork/193829854.jpg",
     "color": "rgb(165,199,230)",
     "contrast": "is-light",
-    "title": "Baby Blue ft. Chance The Rapper (Prod. Mark Ronson)",
-    "artist": "ACTION BRONSON",
+    "title": "Baby Blue (ft. Chance The Rapper)",
+    "artist": "Action Bronson",
     "permalink": "http://soundcloud.com/actionbronson/baby-blue-ft-chance-the-rapper",
     "duration": 280267
   },
@@ -24,8 +14,8 @@
     "artwork": "assets/images/artwork/194041745.jpg",
     "color": "rgb(91,92,96)",
     "contrast": "is-dark",
-    "title": "Mikal Cronin \"ii) Gold\"",
-    "artist": "MergeRecords",
+    "title": "ii) Gold",
+    "artist": "Mikal Cronin",
     "permalink": "http://soundcloud.com/mergerecords/mikal-cronin-ii-gold",
     "duration": 223550
   },
@@ -44,8 +34,8 @@
     "artwork": "assets/images/artwork/194225616.jpg",
     "color": "rgb(58,56,59)",
     "contrast": "is-dark",
-    "title": "05 Flurry",
-    "artist": "hitogokoro",
+    "title": "Flurry",
+    "artist": "Ratking",
     "permalink": "http://soundcloud.com/hitogokoro/05-flurry",
     "duration": 231309
   },
@@ -54,20 +44,20 @@
     "artwork": "assets/images/artwork/193396018.jpg",
     "color": "rgb(30,30,30)",
     "contrast": "is-very-dark",
-    "title": "08 Private Number",
-    "artist": "TroubleInMind",
+    "title": "Private Number",
+    "artist": "Dick Diver",
     "permalink": "http://soundcloud.com/troubleinmind/08-private-number",
     "duration": 236247
   },
   {
-    "id": "192762070",
-    "artwork": "assets/images/artwork/192762070.jpg",
-    "color": "rgb(243,241,215)",
-    "contrast": "is-light",
-    "title": "One Too Many Things",
-    "artist": "Surf City",
-    "permalink": "http://soundcloud.com/firerecords/surf-city-one-too-many-things",
-    "duration": 172998
+    "id": "197645472",
+    "artwork": "assets/images/artwork/197645472.jpg",
+    "color": "rgb(53,57,62)",
+    "contrast": "is-dark",
+    "title": "Disease Freak",
+    "artist": "Mold Boy",
+    "permalink": "http://soundcloud.com/capturedtracks/04-disease-freak",
+    "duration": 190528
   },
   {
     "id": "191963815",
@@ -80,22 +70,12 @@
     "duration": 236690
   },
   {
-    "id": "193414245",
-    "artwork": "assets/images/artwork/193414245.jpg",
-    "color": "rgb(252,30,30)",
-    "contrast": "is-dark",
-    "title": "Cold Stares ft. Chance The Rapper + The OMys",
-    "artist": "Nosaj Thing",
-    "permalink": "http://soundcloud.com/nosajthing/nosaj-thing-cold-stares-ft-chance-the-rapper",
-    "duration": 173129
-  },
-  {
     "id": "192012024",
     "artwork": "assets/images/artwork/192012024.jpg",
     "color": "rgb(127,73,86)",
     "contrast": "is-dark",
     "title": " Buffalo",
-    "artist": "Toro y Moi",
+    "artist": "Toro Y Moi",
     "permalink": "http://soundcloud.com/carparkrecords/toro-y-moi-buffalo",
     "duration": 198105
   },
@@ -115,7 +95,7 @@
     "color": "rgb(66,52,134)",
     "contrast": "is-dark",
     "title": "Shame",
-    "artist": "YOUNG FATHERS",
+    "artist": "Young Fathers",
     "permalink": "http://soundcloud.com/youngfathers/shame-yf",
     "duration": 251033
   },
@@ -124,40 +104,40 @@
     "artwork": "assets/images/artwork/195330662.jpg",
     "color": "rgb(113,113,126)",
     "contrast": "is-dark",
-    "title": "Sufjan Stevens, \"Should Have Known Better\"",
-    "artist": "asthmatickitty",
+    "title": "Should Have Known Better",
+    "artist": "Sufjan Stevens",
     "permalink": "http://soundcloud.com/asthmatickitty/sufjan-stevens-should-have-known-better",
     "duration": 305608
   },
   {
-    "id": "191767017",
-    "artwork": "assets/images/artwork/191767017.jpg",
-    "color": "rgb(30,30,30)",
-    "contrast": "is-very-dark",
-    "title": "Swirl",
-    "artist": "Westkust",
-    "permalink": "http://soundcloud.com/luxury-gbg/westkust-swirl",
-    "duration": 194812
-  },
-  {
-    "id": "189102042",
-    "artwork": "assets/images/artwork/189102042.jpg",
-    "color": "rgb(237,240,231)",
-    "contrast": "is-light",
-    "title": "An Eye For Gold (unreleased demo)",
-    "artist": "El Perro Del Mar",
-    "permalink": "http://soundcloud.com/el-perro-del-mar/an-eye-for-gold-unreleased-demo",
-    "duration": 250485
-  },
-  {
-    "id": "192678174",
-    "artwork": "assets/images/artwork/192678174.jpg",
+    "id": "197311402",
+    "artwork": "assets/images/artwork/197311402.jpg",
     "color": "rgb(216,210,202)",
     "contrast": "is-light",
-    "title": "Cops Dont Care Pt. II",
+    "title": "Every Song Sung To A Dog",
     "artist": "Fred Thomas",
-    "permalink": "http://soundcloud.com/polyvinyl-records/fred-thomas-cops-dont-care-pt-ii-1",
-    "duration": 107216
+    "permalink": "http://soundcloud.com/polyvinyl-records/fred-thomas-every-song-sung-to-a-dog-1",
+    "duration": 232641
+  },
+  {
+    "id": "197397623",
+    "artwork": "assets/images/artwork/197397623.jpg",
+    "color": "rgb(140,141,117)",
+    "contrast": "is-dark",
+    "title": "U Boats Ft. Elucid",
+    "artist": "Billy Woods",
+    "permalink": "http://soundcloud.com/backwoodzstudioz/billy-woods-u-boats-ft-elucid",
+    "duration": 159073
+  },
+  {
+    "id": "193895079",
+    "artwork": "assets/images/artwork/193895079.jpg",
+    "color": "rgb(69,69,69)",
+    "contrast": "is-dark",
+    "title": "Taken By The Night",
+    "artist": "L'Orange & Jeremiah Jae",
+    "permalink": "http://soundcloud.com/mellomusicgroup/lorange-jeremiah-jae-taken-by-the-night",
+    "duration": 189849
   },
   {
     "id": "188154304",
@@ -190,24 +170,24 @@
     "duration": 260281
   },
   {
-    "id": "196262805",
-    "artwork": "assets/images/artwork/196262805.jpg",
-    "color": "rgb(30,30,30)",
-    "contrast": "is-very-dark",
-    "title": "Grief",
-    "artist": "Earl Sweatshirt",
-    "permalink": "http://soundcloud.com/andres-rojas-179/04-grief",
-    "duration": 250798
+    "id": "195655325",
+    "artwork": "assets/images/artwork/195655325.jpg",
+    "color": "rgb(233,229,222)",
+    "contrast": "is-light",
+    "title": "Needle In The Hay",
+    "artist": "Jen Cloher",
+    "permalink": "http://soundcloud.com/jencloher/needle-in-the-hay",
+    "duration": 215503
   },
   {
-    "id": "187184381",
-    "artwork": "assets/images/artwork/187184381.jpg",
-    "color": "rgb(64,62,64)",
-    "contrast": "is-dark",
-    "title": " Kelly",
-    "artist": "American Wrestlers",
-    "permalink": "http://soundcloud.com/fatpossum/american-wrestlers-kelly-1",
-    "duration": 287033
+    "id": "192762070",
+    "artwork": "assets/images/artwork/192762070.jpg",
+    "color": "rgb(243,241,215)",
+    "contrast": "is-light",
+    "title": "One Too Many Things",
+    "artist": "Surf City",
+    "permalink": "http://soundcloud.com/firerecords/surf-city-one-too-many-things",
+    "duration": 172998
   },
   {
     "id": "193712917",
@@ -220,96 +200,6 @@
     "duration": 260150
   },
   {
-    "id": "197311402",
-    "artwork": "assets/images/artwork/197311402.jpg",
-    "color": "rgb(216,210,202)",
-    "contrast": "is-light",
-    "title": "Every Song Sung To A Dog",
-    "artist": "Fred Thomas",
-    "permalink": "http://soundcloud.com/polyvinyl-records/fred-thomas-every-song-sung-to-a-dog-1",
-    "duration": 232641
-  },
-  {
-    "id": "195655325",
-    "artwork": "assets/images/artwork/195655325.jpg",
-    "color": "rgb(233,229,222)",
-    "contrast": "is-light",
-    "title": "Needle In The Hay",
-    "artist": "jencloher",
-    "permalink": "http://soundcloud.com/jencloher/needle-in-the-hay",
-    "duration": 215503
-  },
-  {
-    "id": "197949473",
-    "artwork": "assets/images/artwork/197949473.jpg",
-    "color": "rgb(231,30,30)",
-    "contrast": "is-dark",
-    "title": "FLAREtWO",
-    "artist": "SBTRKT",
-    "permalink": "http://soundcloud.com/sbtrkt/flaretwo",
-    "duration": 297352
-  },
-  {
-    "id": "197645472",
-    "artwork": "assets/images/artwork/197645472.jpg",
-    "color": "rgb(53,57,62)",
-    "contrast": "is-dark",
-    "title": "Disease Freak",
-    "artist": "Mold Boy",
-    "permalink": "http://soundcloud.com/capturedtracks/04-disease-freak",
-    "duration": 190528
-  },
-  {
-    "id": "197513524",
-    "artwork": "assets/images/artwork/197513524.jpg",
-    "color": "rgb(193,181,171)",
-    "contrast": "is-light",
-    "title": "Run Baby Run",
-    "artist": "Toro Y Moi",
-    "permalink": "http://soundcloud.com/carparkrecords/toro-y-moi-run-baby-run",
-    "duration": 165370
-  },
-  {
-    "id": "177374601",
-    "artwork": "assets/images/artwork/177374601.jpg",
-    "color": "rgb(210,214,217)",
-    "contrast": "is-light",
-    "title": "The Math (Official Single)",
-    "artist": "Pale Blue",
-    "permalink": "http://soundcloud.com/capturedtracks/the-math",
-    "duration": 350596
-  },
-  {
-    "id": "197397623",
-    "artwork": "assets/images/artwork/197397623.jpg",
-    "color": "rgb(140,141,117)",
-    "contrast": "is-dark",
-    "title": "U Boats Ft. Elucid",
-    "artist": "Billy Woods",
-    "permalink": "http://soundcloud.com/backwoodzstudioz/billy-woods-u-boats-ft-elucid",
-    "duration": 159073
-  },
-  {
-    "id": "193895079",
-    "artwork": "assets/images/artwork/193895079.jpg",
-    "color": "rgb(69,69,69)",
-    "contrast": "is-dark",
-    "title": "Taken By The Night",
-    "artist": "L'Orange & Jeremiah Jae",
-    "permalink": "http://soundcloud.com/mellomusicgroup/lorange-jeremiah-jae-taken-by-the-night",
-    "duration": 189849
-  },
-  {
-    "id": "197837921",
-    "artwork": "assets/images/artwork/197837921.jpg",
-    "color": "rgb(212,208,207)",
-    "contrast": "is-light",
-    "title": "Queen Lullabye (Live At Pickathon)",
-    "artist": "Ty Segall",
-    "permalink": "http://soundcloud.com/easysoundrecordingco/ty-segall-queen-lullabye-live",
-    "duration": 204166
-  },
-  {
     "id": "197837884",
     "artwork": "assets/images/artwork/197837884.jpg",
     "color": "rgb(155,206,208)",
@@ -318,5 +208,15 @@
     "artist": "King Tuff",
     "permalink": "http://soundcloud.com/easysoundrecordingco/king-tuff-shes-on-fire-live-at",
     "duration": 207822
+  },
+  {
+    "id": "190019209",
+    "artwork": "assets/images/artwork/190019209.jpg",
+    "color": "rgb(226,201,232)",
+    "contrast": "is-light",
+    "title": "Purple (Zikomo Remix)",
+    "artist": "Crustation/J Dilla",
+    "permalink": "http://soundcloud.com/zikomo/j-dilla-purple-zikomo-remix",
+    "duration": 254378
   }
 ]
