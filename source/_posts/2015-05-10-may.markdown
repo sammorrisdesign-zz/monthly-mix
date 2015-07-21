@@ -4,4 +4,14 @@ title:  "May"
 date:   2015-05-10 20:15:00
 soundcloud: https://soundcloud.com/sam-morris-30/sets/may-2015
 fetch: false
+artist-202965984: Julio Bashmore
+artist-89938403: Shopping
+title-203407092: Inhale Exhale
+artist-206024766: Ultimate Painting
+title-206024766: Break The Chain
+artist-203926260: Mourn
+title-202973107: Lately
+artist-202866111: Nosaj Thing
+artist-205342795: Chris Lake & Chris Lorenzo
+title-205342795: Piano Hand
 ---

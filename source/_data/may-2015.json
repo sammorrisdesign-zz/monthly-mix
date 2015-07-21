@@ -10,14 +10,14 @@
     "duration": 156513
   },
   {
-    "id": "200337518",
-    "artwork": "assets/images/artwork/200337518.jpg",
-    "color": "rgb(35,37,37)",
-    "contrast": "is-very-dark",
-    "title": "Call It Off",
-    "artist": "Shamir",
-    "permalink": "http://soundcloud.com/abner-freitas-3/shamir-call-it-off",
-    "duration": 168112
+    "id": "202965984",
+    "artwork": "assets/images/artwork/202965984.jpg",
+    "color": "rgb(214,199,239)",
+    "contrast": "is-light",
+    "title": "Holding On feat. Sam Dew",
+    "artist": "Julio Bashmore",
+    "permalink": "http://soundcloud.com/juliobashmoremusic/holding-on-feat-sam-dew",
+    "duration": 282540
   },
   {
     "id": "203997573",
@@ -35,49 +35,39 @@
     "color": "rgb(240,174,36)",
     "contrast": "is-light",
     "title": "In Other Words",
-    "artist": "SHOPPING",
+    "artist": "Shopping",
     "permalink": "http://soundcloud.com/shoppingband/in-other-words-1",
     "duration": 192800
   },
   {
-    "id": "206420134",
-    "artwork": "assets/images/artwork/206420134.jpg",
-    "color": "rgb(76,80,136)",
-    "contrast": "is-dark",
-    "title": "I Know Theres Gonna Be (Good Times) ft. Young Thug",
-    "artist": "Jamie xx",
-    "permalink": "http://soundcloud.com/dominik-ukawski/i-know-theres-gonna-be-good",
-    "duration": 177257
-  },
-  {
-    "id": "202499624",
-    "artwork": "assets/images/artwork/202499624.jpg",
-    "color": "rgb(30,30,30)",
-    "contrast": "is-very-dark",
-    "title": "Planes Remix",
-    "artist": "Jeremih",
-    "permalink": "http://soundcloud.com/chancetherapper/jeremih-planes-remix-lido-the-social-experiment",
-    "duration": 240139
-  },
-  {
-    "id": "202965984",
-    "artwork": "assets/images/artwork/202965984.jpg",
-    "color": "rgb(214,199,239)",
+    "id": "204158964",
+    "artwork": "assets/images/artwork/204158964.jpg",
+    "color": "rgb(234,234,234)",
     "contrast": "is-light",
-    "title": "Holding On feat. Sam Dew",
-    "artist": "juliobashmoremusic",
-    "permalink": "http://soundcloud.com/juliobashmoremusic/holding-on-feat-sam-dew",
-    "duration": 282540
+    "title": "Seven Sisters",
+    "artist": "RealLies",
+    "permalink": "http://soundcloud.com/real_lies/seven-sisters",
+    "duration": 186975
   },
   {
     "id": "206024766",
     "artwork": "assets/images/artwork/206024766.jpg",
     "color": "rgb(166,187,193)",
     "contrast": "is-light",
-    "title": "Ultimate Painting \"Break The Chain\"",
-    "artist": "TroubleInMind",
+    "title": "Break The Chain",
+    "artist": "Ultimate Painting",
     "permalink": "http://soundcloud.com/troubleinmind/ultimate-painting-break-the-chain-1",
     "duration": 183421
+  },
+  {
+    "id": "203407092",
+    "artwork": "assets/images/artwork/203407092.jpg",
+    "color": "rgb(218,215,210)",
+    "contrast": "is-light",
+    "title": "Inhale Exhale",
+    "artist": "Nao",
+    "permalink": "http://soundcloud.com/thisnao/nao-inhale-exhale",
+    "duration": 185225
   },
   {
     "id": "203926260",
@@ -85,19 +75,39 @@
     "color": "rgb(138,79,82)",
     "contrast": "is-dark",
     "title": "Gertrudis, Get Through This!",
-    "artist": "capturedtracks",
+    "artist": "Mourn",
     "permalink": "http://soundcloud.com/capturedtracks/01-gertrudis-get-through-this",
     "duration": 159282
+  },
+  {
+    "id": "206104528",
+    "artwork": "assets/images/artwork/206104528.jpg",
+    "color": "rgb(30,30,30)",
+    "contrast": "is-very-dark",
+    "title": "Bust No Moves feat. CUZ",
+    "artist": "Run The Jewels",
+    "permalink": "http://soundcloud.com/massappealrecs/run-the-jewels-bust-no-moves-feat-cuz",
+    "duration": 193298
   },
   {
     "id": "202973107",
     "artwork": "assets/images/artwork/202973107.jpg",
     "color": "rgb(81,94,92)",
     "contrast": "is-dark",
-    "title": "Lately [prod. by Mic Kellogg]",
+    "title": "Lately",
     "artist": "WebsterX",
     "permalink": "http://soundcloud.com/websterx/lately-prod-by-mic-kellogg",
     "duration": 240636
+  },
+  {
+    "id": "197436142",
+    "artwork": "assets/images/artwork/197436142.jpg",
+    "color": "rgb(30,30,39)",
+    "contrast": "is-very-dark",
+    "title": "Very First Breath ft Irfane",
+    "artist": "Hudson Mohawke",
+    "permalink": "http://soundcloud.com/hudsonmohawke/very-first-breath-feat-irfane",
+    "duration": 184389
   },
   {
     "id": "206384777",
@@ -120,54 +130,14 @@
     "duration": 185669
   },
   {
-    "id": "206387368",
-    "artwork": "assets/images/artwork/206387368.jpg",
-    "color": "rgb(105,104,103)",
-    "contrast": "is-dark",
-    "title": "Dream Lover",
-    "artist": "Destroyer",
-    "permalink": "http://soundcloud.com/destroyerband/dream-lover",
-    "duration": 228931
-  },
-  {
-    "id": "204158964",
-    "artwork": "assets/images/artwork/204158964.jpg",
-    "color": "rgb(234,234,234)",
-    "contrast": "is-light",
-    "title": "Seven Sisters",
-    "artist": "RealLies",
-    "permalink": "http://soundcloud.com/real_lies/seven-sisters",
-    "duration": 186975
-  },
-  {
-    "id": "198783364",
-    "artwork": "assets/images/artwork/198783364.jpg",
-    "color": "rgb(90,88,52)",
-    "contrast": "is-dark",
-    "title": "Survival",
-    "artist": "Adult Mom",
-    "permalink": "http://soundcloud.com/tinyengines/adult-mom-survival",
-    "duration": 169732
-  },
-  {
     "id": "202866111",
     "artwork": "assets/images/artwork/202866111.jpg",
     "color": "rgb(30,30,75)",
     "contrast": "is-very-dark",
     "title": "Let You",
-    "artist": "NOSAJ THING",
+    "artist": "Nosaj Thing",
     "permalink": "http://soundcloud.com/nosajthing/let-you",
     "duration": 174357
-  },
-  {
-    "id": "203407092",
-    "artwork": "assets/images/artwork/203407092.jpg",
-    "color": "rgb(218,215,210)",
-    "contrast": "is-light",
-    "title": "Inhale Exhale (new EP February 15 out now)",
-    "artist": "Nao",
-    "permalink": "http://soundcloud.com/thisnao/nao-inhale-exhale",
-    "duration": 185225
   },
   {
     "id": "198934682",
@@ -180,16 +150,6 @@
     "duration": 235568
   },
   {
-    "id": "206104528",
-    "artwork": "assets/images/artwork/206104528.jpg",
-    "color": "rgb(30,30,30)",
-    "contrast": "is-very-dark",
-    "title": "Bust No Moves feat. CUZ",
-    "artist": "Run The Jewels",
-    "permalink": "http://soundcloud.com/massappealrecs/run-the-jewels-bust-no-moves-feat-cuz",
-    "duration": 193298
-  },
-  {
     "id": "206555217",
     "artwork": "assets/images/artwork/206555217.jpg",
     "color": "rgb(216,216,213)",
@@ -198,6 +158,16 @@
     "artist": "J Fernandez",
     "permalink": "http://soundcloud.com/joyful-noise-recordings/j-fernandez-between-the-channels-1",
     "duration": 236560
+  },
+  {
+    "id": "205342795",
+    "artwork": "assets/images/artwork/205342795.jpg",
+    "color": "rgb(37,49,52)",
+    "contrast": "is-dark",
+    "title": "Piano Hand",
+    "artist": "Chris Lake & Chris Lorenzo",
+    "permalink": "http://soundcloud.com/chrislake/chris-lake-chris-lorenzo-piano-hand-original",
+    "duration": 266787
   },
   {
     "id": "206419080",
@@ -218,5 +188,15 @@
     "artist": "Spirit Club",
     "permalink": "http://soundcloud.com/ghost-ramp/spirit-club-still-life",
     "duration": 187941
+  },
+  {
+    "id": "207272310",
+    "artwork": "assets/images/artwork/207272310.jpg",
+    "color": "rgb(232,229,221)",
+    "contrast": "is-light",
+    "title": "Cherry Picking",
+    "artist": "Girlpool",
+    "permalink": "http://soundcloud.com/wichita-recordings/girlpool-cherry-picking",
+    "duration": 215216
   }
 ]
