@@ -35,7 +35,7 @@
     "color": "rgb(248,107,127)",
     "contrast": "is-dark",
     "title": "In Vain",
-    "artist": "MOVIE.",
+    "artist": "Movie",
     "permalink": "http://soundcloud.com/listentomovie/in-vain-3",
     "duration": 185093
   },
@@ -48,26 +48,6 @@
     "artist": "Django Django",
     "permalink": "http://soundcloud.com/djangodjango/first-light",
     "duration": 288915
-  },
-  {
-    "id": "184895628",
-    "artwork": "assets/images/artwork/184895628.jpg",
-    "color": "rgb(228,216,223)",
-    "contrast": "is-light",
-    "title": "Off Peak Dreams",
-    "artist": "Ghostpoet",
-    "permalink": "http://soundcloud.com/ghostpoet/off-peak-dreams",
-    "duration": 198313
-  },
-  {
-    "id": "184599429",
-    "artwork": "assets/images/artwork/184599429.jpg",
-    "color": "rgb(121,123,131)",
-    "contrast": "is-dark",
-    "title": "Cat Food",
-    "artist": "Aesop Rock",
-    "permalink": "http://soundcloud.com/rhymesayers/aesop-rock-cat-food",
-    "duration": 204610
   },
   {
     "id": "179670551",
@@ -85,19 +65,9 @@
     "color": "rgb(40,49,30)",
     "contrast": "is-dark",
     "title": "Essay to write",
-    "artist": "trust fund",
+    "artist": "Trust Fund",
     "permalink": "http://soundcloud.com/trust-fund/essay-to-write",
     "duration": 188830
-  },
-  {
-    "id": "182844642",
-    "artwork": "assets/images/artwork/182844642.jpg",
-    "color": "rgb(135,143,55)",
-    "contrast": "is-dark",
-    "title": "Primrose Green",
-    "artist": "Ryley Walker",
-    "permalink": "http://soundcloud.com/deadoceans/ryley-walker-primrose-green",
-    "duration": 247401
   },
   {
     "id": "130904324",
@@ -134,30 +104,10 @@
     "artwork": "assets/images/artwork/184964202.jpg",
     "color": "rgb(36,33,33)",
     "contrast": "is-very-dark",
-    "title": "Actin Crazy (Prod. By 40 and Omen)",
+    "title": "Actin Crazy",
     "artist": "Action Bronson",
     "permalink": "http://soundcloud.com/actionbronson/action-bronson-actin-crazy",
     "duration": 218063
-  },
-  {
-    "id": "186984002",
-    "artwork": "assets/images/artwork/186984002.jpg",
-    "color": "rgb(171,155,153)",
-    "contrast": "is-dark",
-    "title": "The Mountain Goats \"The Legend of Chavo Guerrero\"",
-    "artist": "MergeRecords",
-    "permalink": "http://soundcloud.com/mergerecords/the-mountain-goats-the-legend-of-chavo-guerrero",
-    "duration": 180235
-  },
-  {
-    "id": "186693204",
-    "artwork": "assets/images/artwork/186693204.jpg",
-    "color": "rgb(62,67,70)",
-    "contrast": "is-dark",
-    "title": "Lupe Fiasco/Mural /Tetsou & Youth January 20th",
-    "artist": "I'm Chris Johnson",
-    "permalink": "http://soundcloud.com/chris-johnson-361/lupe-fiasco-mural",
-    "duration": 499402
   },
   {
     "id": "171085572",
@@ -185,27 +135,17 @@
     "color": "rgb(30,30,30)",
     "contrast": "is-very-dark",
     "title": "Where's your car Debbie?",
-    "artist": "slaves (band)",
+    "artist": "Slaves",
     "permalink": "http://soundcloud.com/slavesband/wheres-your-car-debbie-1",
     "duration": 142589
-  },
-  {
-    "id": "182271061",
-    "artwork": "assets/images/artwork/182271061.jpg",
-    "color": "rgb(237,233,230)",
-    "contrast": "is-light",
-    "title": "#Aweday prod. by Fumitake Tamura/Bun",
-    "artist": "Busdriver",
-    "permalink": "http://soundcloud.com/busdriver-of-hellfyre/busdriver-aweday-prod-by-fumitake-tamurabun",
-    "duration": 201082
   },
   {
     "id": "187356739",
     "artwork": "assets/images/artwork/187356739.jpg",
     "color": "rgb(91,92,96)",
     "contrast": "is-dark",
-    "title": "Mikal Cronin \"Made My Mind Up\"",
-    "artist": "MergeRecords",
+    "title": "Made My Mind Up",
+    "artist": "Mikal Cronin",
     "permalink": "http://soundcloud.com/mergerecords/mikal-cronin-made-my-mind-up",
     "duration": 211453
   },
@@ -270,16 +210,6 @@
     "duration": 300410
   },
   {
-    "id": "180167809",
-    "artwork": "assets/images/artwork/180167809.jpg",
-    "color": "rgb(137,45,80)",
-    "contrast": "is-dark",
-    "title": "Lonely Boy and Girl",
-    "artist": "Callum Pickard",
-    "permalink": "http://soundcloud.com/callumpickard/lonely-boy-and-girl",
-    "duration": 293878
-  },
-  {
     "id": "187963669",
     "artwork": "assets/images/artwork/187963669.jpg",
     "color": "rgb(105,110,141)",
@@ -298,16 +228,6 @@
     "artist": "Apidae",
     "permalink": "http://soundcloud.com/dumontdumont/apidae-turning-tides",
     "duration": 253097
-  },
-  {
-    "id": "187786548",
-    "artwork": "assets/images/artwork/187786548.jpg",
-    "color": "rgb(216,153,106)",
-    "contrast": "is-dark",
-    "title": "Then What",
-    "artist": "Balthazarband",
-    "permalink": "http://soundcloud.com/balthazarband/then-what-1",
-    "duration": 249466
   },
   {
     "id": "185242985",
