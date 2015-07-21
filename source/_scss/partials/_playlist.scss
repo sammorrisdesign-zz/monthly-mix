@@ -35,6 +35,11 @@
         padding-top: 40%;
     }
 
+    @include mq(tablet) {
+        width: 220px;
+        padding-top: 220px;
+    }
+
     &:hover {
         .playlist__entry__info {
             top: 10%;
