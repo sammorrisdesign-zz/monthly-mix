@@ -1,7 +1,7 @@
 @mixin playlist-layout() {
     @for $i from 1 through 5 {
         &.horizontal--#{$i} {
-            margin-left: 3% * $i;
+            margin-left: 2.5% * $i;
         }
     }
 
