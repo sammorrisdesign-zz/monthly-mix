@@ -30,7 +30,25 @@ layout: default
     </article>
 </div>
 
-<div class="controls is-default">
+<div class="controls controls--active is-default">
+    <div class="progress-bar">
+        <div class="progress-bar__current"></div>
+    </div>
+    <h1 class="controls__title title">
+        <span class="controls__title__track-artist track__artist"></span>
+        <span class="controls__title__track-title track__title">{{ page.title }} {{ page.date | date: "%Y" }}</span>
+    </h1>
+    <div class="controls__buttons">
+        <div class="audio-controls input sub">
+            <span class="audio-controls__pause">{% svg icon-pause %} <span class="controls__tablet-label">Pause</span></span>
+            <span class="audio-controls__play">{% svg icon-play %} <span class="controls__tablet-label">Play</span></span>
+        </div>
+        <div class="controls__buttons__skip input sub">{% svg icon-skip %} <span class="controls__tablet-label">Skip</span></div>
+        <div class="controls__buttons__soundcloud input sub"><a target="_blank"><span class="controls__tablet-label">Open in</span> Soundcloud</a></div>
+    </div>
+</div>
+
+<div class="controls controls--next is-default">
     <div class="progress-bar">
         <div class="progress-bar__current"></div>
     </div>
