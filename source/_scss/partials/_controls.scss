@@ -3,7 +3,7 @@
     z-index: 20;
     bottom: 0;
     width: 100%;
-    padding: $g-gutter;
+    padding: ($g-gutter / 1.25) $g-gutter;
     background-color: $c-black;
     color: $c-white;
 
@@ -57,6 +57,12 @@
     }
 
     &.is-default {
+        .controls__title {
+            @include mq($until: tablet) {
+                margin: 0.6875em 0;
+            }
+        }
+
         .controls__title__track-title {
             color: $c-light-grey;
         }
@@ -97,42 +103,59 @@
 }
 
 .controls__buttons {
-    position: relative;
+    position: absolute;
     z-index: 20;
-
-    @include mq(tablet) {
-        position: absolute;
-        z-index: 20;
-        right: $g-gutter;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        text-align: right;
-        height: 36px;
-    }
+    right: $g-gutter;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: right;
+    height: 36px;
 
     .input:first-of-type {
         margin-left: 0;
     }
 }
 
-.controls__buttons__soundcloud {
+.controls__buttons__soundcloud,
+.controls__buttons__skip {
     @include mq($until: tablet) {
-        float: right;
+        display: none;
     }
 }
 
 .controls__title {
     position: relative;
     z-index: 20;
-    display: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 50px; // To compensate for buttons
+    color: rgba(#000, .6);
+
+    .is-very-dark & {
+        color: rgba(#fff, .8);
+    }
+
+    // Mimics .sub class styles
+    @include mq($until: mobile) {
+        font-size: 1.4rem;
+        line-height: 2.0rem;
+    }
+
+    @include mq($until: tablet) {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+    }
 
     @include mq(tablet) {
+        margin-right: 380px; // To compensate for buttons
+    }
+}
+
+.controls__title__track-artist {
+    @include mq($until: tablet) {
         display: block;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin-right: 380px;
     }
 }
 
