@@ -124,15 +124,19 @@
     }
 }
 
+.controls__buttons__soundcloud {
+    @include mq($until: tablet) {
+        float: right;
+    }
+}
+
 .controls__title {
     position: relative;
     z-index: 20;
-
-    @include mq($until: tablet) {
-        margin-bottom: 16px;
-    }
+    display: none;
 
     @include mq(tablet) {
+        display: block;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
