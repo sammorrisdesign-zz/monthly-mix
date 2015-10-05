@@ -7,6 +7,10 @@
     background-color: $c-black;
     color: $c-white;
 
+    @include mq(tablet) {
+        padding: $g-gutter;
+    }
+
     a {
         color: $c-white;
 
