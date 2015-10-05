@@ -52,10 +52,6 @@
         .playlist__entry__info {
             top: 100%;
         }
-
-        &:hover .playlist__entry__info {
-            top: 50%;
-        }
     }
 
     &.is-loading.is-playing {
