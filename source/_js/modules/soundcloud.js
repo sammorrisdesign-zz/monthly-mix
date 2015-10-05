@@ -127,7 +127,7 @@ define([
         },
 
         updateProgressBar: function(duration, position) {
-            bonzo(qwery('.progress-bar__current')).attr('style', 'width:' + (position / duration) * 100 + '%;')
+            bonzo(qwery('.controls--active .progress-bar__current')).attr('style', 'width:' + (position / duration) * 100 + '%;')
         },
 
         newTrack: function(trackId, scrollTo) {
