@@ -48,6 +48,10 @@
         }
     }
 
+    &:first-of-type {
+        margin-bottom: -12px;
+    }
+
     &.is-playing {
         .playlist__entry__info {
             top: 100%;
