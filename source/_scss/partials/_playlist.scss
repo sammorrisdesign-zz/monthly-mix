@@ -32,13 +32,18 @@
     @include playlist-layout;
 
     @include mq(mobile) {
-        width: 40%;
-        padding-top: 40%;
+        width: 35%;
+        padding-top: 35%;
     }
 
     @include mq(tablet) {
-        width: 220px;
-        padding-top: 220px;
+        width: 190px;
+        padding-top: 190px;
+    }
+
+    @include mq(wide) {
+        width: 240px;
+        padding-top: 240px;
     }
 
     &:hover {
