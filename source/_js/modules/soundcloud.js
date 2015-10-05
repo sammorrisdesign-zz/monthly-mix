@@ -112,6 +112,7 @@ define([
             bonzo(qwery('.playlist')).attr("style", track['color'].replace(')', ', 0.2)').replace('rgb', 'rgba'));
             bonzo(qwery('.controls--next .controls__title__track-artist')).text(track['artist']);
             bonzo(qwery('.controls--next .controls__title__track-title')).text(track['title']);
+            bonzo(qwery('.controls--next .progress-bar__current')).attr('style', 'width: 0%;');
             bonzo(qwery('.controls--active')).removeClass("controls--active").addClass("controls--previous");
             bonzo(qwery('.controls--next')).removeClass("controls--next").addClass("controls--active");
             bonzo(qwery('.controls--previous')).removeClass("controls--previous").addClass("controls--next");
