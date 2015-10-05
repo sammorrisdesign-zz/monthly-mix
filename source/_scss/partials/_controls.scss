@@ -19,6 +19,7 @@
 
     .input,
     svg path {
+        user-select: none;
         // @include transition(color 0.5s, background-color 0.5s, fill 0.5s);
     }
 
