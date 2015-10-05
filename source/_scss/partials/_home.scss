@@ -50,6 +50,7 @@
     > div {
         position: relative;
         z-index: 4;
+        -webkit-transform: translate3d(0,0,0);
     }
 
     // Compensation for fixed navigation
@@ -347,6 +348,7 @@
 
 .home-canvas {
     position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
     right: 0;
