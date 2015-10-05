@@ -1,7 +1,9 @@
 define([
-    'libs/qwery'
+    'libs/qwery',
+    'utils/typekit-cache'
 ], function(
-    qwery
+    qwery,
+    typekitCache
 ) {
     var config = {
         kitId: 'tiu5deg',
@@ -10,12 +12,23 @@ define([
 
     return {
         init: function(d) {
+
+            typekitCache(document, Element.prototype, localStorage, 'tk', 'https://use.typekit.net');
+
+            var tkTimeout = 3000;
+            if(window.sessionStorage){if(sessionStorage.getItem('useTypekit')==='false'){tkTimeout=0;}}
+
             var h = qwery('html');
             h.className += ' wf-loading';
+            
             var t = setTimeout(function() {
-              h.className = h.className.replace(/(\s|^)wf-loading(\s|$)/g, ' ');
-              h.className += ' wf-inactive';
+                h.className = h.className.replace(/(\s|^)wf-loading(\s|$)/g, ' ');
+                h.className += ' wf-inactive';
+                if (window.sessionStorage) {
+                    sessionStorage.setItem("useTypekit", "false");
+                }
             }, config.scriptTimeout);
+
             var d = false;
             var tk = document.createElement('script');
             tk.src = '//use.typekit.net/' + config.kitId + '.js';
@@ -30,6 +43,7 @@ define([
             };
             var s = qwery('script')[0];
             s.parentNode.insertBefore(tk, s);
+
         }
     }
 });
