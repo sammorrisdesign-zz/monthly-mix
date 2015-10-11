@@ -24,6 +24,7 @@ define([
 
             defaultTitle = document.title;
             this.bindEvents();
+            this.initPlayer();
         },
 
         bindEvents: function() {
@@ -136,6 +137,7 @@ define([
 
             // Set options for player
             var myOptions = {
+                useHTML5Audio: true,
                 onload : function() {
                     // readyState 2 means failed or error in fetching track
                     if (this.readyState == 2) {
@@ -154,7 +156,7 @@ define([
                     this.updateProgressBar(sound.durationEstimate, sound.position);
                 }.bind(this),
                 ondataerror: function() {
-                    console.log("errorz");
+                    console.log("error");
                 },
                 onplay: function() {
                     this.loadingState(el, true);
@@ -162,15 +164,22 @@ define([
             }
 
             SC.whenStreamingReady(function() {
-                var obj = SC.stream('/tracks/' + trackId, myOptions, function(obj){
-                    obj.play();
+                SC.stream('/tracks/' + trackId, myOptions, function(obj){
                     sound = obj;
+                    sound.play();
                     context.onPlay(el);
                     if (scrollTo) {
                         context.scrollToTrack(el);
                     }
                 });
-                sound.load();
+            });
+        },
+
+        initPlayer: function() {
+            // Triggers audio for mobile devices
+            SC.whenStreamingReady(function() {
+               SC.stream('/tracks/' + bonzo(qwery('.playlist__entry')).attr('data-track-id'), {}, function(obj) {
+               }) 
             });
         },
 
@@ -178,6 +187,7 @@ define([
             scrollTo = scrollTo || false;
             el = bonzo(qwery('#playlist__entry--' + trackId));
             current = bonzo(qwery('.is-playing'));
+            this.loadingState(el, false);
 
             if (sound) {
                 // Check if it's the same track
