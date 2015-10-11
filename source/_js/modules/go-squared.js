@@ -11,6 +11,13 @@ define([
             insertBefore(d,q)}(window,document,'script','_gs');
             
             _gs('GSN-411731-V');
+        },
+
+        newTrack: function(trackId, playlistTitle) {
+            _gs('event', 'Played track ' + trackId + ' on playlist for ' + playlistTitle, {
+              extra: 'event',
+              details: true
+            });
         }
     }
 });

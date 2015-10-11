@@ -4,15 +4,17 @@ define([
     'libs/qwery',
     'utils/loadJSON',
     'utils/scroller',
+    'modules/go-squared',
     'sc'
 ], function(
     bean,
     bonzo,
     qwery,
     loadJSON,
-    scroller
+    scroller,
+    goSquared
 ) {
-    var sound, defaultTitle;
+    var sound, defaultTitle, playlistTitle;
 
     return {
         init: function() {
@@ -23,6 +25,7 @@ define([
             });
 
             defaultTitle = document.title;
+            playlistTitle = bonzo(qwery(".header__block .post-title")).text();
             this.bindEvents();
             this.initPlayer();
         },
@@ -134,6 +137,8 @@ define([
 
         newTrack: function(trackId, scrollTo) {
             context = this;
+
+            goSquared.newTrack(trackId, playlistTitle);
 
             // Set options for player
             var myOptions = {
