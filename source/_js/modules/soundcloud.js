@@ -138,7 +138,9 @@ define([
         newTrack: function(trackId, scrollTo) {
             context = this;
 
-            goSquared.newTrack(trackId, playlistTitle);
+            trackArtist = bonzo(qwery("#playlist__entry--" + trackId + " .track__artist")).text();
+            trackTitle = bonzo(qwery("#playlist__entry--" + trackId + " .track__title")).text();
+            goSquared.newTrack(trackArtist, trackTitle, playlistTitle);
 
             // Set options for player
             var myOptions = {

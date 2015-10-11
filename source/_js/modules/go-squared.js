@@ -13,8 +13,8 @@ define([
             _gs('GSN-411731-V');
         },
 
-        newTrack: function(trackId, playlistTitle) {
-            _gs('event', 'Played track ' + trackId + ' on playlist for ' + playlistTitle, {
+        newTrack: function(trackArtist, trackTitle,playlistTitle) {
+            _gs('event', 'Played ' + trackArtist + ' – "' + trackTitle + '" on playlist for ' + playlistTitle, {
               extra: 'event',
               details: true
             });
