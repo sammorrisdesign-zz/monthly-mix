@@ -1,7 +1,17 @@
 .container {
+    position: relative;
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 $g-gutter;
+    overflow: auto;
+
+    .home & {
+        @include mq(tablet) {
+            max-width: 600px;
+            padding-left: 300px - $g-gutter;
+            box-sizing: initial;
+        }
+    }
 }
 
 @keyframes background {
@@ -65,23 +75,18 @@
     z-index: 10;
     overflow: hidden;
     width: 100%;
-    padding: 20px 0;
+    padding: $g-gutter 0;
     background: transparent;
 }
 
 .home-title {
     font-weight: bold;
+    margin-bottom: $g-gutter / 2;
 
-    &.title {
-        @include mq($until: tablet) {
-            margin-bottom: $g-gutter / 2;
-        }
-
-        @include mq(tablet) {
-            width: 33%;
-            display: inline-block;
-            float: left;
-        }
+    @include mq(tablet) {
+        position: absolute;
+        left: $g-gutter;
+        margin-bottom: 0;
     }
 }
 
@@ -97,8 +102,7 @@
     }
 
     .container {
-        position: relative;
-        z-index: 10;
+        padding-left: $g-gutter;
     }
 }
 
@@ -192,17 +196,24 @@
         opacity: .2;
     }
 
-    .container {
-        position: relative;
-        z-index: 2;
-    }
-
     .home-playlists__title {
         font-size: 3.4rem;
-        margin: 8px 0 0 -3px;
+        line-height: 1.1;
 
         @include mq(tablet) {
             font-size: 4.8rem;
+            margin-top: -3px;
+        }
+    }
+    
+    .home-playlists__meta {
+        display: none;
+
+        @include mq(mobile) {
+            display: block;
+            position: absolute;
+            top: 4px;
+            right: 0;
         }
     }
 
@@ -213,6 +224,7 @@
 
     .home-playlists__description {
         padding-left: 0;
+        max-width: 500px;
     }
 
     .input {
@@ -230,10 +242,7 @@
 }
 
 .home-recent__content {
-    @include mq(tablet) {
-        float: left;
-        width: 66%;
-    }
+    position: relative;
 
     a:hover {
         text-decoration: none;
@@ -259,14 +268,6 @@
         padding: $g-gutter * 2 0;
     }
 
-    .container {
-        overflow: auto;
-
-        @include mq(tablet) {
-            padding-bottom: $g-gutter * 2;
-        }
-    }
-
     .sign-up__input {
         border-color: $c-grey;
         color: $c-grey;
@@ -281,10 +282,7 @@
 }
 
 .home-subscribe__content {
-    @include mq(tablet) {
-        float: left;
-        width: 66%;
-    }
+    
 }
 
 .home-subscribe__description {
@@ -310,10 +308,8 @@
     color: $c-grey;
 
     @include mq(tablet) {
-        width: 66%;
-        float: left;
         @include column-count(2);
-        @include column-gap($g-gutter);
+        @include column-gap($g-gutter * 2);
     }
 
     strong {
@@ -328,8 +324,9 @@
 
     p {
         display: block;
-        margin-bottom: 1em;
-        @include column-break-inside(avoid)
+        padding-bottom: 1em;
+        @include column-break-inside(avoid);
+        max-width: 500px;
     }
 }
 
@@ -339,6 +336,10 @@
 
     @include mq(tablet) {
         padding-bottom: 300px;
+    }
+
+    .container {
+        padding-left: $g-gutter;
     }
 
     a {

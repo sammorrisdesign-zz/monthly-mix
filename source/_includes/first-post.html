@@ -1,13 +1,14 @@
 {% assign post = site.posts.first %}
 {% assign playlist = post.soundcloud | split: '/' %}
 <a href="{{ post.url | prepend: site.baseurl }}">
-    <p class="home-playlists__time sub">
-        {% assign duration = 0 %}
-        {% for track in site.data.[playlist.last] %}
-        {% assign duration = duration | plus: track.duration %}
-        {% endfor %}
-        {% totalduration duration %}
-    </p>
+    <div class="home-playlists__meta">
+        <p class="home-playlists__time sub">
+            {% include duration.html %}
+        </p>
+        <p class="home-playlists__track-count sub">
+            {{ site.data.[playlist.last].size }} tracks
+        </p>
+    </div>
     <h3 class="home-playlists__title title">{{ post.title }} {{ post.date | date: "%Y" }}</h3>
     {% include stripe.html %}
     <p class="home-playlists__description sub">Featuring
