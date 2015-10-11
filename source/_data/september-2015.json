@@ -1,15 +1,5 @@
 [
   {
-    "id": "222924366",
-    "artwork": "assets/images/artwork/222924366.jpg",
-    "color": "rgb(35,51,65)",
-    "contrast": "is-dark",
-    "title": "Milo \"Zen Scientist (feat. Myka 9)\"",
-    "artist": "ALPHA PUP",
-    "permalink": "http://soundcloud.com/alphapup/milo-zen-scientist-feat-myka-10",
-    "duration": 230133
-  },
-  {
     "id": "223228432",
     "artwork": "assets/images/artwork/223228432.jpg",
     "color": "rgb(30,30,33)",
@@ -34,10 +24,20 @@
     "artwork": "assets/images/artwork/223727290.jpg",
     "color": "rgb(225,223,227)",
     "contrast": "is-light",
-    "title": "Dopamine (Official Single)",
+    "title": "Dopamine",
     "artist": "DIIV",
     "permalink": "http://soundcloud.com/capturedtracks/diiv-dopamine-official-single",
     "duration": 232353
+  },
+  {
+    "id": "221203134",
+    "artwork": "assets/images/artwork/221203134.jpg",
+    "color": "rgb(140,221,242)",
+    "contrast": "is-light",
+    "title": "It Makes The Babies Want To Cry",
+    "artist": "George Clanton",
+    "permalink": "http://soundcloud.com/georgeclanton/george-clanton-it-makes-the-babies-want-to-cry",
+    "duration": 218116
   },
   {
     "id": "223353738",
@@ -64,20 +64,10 @@
     "artwork": "assets/images/artwork/225061522.jpg",
     "color": "rgb(84,76,65)",
     "contrast": "is-dark",
-    "title": "Knock Knock",
-    "artist": "MED BLU MADLIB feat. MF DOOM",
+    "title": "Knock Knock (ft. MF DOOM)",
+    "artist": "Med Blu Madlib",
     "permalink": "http://soundcloud.com/rappcats/knock-knock",
     "duration": 285205
-  },
-  {
-    "id": "222246799",
-    "artwork": "assets/images/artwork/222246799.jpg",
-    "color": "rgb(30,30,30)",
-    "contrast": "is-very-dark",
-    "title": "Nonbelievers",
-    "artist": "Homeboy Sandman",
-    "permalink": "http://soundcloud.com/stonesthrow/homeboy-sandman-nonbelievers",
-    "duration": 125425
   },
   {
     "id": "217962739",
@@ -85,7 +75,7 @@
     "color": "rgb(240,239,237)",
     "contrast": "is-light",
     "title": "Abalone",
-    "artist": "SOFTSPOT",
+    "artist": "Softspot",
     "permalink": "http://soundcloud.com/softspot/abalone-single-edit",
     "duration": 300121
   },
@@ -98,5 +88,145 @@
     "artist": "HINDS",
     "permalink": "http://soundcloud.com/hindsband/garden",
     "duration": 247871
+  },
+  {
+    "id": "222810014",
+    "artwork": "assets/images/artwork/222810014.jpg",
+    "color": "rgb(100,108,98)",
+    "contrast": "is-dark",
+    "title": "J.Park",
+    "artist": "Airbird & Napolian",
+    "permalink": "http://soundcloud.com/cascine/airbird-napolian-jpark-1",
+    "duration": 182560
+  },
+  {
+    "id": "206739120",
+    "artwork": "assets/images/artwork/206739120.jpg",
+    "color": "rgb(230,194,149)",
+    "contrast": "is-light",
+    "title": "A Dot Running for the Dust",
+    "artist": "Helvetia",
+    "permalink": "http://soundcloud.com/joyful-noise-recordings/a-dot-running-for-the-dust",
+    "duration": 198496
+  },
+  {
+    "id": "223819811",
+    "artwork": "assets/images/artwork/223819811.jpg",
+    "color": "rgb(30,48,62)",
+    "contrast": "is-dark",
+    "title": "Song About A Raygunn (An Ode To Driver)",
+    "artist": "Milo",
+    "permalink": "http://soundcloud.com/alphapup/milo-song-about-a-raygunn-an-ode-to-driver",
+    "duration": 233138
+  },
+  {
+    "id": "224089915",
+    "artwork": "assets/images/artwork/224089915.jpg",
+    "color": "rgb(124,118,111)",
+    "contrast": "is-dark",
+    "title": "Little Fourth of July",
+    "artist": "Petite League",
+    "permalink": "http://soundcloud.com/petiteleague/little-fourth-of-july",
+    "duration": 148598
+  },
+  {
+    "id": "223281673",
+    "artwork": "assets/images/artwork/223281673.jpg",
+    "color": "rgb(71,86,152)",
+    "contrast": "is-dark",
+    "title": "The Chat (feat. Ariel Pink, Weyes Blood)",
+    "artist": "Mild High Club",
+    "permalink": "http://soundcloud.com/stonesthrow/mild-high-club-the-chat",
+    "duration": 160485
+  },
+  {
+    "id": "221862970",
+    "artwork": "assets/images/artwork/221862970.jpg",
+    "color": "rgb(48,47,49)",
+    "contrast": "is-dark",
+    "title": "I Cant Be Your Superman",
+    "artist": "Skylar Spence",
+    "permalink": "http://soundcloud.com/carparkrecords/skylar-spence-i-cant-be-your-superman-1",
+    "duration": 260517
+  },
+  {
+    "id": "219935020",
+    "artwork": "assets/images/artwork/219935020.jpg",
+    "color": "rgb(89,79,76)",
+    "contrast": "is-dark",
+    "title": "Dinner Date",
+    "artist": "Diet Cig",
+    "permalink": "http://soundcloud.com/separatedbymotorways/diet-cig-dinner-date",
+    "duration": 157480
+  },
+  {
+    "id": "223236523",
+    "artwork": "assets/images/artwork/223236523.jpg",
+    "color": "rgb(56,56,56)",
+    "contrast": "is-dark",
+    "title": "Vice City",
+    "artist": "Jay Rock",
+    "permalink": "http://soundcloud.com/ryanmcounsell/jay-rock-vice-city",
+    "duration": 283899
+  },
+  {
+    "id": "212853226",
+    "artwork": "assets/images/artwork/212853226.jpg",
+    "color": "rgb(65,89,96)",
+    "contrast": "is-dark",
+    "title": "I Forgive You",
+    "artist": "Protomartyr",
+    "permalink": "http://soundcloud.com/hardlyartrecords/protomartyr-i-forgive-you",
+    "duration": 181385
+  },
+  {
+    "id": "225189162",
+    "artwork": "assets/images/artwork/225189162.jpg",
+    "color": "rgb(226,180,199)",
+    "contrast": "is-light",
+    "title": "Emo Friends",
+    "artist": "Bruising",
+    "permalink": "http://soundcloud.com/beechcoma/bruising-emo-friends",
+    "duration": 246670
+  },
+  {
+    "id": "224896938",
+    "artwork": "assets/images/artwork/224896938.jpg",
+    "color": "rgb(238,223,186)",
+    "contrast": "is-light",
+    "title": "Happy Living Things",
+    "artist": "Cristobal and the Sea",
+    "permalink": "http://soundcloud.com/cityslang/cristobal-and-the-sea-happy",
+    "duration": 169655
+  },
+  {
+    "id": "223223979",
+    "artwork": "assets/images/artwork/223223979.jpg",
+    "color": "rgb(208,206,201)",
+    "contrast": "is-light",
+    "title": "Lively Hood",
+    "artist": "DOOMSTARKS",
+    "permalink": "http://soundcloud.com/adultswimsingles/doomstarks",
+    "duration": 132112
+  },
+  {
+    "id": "221164844",
+    "artwork": "assets/images/artwork/221164844.jpg",
+    "color": "rgb(30,30,34)",
+    "contrast": "is-very-dark",
+    "title": "West Texas",
+    "artist": "PWR BTTM",
+    "permalink": "http://soundcloud.com/fatherdaughter/pwr-bttm-west-texas",
+    "duration": 165109
+  },
+  {
+    "id": "221879249",
+    "artwork": "assets/images/artwork/221879249.jpg",
+    "color": "rgb(240,240,240)",
+    "contrast": "is-light",
+    "title": "Downtown",
+    "artist": "Majical Cloudz",
+    "permalink": "http://soundcloud.com/majical-cloudz/downtown",
+    "duration": 249179
   }
 ]
