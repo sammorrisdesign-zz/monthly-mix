@@ -1,25 +1,5 @@
 [
   {
-    "id": "223228432",
-    "artwork": "assets/images/artwork/223228432.jpg",
-    "color": "rgb(30,30,33)",
-    "contrast": "is-very-dark",
-    "title": "It's Strange (Ft. K.Flay)",
-    "artist": "Louis The Child",
-    "permalink": "http://soundcloud.com/louisthechild/itsstrange",
-    "duration": 245678
-  },
-  {
-    "id": "222017377",
-    "artwork": "assets/images/artwork/222017377.jpg",
-    "color": "rgb(244,203,207)",
-    "contrast": "is-light",
-    "title": "What You Dont Do (Maribou State Remix)",
-    "artist": "Lianne La Havas",
-    "permalink": "http://soundcloud.com/mariboustate/lianne-la-havas-what-you-dont-do-maribou-state-remix-1",
-    "duration": 253045
-  },
-  {
     "id": "223727290",
     "artwork": "assets/images/artwork/223727290.jpg",
     "color": "rgb(225,223,227)",
@@ -30,14 +10,14 @@
     "duration": 232353
   },
   {
-    "id": "221203134",
-    "artwork": "assets/images/artwork/221203134.jpg",
-    "color": "rgb(140,221,242)",
-    "contrast": "is-light",
-    "title": "It Makes The Babies Want To Cry",
-    "artist": "George Clanton",
-    "permalink": "http://soundcloud.com/georgeclanton/george-clanton-it-makes-the-babies-want-to-cry",
-    "duration": 218116
+    "id": "223228432",
+    "artwork": "assets/images/artwork/223228432.jpg",
+    "color": "rgb(30,30,33)",
+    "contrast": "is-very-dark",
+    "title": "It's Strange (Ft. K.Flay)",
+    "artist": "Louis The Child",
+    "permalink": "http://soundcloud.com/louisthechild/itsstrange",
+    "duration": 245678
   },
   {
     "id": "223353738",
@@ -50,14 +30,14 @@
     "duration": 134020
   },
   {
-    "id": "224454096",
-    "artwork": "assets/images/artwork/224454096.jpg",
-    "color": "rgb(30,54,91)",
-    "contrast": "is-dark",
-    "title": "Kicker",
-    "artist": "Alex G",
-    "permalink": "http://soundcloud.com/dominorecordco/alex-g-kicker",
-    "duration": 170830
+    "id": "221164844",
+    "artwork": "assets/images/artwork/221164844.jpg",
+    "color": "rgb(30,30,34)",
+    "contrast": "is-very-dark",
+    "title": "West Texas",
+    "artist": "PWR BTTM",
+    "permalink": "http://soundcloud.com/fatherdaughter/pwr-bttm-west-texas",
+    "duration": 165109
   },
   {
     "id": "225061522",
@@ -68,16 +48,6 @@
     "artist": "Med Blu Madlib",
     "permalink": "http://soundcloud.com/rappcats/knock-knock",
     "duration": 285205
-  },
-  {
-    "id": "217962739",
-    "artwork": "assets/images/artwork/217962739.jpg",
-    "color": "rgb(240,239,237)",
-    "contrast": "is-light",
-    "title": "Abalone",
-    "artist": "Softspot",
-    "permalink": "http://soundcloud.com/softspot/abalone-single-edit",
-    "duration": 300121
   },
   {
     "id": "222814356",
@@ -100,6 +70,16 @@
     "duration": 182560
   },
   {
+    "id": "224454096",
+    "artwork": "assets/images/artwork/224454096.jpg",
+    "color": "rgb(30,54,91)",
+    "contrast": "is-dark",
+    "title": "Kicker",
+    "artist": "Alex G",
+    "permalink": "http://soundcloud.com/dominorecordco/alex-g-kicker",
+    "duration": 170830
+  },
+  {
     "id": "206739120",
     "artwork": "assets/images/artwork/206739120.jpg",
     "color": "rgb(230,194,149)",
@@ -110,6 +90,16 @@
     "duration": 198496
   },
   {
+    "id": "222017377",
+    "artwork": "assets/images/artwork/222017377.jpg",
+    "color": "rgb(244,203,207)",
+    "contrast": "is-light",
+    "title": "What You Dont Do (Maribou State Remix)",
+    "artist": "Lianne La Havas",
+    "permalink": "http://soundcloud.com/mariboustate/lianne-la-havas-what-you-dont-do-maribou-state-remix-1",
+    "duration": 253045
+  },
+  {
     "id": "223819811",
     "artwork": "assets/images/artwork/223819811.jpg",
     "color": "rgb(30,48,62)",
@@ -118,6 +108,16 @@
     "artist": "Milo",
     "permalink": "http://soundcloud.com/alphapup/milo-song-about-a-raygunn-an-ode-to-driver",
     "duration": 233138
+  },
+  {
+    "id": "221203134",
+    "artwork": "assets/images/artwork/221203134.jpg",
+    "color": "rgb(140,221,242)",
+    "contrast": "is-light",
+    "title": "It Makes The Babies Want To Cry",
+    "artist": "George Clanton",
+    "permalink": "http://soundcloud.com/georgeclanton/george-clanton-it-makes-the-babies-want-to-cry",
+    "duration": 218116
   },
   {
     "id": "224089915",
@@ -170,6 +170,16 @@
     "duration": 283899
   },
   {
+    "id": "224896938",
+    "artwork": "assets/images/artwork/224896938.jpg",
+    "color": "rgb(238,223,186)",
+    "contrast": "is-light",
+    "title": "Happy Living Things",
+    "artist": "Cristobal and the Sea",
+    "permalink": "http://soundcloud.com/cityslang/cristobal-and-the-sea-happy",
+    "duration": 169655
+  },
+  {
     "id": "212853226",
     "artwork": "assets/images/artwork/212853226.jpg",
     "color": "rgb(65,89,96)",
@@ -190,14 +200,14 @@
     "duration": 246670
   },
   {
-    "id": "224896938",
-    "artwork": "assets/images/artwork/224896938.jpg",
-    "color": "rgb(238,223,186)",
+    "id": "217962739",
+    "artwork": "assets/images/artwork/217962739.jpg",
+    "color": "rgb(240,239,237)",
     "contrast": "is-light",
-    "title": "Happy Living Things",
-    "artist": "Cristobal and the Sea",
-    "permalink": "http://soundcloud.com/cityslang/cristobal-and-the-sea-happy",
-    "duration": 169655
+    "title": "Abalone",
+    "artist": "Softspot",
+    "permalink": "http://soundcloud.com/softspot/abalone-single-edit",
+    "duration": 300121
   },
   {
     "id": "223223979",
@@ -208,16 +218,6 @@
     "artist": "DOOMSTARKS",
     "permalink": "http://soundcloud.com/adultswimsingles/doomstarks",
     "duration": 132112
-  },
-  {
-    "id": "221164844",
-    "artwork": "assets/images/artwork/221164844.jpg",
-    "color": "rgb(30,30,34)",
-    "contrast": "is-very-dark",
-    "title": "West Texas",
-    "artist": "PWR BTTM",
-    "permalink": "http://soundcloud.com/fatherdaughter/pwr-bttm-west-texas",
-    "duration": 165109
   },
   {
     "id": "221879249",

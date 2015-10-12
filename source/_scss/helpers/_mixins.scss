@@ -17,7 +17,7 @@
 
     @for $i from 1 through 4 {
         &.vertical--#{$i} {
-            margin-top: - 3% * $i;
+            margin-top: - 2% * $i;
         }
     }
 

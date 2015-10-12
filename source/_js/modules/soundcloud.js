@@ -38,9 +38,7 @@ define([
                 this.controlsPlay();
             }.bind(this));
             bean.on(document.body, 'click', '.controls__buttons__skip', function(e) {
-                if (bonzo(qwery('.controls')).hasClass('is-default') == false) {
-                    this.onSkip();
-                }
+                this.onSkip();
             }.bind(this));
         },
 
@@ -74,6 +72,7 @@ define([
         },
 
         onSkip: function() {
+            console.log("on skip function");
             next = bonzo(qwery('.is-playing')).next().attr('data-track-id');
             if (next) {
                 this.playTrack(next, true);
