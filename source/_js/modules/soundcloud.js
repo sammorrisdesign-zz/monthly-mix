@@ -72,7 +72,6 @@ define([
         },
 
         onSkip: function() {
-            console.log("on skip function");
             next = bonzo(qwery('.is-playing')).next().attr('data-track-id');
             if (next) {
                 this.playTrack(next, true);

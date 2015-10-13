@@ -14,48 +14,9 @@
     }
 }
 
-@keyframes background {
-    0% {
-        background-color: $c-light-grey;
-    }
-
-    12% {
-        background-color: rgba($c-purple, 0.4);
-    }
-
-    24% {
-        background-color: rgba($c-orange, 0.4);
-    }
-
-    36% {
-        background-color: rgba($c-green, 0.4);
-    }
-
-    48% {
-        background-color: rgba($c-blue, 0.4);
-    }
-
-    60% {
-        background-color: rgba($c-yellow, 0.4);
-    }
-
-    72% {
-        background-color: rgba($c-purple-grey, 0.4);
-    }
-
-    84% {
-        background-color: rgba($c-light-blue, 0.4);
-    }
-
-    100% {
-        background-color: $c-light-grey;
-    }
-}
-
 .home {
     padding-top: $g-now-playing;
-    background-color: $c-light-grey;
-    animation: background 60s infinite;
+    background-color: rgba($c-blue, 0.4);
 
     > div {
         position: relative;
