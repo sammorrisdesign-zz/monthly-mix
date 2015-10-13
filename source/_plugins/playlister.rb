@@ -101,7 +101,7 @@ module Jekyll
 
         if yiq >= 170
             return 'is-light'
-        elsif yiq <= 40
+        elsif yiq <= 100
             return 'is-very-dark'
         else
             return 'is-dark'
