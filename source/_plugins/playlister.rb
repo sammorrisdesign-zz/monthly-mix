@@ -74,8 +74,15 @@ module Jekyll
         img = Magick::Image.read(src).first
         q = img.quantize(3, Magick::RGBColorspace)
         palette = q.color_histogram.sort {|a, b| b[1] <=> a[1]}
-        palette = palette[0][0]
+        convert_color(palette[0][0])
 
+        if contrast_color(@tmpcolor) == 'try-again'
+            convert_color(palette[1][0])
+        end
+        @color = @tmpcolor
+    end
+
+    def convert_color(palette)
         # Convert to RGB
         color = { :r => 0.0, :g => 0.0, :b => 0.0 }
         color[:r] += palette.red
@@ -88,8 +95,8 @@ module Jekyll
             end
         end
 
-        @color = "rgb(#{color[:r]},#{color[:g]},#{color[:b]})"
-        return @color
+        @tmpcolor = "rgb(#{color[:r]},#{color[:g]},#{color[:b]})"
+        return @tmpcolor
     end
 
     def contrast_color(rgb)
@@ -99,7 +106,9 @@ module Jekyll
         b = rgb.split(',')[2].to_i
         yiq = ((r*299)+(g*587)+(b*114)) / 1000
 
-        if yiq >= 170
+        if yiq >= 245
+            return 'try-again'
+        elsif yiq >= 170
             return 'is-light'
         elsif yiq <= 100
             return 'is-very-dark'
