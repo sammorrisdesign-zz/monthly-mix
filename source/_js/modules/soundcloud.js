@@ -27,7 +27,10 @@ define([
             defaultTitle = document.title;
             playlistTitle = bonzo(qwery(".header__block .post-title")).text();
             this.bindEvents();
-            this.initPlayer();
+
+            if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+                this.initPlayer();
+            }
         },
 
         bindEvents: function() {
@@ -184,6 +187,7 @@ define([
             // Triggers audio for mobile devices
             SC.whenStreamingReady(function() {
                SC.stream('/tracks/' + bonzo(qwery('.playlist__entry')).attr('data-track-id'), {}, function(obj) {
+
                }) 
             });
         },
