@@ -206,10 +206,9 @@
     bottom: 0;
     left: 0;
     right: 0;
-
-    background-color: rgba($c-white, .2);
     height: 100%;
     width: 0%;
+    background-color: rgba($c-white, .2);
 
     .is-light & {
         background-color: rgba($c-black, .2);
