@@ -40,20 +40,10 @@
     "duration": 242281
   },
   {
-    "id": "213838950",
-    "artwork": "assets/images/artwork/213838950.jpg",
-    "color": "rgb(62,68,60)",
-    "contrast": "is-dark",
-    "title": "Pitch Black Ft. Rome Fortune",
-    "artist": "Toro y Moi",
-    "permalink": "http://soundcloud.com/toroymoi/pitch-black-ft-rome-fortune",
-    "duration": 170229
-  },
-  {
     "id": "200105357",
     "artwork": "assets/images/artwork/200105357.jpg",
     "color": "rgb(65,65,61)",
-    "contrast": "is-dark",
+    "contrast": "is-very-dark",
     "title": "Ive Been Waiting For Her",
     "artist": "Mac Demarco",
     "permalink": "http://soundcloud.com/capturedtracks/mac-demarco-ive-been-waiting",
@@ -64,8 +54,8 @@
     "artwork": "assets/images/artwork/213523289.jpg",
     "color": "rgb(154,169,162)",
     "contrast": "is-dark",
-    "title": "helen 'motorcycle'",
-    "artist": "kranky",
+    "title": "Motorcycle",
+    "artist": "Helen",
     "permalink": "http://soundcloud.com/kranky/helen-motorcycle",
     "duration": 110402
   },
@@ -83,7 +73,7 @@
     "id": "206569743",
     "artwork": "assets/images/artwork/206569743.jpg",
     "color": "rgb(60,67,43)",
-    "contrast": "is-dark",
+    "contrast": "is-very-dark",
     "title": "Garden",
     "artist": "C-Duncan",
     "permalink": "http://soundcloud.com/mrduncan/garden-1",
@@ -104,18 +94,28 @@
     "artwork": "assets/images/artwork/214888917.jpg",
     "color": "rgb(30,30,30)",
     "contrast": "is-very-dark",
-    "title": "TY REX Out 11/27 On Goner",
-    "artist": "Ty Segall \"Buick Mackane\"",
+    "title": "Buick Mackane",
+    "artist": "Ty Segall",
     "permalink": "http://soundcloud.com/gonerrecords/ty-segall-buick-mackane-ty-rex",
     "duration": 168112
+  },
+  {
+    "id": "216187302",
+    "artwork": "assets/images/artwork/216187302.jpg",
+    "color": "rgb(254,254,254)",
+    "contrast": "is-light",
+    "title": "1998 feat. Banks",
+    "artist": "Chet Faker",
+    "permalink": "http://soundcloud.com/chet-faker/1998-feat-banks",
+    "duration": 224099
   },
   {
     "id": "215463972",
     "artwork": "assets/images/artwork/215463972.jpg",
     "color": "rgb(158,208,203)",
     "contrast": "is-light",
-    "title": "Get Up Get Down [Prod. by Stefan Ponce & ThemPeople]",
-    "artist": "MICK JENKINS",
+    "title": "Get Up Get Down",
+    "artist": "Mick Jenkins",
     "permalink": "http://soundcloud.com/mickjenkinsmusic/get-up-get-down-prod-by-stefan-ponce-thempeople",
     "duration": 199932
   },
@@ -128,15 +128,5 @@
     "artist": "Small Black",
     "permalink": "http://soundcloud.com/jagjaguwar/small-black-boys-life",
     "duration": 301401
-  },
-  {
-    "id": "216187302",
-    "artwork": "assets/images/artwork/216187302.jpg",
-    "color": "rgb(254,254,254)",
-    "contrast": "is-light",
-    "title": "1998 feat. Banks",
-    "artist": "Chet Faker",
-    "permalink": "http://soundcloud.com/chet-faker/1998-feat-banks",
-    "duration": 224099
   }
 ]
