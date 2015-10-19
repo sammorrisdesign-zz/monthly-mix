@@ -206,13 +206,10 @@
     bottom: 0;
     left: 0;
     right: 0;
-}
 
-.progress-bar__current {
     background-color: rgba($c-white, .2);
     height: 100%;
     width: 0%;
-    // transition: width 0.2s linear;
 
     .is-light & {
         background-color: rgba($c-black, .2);
