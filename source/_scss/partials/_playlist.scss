@@ -85,7 +85,3 @@
     @include box-sizing(border-box);
     @include transition(top .2s ease-in);
 }
-
-.playlist__entry__permalink {
-    display: none;
-}
