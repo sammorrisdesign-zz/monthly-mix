@@ -26,5 +26,8 @@
     "grunt-scss-lint": "^0.3.4",
     "grunt-shell": "^1.1.1",
     "jit-grunt": "^0.9.1"
+  },
+  "dependencies": {
+    "grunt-contrib-cssmin": "^0.14.0"
   }
 }
