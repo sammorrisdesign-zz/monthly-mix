@@ -4,6 +4,10 @@
     background-color: $c-light-grey;
     margin-bottom: $g-now-playing;
     @include transition(background-color 1s);
+
+    @include mq(tablet) {
+        margin-bottom: $g-now-playing - 8px;
+    }
 }
 
 @include keyframes(flash) {

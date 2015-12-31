@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "October"
-date:   2015-09-10 20:15:00
+date:   2015-10-10 20:15:00
 soundcloud: https://soundcloud.com/sam-morris-30/sets/october-2015
 fetch: false
 artist-230266213: Chance The Rapper
