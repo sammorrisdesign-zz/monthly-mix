@@ -16,6 +16,11 @@
         border-color: $c-white;
         color: $c-white;
     }
+
+    &:focus {
+        outline: none;
+        color: $c-white;
+    }
 }
 
 .sign-up__button {
@@ -25,4 +30,5 @@
     color: $c-black;
     font-weight: bold;
     @include flex(1);
+    cursor: pointer;
 }

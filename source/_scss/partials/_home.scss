@@ -65,6 +65,24 @@
     .container {
         padding-left: $g-gutter;
     }
+
+    .sign-up {
+        max-width: 400px;
+        margin: $g-gutter auto 0;
+    }
+
+    .sign-up__input {
+        border-color: $c-grey;
+
+        &:focus {
+            border-color: $c-black;
+            color: $c-black;
+        }
+    }
+
+    .sign-up__button {
+        background-color: $c-white;
+    }
 }
 
 .home-header__title {

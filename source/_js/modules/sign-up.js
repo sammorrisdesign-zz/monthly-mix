@@ -14,25 +14,28 @@ define([
         },
 
         bindEvents: function() {
-            document.getElementsByClassName("sign-up__input")[0].onfocus = function () {
-                this.focusIn();
-            }.bind(this);
-            document.getElementsByClassName("sign-up__input")[0].onblur = function () {
-                this.focusOut();
-            }.bind(this);
-        },
-
-        focusIn: function() {
-            bonzo(qwery('.sign-up__input')).addClass('is-focused');
-            if (bonzo(qwery('.sign-up__input')).attr('value') === defaultValue) {
-                bonzo(qwery('.sign-up__input')).attr('value', '');
+            for (i = 0; i < 2; i++) { 
+                console.log(i);
+                document.getElementsByClassName("sign-up__input")[i].onfocus = function (el) {
+                    this.focusIn(el.srcElement);
+                }.bind(this);
+                document.getElementsByClassName("sign-up__input")[i].onblur = function (el) {
+                    this.focusOut(el.srcElement);
+                }.bind(this);
             }
         },
 
-        focusOut: function() {
-            bonzo(qwery('.sign-up__input')).removeClass("is-focused");
-            if (bonzo(qwery('.sign-up__input')).attr('value') === '') {
-                bonzo(qwery('.sign-up__input')).attr('value', defaultValue);
+        focusIn: function(el) {
+            bonzo(el).addClass('is-focused');
+            if (bonzo(el).attr('value') === defaultValue) {
+                bonzo(el).attr('value', '');
+            }
+        },
+
+        focusOut: function(el) {
+            bonzo(el).removeClass("is-focused");
+            if (bonzo(el).attr('value') === '') {
+                bonzo(el).attr('value', defaultValue);
             }
         }
     }
