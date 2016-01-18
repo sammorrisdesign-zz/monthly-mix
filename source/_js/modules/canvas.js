@@ -10,7 +10,7 @@ define([
     var size = 200;
     var fallingDrops = [];
     var canvas;
-    var colour = ['#9bd5e0', '#c44f85', '#e2e2e2', '#7ecac6', '#5db456', '#e6d35f', '#fc7c62', '#797379', '#dedede', '#333', '#b51717'];
+    var colour = ['#9bd5e0', '#c44f85', '#e2e2e2', '#7ecac6', '#5db456', '#e6d35f', '#fc7c62', '#797379', '#dedede', '#C42424', '#b51717'];
 
     return {
         init: function() {
