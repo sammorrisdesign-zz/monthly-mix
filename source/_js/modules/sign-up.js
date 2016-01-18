@@ -15,7 +15,6 @@ define([
 
         bindEvents: function() {
             for (i = 0; i < 2; i++) { 
-                console.log(i);
                 document.getElementsByClassName("sign-up__input")[i].onfocus = function (el) {
                     this.focusIn(el.srcElement);
                 }.bind(this);
