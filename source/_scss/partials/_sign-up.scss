@@ -4,6 +4,7 @@
 }
 
 .sign-up__input {
+    -webkit-appearance: none;
     margin-right: 2px;
     border: 1px solid $c-light-grey;
     padding: 5px 10px;
@@ -24,6 +25,7 @@
 }
 
 .sign-up__button {
+    -webkit-appearance: none;
     border: 2px solid $c-black;
     border-radius: 0;
     padding: 4px 9px;
