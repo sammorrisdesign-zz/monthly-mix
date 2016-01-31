@@ -14,8 +14,6 @@ define([
     scroller,
     goSquared
 ) {
-    // REMOVE ME LATER
-    var sound;
     var currentTrack, defaultTitle, playlistTitle;
     var clientId = "5dcb5ea7cb935713b230330006d1765e";
 
@@ -57,6 +55,7 @@ define([
         },
 
         onPlay: function(target) {
+            bonzo(qwery("audio"))[0].play();
             target.addClass('is-playing');
             bonzo(qwery('body')).attr('data-state', 'is-playing');
             this.updateNowPlaying();
@@ -64,9 +63,7 @@ define([
         },
 
         onSkip: function() {
-            console.log("skip");
             next = bonzo(qwery('.is-playing')).next().attr('data-track-id');
-            console.log(next);
             if (next) {
                 this.playTrack(next, true);
             } else {
@@ -76,6 +73,7 @@ define([
         },
 
         onStop: function(target) {
+            bonzo(qwery("audio"))[0].pause();
             bonzo(qwery('body')).attr('data-state', 'is-stopped');
             target.removeClass('is-playing');
             this.resetPageTitle();
@@ -127,26 +125,10 @@ define([
             bonzo(qwery('.controls--active .progress-bar')).attr('style', 'width:' + (position / duration) * 100 + '%;')
         },
 
-        newTrack: function(trackId, scrollTo) {
-            context = this;
-
+        sendTrackAnalytics: function() {
             trackArtist = bonzo(qwery("#playlist__entry--" + trackId + " .track__artist")).text();
             trackTitle = bonzo(qwery("#playlist__entry--" + trackId + " .track__title")).text();
             goSquared.newTrack(trackArtist, trackTitle, playlistTitle);
-
-            // Set options for player
-            var myOptions = {
-                useHTML5Audio: true,
-                onfinish : function(){
-                    this.onSkip();
-                }.bind(this),
-                whileplaying: function() {
-                    this.updateProgressBar(sound.durationEstimate, sound.position);
-                }.bind(this),
-                ondataerror: function() {
-                    console.log("error");
-                }
-            }
         },
 
         playTrack: function(trackId, scrollTo) {
@@ -159,21 +141,22 @@ define([
                 var url = track.stream_url + "?client_id=" + clientId;
                 // Check if it's the current track
                 if (url == bonzo(qwery("audio")).attr("src")) {
-                    if(player.paused) {
-                        player.play();
+                    if(bonzo(qwery("audio"))[0].paused) {
                         context.onPlay(el);
                     } else {
-                        player.pause();
                         context.onStop(el);
                     }
                 } else {
                     context.onStop(bonzo(qwery('.is-playing')));
                     bonzo(qwery("audio")).attr("src", url);
-                    player.play();
                     context.onPlay(el);
                     player.onended = function() {
                         context.onSkip();
                     }
+                    player.ontimeupdate = function() {
+                        context.updateProgressBar(player.duration, player.currentTime)
+                    }
+                    context.sendTrackAnalytics();
                 }
             });
 
