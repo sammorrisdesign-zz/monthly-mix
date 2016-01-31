@@ -1,6 +1,6 @@
 requirejs.config({
     paths: {
-        'sc': 'http://connect.soundcloud.com/sdk'
+        'sc': 'https://connect.soundcloud.com/sdk/sdk-3.0.0'
     }
 });
 

@@ -14,23 +14,20 @@ define([
     scroller,
     goSquared
 ) {
-    var sound, defaultTitle, playlistTitle;
+    // REMOVE ME LATER
+    var sound;
+    var currentTrack, defaultTitle, playlistTitle;
+    var clientId = "5dcb5ea7cb935713b230330006d1765e";
 
     return {
         init: function() {
-            loadJSON('/soundcloud-keys.json', function(data) {
-                SC.initialize({
-                    client_id: data.id
-                });
+            SC.initialize({
+                client_id: clientId
             });
 
             defaultTitle = document.title;
             playlistTitle = bonzo(qwery(".header__block .post-title")).text();
             this.bindEvents();
-
-            if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
-                this.initPlayer();
-            }
         },
 
         bindEvents: function() {
@@ -55,14 +52,6 @@ define([
             }
         },
 
-        loadingState: function(target, state) {
-            if (state === true) {
-                target.addClass("is-loading");
-            } else {
-                target.removeClass("is-loading");
-            }
-        },
-
         scrollToTrack: function(target) {
             scroller.scrollToElement(el, 1000, 'easeInQuad');
         },
@@ -75,7 +64,9 @@ define([
         },
 
         onSkip: function() {
+            console.log("skip");
             next = bonzo(qwery('.is-playing')).next().attr('data-track-id');
+            console.log(next);
             if (next) {
                 this.playTrack(next, true);
             } else {
@@ -146,81 +137,48 @@ define([
             // Set options for player
             var myOptions = {
                 useHTML5Audio: true,
-                onload : function() {
-                    // readyState 2 means failed or error in fetching track
-                    if (this.readyState == 2) {
-                        context.onSkip();
-                    }
-                    // Debug onfinish with this
-                    // sound.setPosition(this.duration - 3000);
-                },
                 onfinish : function(){
                     this.onSkip();
-                }.bind(this),
-                onbufferchange: function() {
-                    this.loadingState(el, sound.playState);
                 }.bind(this),
                 whileplaying: function() {
                     this.updateProgressBar(sound.durationEstimate, sound.position);
                 }.bind(this),
                 ondataerror: function() {
                     console.log("error");
-                },
-                onplay: function() {
-                    this.loadingState(el, true);
-                }.bind(this)
+                }
             }
-
-            SC.whenStreamingReady(function() {
-                SC.stream('/tracks/' + trackId, myOptions, function(obj){
-                    sound = obj;
-                    sound.play();
-                    context.onPlay(el);
-                    if (scrollTo) {
-                        context.scrollToTrack(el);
-                    }
-                });
-            });
-        },
-
-        initPlayer: function() {
-            // Triggers audio for mobile devices
-            SC.whenStreamingReady(function() {
-               SC.stream('/tracks/' + bonzo(qwery('.playlist__entry')).attr('data-track-id'), {}, function(obj) {
-
-               }) 
-            });
         },
 
         playTrack: function(trackId, scrollTo) {
             scrollTo = scrollTo || false;
             el = bonzo(qwery('#playlist__entry--' + trackId));
-            current = bonzo(qwery('.is-playing'));
-            this.loadingState(el, false);
+            player = bonzo(qwery("audio"))[0];
+            context = this;
 
-            if (sound) {
-                // Check if it's the same track
-                if (sound.url.split('/')[4] == trackId) {
-                    if (el.hasClass('is-playing')) {
-                        sound.pause();
-                        this.onStop(el);
+            SC.get('/tracks/' + trackId).then(function(track) {
+                var url = track.stream_url + "?client_id=" + clientId;
+                // Check if it's the current track
+                if (url == bonzo(qwery("audio")).attr("src")) {
+                    if(player.paused) {
+                        player.play();
+                        context.onPlay(el);
                     } else {
-                        sound.play();
-                        this.onPlay(el);
-                        if (scrollTo) {
-                            this.scrollToTrack(el);
-                        }
-                        this.loadingState(el, sound.playState);
+                        player.pause();
+                        context.onStop(el);
                     }
-                // If not, destroy old track and start again
                 } else {
-                    sound.stop();
-                    this.onStop(current);
-                    sound = undefined;
-                    this.newTrack(trackId, scrollTo);
+                    context.onStop(bonzo(qwery('.is-playing')));
+                    bonzo(qwery("audio")).attr("src", url);
+                    player.play();
+                    context.onPlay(el);
+                    player.onended = function() {
+                        context.onSkip();
+                    }
                 }
-            } else {
-                this.newTrack(trackId, scrollTo);
+            });
+
+            if(scrollTo) {
+                context.scrollToTrack(el);
             }
         }
     }
