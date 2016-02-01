@@ -15,6 +15,7 @@ define([
     goSquared
 ) {
     var currentTrack, defaultTitle, playlistTitle;
+    var firstPlay = true;
     var clientId = "5dcb5ea7cb935713b230330006d1765e";
 
     return {
@@ -30,6 +31,7 @@ define([
 
         bindEvents: function() {
             bean.on(document.body, 'click', '.playlist__entry', function(e) {
+                this.ifFirstPlay();
                 this.playTrack(e.currentTarget.dataset.trackId);
             }.bind(this));
             bean.on(document.body, 'click', '.audio-controls', function(e) {
@@ -40,8 +42,18 @@ define([
             }.bind(this));
         },
 
+        ifFirstPlay: function() {
+            // A workaround to enable native player on iOS
+            if (firstPlay) {
+                bonzo(qwery("audio"))[0].play();
+                firstPlay = false;
+            }
+        },
+
         controlsPlay: function() {
             id = bonzo(qwery('.post')).attr('data-current-track');
+
+            this.ifFirstPlay();
 
             if (id) {
                 this.playTrack(id);
@@ -139,6 +151,8 @@ define([
 
             SC.get('/tracks/' + trackId).then(function(track) {
                 var url = track.stream_url + "?client_id=" + clientId;
+                console.log(url);
+
                 // Check if it's the current track
                 if (url == bonzo(qwery("audio")).attr("src")) {
                     if(bonzo(qwery("audio"))[0].paused) {
