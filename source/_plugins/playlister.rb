@@ -23,7 +23,7 @@ module Jekyll
         # Get Playlist and render json
         playlist = client.get('/resolve', :url => post.data['soundcloud'])
         playlist.tracks.each_with_index do |track, index|
-            image_grabber(track.artwork_url, track.id.to_s)
+            image_grabber(post.data['artwork-' + track.id.to_s] || track.artwork_url || track.user.avatar_url, track.id.to_s)
             title_splitter(track.title, track.user.username)
             @list << {
                 :id     => track.id.to_s,
@@ -43,7 +43,9 @@ module Jekyll
     def image_grabber(url, id)
         # Get a larger size of image
         # See: https://developers.soundcloud.com/docs/api/reference#artwork_url for a list of sizes
-        url ["large"] = "t300x300"
+        if url.include?("large")
+            url["large"] = "t300x300"
+        end
         @img_dest = "assets/images/artwork/" + id + ".jpg"
 
         # Check if image has already been downloaded before copying to assets folder
