@@ -17,7 +17,7 @@ layout: default
     <article class="post-content">
         <ul class="playlist">
         {% for track in site.data.[playlist.last] %}
-            <li class="playlist__entry {% layoutclasses %}" id="playlist__entry--{{ track.id }}" data-track-id="{{ track.id }}" data-track-contrast="{{ track.contrast }}" data-track-permalink="{{ track.permalink }}">
+            <li class="playlist__entry {% layoutclasses %}" id="track--{{ track.id }}" data-track-id="{{ track.id }}" data-track-contrast="{{ track.contrast }}" data-track-permalink="{{ track.permalink }}">
                 <div class="playlist__entry__info {{ track.contrast }}" style="background-color: {{ track.color }};">
                     <span class="playlist__entry__artist track__artist title">{{ track.artist }}</span><br />
                     <span class="playlist__entry__title track__title title">{{ track.title }}</span><br />

@@ -17,6 +17,7 @@ define([
     var currentTrack, defaultTitle, playlistTitle;
     var firstPlay = true;
     var clientId = "5dcb5ea7cb935713b230330006d1765e";
+    var url = document.location.href.split("#")[0];
 
     return {
         init: function() {
@@ -72,6 +73,7 @@ define([
             bonzo(qwery('body')).attr('data-state', 'is-playing');
             this.updateNowPlaying();
             this.setPageTitle();
+            this.updateUrl();
         },
 
         onSkip: function() {
@@ -137,21 +139,24 @@ define([
             bonzo(qwery('.controls--active .progress-bar')).attr('style', 'width:' + (position / duration) * 100 + '%;')
         },
 
+        updateUrl: function() {
+            history.pushState('', document.title, url.replace(/\/\s*$/, "#track--") + bonzo(qwery('.post')).attr('data-current-track'));
+        },
+
         sendTrackAnalytics: function() {
-            trackArtist = bonzo(qwery("#playlist__entry--" + trackId + " .track__artist")).text();
-            trackTitle = bonzo(qwery("#playlist__entry--" + trackId + " .track__title")).text();
+            trackArtist = bonzo(qwery("#track--" + trackId + " .track__artist")).text();
+            trackTitle = bonzo(qwery("#track--" + trackId + " .track__title")).text();
             goSquared.newTrack(trackArtist, trackTitle, playlistTitle);
         },
 
         playTrack: function(trackId, scrollTo) {
             scrollTo = scrollTo || false;
-            el = bonzo(qwery('#playlist__entry--' + trackId));
+            el = bonzo(qwery('#track--' + trackId));
             player = bonzo(qwery("audio"))[0];
             context = this;
 
             SC.get('/tracks/' + trackId).then(function(track) {
                 var url = track.stream_url + "?client_id=" + clientId;
-                console.log(url);
 
                 // Check if it's the current track
                 if (url == bonzo(qwery("audio")).attr("src")) {
