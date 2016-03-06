@@ -28,6 +28,7 @@ define([
             defaultTitle = document.title;
             playlistTitle = bonzo(qwery(".header__block .post-title")).text();
             this.bindEvents();
+            this.ifHasId();
         },
 
         bindEvents: function() {
@@ -48,6 +49,17 @@ define([
             if (firstPlay) {
                 bonzo(qwery("audio"))[0].play();
                 firstPlay = false;
+            }
+        },
+
+        ifHasId: function() {
+            var id = document.location.href.split("#")[1];
+            if (id.length > 0) {
+                bonzo(qwery("#" + id)).addClass('is-playing');
+                bonzo(qwery('body')).attr('data-state', 'is-playing');
+                this.updateNowPlaying();
+                bonzo(qwery("#" + id)).removeClass("is-playing");
+                bonzo(qwery('body')).attr('data-state', 'is-stopped');
             }
         },
 
