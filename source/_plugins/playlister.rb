@@ -15,9 +15,9 @@ module Jekyll
 
     def render_playlist(post)
         # Register a client with Soundcloud
-        file = File.read("soundcloud-keys.json")
-        data_hash = JSON.parse(file)
-        client = SoundCloud.new(:client_id => data_hash['id'])
+#         file = File.read("soundcloud-keys.json")
+#         data_hash = JSON.parse(file)
+        client = SoundCloud.new(:client_id => "5dcb5ea7cb935713b230330006d1765e")
         @list = Array.new
 
         # Get Playlist and render json
