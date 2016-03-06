@@ -152,7 +152,7 @@ define([
         },
 
         updateUrl: function() {
-            history.pushState('', document.title, url.replace(/\/\s*$/, "#track--") + bonzo(qwery('.post')).attr('data-current-track'));
+            history.pushState('', document.title, url + "#track--" + bonzo(qwery('.post')).attr('data-current-track'));
         },
 
         sendTrackAnalytics: function() {
