@@ -42,6 +42,9 @@ define([
             bean.on(document.body, 'click', '.controls__buttons__skip', function(e) {
                 this.onSkip();
             }.bind(this));
+            bean.on(document.body, 'keydown', function(e) {
+                this.togglePlayOnSpaceBar(e);
+            }.bind(this));
         },
 
         ifFirstPlay: function() {
@@ -77,6 +80,13 @@ define([
 
         scrollToTrack: function(target) {
             scroller.scrollToElement(el, 1000, 'easeInQuad');
+        },
+
+        togglePlayOnSpaceBar: function(e) {
+            if (e.keyCode == 32) {
+                e.preventDefault();
+                this.controlsPlay();
+            }
         },
 
         onPlay: function(target) {
