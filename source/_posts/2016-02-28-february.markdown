@@ -3,7 +3,7 @@ layout: post
 title:  "February"
 date:   2016-02-28 12:15:00
 soundcloud: https://soundcloud.com/sam-morris-30/sets/february-2016
-fetch: true
+fetch: false
 artist-246051560: Teen
 title-244976490: Skipping Stones (feat. Jhené Aiko)
 title-243251457: Get a Grip

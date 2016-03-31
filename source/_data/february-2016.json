@@ -30,16 +30,6 @@
     "duration": 223237
   },
   {
-    "id": "247860480",
-    "artwork": "assets/images/artwork/247860480.jpg",
-    "color": "rgb(145,137,131)",
-    "contrast": "is-dark",
-    "title": "Time Eater",
-    "artist": "Gold Panda",
-    "permalink": "http://soundcloud.com/goldpanda/time-eater",
-    "duration": 298293
-  },
-  {
     "id": "246051560",
     "artwork": "assets/images/artwork/246051560.jpg",
     "color": "rgb(226,177,152)",
@@ -78,16 +68,6 @@
     "artist": "Aesop Rock",
     "permalink": "http://soundcloud.com/rhymesayers/aesop-rock-rings",
     "duration": 227469
-  },
-  {
-    "id": "236508989",
-    "artwork": "assets/images/artwork/236508989.jpg",
-    "color": "rgb(155,134,95)",
-    "contrast": "is-dark",
-    "title": "Walk To The One You Love",
-    "artist": "Twin Peaks",
-    "permalink": "http://soundcloud.com/twinpeaksdudes/walk-to-the-one-you-love",
-    "duration": 213518
   },
   {
     "id": "241132521",
@@ -148,16 +128,6 @@
     "artist": "Open Mike Eagle & Paul White",
     "permalink": "http://soundcloud.com/mellomusicgroup/open-mike-eagle-paul-white-check-to-check",
     "duration": 123883
-  },
-  {
-    "id": "243800847",
-    "artwork": "assets/images/artwork/243800847.jpg",
-    "color": "rgb(56,35,30)",
-    "contrast": "is-very-dark",
-    "title": "DVP",
-    "artist": "PUPTHEBAND",
-    "permalink": "http://soundcloud.com/puptheband/dvp",
-    "duration": 149041
   },
   {
     "id": "243575789",
