@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "May"
+date:   2016-05-31 10:00:00
+soundcloud: https://soundcloud.com/sam-morris-30/sets/may-2016
+fetch: true
+artist-262411973: Gooch Palms
+artwork-246617569: http://f.cl.ly/items/1I3E2l3U3U1k3Q2J2b3K/Image%202016-05-31%20at%2018%3A27%3A17.jpg
+artist-266130725: Chance The Rapper
+title-266130725: Finish Line / Drown
+artist-263967205: Clams Casino
+title-263300206: Syrup (ft. Homeboy Sandman and Open Mike Eagle)
+artist-264862145: Todd Terje & The Olsens
+title-264862145: Firecracker
+title-259857941: Good Luck With That
+---
