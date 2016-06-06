@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem 'sass'
 gem 'scss-lint'
-gem 'jekyll', '2.4.0'
+gem 'jekyll'
 gem 'soundcloud'
 gem 'json'
 

@@ -10,16 +10,6 @@
     "duration": 125138
   },
   {
-    "id": "262411973",
-    "artwork": "assets/images/artwork/262411973.jpg",
-    "color": "rgb(82,90,90)",
-    "contrast": "is-very-dark",
-    "title": "Ask Me Why",
-    "artist": "Gooch Palms",
-    "permalink": "http://soundcloud.com/summer-camp-records/ask-me-why",
-    "duration": 180078
-  },
-  {
     "id": "246617569",
     "artwork": "assets/images/artwork/246617569.jpg",
     "color": "rgb(141,147,141)",
@@ -28,6 +18,16 @@
     "artist": "James Blake",
     "permalink": "http://soundcloud.com/fakeblakejames/james-blake-modern-soul",
     "duration": 318722
+  },
+  {
+    "id": "263473455",
+    "artwork": "assets/images/artwork/263473455.jpg",
+    "color": "rgb(231,231,232)",
+    "contrast": "is-light",
+    "title": "No Matter Where We Go",
+    "artist": "Whitney",
+    "permalink": "http://soundcloud.com/secretlycanadian/whitney-no-matter-where-we-go-1",
+    "duration": 161817
   },
   {
     "id": "264541898",
@@ -60,14 +60,24 @@
     "duration": 136450
   },
   {
-    "id": "264548763",
-    "artwork": "assets/images/artwork/264548763.jpg",
-    "color": "rgb(39,117,228)",
-    "contrast": "is-dark",
-    "title": "Guru",
-    "artist": "Coast Modern",
-    "permalink": "http://soundcloud.com/coast-modern/guru-1",
-    "duration": 204610
+    "id": "262411973",
+    "artwork": "assets/images/artwork/262411973.jpg",
+    "color": "rgb(82,90,90)",
+    "contrast": "is-very-dark",
+    "title": "Ask Me Why",
+    "artist": "Gooch Palms",
+    "permalink": "http://soundcloud.com/summer-camp-records/ask-me-why",
+    "duration": 180078
+  },
+  {
+    "id": "263234679",
+    "artwork": "assets/images/artwork/263234679.jpg",
+    "color": "rgb(233,227,212)",
+    "contrast": "is-light",
+    "title": "First World Problem",
+    "artist": "Unknown Mortal Orchestra",
+    "permalink": "http://soundcloud.com/jagjaguwar/unknown-mortal-orchestra-first-world-problem",
+    "duration": 246540
   },
   {
     "id": "263967205",
@@ -90,16 +100,6 @@
     "duration": 135379
   },
   {
-    "id": "262313568",
-    "artwork": "assets/images/artwork/262313568.jpg",
-    "color": "rgb(233,120,147)",
-    "contrast": "is-dark",
-    "title": "SB's Truck",
-    "artist": "Happyness.",
-    "permalink": "http://soundcloud.com/happyness-4/sbs-truck",
-    "duration": 274440
-  },
-  {
     "id": "259938320",
     "artwork": "assets/images/artwork/259938320.jpg",
     "color": "rgb(202,203,203)",
@@ -118,6 +118,16 @@
     "artist": "Aesop Rock",
     "permalink": "http://soundcloud.com/rhymesayers/aesop-rock-syrup",
     "duration": 180340
+  },
+  {
+    "id": "264548763",
+    "artwork": "assets/images/artwork/264548763.jpg",
+    "color": "rgb(39,117,228)",
+    "contrast": "is-dark",
+    "title": "Guru",
+    "artist": "Coast Modern",
+    "permalink": "http://soundcloud.com/coast-modern/guru-1",
+    "duration": 204610
   },
   {
     "id": "261306476",
@@ -170,16 +180,6 @@
     "duration": 214328
   },
   {
-    "id": "252742049",
-    "artwork": "assets/images/artwork/252742049.jpg",
-    "color": "rgb(59,52,41)",
-    "contrast": "is-very-dark",
-    "title": "Black Monday",
-    "artist": "DRINKING FLOWERS",
-    "permalink": "http://soundcloud.com/lolipoprecords/drinking-flowers-black-monday",
-    "duration": 234522
-  },
-  {
     "id": "259857941",
     "artwork": "assets/images/artwork/259857941.jpg",
     "color": "rgb(128,125,128)",
@@ -188,5 +188,15 @@
     "artist": "Trust Punks",
     "permalink": "http://soundcloud.com/wharf-cat-records/trust-punks-good-luck-with-that",
     "duration": 123518
+  },
+  {
+    "id": "264452287",
+    "artwork": "assets/images/artwork/264452287.jpg",
+    "color": "rgb(87,66,45)",
+    "contrast": "is-very-dark",
+    "title": "High School Never Ends (featuring Woodkid)",
+    "artist": "Mykki Blanco",
+    "permalink": "http://soundcloud.com/mykkiblanco/high-school-never-ends-featuring-woodkid",
+    "duration": 332333
   }
 ]
