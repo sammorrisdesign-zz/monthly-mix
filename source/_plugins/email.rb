@@ -7,7 +7,12 @@ module Jekyll
       @name = dir + '/email.html'
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'email.html')
-
+      self.data['body']          = post.content
+      self.data['title']         = post.data['title']
+      self.data['date']          = post.data['date']
+      self.data['author']        = post.data['author']
+      self.data['category']      = post.data['category']
+      self.data['canonical_url'] = post.url
     end
   end
 
