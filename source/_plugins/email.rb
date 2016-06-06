@@ -1,17 +1,14 @@
 module Jekyll
   class EmailPost < Page
     def initialize(site, base, dir, post)
+        require 'kramdown'
       @site = site
       @base = base
-      @dir = ''
-      @name = dir + '/email.html'
+      @dir = dir
+      @name = 'email.html'
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'email.html')
-      self.data['body']          = post.content
-      self.data['title']         = post.data['title']
-      self.data['date']          = post.data['date']
-      self.data['author']        = post.data['author']
-      self.data['category']      = post.data['category']
+      self.data['body'] = Kramdown::Document.new(post.content).to_html.gsub(/\n/, "")
       self.data['canonical_url'] = post.url
     end
   end
@@ -19,7 +16,7 @@ module Jekyll
   class AmpGenerator < Generator
     priority :low
     def generate(site)
-      site.posts.each do |post|
+      site.posts.docs.each do |post|
         index = EmailPost.new(site, site.source, post.id, post)
         index.render(site.layouts, site.site_payload)
         index.write(site.dest)

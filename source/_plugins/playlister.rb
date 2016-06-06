@@ -6,7 +6,7 @@ require 'rmagick'
 module Jekyll
   class Playlister < Generator
     def generate(site)
-        site.posts.each do |post|
+        site.posts.docs.each do |post|
             if (post.data['soundcloud'] && post.data['fetch'] === true)
                 render_playlist(post)
             end
