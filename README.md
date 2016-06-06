@@ -2,10 +2,8 @@
 The latest music from the past month delivered to your inbox
 
 ## Requirements
-- ImageMagick
-- Jekyll
-- Sass
-- Grunt
+- ImageMagick (`brew install imagemagick`)
+- Grunt (`npm install -g grunt-cli`)
 
 Get extra dependencies with `npm install` then `bundle install`
 
