@@ -54,12 +54,12 @@
 .home-header {
     position: relative;
     z-index: 5;
-    padding: 100px 0;
+    padding: 80px 0 50px;
     text-align: center;
     margin-top: -$g-now-playing;
 
     @include mq(tablet) {
-        padding: 36vh 0;
+        padding: 18vh 0 15vh;
     }
 
     .container {
@@ -85,11 +85,6 @@
     }
 }
 
-.home-header__title {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
 .home-playlists {
     margin-bottom: 160px;
     background-color: $c-white;
@@ -112,11 +107,6 @@
 
 .home-playlists__item {
     padding: 2px 0;
-
-    .stripe {
-        width: 100%;
-        margin: $g-gutter / 2 auto;
-    }
 
     a:hover {
         text-decoration: none;
@@ -194,11 +184,6 @@
             top: 4px;
             right: 0;
         }
-    }
-
-    .stripe {
-        width: 100%;
-        margin: $g-gutter 0;
     }
 
     .home-playlists__description {

@@ -10,7 +10,7 @@
         </p>
     </div>
     <h3 class="home-playlists__title title">{{ post.title }} {{ post.date | date: "%Y" }}</h3>
-    {% include stripe.html %}
+    <hr class="hr" />
     <p class="home-playlists__description sub">Featuring
     {% for track in site.data.[playlist.last] limit:5 %}
         {{ track.artist }}{% if forloop.index != 5 %},{% endif %}

@@ -20,13 +20,25 @@
 
         @include mq(tablet) {
             position: absolute;
-            top: 34%;
+            top: 24%;
             left: 0;
             right: 0;
         }
     }
 
-    .site-title,
+    .logo {
+        text-align: center;
+    }
+
+    .logo__monthly {
+        font-size: 40px;
+    }
+
+    .logo__mix {
+        font-size: 104px;
+        letter-spacing: -7px;
+    }
+
     .post-title {
         position: relative;
         z-index: 5;
@@ -44,10 +56,8 @@
             bottom: 20px + $g-now-playing;
         }
     }
-    
-    .stripe {
-        width: 100%;
-        max-width: 300px;
-        margin: 20px auto;
+
+    .hr {
+        width: 20%;
     }
 }

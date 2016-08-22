@@ -94,6 +94,7 @@ define([
             target.addClass('is-playing');
             bonzo(qwery('body')).attr('data-state', 'is-playing');
             this.updateNowPlaying();
+            this.updateMixColor();
             this.setPageTitle();
             this.updateUrl();
         },
@@ -146,6 +147,10 @@ define([
             bonzo(qwery('.controls--active')).removeClass("controls--active").addClass("controls--previous");
             bonzo(qwery('.controls--next')).removeClass("controls--next").addClass("controls--active");
             bonzo(qwery('.controls--previous')).removeClass("controls--previous").addClass("controls--next");
+        },
+
+        updateMixColor: function() {
+            bonzo(qwery('.logo__mix')).attr('style', track['color'].replace('background-', ''));
         },
 
         setPageTitle: function() {
