@@ -21,7 +21,6 @@
 .logo__mix {
     font-size: 104px;
     letter-spacing: -7px;
-    transition: color ease 1s;
 
     @include mq(tablet) {
         font-size: 140px;
