@@ -67,7 +67,7 @@
     "title": "Janet",
     "artist": "berhana",
     "permalink": "http://soundcloud.com/berhana/janet",
-    "duration": 224778
+    "duration": 204087
   },
   {
     "id": "268049983",
@@ -84,8 +84,8 @@
     "artwork": "assets/images/artwork/273180881.jpg",
     "color": "rgb(49,30,30)",
     "contrast": "is-very-dark",
-    "title": "Bills",
-    "artist": "Ultimate Painting",
+    "title": "Ultimate Painting \"Bills\" (Trouble In Mind Records)",
+    "artist": "TroubleInMind",
     "permalink": "http://soundcloud.com/troubleinmind/ultimate-painting-bills-trouble-in-mind-records-2",
     "duration": 229793
   },
@@ -144,8 +144,8 @@
     "artwork": "assets/images/artwork/274537988.jpg",
     "color": "rgb(187,204,195)",
     "contrast": "is-light",
-    "title": "Hard To Clean",
-    "artist": "Chook Race",
+    "title": "Chook Race \"Hard To Clean\" (Trouble In Mind Records)",
+    "artist": "TroubleInMind",
     "permalink": "http://soundcloud.com/troubleinmind/chook-race-hard-to-clean-trouble-in-mind-records",
     "duration": 165891
   },
@@ -154,8 +154,8 @@
     "artwork": "assets/images/artwork/271251562.jpg",
     "color": "rgb(34,31,42)",
     "contrast": "is-very-dark",
-    "title": "Reservoir",
-    "artist": "Warehouse",
+    "title": "Warehouse \"Reservoir\" Official Single",
+    "artist": "Bayonet Records",
     "permalink": "http://soundcloud.com/bayonetrecords/warehouse-reservoir-official-single",
     "duration": 220676
   },
