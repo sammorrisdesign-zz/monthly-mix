@@ -45,10 +45,6 @@
         font-weight: bold;
         color: $c-black;
     }
-
-    .hr {
-        width: 20%;
-    }
 }
 
 .post-header__navigation {
@@ -56,7 +52,7 @@
     align-items: center;
     position: absolute;
     bottom: $g-now-playing;
-    width: calc(100% - 24px); // there's probably a cleaner way of doing this
+    width: calc(100% - (#{$g-gutter * 2})); // there's probably a cleaner way of doing this
 
     .sign-up__container,
     .spotify__link {

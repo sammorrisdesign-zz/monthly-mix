@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign playlist = page.soundcloud | split: '/' %}
 
-<header class="post-header">
+<header class="post-header" style="background-color: {{ site.data.[playlist.last].first().color }};">
     {% include logo.html %}
     <h2 class="post-title super-title">{{ page.title }} {{ page.date | date: "%Y" }}</h2>
     <div class="post-header__navigation">
