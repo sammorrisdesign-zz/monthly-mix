@@ -46,17 +46,24 @@
         color: $c-black;
     }
 
-    .powered-by {
-        float: right;
-
-        @include mq(tablet) {
-            position: absolute;
-            right: 20px;
-            bottom: 20px + $g-now-playing;
-        }
-    }
-
     .hr {
         width: 20%;
+    }
+}
+
+.post-header__navigation {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: $g-now-playing;
+    width: calc(100% - 24px); // there's probably a cleaner way of doing this
+
+    .sign-up__container,
+    .spotify__link {
+        margin-right: $g-gutter;
+    }
+
+    .sign-up__container {
+        flex-grow: 2;
     }
 }

@@ -4,13 +4,18 @@ layout: default
 {% assign playlist = page.soundcloud | split: '/' %}
 
 <header class="post-header">
-    {% include navigation.html %}
-    <div class="post-header__block">
-        {% include logo.html %}
-        <hr class="hr" />
-        <h2 class="post-title super-title">{{ page.title }} {{ page.date | date: "%Y" }}</h2>
+    {% include logo.html %}
+    <h2 class="post-title super-title">{{ page.title }} {{ page.date | date: "%Y" }}</h2>
+    <div class="post-header__navigation">
+        {% include sign-up.html %}
+        {% if page.spotify %}
+        <a class="spotify__link" href="{{ page.spotify }}">
+            <img class="spotify" src="{{ site.baseurl }}/assets/images/spotify--dark.png" />
+        {% endif %}
+        <a class="soundcloud__link" href="{{ page.soundcloud }}">
+            <img class="soundcloud" src="{{ site.baseurl }}/assets/images/soundcloud--dark.png" />
+        </a>
     </div>
-    <img class="powered-by" src="{{ site.baseurl }}/assets/images/soundcloud.jpg" />
 </header>
 
 <div class="post">
