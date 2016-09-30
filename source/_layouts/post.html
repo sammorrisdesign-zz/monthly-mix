@@ -5,7 +5,10 @@ layout: default
 
 <header class="post-header" style="background-color: {{ site.data.[playlist.last].first().color }};">
     {% include logo.html %}
-    <h2 class="post-title super-title">{{ page.title }} {{ page.date | date: "%Y" }}</h2>
+<!--     <h2 class="post-title super-title">{{ page.title }} {{ page.date | date: "%Y" }}</h2> -->
+    <div class="post-title">
+        {% svg titles/august %}
+    </div>
     <div class="post-header__navigation">
         {% include sign-up.html %}
         {% if page.spotify %}

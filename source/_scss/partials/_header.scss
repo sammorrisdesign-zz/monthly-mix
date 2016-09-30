@@ -46,8 +46,19 @@
     }
 
     .logo {
+        position: absolute;
         text-align: center;
         color: $c-white;
+        right: -20px;
+        top: -20px;
+        z-index: 2;
+        transform: scale(.6);
+
+        @include mq(tablet) {
+            transform: none;
+            right: 40px;
+            top: 20px;
+        }
     }
 
     .logo__monthly {
@@ -60,17 +71,36 @@
     }
 
     .post-title {
-        position: relative;
-        z-index: 5;
-        text-align: center;
-        font-weight: bold;
-        color: $c-white;
+        max-height: 400px;
+
+        @include mq(tablet) {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    }
+
+    .post-title svg {
+        max-height: 400px;
+
+        @include mq(tablet) {
+            display: block;
+            margin: 0 auto;
+            max-height: none;
+            height: calc(100vh - #{$g-now-playing + $g-gutter * 2.5});
+            max-width: 100%;
+        }
     }
 
     .is-light & {
-        .logo,
-        .post-title {
+        .logo {
             color: $c-black;
+        }
+
+        .post-title svg path {
+            fill: $c-black;
         }
     }
 }
@@ -78,9 +108,13 @@
 .post-header__navigation {
     display: flex;
     align-items: center;
-    position: absolute;
+    margin-top: $g-gutter;
     bottom: $g-now-playing;
     width: calc(100% - (#{$g-gutter * 2})); // there's probably a cleaner way of doing this
+
+    @include mq(tablet) {
+        position: absolute;
+    }
 
     .sign-up__container,
     .spotify__link {
