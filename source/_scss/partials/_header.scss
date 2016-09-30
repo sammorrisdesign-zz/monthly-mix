@@ -105,6 +105,20 @@
     }
 }
 
+.post-title {
+    .year {
+        display: none;
+    }
+}
+
+@for $i from 2015 through 2018 {
+    .post-title--#{$i} {
+        .year--#{$i} {
+            display: block;
+        }
+    }
+}
+
 .post-header__navigation {
     display: flex;
     align-items: center;
