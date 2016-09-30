@@ -2,7 +2,7 @@
     color: $c-white;
     font-weight: bold;
 
-    .is-light & {
+    .is-light > & {
         color: $c-black;
     }
 }
@@ -11,7 +11,7 @@
     color: rgba(#000, .6);
     font-weight: bold;
 
-    .is-very-dark & {
+    .is-very-dark > & {
         color: rgba(#fff, .8);
     }
 }
