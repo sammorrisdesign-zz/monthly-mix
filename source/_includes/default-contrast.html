@@ -1,0 +1,4 @@
+{% if page.soundcloud %}
+    {% assign playlist = page.soundcloud | split: '/' %}
+    class="{{ site.data.[playlist.last].first().contrast }}"
+{% endif %}

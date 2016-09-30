@@ -31,7 +31,7 @@
         }
     }
 
-    &.is-light {
+    .is-light & {
         color: $c-black;
 
         a {
@@ -60,7 +60,7 @@
         }
     }
 
-    &.is-default {
+    .is-default & {
         .controls__title {
             @include mq($until: tablet) {
                 margin: 0.6875em 0;

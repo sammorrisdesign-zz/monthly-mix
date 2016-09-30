@@ -138,7 +138,7 @@ define([
             bonzo(qwery('.controls--next .controls__buttons__soundcloud a')).attr('href', track['permalink']);
             bonzo(qwery('.is-changable')).attr("style", track['color'].replace('background-', ''));
             bonzo(qwery('.post')).attr('data-current-track', track['id']);
-            bonzo(qwery('.controls--next')).removeClass('is-dark is-light is-very-dark is-default').addClass(track['contrast']).attr("style", track['color']);
+            bonzo(qwery('body')).removeClass('is-dark is-light is-very-dark is-default').addClass(track['contrast']).attr("style", track['color']);
             bonzo(qwery('.controls--next .controls__buttons .input')).attr('style', track['color']);
             bonzo(qwery('.playlist')).attr("style", track['color'].replace(')', ', 0.2)').replace('rgb', 'rgba'));
             bonzo(qwery('.controls--next .controls__title__track-artist')).text(track['artist']);

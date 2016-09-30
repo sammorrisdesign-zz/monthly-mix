@@ -26,6 +26,7 @@
 
     .logo {
         text-align: center;
+        color: $c-white;
     }
 
     .logo__monthly {
@@ -35,7 +36,6 @@
     .logo__mix {
         font-size: 104px;
         letter-spacing: -7px;
-        transition: color ease 1s;
     }
 
     .post-title {
@@ -43,7 +43,14 @@
         z-index: 5;
         text-align: center;
         font-weight: bold;
-        color: $c-black;
+        color: $c-white;
+    }
+
+    .is-light & {
+        .logo,
+        .post-title {
+            color: $c-black;
+        }
     }
 }
 
@@ -61,5 +68,22 @@
 
     .sign-up__container {
         flex-grow: 2;
+    }
+
+    .spotify--light,
+    .soundcloud--light {
+        display: none;
+    }
+
+    .is-light & {
+        .spotify,
+        .soundcloud {
+            display: none;
+        }
+
+        .spotify--light,
+        .soundcloud--light {
+            display: block;
+        }
     }
 }
