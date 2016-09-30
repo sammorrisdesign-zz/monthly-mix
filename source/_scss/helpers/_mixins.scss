@@ -21,6 +21,12 @@
         }
     }
 
+    @for $i from 1 through 6 {
+        &.frame--#{$i}:before {
+            background-image: url('../images/frame--#{$i}.svg');
+        }
+    }
+
     &.clear {
         clear: both;
     }
