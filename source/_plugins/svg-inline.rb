@@ -8,6 +8,7 @@ module Jekyll
         end
 
         def render(context)
+            @path = context[@path] || @path
             "#{File.read('assets/images/' + @path.strip + '.svg')}"
         end
     end

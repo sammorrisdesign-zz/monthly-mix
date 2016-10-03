@@ -7,7 +7,9 @@ layout: default
     {% include logo.html %}
 <!--     <h2 class="post-title super-title">{{ page.title }} {{ page.date | date: "%Y" }}</h2> -->
     <div class="post-title post-title--{{ page.date | date: '%Y' }}">
-        {% svg titles/december %}
+        {% assign path = page.title | downcase | prepend: 'titles/' %}
+        {% svg path %}
+
     </div>
     <div class="post-header__navigation">
         {% include sign-up.html %}
