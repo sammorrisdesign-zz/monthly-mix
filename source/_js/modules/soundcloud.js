@@ -60,7 +60,7 @@ define([
             if (id.length > 0) {
                 bonzo(qwery("#" + id)).addClass('is-playing');
                 bonzo(qwery('body')).attr('data-state', 'is-playing');
-                this.updateNowPlaying();
+                this.updatePage();
                 bonzo(qwery("#" + id)).removeClass("is-playing");
                 bonzo(qwery('body')).attr('data-state', 'is-stopped');
             }
@@ -82,6 +82,11 @@ define([
             scroller.scrollToElement(el, 1000, 'easeInQuad');
         },
 
+        updatePage: function() {
+            this.updateNowPlaying();
+            this.updatePageColor();
+        },
+
         togglePlayOnSpaceBar: function(e) {
             if (e.keyCode == 32) {
                 e.preventDefault();
@@ -93,8 +98,7 @@ define([
             bonzo(qwery("audio"))[0].play();
             target.addClass('is-playing');
             bonzo(qwery('body')).attr('data-state', 'is-playing');
-            this.updateNowPlaying();
-            this.updateMixColor();
+            this.updatePage();
             this.setPageTitle();
             this.updateUrl();
         },
@@ -138,9 +142,8 @@ define([
             bonzo(qwery('.controls--next .controls__buttons__soundcloud a')).attr('href', track['permalink']);
             bonzo(qwery('.is-changable')).attr("style", track['color'].replace('background-', ''));
             bonzo(qwery('.post')).attr('data-current-track', track['id']);
-            bonzo(qwery('body')).removeClass('is-dark is-light is-very-dark is-default').addClass(track['contrast']).attr("style", track['color']);
+            bonzo(qwery('body')).removeClass('is-dark is-light is-very-dark is-default').addClass(track['contrast']);
             bonzo(qwery('.controls--next .controls__buttons .input')).attr('style', track['color']);
-            bonzo(qwery('.playlist')).attr("style", track['color'].replace(')', ', 0.2)').replace('rgb', 'rgba'));
             bonzo(qwery('.controls--next .controls__title__track-artist')).text(track['artist']);
             bonzo(qwery('.controls--next .controls__title__track-title')).text(track['title']);
             bonzo(qwery('.controls--next .progress-bar')).attr('style', 'width: 0%;');
@@ -149,8 +152,8 @@ define([
             bonzo(qwery('.controls--previous')).removeClass("controls--previous").addClass("controls--next");
         },
 
-        updateMixColor: function() {
-            bonzo(qwery('.logo__mix')).attr('style', track['color'].replace('background-', ''));
+        updatePageColor: function() {
+            bonzo(qwery('.post-header')).attr('style', track['color']);
         },
 
         setPageTitle: function() {
