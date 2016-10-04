@@ -10,7 +10,14 @@ highlighter: true
 markdown: kramdown
 sass:
   style: compressed
+assets:
+  compress:
+    js: true
+  prefix: "assets/js"
+  sources:
+    - _js
 
 # Imports
 gems:
   - octopress-autoprefixer
+  - jekyll-assets

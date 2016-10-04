@@ -16,11 +16,7 @@
     &.is-focused {
         border-color: $c-white;
         color: $c-white;
-    }
-
-    &:focus {
         outline: none;
-        color: $c-white;
     }
 }
 
