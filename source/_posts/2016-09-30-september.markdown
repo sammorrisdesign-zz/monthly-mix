@@ -3,7 +3,7 @@ layout: post
 title:  "September"
 date:   2016-09-31 10:00:00
 soundcloud: https://soundcloud.com/sam-morris-30/sets/september-2016
-fetch: true
+fetch: false
 title-283635415: Lyk Dis
 title-278636622: Spread Love
 ---
