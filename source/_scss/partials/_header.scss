@@ -89,7 +89,7 @@
             display: block;
             margin: 0 auto;
             max-height: none;
-            height: calc(100vh - #{$g-now-playing + $g-gutter * 2.5});
+            height: calc(100vh - #{$g-now-playing + $g-gutter * 3});
             max-width: 100%;
         }
     }
