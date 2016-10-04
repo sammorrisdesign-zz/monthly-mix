@@ -5,11 +5,9 @@ layout: default
 
 <header class="post-header" style="background-color: {{ site.data.[playlist.last].first().color }};">
     {% include logo.html %}
-<!--     <h2 class="post-title super-title">{{ page.title }} {{ page.date | date: "%Y" }}</h2> -->
     <div class="post-title post-title--{{ page.date | date: '%Y' }}">
         {% assign path = page.title | downcase | prepend: 'titles/' %}
         {% svg path %}
-
     </div>
     <div class="post-header__navigation">
         {% include sign-up.html %}
@@ -43,34 +41,26 @@ layout: default
 
 <div class="controls controls--active is-default">
     <div class="progress-bar"></div>
-    <h1 class="controls__title title">
-        <span class="controls__title__track-artist track__artist"></span>
-        <span class="controls__title__track-title track__title">{{ page.title }} {{ page.date | date: "%Y" }}</span>
-    </h1>
-    <div class="controls__buttons">
-        <div class="audio-controls input sub">
-            <span class="audio-controls__pause">{% svg icon-pause %} <span class="controls__tablet-label">Pause</span></span>
-            <span class="audio-controls__play">{% svg icon-play %} <span class="controls__tablet-label">Play</span></span>
-        </div>
-        <div class="controls__buttons__skip input sub">{% svg icon-skip %} <span class="controls__tablet-label">Skip</span></div>
-        <div class="controls__buttons__soundcloud input sub"><a target="_blank"><span class="controls__tablet-label">Open in</span> Soundcloud</a></div>
+    <div class="audio-controls" style="background-color: {{ site.data.[playlist.last].first().color }};">
+        <span class="audio-controls__pause">{% svg icon-pause %}</span>
+        <span class="audio-controls__play">{% svg icon-play %}</span>
     </div>
+    <h1 class="controls__title title">
+        <span class="controls__title__track-artist track__artist">{{ site.data.[playlist.last].first().artist }}</span>
+        <span class="controls__title__track-title track__title">{{ site.data.[playlist.last].first().title }}</span>
+    </h1>
 </div>
 
 <div class="controls controls--next is-default">
     <div class="progress-bar"></div>
-    <h1 class="controls__title title">
-        <span class="controls__title__track-artist track__artist"></span>
-        <span class="controls__title__track-title track__title">{{ page.title }} {{ page.date | date: "%Y" }}</span>
-    </h1>
-    <div class="controls__buttons">
-        <div class="audio-controls input sub">
-            <span class="audio-controls__pause">{% svg icon-pause %} <span class="controls__tablet-label">Pause</span></span>
-            <span class="audio-controls__play">{% svg icon-play %} <span class="controls__tablet-label">Play</span></span>
-        </div>
-        <div class="controls__buttons__skip input sub">{% svg icon-skip %} <span class="controls__tablet-label">Skip</span></div>
-        <div class="controls__buttons__soundcloud input sub"><a target="_blank"><span class="controls__tablet-label">Open in</span> Soundcloud</a></div>
+    <div class="audio-controls" style="background-color: {{ site.data.[playlist.last].first().color }};">
+        <span class="audio-controls__pause">{% svg icon-pause %}</span>
+        <span class="audio-controls__play">{% svg icon-play %}</span>
     </div>
+    <h1 class="controls__title title">
+        <span class="controls__title__track-artist track__artist">{{ site.data.[playlist.last].first().artist }}</span>
+        <span class="controls__title__track-title track__title">{{ site.data.[playlist.last].first().title }}</span>
+    </h1>
 </div>
 
 <audio class="audio-player"/>

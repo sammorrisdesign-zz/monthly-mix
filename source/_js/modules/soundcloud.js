@@ -39,9 +39,6 @@ define([
             bean.on(document.body, 'click', '.audio-controls', function(e) {
                 this.controlsPlay();
             }.bind(this));
-            bean.on(document.body, 'click', '.controls__buttons__skip', function(e) {
-                this.onSkip();
-            }.bind(this));
             bean.on(document.body, 'keydown', function(e) {
                 this.togglePlayOnSpaceBar(e);
             }.bind(this));
@@ -139,11 +136,10 @@ define([
                 return false;
             }
 
-            bonzo(qwery('.controls--next .controls__buttons__soundcloud a')).attr('href', track['permalink']);
-            bonzo(qwery('.is-changable')).attr("style", track['color'].replace('background-', ''));
+            bonzo(qwery('.is-changable')).attr('style', track['color'].replace('background-', ''));
             bonzo(qwery('.post')).attr('data-current-track', track['id']);
             bonzo(qwery('body')).removeClass('is-dark is-light is-very-dark is-default').addClass(track['contrast']);
-            bonzo(qwery('.controls--next .controls__buttons .input')).attr('style', track['color']);
+            bonzo(qwery('.controls--next .audio-controls')).attr('style', track['color']);
             bonzo(qwery('.controls--next .controls__title__track-artist')).text(track['artist']);
             bonzo(qwery('.controls--next .controls__title__track-title')).text(track['title']);
             bonzo(qwery('.controls--next .progress-bar')).attr('style', 'width: 0%;');

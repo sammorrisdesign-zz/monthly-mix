@@ -10,169 +10,6 @@
     @include mq(tablet) {
         padding: $g-gutter;
     }
-
-    a {
-        color: $c-white;
-
-        &:hover {
-            color: $c-black;
-            text-decoration: none;
-        }
-    }
-
-    .input,
-    svg path {
-        user-select: none;
-    }
-
-    .input {
-        &:hover {
-            background-color: $c-white !important;
-        }
-    }
-
-    .is-light & {
-        color: $c-black;
-
-        a {
-            color: $c-black;
-        }
-
-        .input {
-            border-color: $c-black;
-
-            &:hover {
-                color: $c-white;
-                background-color: $c-black !important;
-
-                svg path {
-                    fill: $c-white;
-                }
-            }
-
-            a:hover {
-                color: $c-white;
-            }
-        }
-
-        svg path {
-            fill: $c-black;
-        }
-    }
-
-    .is-default & {
-        .controls__title {
-            @include mq($until: tablet) {
-                margin: 0.6875em 0;
-            }
-        }
-
-        .controls__title__track-title {
-            color: $c-light-grey;
-        }
-
-        .controls__buttons__skip,
-        .controls__buttons__soundcloud {
-            display: none;
-        }
-
-        .controls__buttons__skip {
-            &:hover {
-                svg path {
-                    fill: $c-white;
-                }
-            }
-        }
-
-        .controls__buttons__soundcloud {
-            a:hover {
-                color: $c-white;
-            }
-        }
-    }
-
-    svg {
-        height: 1em;
-        width: 1em;
-        margin-bottom: -.1em;
-
-        @include mq(tablet) {
-            margin-right: .2em;
-        }
-
-        path {
-            fill: $c-white;
-        }
-    }
-}
-
-.controls__buttons {
-    position: absolute;
-    z-index: 20;
-    right: $g-gutter;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    text-align: right;
-    height: 36px;
-
-    .input:first-of-type {
-        margin-left: 0;
-    }
-}
-
-.controls__buttons__soundcloud,
-.controls__buttons__skip {
-    @include mq($until: tablet) {
-        display: none;
-    }
-}
-
-.controls__title {
-    position: relative;
-    z-index: 20;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-right: 50px; // To compensate for buttons
-    color: rgba(#000, .6);
-
-    .is-very-dark & {
-        color: rgba(#fff, .8);
-    }
-
-    // Mimics .sub class styles
-    @include mq($until: mobile) {
-        font-size: 1.4rem;
-        line-height: 2.0rem;
-    }
-
-    @include mq(mobile, tablet) {
-        font-size: 1.6rem;
-        line-height: 2.2rem;
-    }
-
-    @include mq(tablet) {
-        margin-right: 380px; // To compensate for buttons
-    }
-}
-
-.controls__title__track-artist {
-    @include mq($until: tablet) {
-        display: block;
-    }
-}
-
-.controls__tablet-label {
-    @include mq($until: tablet) {
-        display: none;
-    }
-}
-
-.controls--active {
-    z-index: 21;
-    transform: translateY(0%);
-    transition: transform 0.4s;
 }
 
 @keyframes controlsNext {
@@ -185,12 +22,32 @@
     }
 }
 
+.controls--active {
+    z-index: 21;
+    transform: translateY(0%);
+    transition: transform 0.4s;
+}
+
 .controls--next {
     animation: controlsNext 0.4s;
     transform: translateY(100%);
 }
 
 .audio-controls {
+    position: relative;
+    z-index: 5;
+    float: left;
+    margin-right: $g-gutter;
+    padding: $g-gutter;
+
+    svg {
+        fill: $c-white;
+    }
+
+    .is-light & svg {
+        fill: $c-black;
+    }
+
     body[data-state="is-stopped"] & .audio-controls__pause {
         display: none;
     }
@@ -198,6 +55,26 @@
     body[data-state="is-playing"] & .audio-controls__play {
         display: none;
     }
+}
+
+.controls__title {
+    position: relative;
+    z-index: 20;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .track__artist {
+        color: $c-white;
+    }
+
+    .track__title {
+        color: rgba($c-white, .6);
+    }
+}
+
+.controls__title__track-artist {
+    display: block;
 }
 
 .progress-bar {
@@ -209,8 +86,4 @@
     height: 100%;
     width: 0%;
     background-color: rgba($c-white, .2);
-
-    .is-light & {
-        background-color: rgba($c-black, .2);
-    }
 }
