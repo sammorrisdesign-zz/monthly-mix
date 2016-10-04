@@ -8,3 +8,7 @@ permalink: /:year/:title/
 # Build settings
 highlighter: true
 markdown: kramdown
+
+# Imports
+gems:
+  - octopress-autoprefixer

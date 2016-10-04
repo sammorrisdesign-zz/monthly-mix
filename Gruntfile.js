@@ -16,22 +16,11 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: 'source/_scss/**/*.scss',
-        tasks: ['sass', 'autoprefixer', 'cssmin']
+        tasks: ['autoprefixer', 'cssmin']
       },
       js: {
         files: 'source/_js/**/*.js',
         tasks: 'requirejs'
-      },
-      jekyll: {
-        files: ['source/**/*', '!source/_site/**/*'],
-        tasks: 'shell'
-      }
-    },
-    sass: {
-      dist: {
-        files: {
-            'source/assets/css/style.css' : 'source/_scss/style.scss'
-        }
       }
     },
     autoprefixer: {
@@ -44,14 +33,6 @@ module.exports = function(grunt) {
         files: [{
           'source/assets/css/style.min.css' : 'source/assets/css/style.css'
         }]
-      }
-    },
-    shell: {
-      run: {
-        command: 'cd source && jekyll build',
-        options: {
-          nospawn: true
-        }
       }
     },
     requirejs: {
