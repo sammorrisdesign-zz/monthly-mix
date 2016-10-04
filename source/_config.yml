@@ -8,6 +8,8 @@ permalink: /:year/:title/
 # Build settings
 highlighter: true
 markdown: kramdown
+sass:
+  style: compressed
 
 # Imports
 gems:
