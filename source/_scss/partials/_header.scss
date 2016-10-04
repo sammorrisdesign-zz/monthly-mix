@@ -53,11 +53,16 @@
         top: -20px;
         z-index: 2;
         transform: scale(.6);
+        opacity: .8;
 
         @include mq(tablet) {
             transform: none;
             right: 40px;
             top: 20px;
+        }
+
+        &:hover {
+            opacity: 1;
         }
     }
 
