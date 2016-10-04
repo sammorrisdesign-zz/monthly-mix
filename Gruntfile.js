@@ -14,25 +14,9 @@ module.exports = function(grunt) {
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
     watch: {
-      css: {
-        files: 'source/_scss/**/*.scss',
-        tasks: ['autoprefixer', 'cssmin']
-      },
       js: {
         files: 'source/_js/**/*.js',
         tasks: 'requirejs'
-      }
-    },
-    autoprefixer: {
-      dist: {
-        src: 'source/assets/css/style.css'
-      }
-    },
-    cssmin: {
-      target: {
-        files: [{
-          'source/assets/css/style.min.css' : 'source/assets/css/style.css'
-        }]
       }
     },
     requirejs: {
@@ -48,22 +32,9 @@ module.exports = function(grunt) {
           findNestedDependencies: true
         }
       }
-    },
-    browserSync: {
-      bsFiles: {
-        src : ['source/_site/**/*.html', 'source/_site/**/*.css', 'source/_site/**/*.js']
-      },
-      options: {
-        watchTask: true,
-        port: 5000,
-        injectChanges: false,
-        server: {
-          baseDir: "source/_site"
-        }
-      }
     }
   });
 
   // Tasks
-  grunt.registerTask('default', ['sass', 'browserSync', 'watch']);
+  grunt.registerTask('default', ['watch']);
 };

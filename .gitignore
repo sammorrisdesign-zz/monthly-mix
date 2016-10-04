@@ -1,15 +1,14 @@
 .sass-cache
 style.css
 style.css.map
-style.min.css
 soundcloud-keys.json
 
 main.min.js
-
-node_modules
 
 .DS_Store
 
 _site
 
 .jekyll-metadata
+
+npm-debug.log
