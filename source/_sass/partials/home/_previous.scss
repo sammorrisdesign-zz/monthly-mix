@@ -1,6 +1,7 @@
 .home-previous {
     position: relative;
     background-color: white;
+    padding-bottom: 50px;
 
     &:before,
     &:after {
@@ -31,4 +32,38 @@
     right: 0;
     bottom: 0;
     opacity: .3;
+}
+
+.home-previous__list-container {
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    margin-top: $g-gutter;
+    z-index: 5;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.home-previous__list {
+    white-space: nowrap;
+    text-align: center;
+}
+
+.home-previous__item {
+    width: 140px;
+    height: 140px;
+    display: inline-block;
+}
+
+.home-previous__item:first-of-type {
+    margin-left: $g-gutter;
+
+    margin-left: $g-gutter;
+
+    @include mq(920px) {
+        margin-left: calc((100% - 920px) / 2 + #{$g-gutter});
+    }
 }

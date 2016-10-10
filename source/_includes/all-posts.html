@@ -6,23 +6,19 @@
     </style>
     <div class="container">
         <h2 class="home__title">Archives</h2>
+    </div>
+    <div class="home-previous__list-container">
         <ul class="home-previous__list">
             {% for post in site.posts %}
                 {% if forloop.first %}
                 {% else %}
-                    <li class="home-previous__item">
-                        {% assign playlist = post.soundcloud | split: '/' %}
+                {% assign playlist = post.soundcloud | split: '/' %}
+                    <li class="home-previous__item" {% for track in site.data.[playlist.last] limit:1 %}style="background-color: {{track.color}}"{% endfor %}>
                         <a href="{{ post.url | prepend: site.baseurl }}">
-                            <div class="home-previous__table">
-                                <h3 class="home-previous__title sub">{{ post.title }} {{ post.date | date: "%Y" }}</h3>
-                                <p class="home-previous__time sub">
-                                    {% include duration.html %}
-                                </p>
-                                <p class="home-previous__track-count sub">
-                                    {{ site.data.[playlist.last].size }} tracks
-                                </p>
+                            <div class="post-title post-title--{{ post.date | date: '%Y' }}">
+                                {% assign path = post.title | downcase | prepend: 'titles/' %}
+                                {% svg path %}
                             </div>
-                            <hr class="hr" />
                         </a>
                     </li>
                 {% endif %}
