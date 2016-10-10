@@ -49,16 +49,19 @@
         position: absolute;
         text-align: center;
         color: $c-white;
-        right: -20px;
-        top: -20px;
+        right: $g-gutter + 6px;
+        top: $g-gutter;
         z-index: 2;
         transform: scale(.6);
+        transform-origin: top right;
         opacity: .8;
 
         @include mq(tablet) {
+            right: 0px;
+        }
+
+        @include mq(wide) {
             transform: none;
-            right: 40px;
-            top: 20px;
         }
 
         &:hover {
@@ -94,7 +97,7 @@
             display: block;
             margin: 0 auto;
             max-height: none;
-            height: calc(100vh - #{$g-now-playing + $g-gutter * 3});
+            height: calc(100vh - #{$g-now-playing + $g-gutter * 5});
             max-width: 100%;
         }
     }
