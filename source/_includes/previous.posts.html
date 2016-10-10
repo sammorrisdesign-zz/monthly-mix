@@ -1,0 +1,27 @@
+{% assign post = site.posts.first %}
+{% assign playlist = post.soundcloud | split: '/' %}
+{% for track in site.data.[playlist.last] limit:1 %}
+<div class="home-previous__background" style="background-color: {{track.color}}"></div>
+{% endfor %}
+
+
+{% for post in site.posts %}
+{% if forloop.first %}
+{% else %}
+    <li class="home-playlists__item">
+        {% assign playlist = post.soundcloud | split: '/' %}
+        <a href="{{ post.url | prepend: site.baseurl }}">
+            <div class="home-playlists__table">
+                <h3 class="home-playlists__title sub">{{ post.title }} {{ post.date | date: "%Y" }}</h3>
+                <p class="home-playlists__time sub">
+                    {% include duration.html %}
+                </p>
+                <p class="home-playlists__track-count sub">
+                    {{ site.data.[playlist.last].size }} tracks
+                </p>
+            </div>
+            <hr class="hr" />
+        </a>
+    </li>
+{% endif %}
+{% endfor %}

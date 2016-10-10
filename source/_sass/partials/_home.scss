@@ -9,6 +9,10 @@
     }
 }
 
+.home {
+    overflow: hidden;
+}
+
 .home__title {
     font-size: 24px;
     font-weight: bold;
@@ -16,3 +20,4 @@
 
 @import 'home/header';
 @import 'home/recent';
+@import 'home/previous';

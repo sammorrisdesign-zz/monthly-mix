@@ -2,18 +2,6 @@
     position: relative;
     padding: 38px 0;
 
-    &:after {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        left: -20px;
-        right: -20px;
-        bottom: -20px;
-        height: 60px;
-        background-color: inherit;
-        transform: rotate(1.5deg);
-    }
-
     svg {
         max-height: 400px;
 

@@ -1,20 +1,33 @@
-{% for post in site.posts %}
-{% if forloop.first %}
-{% else %}
-    <li class="home-playlists__item">
-        {% assign playlist = post.soundcloud | split: '/' %}
-        <a href="{{ post.url | prepend: site.baseurl }}">
-            <div class="home-playlists__table">
-                <h3 class="home-playlists__title sub">{{ post.title }} {{ post.date | date: "%Y" }}</h3>
-                <p class="home-playlists__time sub">
-                    {% include duration.html %}
-                </p>
-                <p class="home-playlists__track-count sub">
-                    {{ site.data.[playlist.last].size }} tracks
-                </p>
-            </div>
-            <hr class="hr" />
-        </a>
-    </li>
-{% endif %}
-{% endfor %}
+<div class="home-previous">
+    <style>
+        .home-previous:before {
+            {% include first-post-color.html %}
+        }
+    </style>
+    <div class="container">
+        <h2 class="home__title">Archives</h2>
+        <ul class="home-previous__list">
+            {% for post in site.posts %}
+                {% if forloop.first %}
+                {% else %}
+                    <li class="home-previous__item">
+                        {% assign playlist = post.soundcloud | split: '/' %}
+                        <a href="{{ post.url | prepend: site.baseurl }}">
+                            <div class="home-previous__table">
+                                <h3 class="home-previous__title sub">{{ post.title }} {{ post.date | date: "%Y" }}</h3>
+                                <p class="home-previous__time sub">
+                                    {% include duration.html %}
+                                </p>
+                                <p class="home-previous__track-count sub">
+                                    {{ site.data.[playlist.last].size }} tracks
+                                </p>
+                            </div>
+                            <hr class="hr" />
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="home-previous__background" style="{% include first-post-color.html %}"></div>
+</div>
