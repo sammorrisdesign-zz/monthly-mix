@@ -11,7 +11,7 @@ var Player = (function () {
 
     var bindEvents = function() {
         $('.playlist__entry').click(function() {
-            ifFirstPlay();
+            // ifFirstPlay();
             playTrack($(this).attr('data-track-id'));
         });
         $('.audio-controls').click(function(el) {
@@ -27,7 +27,7 @@ var Player = (function () {
     var ifFirstPlay = function() {
         // A workaround to enable the native player on iOS
         if (firstPlay) {
-            $('audio').get(0).play();
+            $('.audio-player').get(0).play();
             firstPlay = false;
         }
     }
@@ -50,7 +50,7 @@ var Player = (function () {
         id = $('.post').attr('data-current-track');
 
         ifFirstPlay();
-        
+
         if (id) {
             playTrack(id);
         } else {
@@ -69,7 +69,7 @@ var Player = (function () {
     }
 
     var onPlay = function(track) {
-        $('audio').get(0).play();
+        $('.audio-player').get(0).play();
         $(track).addClass('is-playing');
         $('body').attr('data-state', 'is-playing');
         updatePage();
@@ -89,7 +89,7 @@ var Player = (function () {
     }
 
     var onStop = function(track) {
-        $('audio').get(0).pause();
+        $('.audio-player').get(0).pause();
         $('body').attr('data-state', 'is-stopped');
         $(track).removeClass('is-playing');
         resetPageTitle();
@@ -113,7 +113,6 @@ var Player = (function () {
 
     var updateNowPlaying = function() {
         track = this.getNowPlayingInfo();
-
         // Don't update if track isn't new
         if ($('.post').attr('data-current-track') == track.id) {
             return false;
@@ -162,21 +161,21 @@ var Player = (function () {
     var playTrack = function(trackId, scrollTo) {
         scrollTo = scrollTo || false;
         el = $('#track--' + trackId);
-        player = $('audio').get(0).play();
+        player = $('.audio-player').get(0);
 
         SC.get('/tracks/' + trackId).then(function(track) {
-            var url = track.stream_url + '?client_id=' + clientId;
+            url = track.stream_url + '?client_id=' + clientId;
 
             // Check if current track
-            if (url = $('audio').attr('src')) {
-                if ($('audio').get(0).paused) {
+            if (url = $('.audio-player').attr('src')) {
+                if ($('.audio-player').get(0).paused) {
                     onPlay(el);
                 } else {
                     onStop(el);
                 }
             } else {
                 onStop($('.is-playing'));
-                $('audio').attr('src', url);
+                $('.audio-player').attr('src', track.stream_url + '?client_id=' + clientId);
                 onPlay(el);
                 player.onended = function() {
                     onSkip();
