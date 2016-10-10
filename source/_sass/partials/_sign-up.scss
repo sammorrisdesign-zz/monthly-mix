@@ -6,10 +6,12 @@
 .sign-up__input {
     -webkit-appearance: none;
     margin-right: 2px;
-    border: 1px solid $c-light-grey;
+    border: 1px solid $c-white;
     padding: 5px 10px;
     border-radius: 0;
-    color: $c-light-grey;
+    color: $c-white;
+    background-color: transparent;
+    font-weight: bold;
     @include flex(1);
     @include flex-basis(75%);
 
@@ -22,10 +24,11 @@
 
 .sign-up__button {
     -webkit-appearance: none;
-    border: 2px solid $c-black;
+    border: 0;
     border-radius: 0;
     padding: 4px 9px;
     color: $c-black;
+    background-color: $c-white;
     font-weight: bold;
     @include flex(1);
     cursor: pointer;
