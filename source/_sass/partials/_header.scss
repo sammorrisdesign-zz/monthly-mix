@@ -2,7 +2,6 @@
     position: relative;
     z-index: 10;
     padding: $g-gutter;
-    // overflow: auto;
     background-color: $c-white;
 
     @include mq(tablet) {

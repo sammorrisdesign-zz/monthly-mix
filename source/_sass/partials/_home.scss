@@ -1,318 +1,47 @@
 .container {
     position: relative;
-    max-width: 900px;
-    margin: 0 auto;
     padding: 0 $g-gutter;
-    overflow: auto;
+    margin: 0 auto;
 
-    .home & {
-        @include mq(tablet) {
-            max-width: 600px;
-            padding-left: 300px - $g-gutter;
-            box-sizing: initial;
-        }
-    }
-}
-
-.home {
-    padding-top: $g-now-playing;
-    background-color: rgba($c-blue, 0.4);
-
-    > div {
-        position: relative;
-        z-index: 4;
-        -webkit-transform: translate3d(0,0,0);
-    }
-
-    // Compensation for fixed navigation
-    .home-title {
-        padding-top: 112px;
-        margin-top: -112px;
-    }
-}
-
-.home-navigation {
-    position: fixed;
-    z-index: 10;
-    overflow: hidden;
-    width: 100%;
-    padding: $g-gutter 0;
-    background: transparent;
-}
-
-.home-title {
-    font-weight: bold;
-    margin-bottom: $g-gutter / 2;
-
-    @include mq(tablet) {
-        position: absolute;
-        left: $g-gutter;
-        margin-bottom: 0;
+    @include mq(wide) {
+        max-width: 1140px;
     }
 }
 
 .home-header {
     position: relative;
-    z-index: 5;
-    padding: 80px 0 50px;
-    text-align: center;
-    margin-top: -$g-now-playing;
-
-    @include mq(tablet) {
-        padding: 18vh 0 15vh;
-    }
-
-    .container {
-        padding-left: $g-gutter;
-    }
-
-    .sign-up {
-        max-width: 400px;
-        margin: $g-gutter auto 0;
-    }
-
-    .sign-up__input {
-        &.is-focused {
-            border-color: $c-black;
-            color: $c-black;
-        }
-    }
-
-    .sign-up__button {
-        background-color: $c-white;
-    }
-}
-
-.home-playlists {
-    margin-bottom: 160px;
-    background-color: $c-white;
-    padding: $g-gutter 0;
-
-    @include mq(tablet) {
-        padding: $g-gutter * 2 0;
-        margin-bottom: 300px;
-    }
-}
-
-.home-playlists__list {
-    overflow: auto;
-}
-
-.home-playlists__time,
-.home-playlists__track-count {
-    color: $c-grey;
-}
-
-.home-playlists__item {
-    padding: 2px 0;
-
-    a:hover {
-        text-decoration: none;
-    }
-}
-
-.home-playlists__table {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-
-    & > * {
-        display: table-cell;
-        width: 25%;
-    }
-
-    .home-playlists__title {
-        width: 52%;
-    }
-
-    .home-playlists__track-count {
-        text-align: right;
-    }
-}
-
-.home-playlists__title {
-    font-weight: bold;
-}
-
-.home-playlists__time {
-    @include mq($until: tablet) {
-        display: none;
-    }
-}
-
-.home-playlists__description {
-    padding: 0 $g-gutter;
-    color: $c-grey;
-}
-
-.home-recent {
-    overflow: auto;
-    background-color: $c-white;
-    padding: $g-gutter 0;
-
-    @include mq(tablet) {
-        padding: $g-gutter * 2 0;
-    }
-
-    .home-recent__background {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        opacity: .2;
-    }
-
-    .home-playlists__title {
-        font-size: 3.4rem;
-        line-height: 1.1;
-
-        @include mq(tablet) {
-            font-size: 4.8rem;
-            margin-top: -3px;
-        }
-    }
-    
-    .home-playlists__meta {
-        display: none;
-
-        @include mq(mobile) {
-            display: block;
-            position: absolute;
-            top: 4px;
-            right: 0;
-        }
-    }
-
-    .home-playlists__description {
-        padding-left: 0;
-        max-width: 500px;
-    }
-
-    .input {
-        border-color: $c-black;
-        margin-left: 0;
-        margin-top: $g-gutter / 2;
-
-        svg {
-            height: 1em;
-            width: 1em;
-            margin-right: .2em;
-            margin-bottom: -.1em;
-        }
-    }
-}
-
-.home-recent__content {
-    position: relative;
-
-    a:hover {
-        text-decoration: none;
-        
-        ~ .input {
-            background-color: $c-black;
-            color: $c-white;
-
-            svg path {
-                fill: $c-white;
-            }
-        }
-    }
-}
-
-.home-subscribe {
-    overflow: auto;
     background-color: $c-black;
     color: $c-white;
-    padding: $g-gutter 0;
+    height: 86px;
 
-    @include mq(tablet) {
-        padding: $g-gutter * 2 0;
-    }
-
-    .sign-up__input {
-        border-color: $c-grey;
-        color: $c-grey;
-        background-color: transparent;
-    }
-    
-    .sign-up__button {
-        border-color: $c-white;
-        background-color: transparent;
+    .logo {
+        position: absolute;
+        top: 8px;
+        left: $g-gutter;
         color: $c-white;
+        transform: scale(.6);
+        transform-origin: top left;
+
+        @include mq(tablet) {
+            transform: scale(.45);
+        }
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        height: 60px;
+        background-color: inherit;
+        transform: rotate(-1deg);
     }
 }
 
-.home-subscribe__description {
-    padding: 0 0 $g-gutter;
-
-    @include mq(tablet) {
-        padding-top: 6px;
-    }
-}
-
-.home-about {
-    padding-top: 0;
-    overflow: auto;
-    padding: $g-gutter 0;
-    background-color: $c-white;
-
-    @include mq(tablet) {
-        padding: $g-gutter * 2 0;
-    }
-}
-
-.home-about__body {
-    color: $c-grey;
-
-    @include mq(tablet) {
-        @include column-count(2);
-        @include column-gap($g-gutter * 2);
-    }
-
-    strong {
-        display: block;
-        font-weight: bold;
-        color: $c-black;
-    }
-
-    a {
-        text-decoration: underline;
-    }
-
-    p {
-        display: block;
-        padding-bottom: 1em;
-        @include column-break-inside(avoid);
-        max-width: 500px;
-    }
-}
-
-.home-credit {
-    padding: $g-gutter 0 160px;
-    color: $c-grey;
-
-    @include mq(tablet) {
-        padding-bottom: 300px;
-    }
-
-    .container {
-        padding-left: $g-gutter;
-        max-width: 860px;
-    }
-
-    a {
-        text-decoration: underline;
-    }
-}
-
-.home-canvas {
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
+.home-header__navigation {
+    width: 320px;
+    float: right;
+    padding: 8px 0;
 }

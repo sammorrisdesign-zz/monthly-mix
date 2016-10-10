@@ -2,57 +2,13 @@
 layout: default
 javascript: home
 ---
-<header class="home-navigation">
-    <div class="container">
-        {% include navigation.html %}
-    </div>
-</header>
-
 <div class="home">
     <div class="home-header">
         <div class="container">
             {% include logo.html %}
-            <h3 class="home-header__tagline sub">The latest music from the past month, delivered to your inbox</h3>
-            {% include sign-up.html %}
-        </div>
-    </div>
-
-    <div class="home-recent">
-        <div class="home-recent__background" {% include first-post-color.html %}></div>
-        <div class="container">
-            <h2 class="home-title home-title--recent title" id="playlists">Latest Playlist</h2>
-            <div class="home-recent__content">
-                {% include first-post.html %}
+            <div class="home-header__navigation">
+                {% include sign-up.html %}
             </div>
-        </div>
-    </div>
-
-    <div class="home-playlists">
-        <div class="container">
-            <h2 class="home-title home-title--playlists title">Archive</h2>
-            <ul class="home-playlists__list">
-                {% include all-posts.html %}
-            </ul>
-        </div>
-    </div>
-
-    <div class="home-about">
-        <div class="container">
-            <h2 id="about" class="home-title home-title--about title">About</h2>
-            <div class="home-about__body sub">
-                <p><strong>What is Monthly Mix?</strong> Playlists of the latest music from each month, with a new playlist going up on the 1st(ish) of each&nbsp;month</p>
-                <p><strong>What music will be featured?</strong> Anything released from the last month, either tracks from albums or individual tracks. Genre wise anything goes. Realistically it will just be the same indie or underground assortment you find on the internet.</p>
-                <p><strong>How can I keep up with new posts?</strong> Keep coming back to this site or <a href="{{ site.baseurl }}/#subscribe">subscribe to our newsletter</a>.</p>
-                <p><strong>I make music/I think you should feature someone. Can I send it to you?</strong> Feel free to <a href="mailto:{{ site.email }}">send me an email</a> or <a href="https://twitter.com/sammorrisdesign" target="_blank">tweet me</a> with a link to the track on Soundcloud. I promise to listen to every track sent in. Like a shitty John&nbsp;Peel.</p>
-                <p><strong>What should I do if I have problems with the site?</strong> <a href="mailto:{{ site.email }}">Contact me</a>. This is still fairly new, so expect jank.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="home-credit">
-        <div class="container sub">
-            Monthly Mix is a project by <a href="https://twitter.com/SamMorrisDesign">@SamMorrisDesign</a>.
         </div>
     </div>
 </div>
-<canvas class="home-canvas"></canvas>
