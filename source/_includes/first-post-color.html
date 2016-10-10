@@ -1,5 +1,0 @@
-{% assign post = site.posts.first %}
-{% assign playlist = post.soundcloud | split: '/' %}
-{% for track in site.data.[playlist.last] limit:1 %}
-    style="background-color: {{track.color}}"
-{% endfor %}

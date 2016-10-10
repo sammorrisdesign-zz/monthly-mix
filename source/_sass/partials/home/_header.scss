@@ -1,0 +1,34 @@
+.home-header {
+    position: relative;
+    background-color: $c-black;
+    color: $c-white;
+    height: 86px;
+    z-index: 5;
+
+    .logo {
+        position: absolute;
+        top: $g-gutter;
+        left: $g-gutter;
+        color: $c-white;
+        transform: scale(.45);
+        transform-origin: top left;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        height: 60px;
+        background-color: inherit;
+        transform: rotate(-1deg);
+    }
+}
+
+.home-header__navigation {
+    width: 320px;
+    float: right;
+    padding: $g-gutter 0;
+}

@@ -51,7 +51,7 @@
         right: $g-gutter + 6px;
         top: $g-gutter;
         z-index: 2;
-        transform: scale(.6);
+        transform: scale(.45);
         transform-origin: top right;
         opacity: .8;
 
@@ -60,21 +60,12 @@
         }
 
         @include mq(wide) {
-            transform: none;
+            transform: scale(.8);
         }
 
         &:hover {
             opacity: 1;
         }
-    }
-
-    .logo__monthly {
-        font-size: 40px;
-    }
-
-    .logo__mix {
-        font-size: 104px;
-        letter-spacing: -7px;
     }
 
     .post-title {

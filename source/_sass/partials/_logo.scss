@@ -13,23 +13,14 @@
 
 .logo__monthly {
     display: block;
-    font-size: 40px;
+    font-size: 54px;
     transform: rotate(6deg);
     margin-left: 12px;
-
-    @include mq(tablet) {
-        font-size: 54px;
-    }
 }
 
 .logo__mix {
-    font-size: 104px;
-    letter-spacing: -7px;
-
-    @include mq(tablet) {
-        font-size: 140px;
-        letter-spacing: -9px;
-    }
+    font-size: 140px;
+    letter-spacing: -9px;
 }
 
 @mixin logoBounce($letter, $rotation, $pos: 10px) {

@@ -1,47 +1,18 @@
 .container {
     position: relative;
+    z-index: 10;
     padding: 0 $g-gutter;
     margin: 0 auto;
 
-    @include mq(wide) {
-        max-width: 1140px;
+    @include mq(tablet) {
+        max-width: 920px;
     }
 }
 
-.home-header {
-    position: relative;
-    background-color: $c-black;
-    color: $c-white;
-    height: 86px;
-
-    .logo {
-        position: absolute;
-        top: 8px;
-        left: $g-gutter;
-        color: $c-white;
-        transform: scale(.6);
-        transform-origin: top left;
-
-        @include mq(tablet) {
-            transform: scale(.45);
-        }
-    }
-
-    &:after {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        left: -20px;
-        right: -20px;
-        bottom: -20px;
-        height: 60px;
-        background-color: inherit;
-        transform: rotate(-1deg);
-    }
+.home__title {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.home-header__navigation {
-    width: 320px;
-    float: right;
-    padding: 8px 0;
-}
+@import 'home/header';
+@import 'home/recent';

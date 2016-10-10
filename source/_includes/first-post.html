@@ -1,20 +1,21 @@
 {% assign post = site.posts.first %}
 {% assign playlist = post.soundcloud | split: '/' %}
-<a href="{{ post.url | prepend: site.baseurl }}">
-    <div class="home-playlists__meta">
-        <p class="home-playlists__time sub">
-            {% include duration.html %}
-        </p>
-        <p class="home-playlists__track-count sub">
-            {{ site.data.[playlist.last].size }} tracks
-        </p>
+
+{% for track in site.data.[playlist.last] limit:1 %}
+<div class="home-recent {{track.contrast}}" style="background-color: {{track.color}}">
+{% endfor %}
+    <div class="container">
+        <h2 class="home__title home-recent__title">The latest music from</h2>
+        <a href="{{ post.url | prepend: site.baseurl }}">
+            <div class="post-title post-title--{{ post.date | date: '%Y' }}">
+                {% assign path = post.title | downcase | prepend: 'titles/' %}
+                {% svg path %}
+            </div>
+        </a>
     </div>
-    <h3 class="home-playlists__title title">{{ post.title }} {{ post.date | date: "%Y" }}</h3>
-    <hr class="hr" />
-    <p class="home-playlists__description sub">Featuring
-    {% for track in site.data.[playlist.last] limit:5 %}
-        {{ track.artist }}{% if forloop.index != 5 %},{% endif %}
-    {% endfor %}
-    and {{ site.data.[playlist.last].size | minus: 5}} others.
-    </p>
-</a>
+    <div class="home-recent__covers">
+        {% for track in site.data.[playlist.last] limit:8 %}
+            <img src="{{ track.artwork }}" class="home-recent__cover"/>
+        {% endfor %}
+    </div>
+</div>
