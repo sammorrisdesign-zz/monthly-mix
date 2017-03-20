@@ -11,6 +11,7 @@ main.min.js
 
 _site
 
-.jekyll-metadata
+.build
 
 npm-debug.log
+node_modules
