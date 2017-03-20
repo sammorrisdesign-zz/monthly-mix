@@ -8,11 +8,13 @@ var GoSquared = (function () {
             _gs('GSN-411731-V');
         },
 
+/*
         newTrack: function(trackArtist, trackTitle,playlistTitle) {
             _gs('event', 'Played ' + trackArtist + ' – "' + trackTitle + '" on playlist for ' + playlistTitle, {
               extra: 'event',
               details: true
             });
         }
+*/
     };
 })();
