@@ -8,25 +8,12 @@
 // A collection of externally created sass files
 @import 'vendor/reset';
 @import 'vendor/sass-mq';
-@import 'vendor/css3';
 
 // Helpers
 // Sass files that include mixins, functions, placeholders and variables.
 // No css should be output by these files directly
-@import 'helpers/variables';
-@import 'helpers/mixins';
+
 
 // Partials
 // Where the actual output css for your site comes from
-@import 'partials/base';
-@import 'partials/header';
-@import 'partials/logo';
-@import 'partials/navigation';
-@import 'partials/post';
-@import 'partials/footer';
-@import 'partials/track';
-@import 'partials/playlist';
-@import 'partials/controls';
-@import 'partials/home';
-@import 'partials/sign-up';
-@import 'partials/titles';
+
