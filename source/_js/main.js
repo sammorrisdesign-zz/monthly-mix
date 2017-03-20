@@ -3,9 +3,3 @@
 
 GoSquared.init();
 SignUp.init();
-
-var bootstrap = $('body').attr('data-bootstrap');
-
-if (bootstrap === 'playlist') {
-    Player.init();
-}
