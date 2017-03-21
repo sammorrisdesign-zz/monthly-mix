@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/sammorrisdesign/mies-boilerplate",
   "devDependencies": {
+    "browserify": "^14.1.0",
     "deasync": "^0.1.9",
     "handlebars": "^4.0.6",
     "klaw-sync": "^1.1.2",
@@ -23,6 +24,7 @@
     "node-static": "^0.7.9",
     "node-watch": "^0.5.2",
     "partials-loader": "^0.1.3",
+    "stringify": "^5.1.0",
     "youtube-api": "^2.0.6"
   },
   "dependencies": {

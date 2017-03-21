@@ -1,12 +1,13 @@
 var fs = require('fs-extra');
-var klawSync = require('klaw-sync');
 
 module.exports = {
     html: function(data) {
         if (data) {
             this.compileHtmlPage(data) 
         } else {
+            var klawSync = require('klaw-sync');
             var dataPaths = klawSync('.data', {ignore: '.DS_Store'});
+
             for (var i in dataPaths) {
                 var jsonData = JSON.parse(fs.readFileSync(dataPaths[i].path, 'utf8'));
                 this.compileHtmlPage(jsonData);
@@ -32,5 +33,32 @@ module.exports = {
 
         fs.mkdirsSync('.build');
         fs.writeFileSync('.build/' + data.handle + '.html', template(data));
+        console.log('updated html for ' + data.handle);
+    },
+
+    js: function() {
+        var browserify = require('browserify');
+        var stringify = require('stringify');
+        var deasync = require('deasync');
+
+        var isDone = false;
+
+        fs.removeSync('.build/assets/js/main.js');
+        fs.mkdirsSync('.build/assets/js');
+
+        browserify('./src/js/main.js').transform(stringify, {
+            appliesTo: { includeExtensions: ['.hjs', '.html', '.whatever'] }
+        }).bundle(function(err, buf) {
+            if (err) {
+                console.log(err);
+            }
+            fs.writeFileSync('.build/assets/js/main.js', buf.toString());
+            isDone = true;
+            console.log('updated js!');
+        });
+
+        deasync.loopWhile(function() {
+            return !isDone;
+        });
     }
 } 

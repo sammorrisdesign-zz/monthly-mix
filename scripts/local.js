@@ -15,7 +15,7 @@ watch('src', { recursive: true }, function(evt, name) {
     } else if (fileExt === 'scss') {
         // call assets.sass()
     } else if (fileExt === 'js') {
-        // call assets.js()
+        assets.js()
     } else {
         console.log('non-watchable file extension changed :' + fileExt);
     }
