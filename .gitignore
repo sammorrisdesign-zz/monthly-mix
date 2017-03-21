@@ -1,17 +1,13 @@
 .sass-cache
-.asset-cache
 
-style.css
-style.css.map
 keys.json
 
 main.min.js
 
 .DS_Store
 
-_site
-
 .build
+.data
 
 npm-debug.log
 node_modules
