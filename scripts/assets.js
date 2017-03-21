@@ -1,7 +1,20 @@
 var fs = require('fs-extra');
+var klawSync = require('klaw-sync');
 
 module.exports = {
     html: function(data) {
+        if (data) {
+            this.compileHtmlPage(data) 
+        } else {
+            var dataPaths = klawSync('.data', {ignore: '.DS_Store'});
+            for (var i in dataPaths) {
+                var jsonData = JSON.parse(fs.readFileSync(dataPaths[i].path, 'utf8'));
+                this.compileHtmlPage(jsonData);
+            }
+        }
+    },
+
+    compileHtmlPage: function(data) {
         var handlebars = require('handlebars');
         var partialLoader = require('partials-loader');
 
@@ -19,5 +32,5 @@ module.exports = {
 
         fs.mkdirsSync('.build');
         fs.writeFileSync('.build/' + data.handle + '.html', template(data));
-    },
+    }
 } 

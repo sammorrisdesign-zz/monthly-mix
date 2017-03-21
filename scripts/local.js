@@ -1,19 +1,21 @@
 var watch = require('node-watch');
-var cmd = require('node-cmd');
 var static = require('node-static');
+var assets = require('../scripts/assets.js');
 
-watch('src', function(file) {
-    var fileExt = file.substring(file.lastIndexOf('.') + 1);
+watch('src', { recursive: true }, function(evt, name) {
+    var fileExt = name.substring(name.lastIndexOf('.') + 1);
+
+    console.log('watching');
+    
+    console.log(file);
 
     if (fileExt === 'html' || fileExt === 'svg') {
-        console.log('updating html');
-        cmd.get('npm run compile -- html', function(data) { console.log(data); });
+        console.log('test');
+        assets.html();
     } else if (fileExt === 'scss') {
-        console.log('updating css');
-        cmd.get('npm run compile -- css', function(data) { console.log(data); });
+        // call assets.sass()
     } else if (fileExt === 'js') {
-        console.log('updating js');
-        cmd.get('npm run compile -- js', function(data) { console.log(data); });
+        // call assets.js()
     } else {
         console.log('non-watchable file extension changed :' + fileExt);
     }
