@@ -13,7 +13,7 @@ watch('src', { recursive: true }, function(evt, name) {
         console.log('test');
         assets.html();
     } else if (fileExt === 'scss') {
-        // call assets.sass()
+        assets.css();
     } else if (fileExt === 'js') {
         assets.js()
     } else {

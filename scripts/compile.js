@@ -4,6 +4,7 @@ var playlists = require('../scripts/playlists.js');
 var tracks = require('../scripts/tracks.js');
 
 assets.js();
+assets.css();
 
 playlists.fetch(function(data) {
     for (var i in data) {

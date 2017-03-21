@@ -60,5 +60,19 @@ module.exports = {
         deasync.loopWhile(function() {
             return !isDone;
         });
+    },
+
+    css: function() {
+        var sass = require('node-sass');
+
+        fs.removeSync('.build/assets/css/main.css');
+        fs.mkdirsSync('.build/assets/css');
+
+        var css = sass.renderSync({
+            file: 'src/sass/main.scss'
+        }).css.toString('utf8');
+
+        fs.writeFileSync('.build/assets/css/main.css', css);
+        console.log('updated css!');
     }
 } 
