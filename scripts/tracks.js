@@ -1,20 +1,26 @@
 var fs = require('fs-extra');
 var keys = require('../keys.json');
 var youtube = require('youtube-api');
+var assets = require('../scripts/assets.js');
+
+var debug = true;
 
 module.exports = {
-    fetch: function() {
-        var id = 'PLYR_FLaQpljOY9YTl4UArYVXn12P8BGBB';
+    fetch: function(playlist) {
+        this.getTracks(playlist.id, function(data) {
+            var playlistTracks = this.cleanData(playlist, data);
+            var jsonFileLocation = '.data/' + playlistTracks.handle + '.json';
+            var oldData = JSON.parse(fs.readFileSync(jsonFileLocation, 'utf8'));
 
-        this.getPlaylist(id, function(data) {
-            var playlist = this.cleanData(data);
-
-            fs.mkdirsSync('.data');
-            fs.writeFileSync('.data/february.json', JSON.stringify(playlist));
+            if (JSON.stringify(oldData.tracks) !== JSON.stringify(playlistTracks.tracks) || debug) {
+                fs.mkdirsSync('.data');
+                fs.writeFileSync(jsonFileLocation, JSON.stringify(playlistTracks));
+                assets.html(playlistTracks);
+            }
         }.bind(this));
     },
 
-    getPlaylistInfo: function(playlistId, callStackSize, pageToken, currentItems, callBack) {
+    getTracksInfo: function(playlistId, callStackSize, pageToken, currentItems, callBack) {
         youtube.playlistItems.list({
             part: 'snippet',
             pageToken: pageToken,
@@ -38,16 +44,16 @@ module.exports = {
         });
     },
 
-    getPlaylist: function(id, done) {
+    getTracks: function(id, done) {
         youtube.authenticate({
             type: 'key',
             key: keys.youtube
         });
 
-        this.getPlaylistInfo(id, 0, null, [], done)
+        this.getTracksInfo(id, 0, null, [], done)
     },
 
-    cleanData: function(data) {
+    cleanData: function(playlistInfo, data) {
         var playlist = {};
         for (var i in data) {
             playlist[i] = {
@@ -57,7 +63,13 @@ module.exports = {
             }
         }
 
-        return playlist;
+        return {
+            lastModified: Date.now(),
+            title: playlistInfo.title,
+            handle: playlistInfo.title.replace(' ', '-').toLowerCase(),
+            id: playlistInfo.id,
+            tracks: playlist
+        };
     },
 
     getArtist: function(title) {

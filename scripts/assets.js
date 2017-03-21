@@ -1,13 +1,13 @@
 var fs = require('fs-extra');
 
 module.exports = {
-    html: function() {
+    html: function(data) {
         var handlebars = require('handlebars');
         var partialLoader = require('partials-loader');
 
-        fs.removeSync('.build/index.html');
+        fs.removeSync('.build/' + data.handle + '.html');
 
-        var html = fs.readFileSync('./src/templates/index.html', 'utf8');
+        var html = fs.readFileSync('./src/templates/playlist.html', 'utf8');
         var template = handlebars.compile(html);
 
         partialLoader.handlebars({
@@ -18,6 +18,6 @@ module.exports = {
         });
 
         fs.mkdirsSync('.build');
-        fs.writeFileSync('.build/index.html', template({}));
+        fs.writeFileSync('.build/' + data.handle + '.html', template(data));
     },
 } 

@@ -1,0 +1,9 @@
+{{ title }}
+
+<ul class='tracks'>
+{{#each tracks}}
+    <li class='track' data-id='{{ id }}'>
+        <h2 class='track__artist'>{{ artist }}</h2>
+        <h2 class='track__title'>{{ title }}</h2>
+    </li>
+{{/each}}
