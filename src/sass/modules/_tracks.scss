@@ -1,0 +1,21 @@
+.tracks {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.track {
+    border-top: 1px solid $c-black;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 10px 20px;
+}
+
+.track__artist {
+    margin: 0;
+}
+
+.track__title {
+    margin: 0;
+    color: $c-white;
+}
