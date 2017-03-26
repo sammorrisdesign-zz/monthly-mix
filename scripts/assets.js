@@ -21,7 +21,7 @@ module.exports = {
 
         fs.removeSync('.build/' + data.handle + '.html');
 
-        var html = fs.readFileSync('./src/templates/playlist.html', 'utf8');
+        var html = fs.readFileSync('./src/templates/main.html', 'utf8');
         var template = handlebars.compile(html);
 
         partialLoader.handlebars({

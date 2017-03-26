@@ -5,25 +5,30 @@
     background-color: $c-yellow;
     width: 50%;
     padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease-in-out;
 
-    &:after {
-        content: 'hide playlist';
-        position: fixed;
-        z-index: 20;
-        margin: auto;
-        transform: rotate(-90deg);
-        width: 32px;
-        background-color: #fff;
-        color: #222;
-        left: 0;
-        right: -60px;
-        top: 0;
-        height: 20px;
-        bottom: 0;
-        width: 100vh;
-        text-align: center;
-        padding: 10px;
+    &.is-closed {
+        transform: translateX(-100%);
     }
+}
+
+.playlist__button {
+    position: fixed;
+    z-index: 20;
+    margin: auto;
+    transform: rotate(-90deg);
+    width: 32px;
+    background-color: #fff;
+    color: #222;
+    left: 0;
+    right: -20px;
+    top: 0;
+    height: 20px;
+    bottom: 0;
+    width: 100vh;
+    text-align: center;
+    padding: 10px;
 }
 
 .playlist__title {
