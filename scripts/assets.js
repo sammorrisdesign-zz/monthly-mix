@@ -31,8 +31,10 @@ module.exports = {
             template_extensions: ['html']
         });
 
-        fs.mkdirsSync('.build');
-        fs.writeFileSync('.build/' + data.handle + '.html', template(data));
+        var location = '.build/' + data.year + '/' + data.month + '/';
+
+        fs.mkdirsSync(location);
+        fs.writeFileSync(location + 'index.html', template(data));
         console.log('updated html for ' + data.handle);
     },
 
