@@ -10,7 +10,7 @@ module.exports = {
         this.getTracks(playlist.id, function(data) {
             var playlistTracks = this.cleanData(playlist, data);
             var jsonFileLocation = '.data/' + playlistTracks.handle + '.json';
-            var oldData = JSON.parse(fs.readFileSync(jsonFileLocation, 'utf8'));
+            var oldData = fs.existsSync(jsonFileLocation) ? JSON.parse(fs.readFileSync(jsonFileLocation, 'utf8')) : {tracks: ''};
 
             if (JSON.stringify(oldData.tracks) !== JSON.stringify(playlistTracks.tracks) || debug) {
                 fs.mkdirsSync('.data');
@@ -55,6 +55,7 @@ module.exports = {
 
     cleanData: function(playlistInfo, data) {
         var playlist = {};
+
         for (var i in data) {
             playlist[i] = {
                 id: data[i].resourceId.videoId,
@@ -67,6 +68,8 @@ module.exports = {
             lastModified: Date.now(),
             title: playlistInfo.title,
             handle: playlistInfo.title.replace(' ', '-').toLowerCase(),
+            month: playlistInfo.title.split(' ')[0].toLowerCase(),
+            year: playlistInfo.title.split(' ')[1],
             id: playlistInfo.id,
             tracks: playlist
         };
