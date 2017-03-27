@@ -1,6 +1,6 @@
 .subscribe {
     position: fixed;
-    z-index: 2;
+    z-index: 5;
     bottom: 0;
     left: 0;
     right: 0;
@@ -10,7 +10,9 @@
     background-color: $c-yellow;
     max-width: 480px;
     height: 260px;
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-out;
 }
 
 .subscribe__copy {
@@ -53,4 +55,12 @@
     font-weight: bold;
     cursor: pointer;
     padding-bottom: 4px;
+}
+
+.is-subscribing {
+    .page-fade,
+    .subscribe {
+        opacity: 1;
+        pointer-events: auto;
+    }
 }
