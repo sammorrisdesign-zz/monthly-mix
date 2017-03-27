@@ -1,0 +1,24 @@
+.playlist-header {
+    padding-top: calc(100% - 20px);
+    height: 0;
+    background-color: $c-grey;
+    position: relative;
+}
+
+.playlist-header__intro {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin: 0;
+}
+
+.playlist-header__seo-hidden {
+    display: none;
+}
+
+.playlist-header__links {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 150px;
+}
