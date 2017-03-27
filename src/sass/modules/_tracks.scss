@@ -1,14 +1,15 @@
 .tracks {
     margin: 0;
-    padding: 0;
+    padding: 10px 0;
     list-style: none;
+    background-color: $c-white;
 }
 
 .track {
-    border-top: 1px solid $c-black;
-    margin-left: -20px;
-    margin-right: -20px;
-    padding: 10px 20px;
+    padding: 10px 10px;
+    background-color: $c-yellow;
+    margin: 10px 0 10px 20px;
+    max-width: 90%;
 }
 
 .track__artist {
