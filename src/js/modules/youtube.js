@@ -1,6 +1,8 @@
 var $ = require('../vendor/jquery.js');
 
-var youTubePlayer, playFirstTrack, throttle = true;
+var youTubePlayer,
+    isFirst = true,
+    throttle = true;
 
 module.exports =  {
     init: function() {
@@ -46,7 +48,19 @@ module.exports =  {
     },
 
     onReady: function() {
-        $('body').trigger('ready');
+        if (isFirst) {
+            youTubePlayer.mute();
+            $('body').trigger('ready');
+            isFirst = false;
+        }
+    },
+
+    mute: function() {
+        youTubePlayer.mute();
+    },
+
+    unmute: function() {
+        youTubePlayer.unMute();
     },
 
     onStateChange: function(event) {

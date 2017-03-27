@@ -12,6 +12,11 @@ module.exports =  {
             this.play(el.currentTarget);
         }.bind(this));
 
+        $('.playlist__mute-button').click(function() {
+            this.mute();
+        }.bind(this));
+
+        // manage play events
         $('body').one('ready', function() {
             this.play($('.track')[0]);
         }.bind(this));
@@ -46,5 +51,15 @@ module.exports =  {
 
     pauseLogo: function() {
         $('.logo').removeClass('is-animating');
+    },
+
+    mute: function() {
+        if ($('.playlist__mute-button').hasClass('is-muted')) {
+            youtube.mute();
+            $('.playlist__mute-button').removeClass('is-muted');
+        } else {
+            youtube.unmute();
+            $('.playlist__mute-button').addClass('is-muted');
+        }
     }
 };
