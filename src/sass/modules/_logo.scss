@@ -40,7 +40,7 @@
         transform: translateY($pos) rotate($rotation);
     }
 
-    .is-playing & {
+    .is-animating & {
         animation: bounce-#{$letter} .3s infinite ease alternate;
     }
 }

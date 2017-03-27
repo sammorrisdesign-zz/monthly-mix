@@ -2,21 +2,31 @@
     margin: 0;
     padding: 10px 0;
     list-style: none;
-    background-color: $c-white;
+    background-color: $c-grey;
 }
 
 .track {
     padding: 10px 10px;
-    background-color: $c-yellow;
+    border: 3px solid $c-black;
     margin: 10px 0 10px 20px;
     max-width: 90%;
 }
 
 .track__artist {
     margin: 0;
+    color: $c-black;
 }
 
 .track__title {
     margin: 0;
-    color: $c-white;
+    color: $c-yellow;
+}
+
+.track.is-playing {
+    border-color: $c-yellow;
+    background-color: $c-yellow;
+
+    .track__title {
+        color: $c-white;
+    }
 }

@@ -55,22 +55,22 @@ module.exports =  {
         // ended
         if (state === 0) {
             if (throttle == true) {
-                $(body).trigger('ended');
+                $('body').trigger('ended');
                 throttle = false;
                 setTimeout(function() {
                     throttle = true;
-                }, 5000);
+                }, 100);
             }
         }
 
         // playing
         if (state === 1) {
-            $(body).trigger('playing');
+            $('body').trigger('play');
         }
 
         // paused
         if (state === 2) {
-            $(body).trigger('paused');
+            $('body').trigger('pause');
         }
     },
 
@@ -80,7 +80,7 @@ module.exports =  {
                 youTubePlayer.playVideo();
             } else {
                 youTubePlayer.loadVideoById(id);
-                // youTubePlayer.loadVideoById({videoId: this.getId(url), startSeconds: 10, endSeconds: 15});
+//                youTubePlayer.loadVideoById({videoId: id, startSeconds: 10, endSeconds: 15});
             }
         } else {
             youTubePlayer.loadVideoById(id);
