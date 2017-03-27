@@ -1,6 +1,6 @@
 var $ = require('../vendor/jquery.js');
 
-var youTubePlayer, throttle = true;
+var youTubePlayer, playFirstTrack, throttle = true;
 
 module.exports =  {
     init: function() {
@@ -35,6 +35,7 @@ module.exports =  {
                 'playsinline': 1
             },
             events: {
+                'onReady': this.onReady,
                 'onStateChange': this.onStateChange
             }
         });
@@ -44,13 +45,17 @@ module.exports =  {
         return url.split('?v=')[1];
     },
 
+    onReady: function() {
+        $('body').trigger('ready');
+    },
+
     onStateChange: function(event) {
         var state = event.data;
 
         // ended
         if (state === 0) {
             if (throttle == true) {
-                this.hasEnded();
+                $(body).trigger('ended');
                 throttle = false;
                 setTimeout(function() {
                     throttle = true;
@@ -60,12 +65,12 @@ module.exports =  {
 
         // playing
         if (state === 1) {
-            this.updatePlayingStatus(true);
+            $(body).trigger('playing');
         }
 
         // paused
         if (state === 2) {
-            this.updatePlayingStatus(false);
+            $(body).trigger('paused');
         }
     },
 
@@ -92,19 +97,7 @@ module.exports =  {
         }
     },
 
-    updatePlayingStatus: function(isPlaying) {
-        if (isPlaying) {
-            $('.sound-of').attr('data-playing', 'true');
-        } else {
-            $('.sound-of').attr('data-playing', 'false');
-        }
-    },
-
     isPlaying: function() {
         return ($('.sound-of').attr('data-playing') == 'true');
-    },
-
-    hasEnded: function() {
-        $('.is-current').trigger('ended');
     }
 };
