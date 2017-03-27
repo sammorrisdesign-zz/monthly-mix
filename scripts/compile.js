@@ -2,6 +2,9 @@
 var assets = require('../scripts/assets.js');
 var playlists = require('../scripts/playlists.js');
 var tracks = require('../scripts/tracks.js');
+var fs = require('fs-extra');
+
+fs.removeSync('.build');
 
 assets.js();
 assets.css();
