@@ -1,10 +1,7 @@
 {
-  "name": "Mies",
-  "version": "1.0.0",
+  "name": "Monthly Mix",
+  "version": "2.0.0",
   "main": "index.js",
-  "scripts": {
-    "start": "cd source && jekyll serve"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/sammorrisdesign/mies-boilerplate.git"
@@ -13,6 +10,11 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sammorrisdesign/mies-boilerplate/issues"
+  },
+  "scripts" : {
+      "compile": "node scripts/compile.js",
+      "prestart" : "npm run compile",
+      "start" : "node scripts/local.js"
   },
   "homepage": "https://github.com/sammorrisdesign/mies-boilerplate",
   "devDependencies": {

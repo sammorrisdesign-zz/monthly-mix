@@ -18,6 +18,7 @@ watch('src', { recursive: true }, function(evt, name) {
         assets.js()
     } else {
         console.log('non-watchable file extension changed :' + fileExt);
+        assets.images();
     }
 });
 

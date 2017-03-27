@@ -74,5 +74,10 @@ module.exports = {
 
         fs.writeFileSync('.build/assets/css/main.css', css);
         console.log('updated css!');
+    },
+
+    images: function() {
+        fs.removeSync('.build/assets/images');
+        fs.copySync('./src/images', '.build/assets');
     }
 } 
