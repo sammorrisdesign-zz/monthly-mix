@@ -3,6 +3,7 @@
     height: 0;
     background-color: $c-grey;
     position: relative;
+    overflow: hidden;
 }
 
 .playlist-header__intro {
@@ -10,6 +11,12 @@
     top: 20px;
     left: 20px;
     margin: 0;
+}
+
+.playlist-header__title {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
 
 .playlist-header__seo-hidden {
