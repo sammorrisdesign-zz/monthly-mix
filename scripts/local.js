@@ -5,12 +5,7 @@ var assets = require('../scripts/assets.js');
 watch('src', { recursive: true }, function(evt, name) {
     var fileExt = name.substring(name.lastIndexOf('.') + 1);
 
-    console.log('watching');
-    
-    console.log(file);
-
     if (fileExt === 'html' || fileExt === 'svg') {
-        console.log('test');
         assets.html();
     } else if (fileExt === 'scss') {
         assets.css();
