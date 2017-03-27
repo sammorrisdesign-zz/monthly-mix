@@ -2,19 +2,16 @@ var $ = require('../vendor/jquery.js');
 
 module.exports =  {
     init: function() {
-        console.log('navigation');
         this.bindings();
     },
 
     bindings: function() {
-        $('.playlist__button').click(function() {
-            console.log('click');
+        $('.playlist__hide-button').click(function() {
             this.hidePlaylist();
         }.bind(this));
     },
 
     hidePlaylist: function() {
-        
-        $('.playlist').toggleClass('is-closed');
+        $('body').toggleClass('is-closed');
     }
 };
