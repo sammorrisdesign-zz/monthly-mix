@@ -10,9 +10,12 @@ module.exports = {
         this.getTracks(playlist.id, function(data) {
             var playlistTracks = this.cleanData(playlist, data);
             var jsonFileLocation = '.data/' + playlistTracks.handle + '.json';
-            var oldData = fs.existsSync(jsonFileLocation) ? JSON.parse(fs.readFileSync(jsonFileLocation, 'utf8')) : {tracks: ''};
+            var oldData = fs.existsSync(jsonFileLocation) ? JSON.parse(fs.readFileSync(jsonFileLocation, 'utf8')) : {tracks: '', colour: ''};
 
             if (JSON.stringify(oldData.tracks) !== JSON.stringify(playlistTracks.tracks) || debug) {
+                playlistTracks.colour = oldData.colour === undefined ? this.generateColour() : oldData.colour;
+                console.log(oldData.colour);
+                console.log(playlistTracks.colour);
                 fs.mkdirsSync('.data');
                 fs.writeFileSync(jsonFileLocation, JSON.stringify(playlistTracks));
                 assets.html(playlistTracks);
@@ -83,5 +86,10 @@ module.exports = {
             artist: videoTitle[0],
             title: videoTitle[1] ? videoTitle[1].replace(/"/g, '').replace(/'/g, '') : ''
         }
-    } 
+    },
+
+    generateColour: function() {
+        var colours = ['light-blue', 'purple', 'mid-grey', 'blue', 'green', 'yellow', 'orange', 'purple-grey'];
+        return colours[Math.floor(Math.random()*colours.length)];
+    }
 } 
