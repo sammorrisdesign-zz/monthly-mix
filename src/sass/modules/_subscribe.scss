@@ -7,7 +7,7 @@
     top: 0;
     margin: auto;
     padding: 20px;
-    background-color: $c-yellow;
+    @include randomBackground();
     max-width: 480px;
     height: 260px;
     opacity: 0;

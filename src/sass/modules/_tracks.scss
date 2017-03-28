@@ -19,12 +19,12 @@
 
 .track__title {
     margin: 0;
-    color: $c-yellow;
+    @include randomColor();
 }
 
 .track.is-playing {
-    border-color: $c-yellow;
-    background-color: $c-yellow;
+    @include randomBorder();
+    @include randomBackground();
 
     .track__title {
         color: $c-white;

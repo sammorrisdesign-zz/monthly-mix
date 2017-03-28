@@ -10,3 +10,105 @@ $c-green: #5db456;
 $c-yellow: #e6d35f;
 $c-orange: #fc7c62;
 $c-purple-grey: #797379;
+
+@mixin randomBackground() {
+    .light-blue & {
+        background-color: $c-light-blue;
+    }
+
+    .purple & {
+        background-color: $c-purple;
+    }
+
+    .mid-grey & {
+        background-color: $c-mid-grey;
+    }
+
+    .blue & {
+        background-color: $c-blue;
+    }
+
+    .green & {
+        background-color: $c-green;
+    }
+
+    .yellow & {
+        background-color: $c-yellow;
+    }
+
+    .orange & {
+        background-color: $c-orange;
+    }
+
+    .purple-grey & {
+        background-color: $c-purple-grey;
+    }
+}
+
+@mixin randomColor() {
+    .light-blue & {
+        color: $c-light-blue;
+    }
+
+    .purple & {
+        color: $c-purple;
+    }
+
+    .mid-grey & {
+        color: $c-mid-grey;
+    }
+
+    .blue & {
+        color: $c-blue;
+    }
+
+    .green & {
+        color: $c-green;
+    }
+
+    .yellow & {
+        color: $c-yellow;
+    }
+
+    .orange & {
+        color: $c-orange;
+    }
+
+    .purple-grey & {
+        color: $c-purple-grey;
+    }
+}
+
+@mixin randomBorder() {
+    .light-blue & {
+        border-color: $c-light-blue;
+    }
+
+    .purple & {
+        border-color: $c-purple;
+    }
+
+    .mid-grey & {
+        border-color: $c-mid-grey;
+    }
+
+    .blue & {
+        border-color: $c-blue;
+    }
+
+    .green & {
+        border-color: $c-green;
+    }
+
+    .yellow & {
+        border-color: $c-yellow;
+    }
+
+    .orange & {
+        border-color: $c-orange;
+    }
+
+    .purple-grey & {
+        border-color: $c-purple-grey;
+    }
+}
