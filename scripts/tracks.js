@@ -14,8 +14,6 @@ module.exports = {
 
             if (JSON.stringify(oldData.tracks) !== JSON.stringify(playlistTracks.tracks) || debug) {
                 playlistTracks.colour = oldData.colour === undefined ? this.generateColour() : oldData.colour;
-                console.log(oldData.colour);
-                console.log(playlistTracks.colour);
                 fs.mkdirsSync('.data');
                 fs.writeFileSync(jsonFileLocation, JSON.stringify(playlistTracks));
                 assets.html(playlistTracks);
