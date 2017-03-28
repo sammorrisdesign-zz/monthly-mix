@@ -12,8 +12,12 @@ module.exports =  {
             this.play(el.currentTarget);
         }.bind(this));
 
-        $('.playlist__mute-button').click(function() {
+        $('.controls__mute-button').click(function() {
             this.mute();
+        }.bind(this));
+
+        $('.controls__play-button').click(function() {
+            this.play($('.is-playing, .is-paused'));
         }.bind(this));
 
         // manage play events
@@ -37,9 +41,10 @@ module.exports =  {
     play: function(track) {
         if ($(track).hasClass('is-playing')) {
             youtube.pauseVideo();
-            $('.is-playing').removeClass('is-playing');
+            $('.is-playing').addClass('is-paused').removeClass('is-playing');
         } else {
             $('.is-playing').removeClass('is-playing');
+            $('.is-paused').removeClass('is-paused');
             $(track).addClass('is-playing');
             youtube.play($(track).attr('data-id'));
         }
@@ -54,12 +59,12 @@ module.exports =  {
     },
 
     mute: function() {
-        if ($('.playlist__mute-button').hasClass('is-muted')) {
-            youtube.mute();
-            $('.playlist__mute-button').removeClass('is-muted');
-        } else {
+        if ($('.controls__mute-button').hasClass('is-muted')) {
             youtube.unmute();
-            $('.playlist__mute-button').addClass('is-muted');
+            $('.controls__mute-button').removeClass('is-muted');
+        } else {
+            youtube.mute();
+            $('.controls__mute-button').addClass('is-muted');
         }
     }
 };
