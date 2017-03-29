@@ -1,6 +1,6 @@
 .tracks {
     margin: 0;
-    padding: 10px 0;
+    padding: 10px;
     list-style: none;
     background-color: $c-white;
 }
@@ -8,8 +8,157 @@
 .track {
     padding: 10px 10px;
     border: 3px solid $c-black;
-    margin: 10px 0 10px 20px;
-    max-width: 90%;
+    margin: 10px 0;
+
+    &:nth-of-type(1) {
+        margin-left: 180px;
+        margin-right: 81px;
+    }
+
+    &:nth-of-type(2) {
+        margin-left: 7px;
+        margin-right: 154px;
+    }
+
+    &:nth-of-type(3) {
+        margin-left: 139px;
+        margin-right: 72px;
+    }
+
+    &:nth-of-type(4) {
+        margin-left: 7px;
+        margin-right: 140px;
+    }
+
+    &:nth-of-type(5) {
+        margin-left: 159px;
+        margin-right: 17px;
+    }
+
+    &:nth-of-type(6) {
+        margin-left: 124px;
+        margin-right: 15px;
+    }
+
+    &:nth-of-type(7) {
+        margin-left: 175px;
+        margin-right: 92px;
+    }
+
+    &:nth-of-type(8) {
+        margin-left: 162px;
+        margin-right: 149px;
+    }
+
+    &:nth-of-type(9) {
+        margin-left: 51px;
+        margin-right: 115px;
+    }
+
+    &:nth-of-type(10) {
+        margin-left: 16px;
+        margin-right: 199px;
+    }
+
+    &:nth-of-type(11) {
+        margin-left: 103px;
+        margin-right: 47px;
+    }
+
+    &:nth-of-type(12) {
+        margin-left: 185px;
+        margin-right: 162px;
+    }
+
+    &:nth-of-type(13) {
+        margin-left: 51px;
+        margin-right: 127px;
+    }
+
+    &:nth-of-type(14) {
+        margin-left: 191px;
+        margin-right: 140px;
+    }
+
+    &:nth-of-type(15) {
+        margin-left: 36px;
+        margin-right: 146px;
+    }
+
+    &:nth-of-type(16) {
+        margin-left: 133px;
+        margin-right: 145px;
+    }
+
+    &:nth-of-type(17) {
+        margin-left: 44px;
+        margin-right: 73px;
+    }
+
+    &:nth-of-type(18) {
+        margin-left: 14px;
+        margin-right: 146px;
+    }
+
+    &:nth-of-type(19) {
+        margin-left: 131px;
+        margin-right: 156px;
+    }
+
+    &:nth-of-type(20) {
+        margin-left: 121px;
+        margin-right: 18px;
+    }
+
+    &:nth-of-type(21) {
+        margin-left: 105px;
+        margin-right: 157px;
+    }
+
+    &:nth-of-type(22) {
+        margin-left: 25px;
+        margin-right: 39px;
+    }
+
+    &:nth-of-type(23) {
+        margin-left: 114px;
+        margin-right: 166px;
+    }
+
+    &:nth-of-type(24) {
+        margin-left: 175px;
+        margin-right: 198px;
+    }
+
+    &:nth-of-type(25) {
+        margin-left: 200px;
+        margin-right: 177px;
+    }
+
+    &:nth-of-type(26) {
+        margin-left: 9px;
+        margin-right: 123px;
+    }
+
+    &:nth-of-type(27) {
+        margin-left: 134px;
+        margin-right: 88px;
+    }
+
+    &:nth-of-type(28) {
+        margin-left: 183px;
+        margin-right: 38px;
+    }
+
+    &:nth-of-type(29) {
+        margin-left: 117px;
+        margin-right: 172px;
+    }
+
+    &:nth-of-type(30) {
+        margin-left: 123px;
+        margin-right: 120px;
+    }
 }
 
 .track__artist {
