@@ -33,7 +33,10 @@ module.exports =  {
         $('body').toggleClass('is-closed');
 
         if ($('body').hasClass('is-closed')) {
-            $('body').removeClass('show-controls');
+            $('.playlist__hide-button').text('Show Playlist');
+            this.showControls();
+        } else {
+            $('.playlist__hide-button').text('Hide Playlist');
         }
     },
 
@@ -52,7 +55,7 @@ module.exports =  {
     showControls: function() {
         $('body').addClass('show-controls');
         clearInterval(timer);
-        
+
         if ($('body').hasClass('is-closed')) {
             timer = setInterval(function() {
                 $('body').removeClass('show-controls');
