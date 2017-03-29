@@ -12,7 +12,6 @@ module.exports =  {
             this.play(el.currentTarget);
         }.bind(this));
 
-
         $('.controls__mute-button').click(function() {
             this.mute();
         }.bind(this));
@@ -49,6 +48,7 @@ module.exports =  {
             $(track).addClass('is-playing');
             youtube.play($(track).attr('data-id'));
         }
+        this.updateYouTubeButton($(track).attr('data-id'));
     },
 
     animateLogo: function() {
@@ -67,5 +67,9 @@ module.exports =  {
             youtube.mute();
             $('.controls__mute-button').addClass('is-muted');
         }
+    },
+
+    updateYouTubeButton: function(id) {
+        $('.playlist__youtube-button').attr('href', 'https://www.youtube.com/watch?v=' + id + '&list=' + $('.playlist').attr('data-id'));
     }
 };
