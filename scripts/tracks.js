@@ -57,6 +57,8 @@ module.exports = {
     cleanData: function(playlistInfo, data) {
         var playlist = {};
 
+        console.log(playlistInfo);
+
         for (var i in data) {
             playlist[i] = {
                 id: data[i].resourceId.videoId,
@@ -72,6 +74,8 @@ module.exports = {
             month: playlistInfo.title.split(' ')[0].toLowerCase(),
             year: playlistInfo.title.split(' ')[1],
             id: playlistInfo.id,
+            description: playlistInfo.description.split('Monthly Mix: ')[0],
+            spotify: playlistInfo.description.split('Spotify: ')[1],
             tracks: playlist
         };
     },

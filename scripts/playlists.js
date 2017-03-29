@@ -18,7 +18,8 @@ module.exports = {
             for (var i in data.items) {
                 playlists[i] = {
                     id: data.items[i].id,
-                    title: data.items[i].snippet.title
+                    title: data.items[i].snippet.title,
+                    description: data.items[i].snippet.description
                 }
             }
             callback(playlists);
