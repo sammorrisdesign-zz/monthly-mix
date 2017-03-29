@@ -34,7 +34,9 @@ module.exports =  {
                 'rel': 0,
                 'showinfo': 0,
                 'modestbranding': 1,
-                'playsinline': 1
+                'playsinline': 1,
+                'disablekb': 1,
+                'iv_load_policy': 3
             },
             events: {
                 'onReady': this.onReady,
