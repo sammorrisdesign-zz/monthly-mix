@@ -12,6 +12,7 @@ module.exports =  {
             this.play(el.currentTarget);
         }.bind(this));
 
+
         $('.controls__mute-button').click(function() {
             this.mute();
         }.bind(this));

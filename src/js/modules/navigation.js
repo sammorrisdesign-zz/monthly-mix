@@ -1,5 +1,7 @@
 var $ = require('../vendor/jquery.js');
 
+var timer;
+
 module.exports =  {
     init: function() {
         this.bindings();
@@ -21,10 +23,18 @@ module.exports =  {
         $('.page-fade').click(function() {
             this.hidePanel();
         }.bind(this));
+
+        $(window).mousemove(function() {
+            this.showControls();
+        }.bind(this));
     },
 
     hidePlaylist: function() {
         $('body').toggleClass('is-closed');
+
+        if ($('body').hasClass('is-closed')) {
+            $('body').removeClass('show-controls');
+        }
     },
 
     showSubscribe: function() {
@@ -37,5 +47,16 @@ module.exports =  {
 
     hidePanel: function() {
         $('body').removeClass('is-subscribing is-archiving');
+    },
+
+    showControls: function() {
+        $('body').addClass('show-controls');
+        clearInterval(timer);
+        
+        if ($('body').hasClass('is-closed')) {
+            timer = setInterval(function() {
+                $('body').removeClass('show-controls');
+            }, 3000);
+        }
     }
 };

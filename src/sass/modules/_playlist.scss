@@ -20,8 +20,15 @@
     margin: auto;
     display: table;
     transform: rotate(-90deg) translateY(50vw);
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, opacity 0.4s ease-out;
     z-index: 3;
+    opacity: 0;
+    pointer-events: none;
+
+    .show-controls & {
+        opacity: 1;
+        pointer-events: auto;
+    }
 
     .is-closed & {
         transform: rotate(-90deg) translateY(0vw);
