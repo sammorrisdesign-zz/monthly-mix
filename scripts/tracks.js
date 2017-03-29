@@ -6,7 +6,7 @@ var assets = require('../scripts/assets.js');
 var debug = true;
 
 module.exports = {
-    fetch: function(playlist) {
+    fetch: function(playlist, isIndex) {
         this.getTracks(playlist.id, function(data) {
             var playlistTracks = this.cleanData(playlist, data);
             var jsonFileLocation = '.data/' + playlistTracks.handle + '.json';
@@ -14,6 +14,7 @@ module.exports = {
 
             if (JSON.stringify(oldData.tracks) !== JSON.stringify(playlistTracks.tracks) || debug) {
                 playlistTracks.colour = oldData.colour === undefined ? this.generateColour() : oldData.colour;
+                playlistTracks.isIndex = isIndex;
                 fs.mkdirsSync('.data');
                 fs.writeFileSync(jsonFileLocation, JSON.stringify(playlistTracks));
             }

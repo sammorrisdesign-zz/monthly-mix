@@ -13,7 +13,8 @@ assets.images();
 
 playlists.fetch(function(data) {
     for (var i in data) {
-        tracks.fetch(data[i]);
+        var isIndex = (i == 0 ? true : false);
+        tracks.fetch(data[i], isIndex);
     }
 
     archive.compile();

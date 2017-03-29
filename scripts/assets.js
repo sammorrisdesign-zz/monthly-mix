@@ -7,9 +7,7 @@ module.exports = {
 
         for (var i in dataPaths) {
             var jsonData = JSON.parse(fs.readFileSync(dataPaths[i].path, 'utf8'));
-            console.log(dataPaths[i].path);
             jsonData.archive = JSON.parse(fs.readFileSync('.data/archive.json', 'utf8'));
-            console.log(jsonData);
             this.compileHtmlPage(jsonData);
         }
     },
@@ -34,6 +32,9 @@ module.exports = {
 
         fs.mkdirsSync(location);
         fs.writeFileSync(location + 'index.html', template(data));
+        if (data.isIndex) {
+            fs.writeFileSync('.build/index.html', template(data));
+        }
         console.log('updated html for ' + data.handle);
     },
 
