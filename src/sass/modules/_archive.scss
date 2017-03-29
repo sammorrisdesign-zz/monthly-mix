@@ -1,0 +1,55 @@
+.archive {
+    position: fixed;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    padding: 20px;
+    background-color: $c-white;
+    max-width: 960px;
+    height: 260px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-out;
+}
+
+.archive__copy {
+    margin: 0;
+    margin-bottom: 20px;
+    color: $c-black;
+}
+
+.archive-playlists {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.archive-playlist {
+    width: 215px;
+    height: 215px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-right: 20px;
+    background-color: red;
+    @include archiveColors();
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.archive-playlist__image {
+    width: 100%;
+}
+
+.is-archiving {
+    .page-fade,
+    .archive {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}

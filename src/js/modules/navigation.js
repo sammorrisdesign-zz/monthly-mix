@@ -10,8 +10,12 @@ module.exports =  {
             this.hidePlaylist();
         }.bind(this));
 
-        $('.header__button').click(function() {
-            this.showPanel();
+        $('.header__subscribe-button').click(function() {
+            this.showSubscribe();
+        }.bind(this));
+
+        $('.header__archive-button').click(function() {
+            this.showArchive();
         }.bind(this));
 
         $('.page-fade').click(function() {
@@ -23,11 +27,15 @@ module.exports =  {
         $('body').toggleClass('is-closed');
     },
 
-    showPanel: function() {
+    showSubscribe: function() {
         $('body').addClass('is-subscribing');
     },
 
+    showArchive: function() {
+        $('body').addClass('is-archiving');
+    },
+
     hidePanel: function() {
-        $('body').removeClass('is-subscribing');
+        $('body').removeClass('is-subscribing is-archiving');
     }
 };

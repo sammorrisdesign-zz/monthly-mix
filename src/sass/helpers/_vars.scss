@@ -45,6 +45,40 @@ $c-purple-grey: #797379;
     }
 }
 
+@mixin archiveColors() {
+    &.light-blue {
+        background-color: $c-light-blue;
+    }
+
+    &.purple {
+        background-color: $c-purple;
+    }
+
+    &.mid-grey {
+        background-color: $c-mid-grey;
+    }
+
+    &.blue {
+        background-color: $c-blue;
+    }
+
+    &.green {
+        background-color: $c-green;
+    }
+
+    &.yellow {
+        background-color: $c-yellow;
+    }
+
+    &.orange {
+        background-color: $c-orange;
+    }
+
+    &.purple-grey {
+        background-color: $c-purple-grey;
+    }
+}
+
 @mixin randomColor() {
     .light-blue & {
         color: $c-light-blue;

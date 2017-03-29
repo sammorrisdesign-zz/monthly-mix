@@ -13,7 +13,8 @@ module.exports = {
             archive[i] = {
                 url: 'http://www.monthly.mx/' + playlist.year + '/' + playlist.month,
                 handle: playlist.handle,
-                colour: playlist.colour
+                colour: playlist.colour,
+                month: playlist.month
             }
         }
 

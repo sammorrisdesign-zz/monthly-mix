@@ -16,7 +16,6 @@ module.exports = {
                 playlistTracks.colour = oldData.colour === undefined ? this.generateColour() : oldData.colour;
                 fs.mkdirsSync('.data');
                 fs.writeFileSync(jsonFileLocation, JSON.stringify(playlistTracks));
-                assets.html(playlistTracks);
             }
         }.bind(this));
     },

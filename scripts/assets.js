@@ -2,16 +2,15 @@ var fs = require('fs-extra');
 
 module.exports = {
     html: function(data) {
-        if (data) {
-            this.compileHtmlPage(data) 
-        } else {
-            var klawSync = require('klaw-sync');
-            var dataPaths = klawSync('.data', {ignore: '.DS_Store'});
+        var klawSync = require('klaw-sync');
+        var dataPaths = klawSync('.data', {ignore: '.DS_Store'});
 
-            for (var i in dataPaths) {
-                var jsonData = JSON.parse(fs.readFileSync(dataPaths[i].path, 'utf8'));
-                this.compileHtmlPage(jsonData);
-            }
+        for (var i in dataPaths) {
+            var jsonData = JSON.parse(fs.readFileSync(dataPaths[i].path, 'utf8'));
+            console.log(dataPaths[i].path);
+            jsonData.archive = JSON.parse(fs.readFileSync('.data/archive.json', 'utf8'));
+            console.log(jsonData);
+            this.compileHtmlPage(jsonData);
         }
     },
 

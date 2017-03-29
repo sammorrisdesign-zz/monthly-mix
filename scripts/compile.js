@@ -17,4 +17,5 @@ playlists.fetch(function(data) {
     }
 
     archive.compile();
+    assets.html();
 });
