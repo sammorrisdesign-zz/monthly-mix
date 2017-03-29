@@ -1,6 +1,6 @@
 .playlist {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     color: $c-black;
     width: 50%;
     padding: 0;
@@ -21,7 +21,7 @@
     display: table;
     transform: rotate(-90deg) translateY(50vw);
     transition: transform 0.2s ease-in-out;
-    z-index: 2;
+    z-index: 3;
 
     .is-closed & {
         transform: rotate(-90deg) translateY(0vw);
