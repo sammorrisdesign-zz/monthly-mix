@@ -4,6 +4,8 @@ var klawSync = require('klaw-sync');
 module.exports = {
     compile: function() {
         fs.removeSync('.data/archive.json');
+        fs.mkdirsSync('.data');
+
         var playlists = klawSync('.data');
 
         var archive = {};

@@ -14,7 +14,7 @@ module.exports = {
             var oldData = fs.existsSync(jsonFileLocation) ? JSON.parse(fs.readFileSync(jsonFileLocation, 'utf8')) : {tracks: '', colour: ''};
 
             if (JSON.stringify(oldData.tracks) !== JSON.stringify(playlistTracks.tracks) || debug) {
-                playlistTracks.colour = oldData.colour === undefined ? this.generateColour() : oldData.colour;
+                playlistTracks.colour = oldData.colour == '' ? this.generateColour() : oldData.colour;
                 playlistTracks.isIndex = isIndex;
                 fs.mkdirsSync('.data');
                 fs.writeFileSync(jsonFileLocation, JSON.stringify(playlistTracks));
