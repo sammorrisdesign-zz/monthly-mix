@@ -41,11 +41,13 @@ module.exports =  {
     play: function(track) {
         if ($(track).hasClass('is-playing')) {
             youtube.pauseVideo();
+            $('.controls__play-button').text('Play');
             $('.is-playing').addClass('is-paused').removeClass('is-playing');
         } else {
             $('.is-playing').removeClass('is-playing');
             $('.is-paused').removeClass('is-paused');
             $(track).addClass('is-playing');
+            $('.controls__play-button').text('Pause');
             youtube.play($(track).attr('data-id'));
         }
         this.updateYouTubeButton($(track).attr('data-id'));
@@ -63,9 +65,11 @@ module.exports =  {
         if ($('.controls__mute-button').hasClass('is-muted')) {
             youtube.unmute();
             $('.controls__mute-button').removeClass('is-muted');
+            $('.controls__mute-button').text('Mute');
         } else {
             youtube.mute();
             $('.controls__mute-button').addClass('is-muted');
+            $('.controls__mute-button').text('Unmute');
         }
     },
 
