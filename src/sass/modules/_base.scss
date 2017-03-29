@@ -20,3 +20,13 @@ input {
     font-size: 24px;
     line-height: 30px;
 }
+
+body {
+    
+}
+
+body.is-archiving,
+body.is-subscribing,
+body.is-closed {
+    overflow: hidden;
+}
