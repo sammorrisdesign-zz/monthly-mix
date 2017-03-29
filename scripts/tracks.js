@@ -2,6 +2,7 @@ var fs = require('fs-extra');
 var keys = require('../keys.json');
 var youtube = require('youtube-api');
 var assets = require('../scripts/assets.js');
+var corrections = JSON.parse(fs.readFileSync('./scripts/corrections.json', 'utf8'));
 
 var debug = true;
 
@@ -57,13 +58,12 @@ module.exports = {
     cleanData: function(playlistInfo, data) {
         var playlist = {};
 
-        console.log(playlistInfo);
-
         for (var i in data) {
+            var correction = corrections[data[i].resourceId.videoId] || {};
             playlist[i] = {
                 id: data[i].resourceId.videoId,
-                artist: this.cleanTrackInfo(data[i].title).artist,
-                title: this.cleanTrackInfo(data[i].title).title
+                artist: correction.hasOwnProperty('artist') ? correction.artist : this.cleanTrackInfo(data[i].title).artist,
+                title: correction.hasOwnProperty('title') ? correction.title : this.cleanTrackInfo(data[i].title).title
             }
         }
 
@@ -81,7 +81,7 @@ module.exports = {
     },
 
     cleanTrackInfo: function(videoTitle) {
-        videoTitle = videoTitle.replace('(Official Video)', '').replace('(Official Audio)', '');
+        videoTitle = videoTitle.replace(/\(Official Video\)|\(Official Audio\)|\(official music video\)|\(audio only\)/g, '');
         videoTitle = videoTitle.split(/ - | – | \/\/ /);
 
         return {
