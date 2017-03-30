@@ -52,6 +52,11 @@
     z-index: 3;
     opacity: 0;
     pointer-events: none;
+    display: none;
+
+    @include mq(tablet) {
+        display: block;
+    }
 
     .show-controls & {
         opacity: 1;

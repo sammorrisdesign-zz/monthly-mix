@@ -7,13 +7,13 @@
     margin: auto;
     padding: 20px;
     @include randomBackground();
-    height: 260px;
     transition: opacity 0.2s ease-out;
 
     @include mq(desktop) {
         position: fixed;
         opacity: 0;
         pointer-events: none;
+        height: 260px;
         width: 480px;
     }
 }
@@ -30,9 +30,17 @@
 }
 
 .subscribe-form {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+    @include mq(desktop) {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+
+#mc_embed_signup_scroll {
+    display: flex;
+    width: 100%;
+    margin-top: 40px;
 }
 
 .subscribe-form__input {
@@ -44,6 +52,7 @@
     color: rgba($c-black, .6);
     background-color: $c-white;
     font-weight: bold;
+    min-width: 120px;
 
     &.is-focused {
         color: $c-black;
