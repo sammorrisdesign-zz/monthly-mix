@@ -1,5 +1,4 @@
 .subscribe {
-    position: fixed;
     z-index: 5;
     bottom: 0;
     left: 0;
@@ -8,11 +7,15 @@
     margin: auto;
     padding: 20px;
     @include randomBackground();
-    max-width: 480px;
     height: 260px;
-    opacity: 0;
-    pointer-events: none;
     transition: opacity 0.2s ease-out;
+
+    @include mq(desktop) {
+        position: fixed;
+        opacity: 0;
+        pointer-events: none;
+        width: 480px;
+    }
 }
 
 .subscribe__copy {

@@ -8,6 +8,11 @@ html {
 
 body {
     position: relative;
+    margin-bottom: 80px;
+
+    @include mq(desktop) {
+        margin-bottom: 0;
+    }
 }
 
 body,

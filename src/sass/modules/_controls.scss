@@ -1,12 +1,20 @@
 .controls {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
-    transform: translateX(50vw);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    transform: translateX(0px);
     transition: transform 0.2s ease-in-out, opacity 0.4s ease-out;
     z-index: 3;
     opacity: 0;
     pointer-events: none;
+    background-color: $c-black;
+
+    @include mq(desktop) {
+        background-color: transparent;
+        transform: translateX(50vw);
+    }
 
     .show-controls & {
         opacity: 1;
