@@ -1,4 +1,5 @@
 var $ = require('../vendor/jquery.js');
+var analytics = require('../modules/analytics');
 
 var timer;
 
@@ -31,6 +32,7 @@ module.exports =  {
 
     hidePlaylist: function() {
         $('body').toggleClass('is-closed');
+        analytics.click('hide playlist');
 
         if ($('body').hasClass('is-closed')) {
             $('.playlist__hide-button').text('Show Playlist');
@@ -42,10 +44,12 @@ module.exports =  {
 
     showSubscribe: function() {
         $('body').addClass('is-subscribing');
+        analytics.click('subscribe');
     },
 
     showArchive: function() {
         $('body').addClass('is-archiving');
+        analytics.click('archive');
     },
 
     hidePanel: function() {

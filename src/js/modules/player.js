@@ -1,4 +1,5 @@
 var $ = require('../vendor/jquery.js');
+var analytics = require('../modules/analytics');
 var youtube = require('../modules/youtube.js');
 
 module.exports =  {
@@ -49,6 +50,7 @@ module.exports =  {
             $(track).addClass('is-playing');
             $('.controls__play-button').text('Pause');
             youtube.play($(track).attr('data-id'));
+            analytics.newTrack($(track).text(), $(document).find("title").text());
         }
         this.updateYouTubeButton($(track).attr('data-id'));
     },
