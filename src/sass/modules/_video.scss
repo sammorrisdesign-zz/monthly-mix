@@ -1,8 +1,13 @@
 .video-wrapper {
-    position: relative;
+    position: fixed;
     width: 100%;
+    padding-top: 56.25%;
     height: 0;
-    padding-top: 56.25%; /* 100 * 9 / 16 */
+    z-index: 8;
+
+    @include mq(tablet) {
+        position: relative;
+    }
 
     @include mq(desktop) {
         position: fixed;
@@ -36,12 +41,16 @@
 }
 
 .video-mask {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 2;
+    display: none;
+
+    @include mq(desktop) {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 2;
+    }
 }
 
 /*

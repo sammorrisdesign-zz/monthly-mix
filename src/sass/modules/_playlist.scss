@@ -6,6 +6,11 @@
     padding: 0;
     box-sizing: border-box;
     transition: transform 0.2s ease-in-out;
+    padding-top: 56.25%;
+
+    @include mq(tablet) {
+        padding-top: 0;
+    }
 
     @include mq(desktop) {
         width: 50%;
