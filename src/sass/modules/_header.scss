@@ -1,15 +1,24 @@
 .header {
-    position: fixed;
+    position: absolute;
     z-index: 3;
     top: 20px;
     right: 20px;
     width: 154px;
+
+    @include mq(desktop) {
+        position: fixed;
+    }
 
     .button {
         display: inline-block;
         transition: opacity 0.4s ease-out;
         opacity: 0;
         pointer-events: none;
+        display: none;
+
+        @include mq(desktop) {
+            display: inline-block;
+        }
 
         .show-controls & {
             opacity: 1;

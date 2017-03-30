@@ -2,10 +2,14 @@
     position: relative;
     z-index: 3;
     color: $c-black;
-    width: 50%;
+    width: 100%;
     padding: 0;
     box-sizing: border-box;
     transition: transform 0.2s ease-in-out;
+
+    @include mq(desktop) {
+        width: 50%;
+    }
 
     .is-closed & {
         transform: translateX(-100%);
@@ -18,12 +22,16 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    display: table;
     transform: rotate(-90deg) translateY(50vw);
     transition: transform 0.2s ease-in-out, opacity 0.4s ease-out;
     z-index: 3;
     opacity: 0;
     pointer-events: none;
+    display: none;
+
+    @include mq(desktop) {
+        display: table;
+    }
 
     .show-controls & {
         opacity: 1;
