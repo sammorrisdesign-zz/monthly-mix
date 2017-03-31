@@ -1,5 +1,6 @@
 var $ = require('../vendor/jquery.js');
 var analytics = require('../modules/analytics');
+var player = require('../modules/player');
 
 var timer;
 
@@ -23,6 +24,14 @@ module.exports =  {
 
         $('.page-fade').click(function() {
             this.hidePanel();
+        }.bind(this));
+
+        $('.video-mask').click(function() {
+            if ($('body').hasClass('is-closed')) {
+                player.play($('.is-playing, .is-paused'));
+            } else {
+                this.hidePlaylist();
+            }
         }.bind(this));
 
         $(window).mousemove(function() {
