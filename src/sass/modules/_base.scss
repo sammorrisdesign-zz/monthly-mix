@@ -29,5 +29,7 @@ input {
 body.is-archiving,
 body.is-subscribing,
 body.is-closed {
-    overflow: hidden;
+    @include mq(desktop) {
+        overflow: hidden;
+    }
 }

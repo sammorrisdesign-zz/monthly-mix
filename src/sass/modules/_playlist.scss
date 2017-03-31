@@ -17,7 +17,9 @@
     }
 
     .is-closed & {
-        transform: translateX(-100%);
+        @include mq(desktop) {
+            transform: translateX(-100%);
+        }
     }
 }
 
