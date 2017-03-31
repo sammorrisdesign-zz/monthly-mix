@@ -7,13 +7,13 @@
 
     @include mq(tablet) {
         position: absolute;
-        z-index: 3;
     }
 
     @include mq(desktop) {
         position: fixed;
         top: 20px;
         width: 154px;
+        z-index: 4;
     }
 
     .button {
