@@ -6,7 +6,8 @@ watch('src', { recursive: true }, function(evt, name) {
     var fileExt = name.substring(name.lastIndexOf('.') + 1);
 
     if (fileExt === 'html' || fileExt === 'svg') {
-        assets.html();
+        var data = fs.readFileSync('.data/archive.json', 'utf8');
+        assets.html(JSON.parse(data));
     } else if (fileExt === 'scss') {
         assets.css();
     } else if (fileExt === 'js') {

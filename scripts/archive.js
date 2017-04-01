@@ -17,14 +17,17 @@ module.exports = {
                 handle: playlist.handle,
                 colour: playlist.colour,
                 month: playlist.month,
-                timeStamp: Date.parse(playlist.month + ' ' + playlist.year)
+                timeStamp: Date.parse(playlist.month + ' ' + playlist.year),
+                path: '.data/' + playlist.month + '-' + playlist.year + '.json'
             }
         }
 
         archive.sort(function(a, b) {
-            return a.timeStamp - b.timeStamp;
+            return b.timeStamp - a.timeStamp;
         });
 
         fs.writeFileSync('.data/archive.json', JSON.stringify(archive));
+
+        return archive
     }
 } 

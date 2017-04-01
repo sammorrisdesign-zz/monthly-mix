@@ -1,13 +1,12 @@
 var fs = require('fs-extra');
 var keys = require('../keys.json');
 var youtube = require('youtube-api');
-var assets = require('../scripts/assets.js');
 var corrections = JSON.parse(fs.readFileSync('./scripts/corrections.json', 'utf8'));
 
 var debug = true;
 
 module.exports = {
-    fetch: function(playlist, isIndex) {
+    fetch: function(playlist) {
         this.getTracks(playlist.id, function(data) {
             var playlistTracks = this.cleanData(playlist, data);
             var jsonFileLocation = '.data/' + playlistTracks.handle + '.json';
@@ -15,7 +14,6 @@ module.exports = {
 
             if (JSON.stringify(oldData.tracks) !== JSON.stringify(playlistTracks.tracks) || debug) {
                 playlistTracks.colour = oldData.colour == '' ? this.generateColour() : oldData.colour;
-                playlistTracks.isIndex = isIndex;
                 fs.mkdirsSync('.data');
                 fs.writeFileSync(jsonFileLocation, JSON.stringify(playlistTracks));
             }
