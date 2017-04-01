@@ -1,6 +1,7 @@
 var watch = require('node-watch');
 var static = require('node-static');
 var assets = require('../scripts/assets.js');
+var fs = require('fs-extra');
 
 watch('src', { recursive: true }, function(evt, name) {
     var fileExt = name.substring(name.lastIndexOf('.') + 1);
