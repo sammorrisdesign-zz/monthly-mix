@@ -50,7 +50,9 @@ module.exports =  {
     },
 
     onReady: function() {
-        if (isFirst) {
+        var referrer = document.referrer;
+        console.log(referrer);
+        if (isFirst && referrer.indexOf('localhost') === -1 && referrer.indexOf('monthly.mx') === -1) {
             youTubePlayer.mute();
             $('body').trigger('ready');
             isFirst = false;

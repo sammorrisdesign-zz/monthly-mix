@@ -8,7 +8,7 @@ module.exports = {
 
         var playlists = klawSync('.data');
 
-        var archive = {};
+        var archive = [];
 
         for (var i in playlists) {
             var playlist = fs.readJsonSync(playlists[i].path);
@@ -16,9 +16,14 @@ module.exports = {
                 url: 'http://www.monthly.mx/' + playlist.year + '/' + playlist.month,
                 handle: playlist.handle,
                 colour: playlist.colour,
-                month: playlist.month
+                month: playlist.month,
+                timeStamp: Date.parse(playlist.month + ' ' + playlist.year)
             }
         }
+
+        archive.sort(function(a, b) {
+            return a.timeStamp - b.timeStamp;
+        });
 
         fs.writeFileSync('.data/archive.json', JSON.stringify(archive));
     }
