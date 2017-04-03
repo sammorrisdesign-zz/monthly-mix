@@ -8,8 +8,9 @@
     margin: auto;
     padding: 20px;
     background-color: $c-white;
-    max-width: 960px;
-    height: 260px;
+    max-width: 920px;
+    max-height: calc(60%);
+    overflow: scroll;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease-out;
@@ -26,6 +27,8 @@
     padding: 0;
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .archive-playlist {
@@ -33,7 +36,7 @@
     height: 215px;
     box-sizing: border-box;
     padding: 5px;
-    margin-right: 20px;
+    margin-bottom: 20px;
     background-color: red;
     @include archiveColors();
 
