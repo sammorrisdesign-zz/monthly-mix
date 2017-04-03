@@ -1,19 +1,26 @@
 .archive {
-    position: fixed;
+    position: relative;
     z-index: 5;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    margin: auto;
     padding: 20px;
     background-color: $c-white;
-    max-width: 920px;
-    max-height: calc(60%);
-    overflow: scroll;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease-out;
+    overflow-x: scroll;
+    backface-visibility: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    @include mq(desktop) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        pointer-events: 0;
+        transition: opacity 0.2s ease-out;
+        opacity: 0;
+        max-width: 920px;
+        overflow: scroll;
+        max-height: calc(60%);
+    }
 }
 
 .archive__copy {
@@ -27,21 +34,43 @@
     padding: 0;
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    @include mq(desktop) {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 .archive-playlist {
+    position: relative;
     width: 215px;
     height: 215px;
     box-sizing: border-box;
     padding: 5px;
     margin-bottom: 20px;
     background-color: red;
+    margin-right: 20px;
     @include archiveColors();
+    float: left;
+    flex-shrink: 0;
 
     &:hover {
         opacity: 0.8;
+    }
+
+    &:nth-of-type(4n) {
+        @include mq(desktop) {
+            margin-right: 0;
+        }
+    }
+
+    a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 }
 
