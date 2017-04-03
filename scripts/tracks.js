@@ -37,11 +37,11 @@ module.exports = {
             }
 
             if (data.nextPageToken) {
-                this.getPlaylistInfo(playlistId, callStackSize + 1, data.nextPageToken, currentItems, callBack)
+                this.getTracksInfo(playlistId, callStackSize + 1, data.nextPageToken, currentItems, callBack)
             } else {
                 callBack(currentItems);
             }
-        });
+        }.bind(this));
     },
 
     getTracks: function(id, done) {
@@ -57,11 +57,13 @@ module.exports = {
         var playlist = {};
 
         for (var i in data) {
-            var correction = corrections[data[i].resourceId.videoId] || {};
-            playlist[i] = {
-                id: data[i].resourceId.videoId,
-                artist: correction.hasOwnProperty('artist') ? correction.artist : this.cleanTrackInfo(data[i].title).artist,
-                title: correction.hasOwnProperty('title') ? correction.title : this.cleanTrackInfo(data[i].title).title
+            if (data[i].title !== "Deleted video") {
+                var correction = corrections[data[i].resourceId.videoId] || {};
+                playlist[i] = {
+                    id: data[i].resourceId.videoId,
+                    artist: correction.hasOwnProperty('artist') ? correction.artist : this.cleanTrackInfo(data[i].title).artist,
+                    title: correction.hasOwnProperty('title') ? correction.title : this.cleanTrackInfo(data[i].title).title
+                }
             }
         }
 
