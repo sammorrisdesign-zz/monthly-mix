@@ -5,6 +5,11 @@
     color: $c-white;
     border: 3px solid $c-white;
     text-decoration: none;
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+        transform: rotate(3deg);
+    }
 }
 
 .button--dark {

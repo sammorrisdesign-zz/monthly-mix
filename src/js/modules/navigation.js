@@ -44,10 +44,10 @@ module.exports =  {
         analytics.click('hide playlist');
 
         if ($('body').hasClass('is-closed')) {
-            $('.playlist__hide-button').text('Show Playlist');
+            $('.playlist__hide-button .button').text('Show Playlist');
             this.showControls();
         } else {
-            $('.playlist__hide-button').text('Hide Playlist');
+            $('.playlist__hide-button .button').text('Hide Playlist');
         }
     },
 
