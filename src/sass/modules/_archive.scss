@@ -1,6 +1,5 @@
 .archive {
-    position: relative;
-    z-index: 5;
+//    z-index: 5;
     padding: 20px;
     background-color: $c-white;
     overflow-x: scroll;
@@ -13,6 +12,7 @@
         left: 0;
         right: 0;
         bottom: 0;
+        z-index: 5;
         margin: auto;
         pointer-events: none;
         transition: opacity 0.2s ease-out;
