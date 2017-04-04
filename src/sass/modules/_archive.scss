@@ -1,0 +1,87 @@
+.archive {
+    padding: 20px;
+    background-color: $c-white;
+    overflow-x: scroll;
+    backface-visibility: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    @include mq(desktop) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 5;
+        margin: auto;
+        pointer-events: none;
+        transition: opacity 0.2s ease-out;
+        opacity: 0;
+        max-width: 920px;
+        overflow: scroll;
+        max-height: calc(60%);
+    }
+}
+
+.archive__copy {
+    margin: 0;
+    margin-bottom: 20px;
+    color: $c-black;
+}
+
+.archive-playlists {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+
+    @include mq(desktop) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.archive-playlist {
+    position: relative;
+    width: 215px;
+    height: 215px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-bottom: 20px;
+    background-color: red;
+    margin-right: 20px;
+    @include archiveColors();
+    float: left;
+    flex-shrink: 0;
+    overflow: hidden;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:nth-of-type(4n) {
+        @include mq(desktop) {
+            margin-right: 0;
+        }
+    }
+
+    a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.archive-playlist__image {
+    width: 100%;
+}
+
+.is-archiving {
+    .page-fade,
+    .archive {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}

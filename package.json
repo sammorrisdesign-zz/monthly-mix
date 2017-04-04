@@ -1,10 +1,7 @@
 {
-  "name": "Mies",
-  "version": "1.0.0",
+  "name": "monthly-mix",
+  "version": "2.0.0",
   "main": "index.js",
-  "scripts": {
-    "start": "cd source && jekyll serve"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/sammorrisdesign/mies-boilerplate.git"
@@ -14,5 +11,26 @@
   "bugs": {
     "url": "https://github.com/sammorrisdesign/mies-boilerplate/issues"
   },
-  "homepage": "https://github.com/sammorrisdesign/mies-boilerplate"
+  "scripts": {
+    "compile": "node scripts/compile.js",
+    "prestart": "npm run compile",
+    "start": "node scripts/local.js"
+  },
+  "homepage": "https://github.com/sammorrisdesign/mies-boilerplate",
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "deasync": "^0.1.9",
+    "handlebars": "^4.0.6",
+    "klaw-sync": "^1.1.2",
+    "node-cmd": "^2.0.0",
+    "node-sass": "^4.5.1",
+    "node-static": "^0.7.9",
+    "node-watch": "^0.5.2",
+    "partials-loader": "^0.1.3",
+    "stringify": "^5.1.0",
+    "youtube-api": "^2.0.6"
+  },
+  "dependencies": {
+    "fs-extra": "^2.1.2"
+  }
 }

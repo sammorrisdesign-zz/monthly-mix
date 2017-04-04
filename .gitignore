@@ -1,16 +1,13 @@
 .sass-cache
-.asset-cache
 
-style.css
-style.css.map
-soundcloud-keys.json
+keys.json
 
 main.min.js
 
 .DS_Store
 
-_site
-
-.jekyll-metadata
+.build
+.data
 
 npm-debug.log
+node_modules

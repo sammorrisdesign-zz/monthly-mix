@@ -1,0 +1,20 @@
+<div class='playlist' data-id='{{ id }}'>
+    {{> templates/partials/playlist-header }}
+
+    <ul class='tracks'>
+    {{#each tracks}}
+        <li class='track' data-id='{{ id }}'>
+            <h2 class='track__artist'>{{ artist }}</h2>
+            <h2 class='track__title'>{{ title }}</h2>
+        </li>
+    {{/each}}
+    </ul>
+</div>
+<div class='playlist__hide-button'>
+    <div class='button'>Hide Tracklist</div>
+</div>
+<div class='controls'>
+    <div class='controls__play-button button'>Pause</div>
+    <div class='controls__mute-button is-muted button'>Unmute</div>
+</div>
+<a class='playlist__youtube-button button' href='' target='_blank'>Watch on YouTube</a>

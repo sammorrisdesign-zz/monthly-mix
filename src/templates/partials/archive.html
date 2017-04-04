@@ -1,0 +1,12 @@
+<div class='archive'>
+    <h2 class='archive__copy'>Archive</h2>
+    <ul class='archive-playlists'>
+        {{#each archive}}
+            <li class='archive-playlist {{ colour }}'>
+                <a href='{{ url }}'>
+                    <img class='archive-playlist__image' src='/assets/images/titles/{{ handle }}.svg' />
+                </a>
+            </li>
+        {{/each}}
+    </ul>
+</div>
