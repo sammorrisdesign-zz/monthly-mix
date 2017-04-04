@@ -51,9 +51,13 @@ module.exports =  {
 
     onReady: function() {
         var referrer = document.referrer;
-        console.log(referrer);
-        if (isFirst && referrer.indexOf('localhost') === -1 && referrer.indexOf('monthly.mx') === -1) {
-            youTubePlayer.mute();
+        if (isFirst) {
+            if (referrer.indexOf('localhost') === -1 && referrer.indexOf('monthly.mx') === -1) {
+                youTubePlayer.mute();
+            } else {
+                $('.controls__mute-button').removeClass('is-muted');
+                $('.controls__mute-button').text('Mute');
+            }
             $('body').trigger('ready');
             isFirst = false;
         }
