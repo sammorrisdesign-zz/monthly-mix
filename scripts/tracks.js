@@ -14,7 +14,6 @@ module.exports = {
 
             if (JSON.stringify(oldData.tracks) !== JSON.stringify(playlistTracks.tracks) || debug) {
                 playlistTracks.colour = oldData.colour == '' ? this.generateColour() : oldData.colour;
-                console.log(playlistTracks.colour);
                 fs.mkdirsSync('.data');
                 fs.writeFileSync(jsonFileLocation, JSON.stringify(playlistTracks));
             }
@@ -82,7 +81,7 @@ module.exports = {
     },
 
     cleanTrackInfo: function(videoTitle) {
-        videoTitle = videoTitle.replace(/\(Official Video\)|\(Official Audio\)|\(official music video\)|\(audio only\)/g, '');
+        videoTitle = videoTitle.replace(/\(Official Video\)|\(Official Audio\)|\(official music video\)|\(Official Music Video\)|\(Official\)|\(Lyrics\)|\(audio only\)|\[OFFICIAL MUSIC VIDEO\]|\[OFFICIAL VIDEO\]|\[OFFICIAL\]|\[OFFICIAL AUDIO\]|/g, '');
         videoTitle = videoTitle.split(/ - | – | \/\/ /);
 
         return {
