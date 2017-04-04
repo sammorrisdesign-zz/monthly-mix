@@ -3,7 +3,8 @@ html {
     margin: 0;
     padding: 0;
     background-color: #000;
-    font-family: 'Adelle Sans', sans-serif;
+    font-family: "adelle-sans", sans-serif;
+    font-weight: bold;
 }
 
 body {
@@ -21,7 +22,8 @@ h1,
 h2,
 h3,
 input {
-    font-family: 'Adelle Sans', sans-serif;
+    font-family: "adelle-sans", sans-serif;
+    font-weight: bold;
     font-size: 24px;
     line-height: 30px;
 }
