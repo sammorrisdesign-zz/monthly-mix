@@ -2,26 +2,20 @@ $c-white: #fff;
 $c-black: #222;
 $c-grey: #ccc;
 
-$c-light-blue: #9bd5e0;
-$c-purple: #c44f85;
-$c-mid-grey: #e2e2e2;
-$c-blue: #7ecac6;
-$c-green: #5db456;
-$c-yellow: #e6d35f;
-$c-orange: #fc7c62;
-$c-purple-grey: #797379;
+$c-orange: #e6711b;
+$c-green: #19e479;
+$c-yellow: #f4e628;
+$c-purple: #4c20c9;
+$c-blue: #009cf5;
+$c-pink: #e4a4bb;
+$c-mint: #66e0c8;
+$c-red: #d8192b;
+$c-hot-pink: #e6256c;
+$c-lime: #80ce1b;
 
 @mixin randomBackground() {
-    .light-blue & {
-        background-color: $c-light-blue;
-    }
-
     .purple & {
         background-color: $c-purple;
-    }
-
-    .mid-grey & {
-        background-color: $c-mid-grey;
     }
 
     .blue & {
@@ -40,22 +34,30 @@ $c-purple-grey: #797379;
         background-color: $c-orange;
     }
 
-    .purple-grey & {
-        background-color: $c-purple-grey;
+    .pink & {
+        background-color: $c-pink;
+    }
+
+    .mint & {
+        background-color: $c-mint;
+    }
+
+    .red & {
+        background-color: $c-red;
+    }
+
+    .hot-pink & {
+        background-color: $c-hot-pink;
+    }
+
+    .lime & {
+        background-color: $c-lime;
     }
 }
 
 @mixin archiveColors() {
-    &.light-blue {
-        background-color: $c-light-blue;
-    }
-
     &.purple {
         background-color: $c-purple;
-    }
-
-    &.mid-grey {
-        background-color: $c-mid-grey;
     }
 
     &.blue {
@@ -74,22 +76,30 @@ $c-purple-grey: #797379;
         background-color: $c-orange;
     }
 
-    &.purple-grey {
-        background-color: $c-purple-grey;
+    &.pink {
+        background-color: $c-pink;
+    }
+
+    &.mint {
+        background-color: $c-mint;
+    }
+
+    &.red {
+        background-color: $c-red;
+    }
+
+    &.hot-pink {
+        background-color: $c-hot-pink;
+    }
+
+    &.lime {
+        background-color: $c-lime;
     }
 }
 
 @mixin randomColor() {
-    .light-blue & {
-        color: $c-light-blue;
-    }
-
     .purple & {
         color: $c-purple;
-    }
-
-    .mid-grey & {
-        color: $c-mid-grey;
     }
 
     .blue & {
@@ -108,22 +118,30 @@ $c-purple-grey: #797379;
         color: $c-orange;
     }
 
-    .purple-grey & {
-        color: $c-purple-grey;
+    .pink & {
+        color: $c-pink;
+    }
+
+    .mint & {
+        color: $c-mint;
+    }
+
+    .red & {
+        color: $c-red;
+    }
+
+    .hot-pink & {
+        color: $c-hot-pink;
+    }
+
+    .lime & {
+        color: $c-lime;
     }
 }
 
 @mixin randomBorder() {
-    .light-blue & {
-        border-color: $c-light-blue;
-    }
-
     .purple & {
         border-color: $c-purple;
-    }
-
-    .mid-grey & {
-        border-color: $c-mid-grey;
     }
 
     .blue & {
@@ -142,7 +160,23 @@ $c-purple-grey: #797379;
         border-color: $c-orange;
     }
 
-    .purple-grey & {
-        border-color: $c-purple-grey;
+    .pink & {
+        border-color: $c-pink;
+    }
+
+    .mint & {
+        border-color: $c-mint;
+    }
+
+    .red & {
+        border-color: $c-red;
+    }
+
+    .hot-pink & {
+        border-color: $c-hot-pink;
+    }
+
+    .lime & {
+        border-color: $c-lime;
     }
 }

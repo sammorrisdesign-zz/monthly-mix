@@ -4,7 +4,7 @@
 
     <div class='playlist-header__links'>
         Or listen on...
-        <a href='{{ spotify }}' target='_blank' class='playlist-header__link playlist-header__link--spotify button'>Spotify</a>
+        {{#if spotify}}<a href='{{ spotify }}' target='_blank' class='playlist-header__link playlist-header__link--spotify button'>Spotify</a>{{/if}}
         <a href='https://www.youtube.com/playlist?list={{ id }}' target='_blank' class='playlist-header__link playlist-header__link--youtube button'>YouTube</a>
     </div>
 </div>

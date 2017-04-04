@@ -14,6 +14,7 @@ module.exports = {
 
             if (JSON.stringify(oldData.tracks) !== JSON.stringify(playlistTracks.tracks) || debug) {
                 playlistTracks.colour = oldData.colour == '' ? this.generateColour() : oldData.colour;
+                console.log(playlistTracks.colour);
                 fs.mkdirsSync('.data');
                 fs.writeFileSync(jsonFileLocation, JSON.stringify(playlistTracks));
             }
@@ -91,7 +92,7 @@ module.exports = {
     },
 
     generateColour: function() {
-        var colours = ['light-blue', 'purple', 'mid-grey', 'blue', 'green', 'yellow', 'orange', 'purple-grey'];
+        var colours = ['orange', 'green', 'yellow', 'purple', 'blue', 'light-blue', 'pink', 'mint', 'red', 'hot-pink', 'lime'];
         return colours[Math.floor(Math.random()*colours.length)];
     }
 } 
