@@ -22,7 +22,7 @@ module.exports =  {
             this.showArchive();
         }.bind(this));
 
-        $('.page-fade').click(function() {
+        $('.page-fade, .archive__button').click(function() {
             this.hidePanel();
         }.bind(this));
 
