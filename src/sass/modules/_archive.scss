@@ -1,9 +1,7 @@
 .archive {
+    position: relative;
     padding: 20px;
     background-color: $c-white;
-    overflow-x: scroll;
-    backface-visibility: hidden;
-    -webkit-overflow-scrolling: touch;
 
     @include mq(desktop) {
         position: fixed;
@@ -19,6 +17,8 @@
         max-width: 920px;
         overflow: scroll;
         max-height: calc(60%);
+        backface-visibility: hidden;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -34,6 +34,12 @@
     list-style: none;
     display: flex;
     flex-wrap: nowrap;
+
+    @include mq($until: desktop) {
+        overflow-x: scroll;
+        backface-visibility: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
 
     @include mq(desktop) {
         display: flex;
