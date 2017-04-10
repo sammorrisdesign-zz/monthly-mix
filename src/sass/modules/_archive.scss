@@ -28,7 +28,7 @@
     color: $c-black;
 }
 
-.archive__button {
+.archive__hide-button {
     display: none;
 
     @include mq(desktop) {
@@ -37,6 +37,7 @@
         position: absolute;
         right: 20px;
         top: 15px;
+        margin-right: 0;
         z-index: 10;
         display: block;
     }
