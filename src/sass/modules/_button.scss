@@ -6,6 +6,7 @@
     border: 3px solid $c-white;
     text-decoration: none;
     transition: transform 0.2s ease-out;
+    cursor: pointer;
 
     &:hover {
         transform: rotate(3deg);

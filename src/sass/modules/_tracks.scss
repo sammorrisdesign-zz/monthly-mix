@@ -10,6 +10,7 @@
     border: 3px solid $c-black;
     margin: 10px 0;
     transition: transform 0.2s ease-out;
+    cursor: pointer;
 
     @for $i from 1 through 30 {
         &:nth-of-type(#{$i}) {
