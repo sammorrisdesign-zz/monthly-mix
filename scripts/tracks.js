@@ -91,7 +91,7 @@ module.exports = {
     },
 
     generateColour: function() {
-        var colours = ['orange', 'green', 'yellow', 'purple', 'blue', 'light-blue', 'pink', 'mint', 'red', 'hot-pink', 'lime'];
+        var colours = ['orange', 'green', 'yellow', 'purple', 'blue', 'pink', 'mint', 'red', 'hot-pink', 'lime'];
         return colours[Math.floor(Math.random()*colours.length)];
     }
 } 
