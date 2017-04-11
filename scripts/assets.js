@@ -25,6 +25,10 @@ module.exports = {
             template_extensions: ['html']
         });
 
+        handlebars.registerHelper("inc", function(value, options) {
+            return parseInt(value) + 1;
+        });
+
         var location = '.build/' + data.year + '/' + data.month + '/';
 
         fs.mkdirsSync(location);
