@@ -25,7 +25,7 @@
 
 .playlist__hide-button {
     position: fixed;
-    left: -44px;
+    left: -37px;
     top: 0;
     bottom: 0;
     margin: auto;
@@ -63,6 +63,10 @@
 
     @include mq(tablet) {
         display: block;
+    }
+
+    @include mq(desktop) {
+        margin-bottom: 0;
     }
 
     .show-controls & {
