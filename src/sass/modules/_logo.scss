@@ -19,7 +19,8 @@
     margin-bottom: 3px;
 
     @include mq(desktop) {
-        font-size: 30px;
+        font-size: 24px;
+        margin-bottom: 0;
     }
 }
 
@@ -29,8 +30,8 @@
     letter-spacing: -4px;
 
     @include mq(desktop) {
-        font-size: 78px;
-        letter-spacing: -6px;
+        font-size: 60px;
+        letter-spacing: -5px;
     }
 }
 
