@@ -23,9 +23,13 @@
 }
 
 .archive__copy {
-    margin: 0;
-    margin-bottom: 20px;
+    margin-top: 0;
     color: $c-black;
+
+    @include mq(desktop) {
+        margin: 0;
+        @include randomColor();
+    }
 }
 
 .archive__hide-button {
@@ -57,6 +61,25 @@
     }
 
     @include mq(desktop) {
+        display: block;
+    }
+}
+
+.archive-divider {
+    display: none;
+    margin: 0;
+    color: $c-black;
+    margin-bottom: 20px;
+
+    @include mq(desktop) {
+        display: block;
+    }
+}
+
+.archive-section {
+    display: flex;
+
+    @include mq(desktop) {
         display: flex;
         flex-wrap: wrap;
     }
@@ -76,14 +99,14 @@
     flex-shrink: 0;
     overflow: hidden;
 
-    &:hover {
-        opacity: 0.8;
-    }
-
     &:nth-of-type(4n) {
         @include mq(desktop) {
             margin-right: 0;
         }
+    }
+
+    &:hover {
+        opacity: 0.8;
     }
 
     a {

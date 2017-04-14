@@ -3,11 +3,18 @@
     <div class='archive__hide-button button'>Close</div>
     <ul class='archive-playlists'>
         {{#each archive}}
+            {{#if isFirstInYear}}
+                <h3 class='archive-divider'>{{ year }}</h3>
+                <div class='archive-section'>
+            {{/if}}
             <li class='archive-playlist {{ colour }}'>
                 <a href='{{ url }}'>
                     <img class='archive-playlist__image' src='/assets/images/titles/{{ handle }}.svg' />
                 </a>
             </li>
+            {{#if isLastInYear}}
+                </div>
+            {{/if}}
         {{/each}}
     </ul>
 </div>

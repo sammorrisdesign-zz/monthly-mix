@@ -17,6 +17,7 @@ module.exports = {
                 handle: playlist.handle,
                 colour: playlist.colour,
                 month: playlist.month,
+                year: playlist.year,
                 timeStamp: Date.parse(playlist.month + ' ' + playlist.year),
                 path: '.data/' + playlist.month + '-' + playlist.year + '.json'
             }
@@ -25,6 +26,22 @@ module.exports = {
         archive.sort(function(a, b) {
             return b.timeStamp - a.timeStamp;
         });
+
+        var lastYear = null;
+
+        for (var i in archive) {
+            if (lastYear !== archive[i].year) {
+                archive[i].isFirstInYear = true;
+            }
+
+            console.log(i);
+            console.log(archive.length);
+
+            if (i == archive.length - 1 || archive[i].year !== archive[parseInt(i) + 1].year) {
+                archive[i].isLastInYear = true;
+            }
+            lastYear = archive[i].year;
+        }
 
         fs.writeFileSync('.data/archive.json', JSON.stringify(archive));
 
