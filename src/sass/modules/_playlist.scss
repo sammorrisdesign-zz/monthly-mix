@@ -25,11 +25,10 @@
 
 .playlist__hide-button {
     position: fixed;
-    left: -37px;
     top: 0;
-    bottom: 0;
+    left: -38px;
     margin: auto;
-    transform: rotate(-90deg) translateY(50vw);
+    transform: rotate(-90deg) translateY(50vw) translateX(-50vh);
     transition: transform 0.2s ease-in-out, opacity 0.4s ease-out;
     z-index: 3;
     opacity: 0;
@@ -37,7 +36,7 @@
     display: none;
 
     @include mq(desktop) {
-        display: table;
+        display: block;
     }
 
     .show-controls & {
@@ -46,7 +45,7 @@
     }
 
     .is-closed & {
-        transform: rotate(-90deg) translateY(0vw);
+        transform: rotate(-90deg) translateY(0vw) translateX(-50vh);
     }
 }
 

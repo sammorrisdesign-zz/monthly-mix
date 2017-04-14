@@ -10,7 +10,7 @@ module.exports =  {
     },
 
     bindings: function() {
-        $('.playlist__hide-button').click(function() {
+        $('.playlist__hide-button .button').click(function() {
             this.hidePlaylist();
         }.bind(this));
 
@@ -27,9 +27,12 @@ module.exports =  {
         }.bind(this));
 
         $('.video-mask').click(function() {
+            console.log('video mask');
             if ($('body').hasClass('is-closed')) {
+                console.log('is-closed');
                 player.play($('.is-playing, .is-paused'));
             } else {
+                console.log('hide the playlist');
                 this.hidePlaylist();
             }
         }.bind(this));
