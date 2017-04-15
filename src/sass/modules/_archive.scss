@@ -58,6 +58,9 @@
         overflow-x: scroll;
         backface-visibility: hidden;
         -webkit-overflow-scrolling: touch;
+        width: calc(100% + 20px);
+        margin-left: -20px;
+        padding-left: 20px;
     }
 
     @include mq(desktop) {
