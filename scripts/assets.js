@@ -6,14 +6,13 @@ module.exports = {
             var jsonData = JSON.parse(fs.readFileSync(data[i].path, 'utf8'));
             jsonData.archive = data;
             this.compileHtmlPage(jsonData, i);
+            this.compileEmail(jsonData);
         }
     },
 
     compileHtmlPage: function(data, i) {
         var handlebars = require('handlebars');
         var partialLoader = require('partials-loader');
-
-        fs.removeSync('.build/' + data.handle + '.html');
 
         var html = fs.readFileSync('./src/templates/main.html', 'utf8');
         var template = handlebars.compile(html);
@@ -24,6 +23,11 @@ module.exports = {
             partials_directory_names: ['partials'],
             template_extensions: ['html']
         });
+
+        handlebars.registerHelper('randomButton', function() {
+            var randomNumber = Math.floor(Math.random() * 6) - 3;
+            return randomNumber == 0 ? -3 : randomNumber;
+        })
 
         handlebars.registerHelper("inc", function(value, options) {
             return parseInt(value) + 1;
@@ -37,6 +41,19 @@ module.exports = {
             fs.writeFileSync('.build/index.html', template(data));
         }
         console.log('updated html for ' + data.handle);
+    },
+
+    compileEmail: function(data) {
+        var handlebars = require('handlebars');
+        var partialLoader = require('partials-loader');
+
+        var html = fs.readFileSync('./src/templates/email.html', 'utf8');
+        var template = handlebars.compile(html);
+
+        var location = '.build/' + data.year + '/' + data.month + '/';
+
+        fs.mkdirsSync(location);
+        fs.writeFileSync(location + 'email.html', template(data));
     },
 
     js: function() {

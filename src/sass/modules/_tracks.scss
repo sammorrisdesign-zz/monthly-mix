@@ -26,9 +26,13 @@
             }
         }
     }
+}
 
-    &:hover {
-        transform: rotate(1deg);
+@for $i from -3 through 3 {
+    .track--#{$i} {
+        &:hover {
+            transform: rotate(#{$i / 2}deg);
+        }
     }
 }
 

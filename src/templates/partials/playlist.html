@@ -3,7 +3,7 @@
 
     <ul class='tracks'>
     {{#each tracks}}
-        <li class='track' data-id='{{ id }}'>
+        <li class='track track--{{ randomButton }}' data-id='{{ id }}'>
             <h2 class='track__number'>{{inc @index }}</h2>
             <h2 class='track__artist'>{{ artist }}</h2>
             <h2 class='track__title'>{{ title }}</h2>
@@ -12,10 +12,10 @@
     </ul>
 </div>
 <div class='playlist__hide-button'>
-    <div class='button'>Hide Tracklist</div>
+    <div class='button button--{{ randomButton }}'>Hide Tracklist</div>
 </div>
 <div class='controls'>
-    <div class='controls__play-button button'>Pause</div>
-    <div class='controls__mute-button is-muted button'>Unmute</div>
+    <div class='controls__play-button button button--{{ randomButton }}'>Pause</div>
+    <div class='controls__mute-button is-muted button button--{{ randomButton }}'>Unmute</div>
 </div>
-<a class='playlist__youtube-button button' href='' target='_blank'>YouTube</a>
+<a class='playlist__youtube-button button button--{{ randomButton }}' href='' target='_blank'>YouTube</a>

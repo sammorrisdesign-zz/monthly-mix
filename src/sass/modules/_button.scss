@@ -7,9 +7,13 @@
     text-decoration: none;
     transition: transform 0.2s ease-out;
     cursor: pointer;
+}
 
-    &:hover {
-        transform: rotate(3deg);
+@for $i from -3 through 3 {
+    .button--#{$i} {
+        &:hover {
+            transform: rotate(#{$i}deg);
+        }
     }
 }
 
