@@ -34,9 +34,6 @@ module.exports = {
                 archive[i].isFirstInYear = true;
             }
 
-            console.log(i);
-            console.log(archive.length);
-
             if (i == archive.length - 1 || archive[i].year !== archive[parseInt(i) + 1].year) {
                 archive[i].isLastInYear = true;
             }
