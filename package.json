@@ -22,6 +22,7 @@
     "deasync": "^0.1.9",
     "handlebars": "^4.0.6",
     "klaw-sync": "^1.1.2",
+    "marked": "^0.3.6",
     "node-cmd": "^2.0.0",
     "node-sass": "^4.5.1",
     "node-static": "^0.7.9",

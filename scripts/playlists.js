@@ -1,6 +1,7 @@
 var fs = require('fs-extra');
 var keys = require('../keys.json');
 var youtube = require('youtube-api');
+var marked = require('marked');
 
 var playlists = [], currentLength;
 
@@ -24,8 +25,9 @@ module.exports = {
                 playlists[playlists.length] = {
                     id: data.items[i].id,
                     title: data.items[i].snippet.title,
-                    description: data.items[i].snippet.description
+                    description: marked(data.items[i].snippet.description)
                 }
+                console.log(data.items[i].snippet.description);
             }
 
             if (data.nextPageToken) {

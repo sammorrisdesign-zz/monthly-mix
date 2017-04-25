@@ -52,6 +52,11 @@ module.exports = {
 
         var location = '.build/' + data.year + '/' + data.month + '/';
 
+        data.description = '<p>Hey Monthly Mixers</p>' + data.description + '<p>Happy New Month, <br />Sam Morris</p>';
+        data.description = data.description.replace(/<p>/g, '<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span id="docs-internal-guid-08af3be0-0244-464c-d6e8-dc24afaa97e5"><span style="color:rgb(0, 0, 0); font-family:arial; font-size:14.6667px; vertical-align:baseline; white-space:pre-wrap">') .replace(/<\/p>/g, '</span></span></p> \r\n &nbsp; \r\n');
+        
+        // replace Monthly mix for month name with link
+
         fs.mkdirsSync(location);
         fs.writeFileSync(location + 'email.html', template(data));
     },
@@ -62,7 +67,7 @@ module.exports = {
         var deasync = require('deasync');
 
         var isDone = false;
-
+                     
         fs.removeSync('.build/assets/js/main.js');
         fs.mkdirsSync('.build/assets/js');
 
