@@ -40,6 +40,10 @@ module.exports = {
             }
         });
 
+        handlebars.registerHelper("len", function(json) {
+            return Object.keys(json).length;
+        });
+
         handlebars.registerHelper("inc", function(value, options) {
             return parseInt(value) + 1;
         });
