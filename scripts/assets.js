@@ -67,7 +67,7 @@ module.exports = {
         var deasync = require('deasync');
 
         var isDone = false;
-                     
+
         fs.removeSync('.build/assets/js/main.js');
         fs.mkdirsSync('.build/assets/js');
 

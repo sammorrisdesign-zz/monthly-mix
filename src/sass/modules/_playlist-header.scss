@@ -16,9 +16,9 @@
 
 .playlist-header__title {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: calc(100% - 80px);
+    left: 0;
+    top: 0;
+    width: 100%;
 }
 
 .playlist-header__seo-hidden {
