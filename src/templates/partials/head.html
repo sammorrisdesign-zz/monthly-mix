@@ -2,8 +2,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Monthly Mix for {{ title }}</title>
-    <meta name="description" content="">
+    <title>The best new music by {{#each (limit tracks 3)}}{{ artist }}, {{/each}}and more – Monthly Mix for {{ title }}</title>
+    <meta name="description" content="A playlist of the best new music from {{ title }}. Featuring new tracks by {{#each tracks}}{{ artist }}, {{/each}}and more">
 
     <!-- Fonts (Here to avoid FOUT and for caching purposes -->
     <script>

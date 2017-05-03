@@ -28,7 +28,7 @@
 
     @include mq(desktop) {
         margin: 0;
-        @include randomColor();
+        color: $c-black;
     }
 }
 
@@ -71,7 +71,7 @@
 .archive-divider {
     display: none;
     margin: 0;
-    color: $c-black;
+    color: lighten($c-black, 20%);
     margin-bottom: 20px;
 
     @include mq(desktop) {
@@ -119,6 +119,15 @@
         right: 0;
         bottom: 0;
     }
+}
+
+.archive-playlist__intro {
+    position: absolute;
+    top: 0;
+    left: 8px;
+    margin: 0;
+    color: $c-black;
+    font-size: 8px;
 }
 
 .archive-playlist__image {

@@ -27,7 +27,6 @@ module.exports = {
                     title: data.items[i].snippet.title,
                     description: marked(data.items[i].snippet.description)
                 }
-                console.log(data.items[i].snippet.description);
             }
 
             if (data.nextPageToken) {

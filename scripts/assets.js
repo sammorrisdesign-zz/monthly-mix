@@ -29,6 +29,17 @@ module.exports = {
             return randomNumber == 0 ? -3 : randomNumber;
         })
 
+        handlebars.registerHelper('limit', function (arr, limit) {
+            var smallArr = {};
+            for (var i in arr) {
+                if (i == limit) {
+                    return smallArr;
+                } else {
+                    smallArr[i] = arr[i];
+                }
+            }
+        });
+
         handlebars.registerHelper("inc", function(value, options) {
             return parseInt(value) + 1;
         });
