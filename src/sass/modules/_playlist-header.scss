@@ -12,6 +12,10 @@
     left: 20px;
     right: 20px;
     margin: 0;
+
+    @include mq(desktop) {
+        font-size: 26px;
+    }
 }
 
 .playlist-header__title {
