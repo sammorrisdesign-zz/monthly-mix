@@ -14,6 +14,7 @@ module.exports = {
 
             if (JSON.stringify(oldData.tracks) !== JSON.stringify(playlistTracks.tracks) || debug) {
                 playlistTracks.colour = oldData.colour == '' ? this.generateColour() : oldData.colour;
+                playlistTracks.colourAsHex = this.colourToHex(playlistTracks.colour),
                 fs.mkdirsSync('.data');
                 fs.writeFileSync(jsonFileLocation, JSON.stringify(playlistTracks));
             }
@@ -93,5 +94,22 @@ module.exports = {
     generateColour: function() {
         var colours = ['orange', 'green', 'yellow', 'purple', 'blue', 'pink', 'mint', 'red', 'hot-pink', 'lime'];
         return colours[Math.floor(Math.random()*colours.length)];
+    },
+
+    colourToHex: function(colour) {
+        var colours = {
+            'orange': '#e6711b',
+            'green': '#19e479',
+            'yellow': '#e6d22e',
+            'purple': '#4c20c9',
+            'blue': '#009cf5',
+            'pink': '#e4a4bb',
+            'mint': '#66e0c8',
+            'red': '#d8192b',
+            'hot-pink': '#e6256c',
+            'lime': '#80ce1b'
+        }
+
+        return colours[colour];
     }
 } 
