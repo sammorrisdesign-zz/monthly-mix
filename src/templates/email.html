@@ -46,13 +46,35 @@
     </style>
 </head>
 
-<body bgcolor="#f1f1f1" style="margin: 0;padding: 0;">
-    <table bgcolor="#f1f1f1" align="center" cellpadding="0" cellspacing="0" width="100%" style="color: #ffffff; border-collapse: collapse;">
+<body bgcolor"{{ colourAsHex }}" style="margin: 0;padding: 0;">
+    <table bgcolor="#ffffff" align="center" cellpadding="0" cellspacing="0" width="100%" style="color: #ffffff; border-collapse: collapse;">
+        <tr width="600" height='10'>
+        </tr>
+    </table>
+
+    <table bgcolor="#fff" align="center" cellpadding="0" cellspacing="0" width="100%" style="color: #333; text-align: center; font-size: 14px; font-family: sans-serif; border-collapse: collapse;">
         <tr width="600">
             <td style="padding: 1px;">
             </td>
             <td width="600px" style="max-width: 600px;">
-                <a href="http://www.monthly.mx/{{ year }}/{{ month }}" target="_blank" style="color: #bf2571;text-decoration: underline;"><img src="https://gallery.mailchimp.com/601418a0f4a6ec9cf7535ad2e/images/1d237c42-3bde-466d-b508-1beb6bea4fff.png" alt="" border="0" style="margin: 0; padding: 0;width: 100%; display: block;" class="image"></a>
+                <div>Having problems reading this? <a href="http://www.monthly.mx/{{ year }}/{{ month }}" target="_blank" style="color: {{ colourAsHex }};text-decoration: underline; ">View playlist on Monthly Mix</a> </div>
+            </td>
+            <td style="padding: 1px;">
+            </td>
+        </tr>
+    </table>
+
+    <table bgcolor="#ffffff" align="center" cellpadding="0" cellspacing="0" width="100%" style="color: #ffffff; border-collapse: collapse;">
+        <tr width="600" height='10'>
+        </tr>
+    </table>
+
+    <table bgcolor="{{ colourAsHex }}" align="center" cellpadding="0" cellspacing="0" width="100%" style="color: #ffffff; border-collapse: collapse;">
+        <tr width="600">
+            <td style="padding: 1px;">
+            </td>
+            <td width="600px" style="max-width: 600px;">
+                <a href="http://www.monthly.mx/{{ year }}/{{ month }}" target="_blank" style="color: {{ colourAsHex }};text-decoration: underline;"><img src="https://gallery.mailchimp.com/601418a0f4a6ec9cf7535ad2e/images/1d237c42-3bde-466d-b508-1beb6bea4fff.png" alt="" border="0" style="margin: 0; padding: 0;width: 100%; display: block;" class="image"></a>
             </td>
             <td style="padding: 1px;">
             </td>
@@ -64,7 +86,7 @@
             <td>
             </td>
             <td width="600px" style="max-width: 600px;">
-                <div style="margin: 1em 0;">
+                <div style="margin: 0.4em 0;">
                     {{{ description }}}
                 </div>
             </td>
