@@ -2,6 +2,8 @@ var $ = require('../vendor/jquery.js');
 var analytics = require('../modules/analytics');
 var youtube = require('../modules/youtube.js');
 
+var isMuted = true;
+
 module.exports =  {
     init: function() {
         youtube.init();
@@ -10,15 +12,11 @@ module.exports =  {
 
     bindings: function() {
         $('.track').click(function(el) {
-            this.play(el.currentTarget);
+            this.play(el.currentTarget, true);
         }.bind(this));
 
-        $('.controls__mute-button').click(function() {
-            this.mute();
-        }.bind(this));
-
-        $('.controls__play-button').click(function() {
-            this.play($('.is-playing, .is-paused'));
+        $('.play-button').click(function() {
+            this.play($('.is-playing, .is-paused'), true);
         }.bind(this));
 
         // manage play events
@@ -39,20 +37,32 @@ module.exports =  {
         }.bind(this));
     },
 
-    play: function(track) {
-        if ($(track).hasClass('is-playing')) {
-            youtube.pauseVideo();
-            $('.controls__play-button').text('Play');
-            $('.is-playing').addClass('is-paused').removeClass('is-playing');
-        } else {
+    play: function(track, unMute = false) {
+        if (isMuted) {
             $('.is-playing').removeClass('is-playing');
-            $('.is-paused').removeClass('is-paused');
             $(track).addClass('is-playing');
-            $('.controls__play-button').text('Pause');
-            youtube.play($(track).attr('data-id'));
-            analytics.newTrack($(track).text(), $(document).find("title").text());
+            youtube.play($(track).attr('data-id'), unMute);
+
+            if (unMute) {
+                isMuted = false;
+                $('.play-button').text('Pause');
+            }
+        } else {
+            if ($(track).hasClass('is-playing')) {
+                console.log('hey');
+                youtube.pauseVideo();
+                $('.play-button').text('Play');
+                $('.is-playing').addClass('is-paused').removeClass('is-playing');
+            } else {
+                $('.is-playing').removeClass('is-playing');
+                $('.is-paused').removeClass('is-paused');
+                $(track).addClass('is-playing');
+                $('.play-button').text('Pause');
+                youtube.play($(track).attr('data-id'), unMute);
+                analytics.newTrack($(track).text(), $(document).find("title").text());
+            }
+            this.updateYouTubeButton($(track).attr('data-id'));
         }
-        this.updateYouTubeButton($(track).attr('data-id'));
     },
 
     animateLogo: function() {
@@ -61,18 +71,6 @@ module.exports =  {
 
     pauseLogo: function() {
         $('.logo').removeClass('is-animating');
-    },
-
-    mute: function() {
-        if ($('.controls__mute-button').hasClass('is-muted')) {
-            youtube.unmute();
-            $('.controls__mute-button').removeClass('is-muted');
-            $('.controls__mute-button').text('Mute');
-        } else {
-            youtube.mute();
-            $('.controls__mute-button').addClass('is-muted');
-            $('.controls__mute-button').text('Unmute');
-        }
     },
 
     updateYouTubeButton: function(id) {

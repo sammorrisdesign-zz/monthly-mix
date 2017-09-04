@@ -13,16 +13,21 @@ module.exports =  {
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
         window.onYouTubePlayerAPIReady = function() {
-          this.createPlayer();
+            this.createPlayer();
         }.bind(this);
     },
 
-    play: function(url) {
-        if (this.isPlaying()) {
-            this.pauseVideo();
-        } else {
-            this.playVideo(url);
+    play: function(url, unMute = false) {
+        console.log(isFirst);
+        console.log(unMute);
+        if (isFirst && unMute) { 
+            youTubePlayer.unMute();
+            console.log('unmuted');
+            youTubePlayer.seekTo(0, true);
+            isFirst = false;
         }
+
+        this.playVideo(url);
     },
 
     createPlayer: function() {
@@ -36,6 +41,7 @@ module.exports =  {
                 'modestbranding': 1,
                 'playsinline': 1,
                 'disablekb': 1,
+                'fs': 0,
                 'iv_load_policy': 3
             },
             events: {
@@ -52,23 +58,9 @@ module.exports =  {
     onReady: function() {
         var referrer = document.referrer;
         if (isFirst) {
-            if (referrer.indexOf('localhost') === -1 && referrer.indexOf('monthly.mx') === -1) {
-                youTubePlayer.mute();
-            } else {
-                $('.controls__mute-button').removeClass('is-muted');
-                $('.controls__mute-button').text('Mute');
-            }
+            youTubePlayer.mute();
             $('body').trigger('ready');
-            isFirst = false;
         }
-    },
-
-    mute: function() {
-        youTubePlayer.mute();
-    },
-
-    unmute: function() {
-        youTubePlayer.unMute();
     },
 
     onStateChange: function(event) {
@@ -117,9 +109,5 @@ module.exports =  {
         if (youTubePlayer !== undefined) {
             this.updatePlayingStatus(false);
         }
-    },
-
-    isPlaying: function() {
-        return ($('.sound-of').attr('data-playing') == 'true');
     }
 };
