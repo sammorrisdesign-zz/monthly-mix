@@ -45,13 +45,13 @@ module.exports =  {
 
             if (unMute) {
                 isMuted = false;
+                $('body').addClass('is-active');
                 $('.play-button__label').text('Pause');
                 $('.play-button__icon--visible').removeClass('play-button__icon--visible');
                 $('.play-button__icon--pause').addClass('play-button__icon--visible');
             }
         } else {
             if ($(track).hasClass('is-playing')) {
-                console.log('hey');
                 youtube.pauseVideo();
                 $('.play-button__label').text('Play');
                 $('.is-playing').addClass('is-paused').removeClass('is-playing');

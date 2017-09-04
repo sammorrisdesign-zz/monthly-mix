@@ -7,6 +7,7 @@ var timer;
 module.exports =  {
     init: function() {
         this.bindings();
+        this.setTimer();
     },
 
     bindings: function() {
@@ -34,9 +35,28 @@ module.exports =  {
             }
         }.bind(this));
 
+        $(window).scroll(function() {
+            this.setTimer();
+        }.bind(this));
+
         $(window).mousemove(function() {
             this.showControls();
+            if ($('.playlist__hover-zone').is(':hover')) {
+                console.log('in the hover zone');
+                $('body').removeClass('is-closed');
+            }
         }.bind(this));
+    },
+
+    setTimer: function() {
+        clearInterval(timer);
+
+        if ($('body').hasClass('is-active') && !$('.playlist').is(':hover') && !$('.play-button').is(':hover')) {
+            timer = setInterval(function() {
+                $('body').removeClass('show-controls');
+                $('body').addClass('is-closed');
+            }, 1000);
+        }
     },
 
     hidePlaylist: function() {
@@ -67,12 +87,6 @@ module.exports =  {
 
     showControls: function() {
         $('body').addClass('show-controls');
-        clearInterval(timer);
-
-        if ($('body').hasClass('is-closed')) {
-            timer = setInterval(function() {
-                $('body').removeClass('show-controls');
-            }, 3000);
-        }
+        this.setTimer();
     }
 };
