@@ -68,7 +68,7 @@ module.exports = {
         var location = '.build/' + data.year + '/' + data.month + '/';
 
         data.description = '<p>Hey Monthly Mixers</p>' + data.description + '<p>Happy New Month, <br />Sam Morris</p>';
-        data.description = data.description.replace(/<p>/g, '<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span id="docs-internal-guid-08af3be0-0244-464c-d6e8-dc24afaa97e5"><span style="color:rgb(0, 0, 0); font-family:arial; font-size:14.6667px; vertical-align:baseline; white-space:pre-wrap">') .replace(/<\/p>/g, '</span></span></p> \r\n &nbsp; \r\n');
+        data.description = data.description.replace(/<p>/g, '<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span id="docs-internal-guid-08af3be0-0244-464c-d6e8-dc24afaa97e5"><span style="color:rgb(0, 0, 0); font-family:\'Adelle Sans\', sans-serif; font-size:14.6667px; vertical-align:baseline; white-space:pre-wrap">') .replace(/<\/p>/g, '</span></span></p> \r\n &nbsp; \r\n');
         data.description = data.description.replace(/Monthly Mix for ([^\s]+) [0-9]{4}/g, '<a href="http://www.monthly.mx/{{ year }}/{{ month }}" style="color: {{ colourAsHex }}; text-decoration:underline" target="_blank">$&</a>');
 
         var newTemplate = handlebars.compile(template(data));
