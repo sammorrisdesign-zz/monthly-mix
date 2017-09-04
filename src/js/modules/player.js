@@ -45,19 +45,25 @@ module.exports =  {
 
             if (unMute) {
                 isMuted = false;
-                $('.play-button').text('Pause');
+                $('.play-button__label').text('Pause');
+                $('.play-button__icon--visible').removeClass('play-button__icon--visible');
+                $('.play-button__icon--pause').addClass('play-button__icon--visible');
             }
         } else {
             if ($(track).hasClass('is-playing')) {
                 console.log('hey');
                 youtube.pauseVideo();
-                $('.play-button').text('Play');
+                $('.play-button__label').text('Play');
                 $('.is-playing').addClass('is-paused').removeClass('is-playing');
+                $('.play-button__icon--visible').removeClass('play-button__icon--visible');
+                $('.play-button__icon--play').addClass('play-button__icon--visible');
             } else {
                 $('.is-playing').removeClass('is-playing');
                 $('.is-paused').removeClass('is-paused');
                 $(track).addClass('is-playing');
-                $('.play-button').text('Pause');
+                $('.play-button__label').text('Pause');
+                $('.play-button__icon--visible').removeClass('play-button__icon--visible');
+                $('.play-button__icon--pause').addClass('play-button__icon--visible');
                 youtube.play($(track).attr('data-id'), unMute);
                 analytics.newTrack($(track).text(), $(document).find("title").text());
             }

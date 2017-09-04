@@ -17,6 +17,11 @@
     <div class='button button--{{ randomButton }}'>Hide Tracklist</div>
 </div>
 
-<div class='play-button button'>Play</div>
+<div class='play-button button'>
+    <span class='play-button__icons'>
+        <svg class='play-button__icon play-button__icon--play play-button__icon--visible' xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M5 0l22 16L5 32z"/></svg>
+        <svg class='play-button__icon play-button__icon--pause' xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M5 0h8v32H5zM19 0h8v32h-8z"/></svg>
+    </span>
+<span class='play-button__label'>Play</span></div>
 
-<a class='playlist__youtube-button button button--{{ randomButton }}' href='' target='_blank'>YouTube</a>
+<!-- <a class='playlist__youtube-button button button--{{ randomButton }}' href='' target='_blank'>YouTube</a> -->
