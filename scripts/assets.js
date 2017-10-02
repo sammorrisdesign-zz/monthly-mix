@@ -8,6 +8,7 @@ module.exports = {
             this.compileHtmlPage(jsonData, i);
             this.compileEmail(jsonData);
         }
+        this.compileSubscribe();
     },
 
     compileHtmlPage: function(data, i) {
@@ -75,6 +76,19 @@ module.exports = {
 
         fs.mkdirsSync(location);
         fs.writeFileSync(location + 'email.html', newTemplate(data));
+    },
+
+    compileSubscribe: function() {
+        var handlebars = require('handlebars');
+        var partialLoader = require('partials-loader');
+
+        var html = fs.readFileSync('./src/templates/subscribe.html', 'utf8');
+        var template = handlebars.compile(html);
+
+        fs.mkdirsSync('.build/');
+        fs.writeFileSync('.build/subscribe.html', template());
+
+        console.log('updated html for subscribe page');
     },
 
     js: function() {

@@ -7,7 +7,6 @@
     @include mq(desktop) {
         position: fixed;
         z-index: 5;
-        opacity: 0;
         bottom: 0;
         left: 0;
         right: 0;
@@ -15,18 +14,6 @@
         pointer-events: none;
         height: 260px;
         width: 480px;
-    }
-}
-
-.subscribe__hide-button {
-    display: none;
-
-    @include mq(desktop) {
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        margin-right: 0;
     }
 }
 
