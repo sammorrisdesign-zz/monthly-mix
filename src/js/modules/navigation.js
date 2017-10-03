@@ -15,10 +15,6 @@ module.exports =  {
             this.hidePlaylist();
         }.bind(this));
 
-        $('.header__subscribe-button').click(function() {
-            this.showSubscribe();
-        }.bind(this));
-
         $('.header__archive-button').click(function() {
             this.showArchive();
         }.bind(this));
@@ -69,11 +65,6 @@ module.exports =  {
         } else {
             $('.playlist__hide-button .button').text('Hide Tracklist');
         }
-    },
-
-    showSubscribe: function() {
-        $('body').addClass('is-subscribing');
-        analytics.click('subscribe');
     },
 
     showArchive: function() {
