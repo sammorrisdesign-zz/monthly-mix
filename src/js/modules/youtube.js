@@ -38,7 +38,6 @@ module.exports =  {
                 'controls': 0,
                 'rel': 0,
                 'showinfo': 0,
-                'modestbranding': 1,
                 'playsinline': 1,
                 'disablekb': 1,
                 'fs': 0,
