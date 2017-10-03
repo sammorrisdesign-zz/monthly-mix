@@ -38,8 +38,8 @@ module.exports =  {
         $(window).mousemove(function() {
             this.showControls();
             if ($('.playlist__hover-zone').is(':hover')) {
-                console.log('in the hover zone');
                 $('body').removeClass('is-closed');
+                $('.playlist__hide-button .button').text('Hide Tracklist');
             }
         }.bind(this));
     },
@@ -51,6 +51,7 @@ module.exports =  {
             timer = setInterval(function() {
                 $('body').removeClass('show-controls');
                 $('body').addClass('is-closed');
+                $('.playlist__hide-button .button').text('Show Tracklist');
             }, 1000);
         }
     },
