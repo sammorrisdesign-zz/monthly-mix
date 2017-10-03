@@ -91,23 +91,23 @@ module.exports = {
         console.log('updated html for subscribe page');
     },
 
-    js: function() {
+    js: function(build) {
         var browserify = require('browserify');
         var stringify = require('stringify');
         var deasync = require('deasync');
 
         var isDone = false;
 
-        fs.removeSync('.build/assets/js/main.js');
+        fs.removeSync('.build/assets/js/' + build + '.js');
         fs.mkdirsSync('.build/assets/js');
 
-        browserify('./src/js/main.js').transform(stringify, {
+        browserify('./src/js/' + build + '.js').transform(stringify, {
             appliesTo: { includeExtensions: ['.hjs', '.html', '.whatever'] }
         }).bundle(function(err, buf) {
             if (err) {
                 console.log(err);
             }
-            fs.writeFileSync('.build/assets/js/main.js', buf.toString());
+            fs.writeFileSync('.build/assets/js/' + build + '.js', buf.toString());
             isDone = true;
             console.log('updated js!');
         });

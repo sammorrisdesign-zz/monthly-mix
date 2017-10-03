@@ -3,33 +3,36 @@
 
 {{> templates/partials/head }}
 
-    <body class="{{ colour }} show-controls">
+    <body class="subscribe">
         <div class='subscribe-logo'>
             {{> templates/partials/logo }}
         </div>
 
-        <div class='subscribe'>
-            <h2 class='subscribe__copy'>
-                <span class='subscribe__title'>Subscribe</span>
-                Hey there, give us your email address and we'll send the best music of the month to your inbox every month. Sound good?
-            </h2>
+        <div class='subscribe-box'>
+            <div class='subscribe-box-inner'>
+                <h2 class='subscribe__copy'>
+                    <span class='subscribe__title'>Subscribe to the newsletter</span>
+                    Every month get a playlist of the latest and greatest music from the past month in your inbox. <!-- There are only 10 days before September’s playlist -->
+                </h2>
 
-            <div id="mc_embed_signup" class="subscribe-form">
-                <form action="//monthly.us11.list-manage.com/subscribe/post?u=601418a0f4a6ec9cf7535ad2e&amp;id=b1d3365fea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                    <div id="mc_embed_signup_scroll">
-                        <input type="email" value="Your email address" name="EMAIL" class="required subscribe-form__input" id="mce-EMAIL">
-                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button button--{{ randomButton }} subscribe-form__button">
+                <div id="mc_embed_signup" class="subscribe-form">
+                    <form action="//monthly.us11.list-manage.com/subscribe/post?u=601418a0f4a6ec9cf7535ad2e&amp;id=b1d3365fea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+                            <input type="email" value="Your email address" name="EMAIL" class="required subscribe-form__input" id="mce-EMAIL">
+                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button button--{{ randomButton }} subscribe-form__button">
 
-                        <div id="mce-responses" class="clear">
-                            <div class="response" id="mce-error-response" style="display:none"></div>
-                            <div class="response" id="mce-success-response" style="display:none"></div>
-                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div id="mce-responses" class="clear">
+                                <div class="response" id="mce-error-response" style="display:none"></div>
+                                <div class="response" id="mce-success-response" style="display:none"></div>
+                            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 
-                        <div style="position: absolute; left: -5000px;"><input type="text" name="b_601418a0f4a6ec9cf7535ad2e_b1d3365fea" tabindex="-1" value=""></div>
-                    </div>
-                </form>
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_601418a0f4a6ec9cf7535ad2e_b1d3365fea" tabindex="-1" value=""></div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
+        <script type="text/javascript" src='/assets/js/subscribe.js'></script>
     </body>
 </html>

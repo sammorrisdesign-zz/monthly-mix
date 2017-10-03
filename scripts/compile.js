@@ -7,7 +7,8 @@ var fs = require('fs-extra');
 
 fs.removeSync('.build');
 
-assets.js();
+assets.js('main');
+assets.js('subscribe');
 assets.css();
 assets.images();
 

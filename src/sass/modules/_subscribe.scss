@@ -1,43 +1,70 @@
 .subscribe {
-    margin: auto;
-    padding: 20px;
-    @include randomBackground();
-    transition: opacity 0.2s ease-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    margin-bottom: 0;
 
-    @include mq(desktop) {
-        position: fixed;
-        z-index: 5;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-        pointer-events: none;
-        height: 260px;
-        width: 480px;
+    @include mq($until: tablet) {
+        flex-direction: column;
     }
 }
 
-.subscribe__copy {
-    margin: 0;
-    margin-bottom: 20px;
-    color: $c-white;
+.subscribe-logo,
+.subscribe-box {
+    width: 50%;
 
-    @include mq(desktop) {
-        padding-right: 80px;
+    @include mq($until: tablet) {
+        height: 50%;
+        width: 100%;
     }
+}
+
+.subscribe-logo {
+    position: relative;
+    background-color: $c-yellow;
+
+    .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        margin: auto;
+        color: $c-black;
+        display: inline-block;
+    }
+
+    .logo__monthly {
+        font-size: 8vw;
+        margin-right: 6vw;
+    }
+
+    .logo__mix {
+        font-size: 19vw;
+    }
+}
+
+.subscribe-box {
+    position: relative;
+    background-color: $c-blue;
+}
+
+.subscribe-box-inner {
+    position: absolute;
+    top: 50%;
+    padding: 0 20px;
+    transform: translateY(-50%);
+}
+
+.subscribe__copy {
+    color: $c-white;
 }
 
 .subscribe__title {
     display: block;
     color: $c-black;
-}
-
-.subscribe-form {
-    @include mq(desktop) {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-    }
 }
 
 #mc_embed_signup_scroll {
