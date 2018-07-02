@@ -82,7 +82,7 @@ module.exports = {
     },
 
     cleanTrackInfo: function(videoTitle) {
-        videoTitle = videoTitle.replace(/\(Official Video\)|\(Official Audio\)|\(official music video\)|\(Official Music Video\)|\(Official\)|\(Lyrics\)|\(audio only\)|\[OFFICIAL MUSIC VIDEO\]|\[OFFICIAL VIDEO\]|\[OFFICIAL\]|\[OFFICIAL AUDIO\]|/g, '');
+        videoTitle = videoTitle.replace(/\(Official Video\)|\(Official Audio\)|\(official music video\)|\(Official Music Video\)|\(Official\)|\(Lyrics\)|\(audio only\)|\[OFFICIAL MUSIC VIDEO\]|\[LYRIC VIDEO\]|\[Official Audio\]|\[OFFICIAL VIDEO\]|\[OFFICIAL\]|\[OFFICIAL AUDIO\]|/g, '');
         videoTitle = videoTitle.split(/ - | – | \/\/ /);
 
         return {
