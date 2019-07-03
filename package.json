@@ -16,7 +16,7 @@
     "prestart": "npm run compile",
     "start": "node scripts/local.js",
     "predeploy": "npm run compile",
-    "deploy": "node scripts/deploy.js",
+    "deploy": "node scripts/deploy.js"
   },
   "homepage": "https://github.com/sammorrisdesign/mies-boilerplate",
   "devDependencies": {
