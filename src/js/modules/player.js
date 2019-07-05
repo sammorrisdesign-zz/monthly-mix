@@ -50,7 +50,10 @@ module.exports =  {
             $(track).addClass('is-playing');
             $('.controls__play-button').text('Pause');
             youtube.play($(track).attr('data-id'));
-            analytics.newTrack($(track).text(), $(document).find("title").text());
+            analytics.newTrack(
+                $(track).find('.track__artist').text() + ' - ' + $(track).find('.track__title').text(),
+                $('.playlist-header__seo-hidden').text()
+            );
         }
         this.updateYouTubeButton($(track).attr('data-id'));
     },
