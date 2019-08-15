@@ -41,7 +41,6 @@ module.exports = {
             title = title.split(/ - | – | \/\/ /);
 
         // Todo: Warn when meta data isn't two fields
-
         return {
             artist: title[0],
             title: title[1]
