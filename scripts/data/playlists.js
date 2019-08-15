@@ -2,7 +2,7 @@ const keys = require('../../config.json');
 const youtube = require('youtube-api');
 
 let pageToken = null;
-let playlists = new Array();
+let playlists = new Object();
 let isFetching = true;
 
 module.exports = {
@@ -23,6 +23,7 @@ module.exports = {
         youtube.playlists.list({
             part: 'snippet, id',
             channelId: 'UC-x9dRR5ZSUZE_RIPSYvcuA',
+            maxResults: 50,
             pageToken: pageToken
         }, function(err, data) {
             if (err) {
@@ -30,11 +31,12 @@ module.exports = {
             }
 
             data.items.forEach(function(playlist) {
-                playlists.push({
+                playlists[playlist.snippet.title] = {
                     id: playlist.id,
                     title: playlist.snippet.title,
-                    description: playlist.snippet.description
-                })
+                    description: playlist.snippet.description,
+                    etag: playlist.etag
+                }
             }.bind(this));
 
             if (data.nextPageToken) {

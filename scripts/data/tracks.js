@@ -11,16 +11,25 @@ module.exports = {
             key: keys.youtube
         });
 
-        data.forEach(function(playlist) {
-            playlist = this.fetchTracksFromPlaylist(playlist);
+        Object.keys(data).forEach(function(playlistName) {
+            data[playlistName].tracks = this.fetchTracksFromPlaylist(data[playlistName]);
+            console.log('going to fetch');
         }.bind(this));
 
-        require('deasync').loopWhile(function() { return data.length > fetched; });
+        require('deasync').loopWhile(function() {
+            let isFetching = Object.keys(data).length > fetched;
+            return isFetching;
+        });
+
+        console.log('fetched tracks');
 
         return data;
     },
 
     fetchTracksFromPlaylist: function(playlist) {
+        let isFetching = true;
+        let tracks = [];
+
         youtube.playlistItems.list({
             part: 'snippet',
             maxResults: 50,
@@ -30,17 +39,17 @@ module.exports = {
                 throw err;
             }
 
-            let tracks = [];
-
             data.items.forEach(function(item) {
                 let track = meta.getTrackInfo(item);
                     track.id = item.snippet.resourceId.videoId;
 
                 tracks.push(track);
             });
-
-            fetched++;
-            return tracks;
+            isFetching = false;
         });
+
+        require('deasync').loopWhile(function() { return isFetching });
+        fetched++;
+        return tracks;
     }
 }

@@ -27,7 +27,7 @@ module.exports = {
             if (title[0].includes("\"")) {
                 title = this.getTitleFromQuotes(title);
             } else {
-                title = this.getTitleFromVideoId(title, snippet.resourceId.videoId);
+                // title = this.getTitleFromVideoId(title, snippet.resourceId.videoId);
             }
         }
 

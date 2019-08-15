@@ -3,5 +3,10 @@ const playlists = require('./data/playlists.js');
 const tracks = require('./data/tracks.js');
 
 let data = playlists.init();
-    data = tracks.init(data);
+    // if Etag is diff then get the data
+    // data = tracks.init(data);
+
+    console.log('Done');
+    console.log(data);
+// Todo: Save the data somewhere
 
