@@ -13,18 +13,44 @@ module.exports = {
             trackInfo.title = correction.title
         }
 
-        console.log(trackInfo);
-
         return trackInfo;
     },
 
     cleanTrackMetaFromSnippet: function(snippet) {
-        // Todo: get channel title if no division
+        let title = snippet.title;
+            title = this.removeFrequentPhrases(title);
+            title = this.splitTitle(title);
+
+        if (title.length == 1) {
+            if (title[0].includes("\"")) {
+                title = this.getTitleFromQuotes(title);
+            } else {
+                console.log(title);
+            }
+        }
+
+        // Todo: check if two fields, if not look at channel title and use that as artist name
+
+        if (title.length !== 2) {
+            // WARN and print id
+        }
+
+        return {
+            artist: title[0],
+            title: title[1]
+        }
+    },
+
+    removeFrequentPhrases: function(title) {
         let phrasesToRemove = [
+            'Official Lyric Video',
+            'Official Music Video',
             'Official Video',
             'Official Audio',
-            'Official Music Video',
             'Official',
+            'Single',
+            'Visualiser',
+            'Visualizer',
             'Lyric Video',
             'Lyrics',
             'Demo',
@@ -36,15 +62,20 @@ module.exports = {
 
         const regEx = new RegExp(phrasesToRemove.join('|'), 'gi');
 
-        let title = snippet.title;
-            title = title.replace(regEx, '').trim();
-            title = title.split(/ - | – | \/\/ /);
+        return title.replace(regEx, '').trim();
+    },
 
-        // Todo: Warn when meta data isn't two fields
-        
-        return {
-            artist: title[0],
-            title: title[1]
+    splitTitle: function(title) {
+        return title.split(/ - | – | ~ | \/\/ | \/\/\/ /);
+    },
+
+    getTitleFromQuotes: function(title) {
+        const quotedTitle = title[0].match(/"((?:\\.|[^"\\])*)"/);
+ 
+        if (quotedTitle && quotedTitle.index > 0) {
+            return [title[0].replace(quotedTitle[0], '').trim(), quotedTitle[1]]
+        } else {
+            return title
         }
     }
 }
