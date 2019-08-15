@@ -1,4 +1,6 @@
 const corrections = require('./corrections.json');
+const keys = require('../../config.json');
+const youtube = require('youtube-api');
 
 module.exports = {
     getTrackInfo: function(data) {
@@ -25,14 +27,12 @@ module.exports = {
             if (title[0].includes("\"")) {
                 title = this.getTitleFromQuotes(title);
             } else {
-                console.log(title);
+                title = this.getTitleFromVideoId(title, snippet.resourceId.videoId);
             }
         }
 
-        // Todo: check if two fields, if not look at channel title and use that as artist name
-
-        if (title.length !== 2) {
-            // WARN and print id
+        if (title.length < 2) {
+            console.log('Missing meta for ', snippet.resourceId.videoId, ' – currently title reads as ', title);
         }
 
         return {
@@ -66,16 +66,50 @@ module.exports = {
     },
 
     splitTitle: function(title) {
-        return title.split(/ - | – | ~ | \/\/ | \/\/\/ /);
+        return title.split(/ - | – | – | — | ~ | \/\/ | \/\/\/ /);
     },
 
     getTitleFromQuotes: function(title) {
         const quotedTitle = title[0].match(/"((?:\\.|[^"\\])*)"/);
  
         if (quotedTitle && quotedTitle.index > 0) {
-            return [title[0].replace(quotedTitle[0], '').trim(), quotedTitle[1]]
+            return [
+                title[0].replace(quotedTitle[0], '').trim(),
+                quotedTitle[1]
+            ]
         } else {
             return title
         }
+    },
+
+    getTitleFromVideoId: function(title, videoId) {
+        let isFetching = true;
+
+        youtube.authenticate({
+            type: 'key',
+            key: keys.youtube
+        });
+
+        youtube.videos.list({
+            part: 'snippet',
+            id: videoId
+        }, function(err, data) {
+            if (err) {
+                throw err;
+            }
+
+            if (data.items.length) {
+                title = [
+                    data.items[0].snippet.channelTitle.replace(' - Topic', ''),
+                    this.removeFrequentPhrases(data.items[0].snippet.title)
+                ]
+            }
+
+            isFetching = false;
+        }.bind(this));
+
+        require('deasync').loopWhile(function() { return isFetching });
+
+        return title;
     }
 }
