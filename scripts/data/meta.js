@@ -6,12 +6,13 @@ module.exports = {
         let title = snippet.title;
             title = this.removeFrequentPhrases(title);
             title = this.splitTitle(title);
+            title = this.dropQuotes(title);
 
         if (title.length == 1) {
             if (title[0].includes("\"")) {
                 title = this.getTitleFromQuotes(title);
             } else {
-                title = this.getTitleFromVideoId(title, snippet.resourceId.videoId);
+                // title = this.getTitleFromVideoId(title, snippet.resourceId.videoId);
             }
         }
 
@@ -51,6 +52,23 @@ module.exports = {
 
     splitTitle: function(title) {
         return title.split(/ - | – | – | — | ~ | \/\/ | \/\/\/ /);
+    },
+
+    dropQuotes: function(title) {
+        let trackTitle = title[1];
+        if (trackTitle) {
+            if (trackTitle[0] == "“" && trackTitle[trackTitle.length - 1] == "“") {
+                trackTitle = trackTitle.replace(/“/g, '');
+            }
+
+            if (trackTitle[0] == "\"" && trackTitle[trackTitle.length - 1] == "\"") {
+                trackTitle = trackTitle.replace(/\"/g, '');
+            }
+        }
+
+        title[1] = trackTitle;
+
+        return title;
     },
 
     getTitleFromQuotes: function(title) {
