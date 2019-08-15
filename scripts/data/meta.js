@@ -1,24 +1,8 @@
-const corrections = require('./corrections.json');
 const keys = require('../../config.json');
 const youtube = require('youtube-api');
 
 module.exports = {
-    getTrackInfo: function(data) {
-        const trackInfo = this.cleanTrackMetaFromSnippet(data.snippet);
-        const correction = corrections[data.snippet.resourceId.videoId];
-
-        if (correction && correction.artist) {
-            trackInfo.artist = correction.artist
-        }
-
-        if (correction && correction.title) {
-            trackInfo.title = correction.title
-        }
-
-        return trackInfo;
-    },
-
-    cleanTrackMetaFromSnippet: function(snippet) {
+    getTrackInfo: function(snippet) {
         let title = snippet.title;
             title = this.removeFrequentPhrases(title);
             title = this.splitTitle(title);
@@ -27,7 +11,7 @@ module.exports = {
             if (title[0].includes("\"")) {
                 title = this.getTitleFromQuotes(title);
             } else {
-                // title = this.getTitleFromVideoId(title, snippet.resourceId.videoId);
+                title = this.getTitleFromVideoId(title, snippet.resourceId.videoId);
             }
         }
 

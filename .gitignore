@@ -8,7 +8,7 @@ main.min.js
 .DS_Store
 
 .build
-.data
+data.json
 
 npm-debug.log
 node_modules

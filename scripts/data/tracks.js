@@ -2,28 +2,16 @@ const keys = require('../../config.json');
 const meta = require('./meta.js');
 const youtube = require('youtube-api');
 
-let fetched = 0;
-
 module.exports = {
-    init: function(data) {
+    init: function(playlist) {
         youtube.authenticate({
             type: 'key',
             key: keys.youtube
         });
 
-        Object.keys(data).forEach(function(playlistName) {
-            data[playlistName].tracks = this.fetchTracksFromPlaylist(data[playlistName]);
-            console.log('going to fetch');
-        }.bind(this));
+        playlist.tracks = this.fetchTracksFromPlaylist(playlist);
 
-        require('deasync').loopWhile(function() {
-            let isFetching = Object.keys(data).length > fetched;
-            return isFetching;
-        });
-
-        console.log('fetched tracks');
-
-        return data;
+        return playlist;
     },
 
     fetchTracksFromPlaylist: function(playlist) {
@@ -40,7 +28,7 @@ module.exports = {
             }
 
             data.items.forEach(function(item) {
-                let track = meta.getTrackInfo(item);
+                let track = meta.getTrackInfo(item.snippet);
                     track.id = item.snippet.resourceId.videoId;
 
                 tracks.push(track);
@@ -49,7 +37,7 @@ module.exports = {
         });
 
         require('deasync').loopWhile(function() { return isFetching });
-        fetched++;
+
         return tracks;
     }
 }

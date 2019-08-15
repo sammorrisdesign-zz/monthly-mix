@@ -44,7 +44,6 @@ module.exports = {
                 this.fetchPlaylists();
             } else {
                 isFetching = false;
-                console.log('Fetched all Playlists');
             }
         }.bind(this))
     }
