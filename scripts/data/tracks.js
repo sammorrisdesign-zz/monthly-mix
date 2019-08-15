@@ -1,17 +1,32 @@
 const keys = require('../../config.json');
+const oldData = require('../../data.json');
 const meta = require('./meta.js');
 const youtube = require('youtube-api');
 
+let fetched = 0;
+
 module.exports = {
-    init: function(playlist) {
+    init: function(data) {
         youtube.authenticate({
             type: 'key',
             key: keys.youtube
         });
 
-        playlist.tracks = this.fetchTracksFromPlaylist(playlist);
+        Object.keys(data).forEach(function(playlist) {
+            if (!oldData[playlist] || data[playlist].etag !== oldData[playlist].etag) {
+                console.log('Fetching new data for ', playlist);
+                data[playlist].tracks = this.fetchTracksFromPlaylist(data[playlist]);
+            } else {
+                fetched++;
+            }
+        }.bind(this));
 
-        return playlist;
+        require('deasync').loopWhile(function() {
+            let isFetching = Object.keys(data).length > fetched;
+            return isFetching;
+        })
+
+        return data;
     },
 
     fetchTracksFromPlaylist: function(playlist) {
@@ -37,7 +52,7 @@ module.exports = {
         });
 
         require('deasync').loopWhile(function() { return isFetching });
-
+        fetched++;
         return tracks;
     }
 }
