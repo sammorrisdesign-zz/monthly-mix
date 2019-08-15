@@ -12,5 +12,10 @@
   "scripts": {
     "start": ""
   },
-  "homepage": "https://github.com/sammorrisdesign/monthly-mix"
+  "homepage": "https://github.com/sammorrisdesign/monthly-mix",
+  "devDependencies": {
+    "deasync": "^0.1.15",
+    "fs-extra": "^8.1.0",
+    "youtube-api": "^2.0.10"
+  }
 }
