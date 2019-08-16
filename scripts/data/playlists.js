@@ -34,6 +34,8 @@ module.exports = {
                 playlists[playlist.snippet.title] = {
                     id: playlist.id,
                     title: playlist.snippet.title,
+                    month: playlist.snippet.title.split(' ')[0],
+                    year: playlist.snippet.title.split(' ')[1],
                     description: playlist.snippet.description,
                     etag: playlist.etag
                 }

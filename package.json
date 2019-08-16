@@ -16,6 +16,8 @@
   "devDependencies": {
     "deasync": "^0.1.15",
     "fs-extra": "^8.1.0",
+    "glob-fs": "^0.1.7",
+    "handlebars": "^4.1.2",
     "youtube-api": "^2.0.10"
   }
 }
