@@ -27,7 +27,6 @@ module.exports = {
             const bundle = await rollup.rollup(inputOptions);
             const output = await bundle.generate(outputOptions);
             fs.mkdirsSync('.build/assets/js');
-            console.log(output.output);
             fs.writeFileSync('.build/assets/js/main.js', output.output[0].code);
         })();
     }
