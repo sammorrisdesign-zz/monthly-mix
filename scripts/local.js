@@ -22,7 +22,7 @@ console.log('watching');
 watch('src', { recursive: true }, (event, file) => {
     const fileExt = file.substring(file.lastIndexOf('.') + 1);
 
-    console.log(fileExt);
+    console.log(`A change has been made to ${file}`);
 
     switch(fileExt) {
         case 'html':
