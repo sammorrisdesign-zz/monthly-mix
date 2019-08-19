@@ -10,7 +10,9 @@
     "url": "https://github.com/sammorrisdesign/monthly-mix/issues"
   },
   "scripts": {
-    "start": ""
+    "start": "node scripts/compile.js && node scripts/local.js",
+    "data": "node scripts/data.js",
+    "fresh-data": "rm data.json && node scripts/data.js"
   },
   "homepage": "https://github.com/sammorrisdesign/monthly-mix",
   "devDependencies": {

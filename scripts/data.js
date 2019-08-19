@@ -1,4 +1,9 @@
 const fs = require('fs-extra');
+
+if (!fs.existsSync('./data.json')) {
+    fs.writeFileSync('data.json', '{}');
+}
+
 const playlists = require('./data/playlists.js');
 const tracks = require('./data/tracks.js');
 const corrections = require('./data/corrections.js');
