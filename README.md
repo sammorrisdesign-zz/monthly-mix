@@ -2,15 +2,16 @@
 The latest music from the past month delivered to your inbox
 
 ## Requirements
-- ImageMagick (`brew install imagemagick`)
-- Grunt (`npm install -g grunt-cli`)
+- Node 10.16.0 or greater
+- A YouTube Data API key
 
-Get extra dependencies with `npm install` then `bundle install`
+Get additional dependencies with `npm install`
 
 ## Development
-Give it a bit of `grunt` to watch for `html`, `sass` and `js` changes.
+Before developing duplicate the `config.example.json` file and populate with values. Only the YouTube value (a key for the YouTube Data API) is required to develop locally.
 
-Access Soundcloud for a playlist by setting `soundcloud: true` at the top of any post inside the `_post` folder.
+For the first time grab the latest data using `npm run data`
 
-## Deployment
-Transfer the contents of the `_site` folder to the server. **Todo: make this a better process**
+Give it a bit of `npm run start` to watch for `html`, `sass` and `js` changes.
+
+If for any reason you need grab fresh data use `npm run fresh-data`, which will nuke the locally saved data and fetch all playlists from YouTube again.
