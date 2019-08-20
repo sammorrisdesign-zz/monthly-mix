@@ -5,10 +5,10 @@
     bottom: 0;
     right: 0;
     z-index: 2;
-    background-color: aquamarine;
 }
 
-.video__placeholder {
+.video-player {
+    position: absolute;
     left: -9999px;
     right: -9999px;
     top: -9999px;
@@ -18,5 +18,5 @@
     width: 177.77777778vh;
     min-width: 100%;
     min-height: 56.25vw;
-    filter: grayscale(1);
+    // filter: grayscale(1);
 }
