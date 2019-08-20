@@ -1,5 +1,10 @@
 import youtube from './youtube';
 
+let playerState = {
+    isPlaying: false,
+    currentId: null
+}
+
 const bindings = () => {
     let body = document.querySelector('body');
 
@@ -12,11 +17,26 @@ const bindings = () => {
 
 const playTrack = id => {
     youtube.play(id);
+    playerState.isPlaying = true;
+    playerState.currentId = id;
+}
+
+const pauseTrack = () => {
+    youtube.pause();
+    playerState.isPlaying = false;
 }
 
 export default {
     init: () => {
         youtube.init();
         bindings();
+    },
+
+    togglePlayState: () => {
+        if (playerState.isPlaying) {
+            pauseTrack();
+        } else {
+            playTrack(playerState.currentId);
+        }
     }
 }

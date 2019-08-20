@@ -58,5 +58,9 @@ export default {
         } else {
             youTubePlayer.loadVideoById(id);
         }
+    },
+
+    pause: () => {
+        youTubePlayer.pauseVideo();
     }
 }
