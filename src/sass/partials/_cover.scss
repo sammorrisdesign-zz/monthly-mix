@@ -1,7 +1,10 @@
 .cover {
     position: relative;
+    z-index: 4;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 100vh;
 }
-
 .cover__content {
     position: absolute;
     top: 50%;
@@ -12,8 +15,12 @@
 }
 
 .cover__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
     width: 100%;
     height: 100vh;
-    background-blend-mode: multiply;
+    mix-blend-mode: multiply;
     background-color: $c-blue;
 }
