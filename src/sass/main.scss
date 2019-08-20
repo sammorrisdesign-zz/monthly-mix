@@ -1,3 +1,4 @@
-body {
-    background-color: red;
-}
+@import 'helpers/colors';
+
+@import 'partials/base';
+@import 'partials/logo';

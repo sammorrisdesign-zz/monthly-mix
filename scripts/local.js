@@ -11,7 +11,7 @@ browserSync.init({
     open: false
 }, browserSyncReuseTab);
 
-browserSync.watch('./.build/*.css', (event, file) => {
+browserSync.watch('./.build/**/*.css', (event, file) => {
     if (event === 'change') {
         browserSync.reload('*.css');
     }
