@@ -8,7 +8,7 @@
             <h2 class='controls__track-artist'>Artist</h2>
             <h2 class='controls__track-title'>Title</h2>
         </div>
-        <select class='controls__track-list'>
+        <select class='controls__track-list js-track-list'>
             {{#each tracks}}
                 <option value='{{ id }}' data-artist='{{ artist }}' data-title='{{ title }}'>{{ artist }} - {{ title }}</option>
             {{/each }}

@@ -35,7 +35,7 @@ const onStateChange = event => {
     const states = {
         0: 'ended',
         1: 'playing',
-        2: 'ended'
+        2: 'paused'
     }
     const state = states[event.data];
 

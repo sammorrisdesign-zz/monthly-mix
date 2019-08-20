@@ -9,9 +9,13 @@ const bindings = () => {
     let body = document.querySelector('body');
 
     body.addEventListener('ready', () => {
-        const firstId = document.querySelector('.controls__track-list option').value;
+        const firstId = document.querySelector('.controls__track-list option:checked').value;
         playTrack(firstId);
         removeEventListener('ready', body);
+    });
+
+    body.addEventListener('ended', () => {
+        
     });
 }
 
@@ -38,5 +42,9 @@ export default {
         } else {
             playTrack(playerState.currentId);
         }
+    },
+
+    playNewTrack: id => {
+        playTrack(id);
     }
 }
