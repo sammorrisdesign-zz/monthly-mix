@@ -1,3 +1,5 @@
+import { Mediator } from "mediator-js/lib/mediator";
+
 let youTubePlayer;
 
 const createYouTubeAPI = () => {
@@ -27,40 +29,39 @@ const createPlayer = () => {
 }
 
 const onReady = () => {
-    const readyEvent = new Event('ready');
-    document.querySelector('body').dispatchEvent(readyEvent);
+    mediator.publish('play', document.querySelector('.controls__track-list option:checked').value);
 }
 
 const onStateChange = event => {
-    const states = {
-        0: 'ended',
-        1: 'playing',
-        2: 'paused'
-    }
-    const state = states[event.data];
+    // 0: 'ended'
+    // 1: 'playing'
+    // 2: 'paused'
 
-    if (state) {
-        const event = new Event('state');
-        document.querySelector('body').dispatchEvent(event);
+    if (event.data === 0) {
+        // Should this be play, or do we need a different ending event?
+        mediator.publish('play', document.querySelector('.controls__track-list option:checked').nextElementSibling.value);
     }
+}
+
+const subscriptions = () => {
+    mediator.subscribe('play', id => {
+        const playingId = youTubePlayer.getVideoData().video_id;
+
+        if (playingId === id) {
+            youTubePlayer.playVideo();
+        } else {
+            youTubePlayer.loadVideoById(id);
+        }
+    });
+
+    mediator.subscribe('pause', () => {
+        youTubePlayer.pauseVideo();
+    })
 }
 
 export default {
     init: () => {
         createYouTubeAPI();
-    },
-
-    play: id => {
-        const currentId = youTubePlayer.getVideoData().video_id;
-
-        if (id === currentId) {
-            youTubePlayer.playVideo();
-        } else {
-            youTubePlayer.loadVideoById(id);
-        }
-    },
-
-    pause: () => {
-        youTubePlayer.pauseVideo();
+        subscriptions();
     }
 }

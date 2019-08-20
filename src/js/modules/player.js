@@ -1,50 +1,37 @@
-import youtube from './youtube';
-
-let playerState = {
-    isPlaying: false,
-    currentId: null
-}
+let isPlaying = false;
 
 const bindings = () => {
     let body = document.querySelector('body');
 
     body.addEventListener('ready', () => {
-        const firstId = document.querySelector('.controls__track-list option:checked').value;
-        playTrack(firstId);
         removeEventListener('ready', body);
-    });
 
-    body.addEventListener('ended', () => {
-        
+        const event = new Event('play');
+        document.querySelector('body').dispatchEvent(event);
     });
 }
 
-const playTrack = id => {
-    youtube.play(id);
-    playerState.isPlaying = true;
-    playerState.currentId = id;
-}
+const subscriptions = () => {
+    mediator.subscribe('play', id => {
+        isPlaying = true;
+    });
 
-const pauseTrack = () => {
-    youtube.pause();
-    playerState.isPlaying = false;
+    mediator.subscribe('pause', () => {
+        isPlaying = false;
+    })
+
+    mediator.subscribe('toggle', () => {
+        if (isPlaying) {
+            mediator.publish('pause');
+        } else {
+            mediator.publish('play', document.querySelector('.controls__track-list option:checked').value);
+        }
+    })
 }
 
 export default {
     init: () => {
-        youtube.init();
         bindings();
-    },
-
-    togglePlayState: () => {
-        if (playerState.isPlaying) {
-            pauseTrack();
-        } else {
-            playTrack(playerState.currentId);
-        }
-    },
-
-    playNewTrack: id => {
-        playTrack(id);
+        subscriptions()
     }
 }
