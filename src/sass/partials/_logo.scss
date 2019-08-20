@@ -1,7 +1,8 @@
 .logo {
     position: fixed;
-    top: 0;
-    left: 0;
+    z-index: 5;
+    top: 10px;
+    left: 10px;
 }
 
 .logo__link {
