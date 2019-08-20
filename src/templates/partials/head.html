@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The best new music from {{ title }} – Monthly Mix</title>
+        <meta charset='utf-8' />
+        <meta name='viewport' content='width=device-width initial-scale=1' />
+        <meta http-equiv='X-UA_Compatible' content='IE=edge' />
+        <meta name='description' content='A playlist of the best music from {{ title }}. Featuring new tracks by {{#each tracks}}{{ artist }}, {{/each}}and more' />
+        <meta name='keywords' content='new music, music, indie, hip-hop, altrap, alternative rap, playlist, interactive, music videos, vevo, newsletter'>
+        <!-- ToDo: Set urls for non-home pages -->
+        <link rel='canonical' href='http://www.monthly.mx/index.html' />
+        <meta property='og:url' content='http://www.monthly.mx' />
+        <meta property='og:title' content='Monthly Mix for {{ title }}' />
+        <meta property='og:description' content='A playlist of the best music from {{ title }}. Featuring new tracks by {{#each tracks}}{{ artist }}, {{/each}}and more' />
+        <meta property='og:image' content='{{ path }}/assets/images/apple-touch-icon-precomposed.png' />
+        <meta property='og:url' content='{{ path }}'>
+        <meta name='twitter:card' content='summary'>
+        <meta name='twitter:site' content='@sammorrisdesign'>
+        <meta name='robots' content='index, follow'>
+
+        <link rel='stylesheet' href='https://use.typekit.net/tiu5deg.css'>
+        <link rel='stylesheet' href='/assets/css/main.css'>
+
+        <!-- ToDo: Add Favicons -->
+    </head>

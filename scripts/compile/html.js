@@ -35,7 +35,7 @@ module.exports = {
         const partials = glob.readdirSync('src/templates/**/*.*');
 
         partials.forEach(function(partial) {
-            const name = partial.replace('src/templates/', '').split('.')[0];
+            const name = partial.replace('src/templates/partials/', '').split('.')[0];
             const template = fs.readFileSync(partial, 'utf8');
 
             handlebars.registerPartial(name, template);
