@@ -8,6 +8,7 @@
 }
 
 .video-player {
+    pointer-events: none;
     position: absolute;
     left: -9999px;
     right: -9999px;
