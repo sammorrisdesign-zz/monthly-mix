@@ -1,4 +1,7 @@
 import Matter from 'matter-js';
+import pathseg from 'pathseg'
+import decomp from 'poly-decomp'
+window.decomp = decomp;
 
 const renderCover = () => {
     // module aliases
@@ -6,7 +9,8 @@ const renderCover = () => {
         Render = Matter.Render,
         World = Matter.World,
         Bodies = Matter.Bodies,
-        Body = Matter.Body;
+        Body = Matter.Body,
+        Svg = Matter.Svg;
 
     // create an engine
     const engine = Engine.create();
@@ -24,26 +28,34 @@ const renderCover = () => {
         }
     });
 
-    // create two boxes and a ground
-    const boxA = Bodies.rectangle(400, 200, 80, 80, { frictionAir: 0.05 } );
-    const boxB = Bodies.rectangle(550, 190, 80, 80, { frictionAir: 0.05 });
     const ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
+
+    const vertexSets = [];
+    const svg = document.querySelectorAll('svg path');
+    svg.forEach((node, i) => {
+        const v = Bodies.fromVertices(100+(i*80), 200, Svg.pathToVertices(node, 1), {
+            render: {
+              fillStyle: '#ffffff',
+              strokeStyle: '#ffffff',
+              lineWidth: 1
+            },
+            frictionAir: 0.05,
+            mass: 20
+          }, true, 0);
+
+        Body.setAngularVelocity(v, 0.02);
+        Body.applyForce(v, v.position, {
+            x: 0.01,
+            y: 0.02
+        });
+
+        vertexSets.push(v);
+    })
 
     engine.world.gravity.scale = 0.000001;
 
     // add all of the bodies to the world
-    World.add(engine.world, [boxA, boxB, ground]);
-    Body.setAngularVelocity(boxA, 0.02);
-    Body.applyForce(boxA, boxA.position, {
-        x: 0.01,
-        y: 0.02
-    });
-
-    Body.setAngularVelocity(boxB, -0.02);
-    Body.applyForce(boxB, boxB.position, {
-        x: -0.01,
-        y: -0.02
-    });
+    World.add(engine.world, vertexSets);
 
     // run the engine
     Engine.run(engine);

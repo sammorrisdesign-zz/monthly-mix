@@ -2,6 +2,7 @@ const fs = require('fs-extra');
 const rollup = require('rollup');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
+const svg = require('rollup-plugin-svg');
 
 module.exports = {
     init: function() {
@@ -15,7 +16,8 @@ module.exports = {
             input: './src/js/main.js',
             plugins: [
                 resolve(),
-                commonjs()
+                commonjs(),
+                svg()
             ]
         };
 
