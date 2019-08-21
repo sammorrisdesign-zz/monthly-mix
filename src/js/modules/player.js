@@ -16,10 +16,14 @@ const bindings = () => {
 const subscriptions = () => {
     mediator.subscribe('play', id => {
         isPlaying = true;
+        document.querySelector('body').classList.add('is-playing');
+        document.querySelector('body').classList.remove('is-paused');
     });
 
     mediator.subscribe('pause', () => {
         isPlaying = false;
+        document.querySelector('body').classList.add('is-paused');
+        document.querySelector('body').classList.remove('is-playing');
     })
 
     mediator.subscribe('toggle', () => {

@@ -41,5 +41,6 @@ watch('src', { recursive: true }, (event, file) => {
             html.init();
             css.init();
             javascript.init();
+            assets.init();
     }
 })
