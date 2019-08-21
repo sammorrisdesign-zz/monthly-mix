@@ -1,18 +1,20 @@
+import helpers from './player-helpers';
+
 const bindings = () => {
     document.querySelector('.js-play').addEventListener('click', () => {
         mediator.publish('toggle');
     });
 
     document.querySelector('.js-prev').addEventListener('click', () => {
-        mediator.publish('play', document.querySelector('.controls__track-list option:checked').previousElementSibling.value);
+        mediator.publish('play', helpers.getPreviousId());
     })
 
     document.querySelector('.js-next').addEventListener('click', () => {
-        mediator.publish('play', document.querySelector('.controls__track-list option:checked').nextElementSibling.value);
+        mediator.publish('play', helpers.getNextId());
     });
 
     document.querySelector('.js-track-list').addEventListener('change', () => {
-        mediator.publish('play', document.querySelector('.controls__track-list option:checked').value);
+        mediator.publish('play', helpers.getCurrentId());
     });
 }
 

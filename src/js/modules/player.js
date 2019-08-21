@@ -1,3 +1,5 @@
+import helpers from './player-helpers';
+
 let isPlaying = false;
 
 const bindings = () => {
@@ -24,7 +26,7 @@ const subscriptions = () => {
         if (isPlaying) {
             mediator.publish('pause');
         } else {
-            mediator.publish('play', document.querySelector('.controls__track-list option:checked').value);
+            mediator.publish('play', helpers.getCurrentId());
         }
     })
 }

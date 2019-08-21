@@ -1,4 +1,4 @@
-import { Mediator } from "mediator-js/lib/mediator";
+import helpers from './player-helpers';
 
 let youTubePlayer;
 
@@ -29,7 +29,7 @@ const createPlayer = () => {
 }
 
 const onReady = () => {
-    mediator.publish('play', document.querySelector('.controls__track-list option:checked').value);
+    mediator.publish('play', helpers.getCurrentId());
 }
 
 const onStateChange = event => {
@@ -39,7 +39,7 @@ const onStateChange = event => {
 
     if (event.data === 0) {
         // Should this be play, or do we need a different ending event?
-        mediator.publish('play', document.querySelector('.controls__track-list option:checked').nextElementSibling.value);
+        mediator.publish('play', helpers.getNextId());
     }
 }
 
