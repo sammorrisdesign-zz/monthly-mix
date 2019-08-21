@@ -1,6 +1,7 @@
 import helpers from './player-helpers';
 
-let youTubePlayer;
+let youTubePlayer,
+    throttle = true;
 
 const createYouTubeAPI = () => {
     const tag = document.createElement('script');
@@ -14,6 +15,8 @@ const createYouTubeAPI = () => {
 
 const createPlayer = () => {
     youTubePlayer = new YT.Player('video-player', {
+        height: '360',
+        width: '640',
         playerVars: {
             'controls': 0,
             'modestbranding': 1,
@@ -34,13 +37,16 @@ const onReady = () => {
 }
 
 const onStateChange = event => {
-    // 0: 'ended'
-    // 1: 'playing'
-    // 2: 'paused'
-
     if (event.data === 0) {
-        // Should this be play, or do we need a different ending event?
-        mediator.publish('play', helpers.getNextId());
+        // throttled because YT fires 'ended' event twice
+        if (throttle) {
+            mediator.publish('play', helpers.getNextId());
+            throttle = false;
+
+            setTimeout(function() {
+                throttle = true;
+            }, 100);
+        }
     }
 }
 
@@ -56,7 +62,7 @@ const subscriptions = () => {
         if (playingId === id) {
             youTubePlayer.playVideo();
         } else {
-            youTubePlayer.loadVideoById(id);
+            youTubePlayer.loadVideoById({videoId: id});
         }
     });
 
