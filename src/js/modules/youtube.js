@@ -23,7 +23,8 @@ const createPlayer = () => {
         },
         events: {
             'onReady': onReady,
-            'onStateChange': onStateChange
+            'onStateChange': onStateChange,
+            'onError': onError
         }
     })
 }
@@ -41,6 +42,11 @@ const onStateChange = event => {
         // Should this be play, or do we need a different ending event?
         mediator.publish('play', helpers.getNextId());
     }
+}
+
+const onError = () => {
+    // This should maybe flag something to the listener?
+    mediator.publish('play', helpers.getNextId());
 }
 
 const subscriptions = () => {
