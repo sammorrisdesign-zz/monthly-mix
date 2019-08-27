@@ -3,7 +3,7 @@ var corrections = require('./corrections.json');
 module.exports = {
     init: function(data) {
         Object.keys(data).forEach(function(playlist) {
-            data.playlist = this.correctPlaylist(data[playlist]);
+            data[playlist] = this.correctPlaylist(data[playlist]);
         }.bind(this));
 
         return data;
