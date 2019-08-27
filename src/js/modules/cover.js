@@ -1,7 +1,5 @@
 import Matter from 'matter-js';
 
-console.log(Matter);
-
 const renderCover = () => {
     let isRunning = true;
     // module aliases
