@@ -7,6 +7,7 @@ module.exports = {
             title = this.removeFrequentPhrases(title);
             title = this.splitTitle(title);
             title = this.dropQuotes(title);
+            title = title.filter(Boolean);
 
         if (title.length == 1) {
             if (title[0].includes("\"")) {
@@ -15,6 +16,8 @@ module.exports = {
                 title = this.getTitleFromVideoId(title, snippet.resourceId.videoId);
             }
         }
+
+        title = title.filter(Boolean);
 
         if (title.length < 2) {
             console.log('Missing meta for ', snippet.resourceId.videoId, ' – currently title reads as ', title);
