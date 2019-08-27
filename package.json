@@ -31,7 +31,6 @@
     "rollup": "^1.19.4",
     "rollup-plugin-commonjs": "^10.0.2",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-svg": "^2.0.0",
     "youtube-api": "^2.0.10"
   }
 }
