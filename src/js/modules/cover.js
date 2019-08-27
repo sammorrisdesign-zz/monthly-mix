@@ -1,5 +1,7 @@
 import Matter from 'matter-js';
 
+console.log(Matter);
+
 const renderCover = () => {
     let isRunning = true;
     // module aliases
@@ -24,20 +26,25 @@ const renderCover = () => {
         }
     });
 
-    const ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
-
-    // add all of the bodies to the world
-    World.add(engine.world, [ground]);
+    // add walls to the world
+    World.add(engine.world, [
+        Bodies.rectangle(window.innerWidth / 2, 0, window.innerWidth, 100, { isStatic: true }),
+        Bodies.rectangle(0, window.innerHeight / 2, 100, window.innerHeight, { isStatic: true }),
+        Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, 100, { isStatic: true }),
+        Bodies.rectangle(window.innerWidth, window.innerHeight / 2, 100, window.innerHeight, { isStatic: true })
+    ]);
 
     // run the engine
     Engine.run(engine);
 
+    // get all animatable elements and add them to the world
     const elements = document.querySelectorAll('.is-movable');
     let bodies = [];
 
     elements.forEach((el, i) => {
         el.setAttribute('data-left', el.offsetLeft + (el.offsetWidth / 2));
         el.setAttribute('data-top', el.offsetTop + (el.offsetHeight / 2));
+
         const body = Bodies.rectangle(
             el.offsetLeft + (el.offsetWidth / 2), el.offsetTop + (el.offsetHeight / 2), el.offsetWidth, el.offsetHeight, {
                 frictionAir: 0.05,
@@ -45,6 +52,7 @@ const renderCover = () => {
             }
         );
 
+        Body.rotate(body, Math.random() * 1 - 0.5);
         Body.setAngularVelocity(body, Math.random() * 0.1 - 0.05);
         Body.applyForce(body, body.position, {
             x: Math.random() * 0.2 - 0.1,
@@ -59,6 +67,7 @@ const renderCover = () => {
 
     engine.world.gravity.scale = 0.000001;
 
+    // translate canvas positions to css
     const update = () => {
         elements.forEach((el, i) => {
             let body = null;
