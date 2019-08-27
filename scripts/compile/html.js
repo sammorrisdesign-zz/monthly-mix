@@ -29,6 +29,12 @@ module.exports = {
         handlebars.registerHelper('inc', function(value) {
             return parseInt(value) + 1;
         });
+
+        handlebars.registerHelper('charactersIn', function(string) {
+            let characters = string.split('');
+                characters = characters.map(character => { return `<span class='is-movable cover__letter'>${character}</span>`});
+            return characters.join('');
+        });
     },
 
     registerPartials: function() {
@@ -40,5 +46,6 @@ module.exports = {
 
             handlebars.registerPartial(name, template);
         });
+        
     }
 }

@@ -47,8 +47,8 @@ const renderCover = () => {
 
         Body.setAngularVelocity(body, Math.random() * 0.1 - 0.05);
         Body.applyForce(body, body.position, {
-            x: Math.random() * 0.1 - 0.05,
-            y: Math.random() * 0.1 - 0.05
+            x: Math.random() * 0.2 - 0.1,
+            y: Math.random() * 0.2 - 0.1
         });
 
         el.id = body.id;
