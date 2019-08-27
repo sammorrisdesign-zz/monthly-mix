@@ -5,6 +5,7 @@
     bottom: 0;
     right: 0;
     z-index: 2;
+    background-color: #000000;
 }
 
 .video-player {
@@ -19,5 +20,5 @@
     width: 177.77777778vh;
     min-width: 100%;
     min-height: 56.25vw;
-    // filter: grayscale(1);
+    filter: grayscale(1);
 }
