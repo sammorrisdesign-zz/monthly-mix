@@ -31,9 +31,14 @@ const renderCover = () => {
     const ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
 
     const vertexSets = [];
-    const svg = document.querySelectorAll('svg path');
+    const month = 'may';
+    const characters = month.split('');
+    const ids = characters.map(character => { return `#${character}` }).join();
+
+    console.log(ids);
+    const svg = document.querySelectorAll(ids);
     svg.forEach((node, i) => {
-        const v = Bodies.fromVertices(100+(i*80), 200, Svg.pathToVertices(node, 1), {
+        const v = Bodies.fromVertices(100+(i*150), 200, Svg.pathToVertices(node, 1), {
             render: {
               fillStyle: '#ffffff',
               strokeStyle: '#ffffff',
