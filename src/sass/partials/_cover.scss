@@ -38,20 +38,11 @@
     margin: 100px 200px;
 }
 
-// .cover__row--3 {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: flex-start;
-// }
-
-// .cover__row--4 {
-//     columns: 3;
-// }
-
 .cover__intro {
     margin: 0;
     font-size: 20px;
     text-align: right;
+    display: inline-block;
 }
 
 .cover__title {
@@ -100,6 +91,7 @@
     font-size: 20px;
     white-space: nowrap;
     margin: 0;
+    display: inline-block;
 }
 
 .cover__featuring--intro {
