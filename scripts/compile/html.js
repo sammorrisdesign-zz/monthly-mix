@@ -30,6 +30,10 @@ module.exports = {
             return parseInt(value) + 1;
         });
 
+        handlebars.registerHelper('count', function(string) {
+            return string.length;
+        })
+
         handlebars.registerHelper('charactersIn', function(string) {
             let characters = string.split('');
                 characters = characters.map(character => { return `<span class='is-movable cover__letter'>${character}</span>`});

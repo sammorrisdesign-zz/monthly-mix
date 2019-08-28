@@ -31,16 +31,17 @@
 }
 
 .cover__content {
-    display: block;
-    margin: auto;
+    padding: 50px;
+    box-sizing: border-box;
+    height: 100%;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    margin: 100px 200px;
 }
 
 .cover__intro {
     margin: 0;
-    font-size: 20px;
+    font-size: 2.5vw;
     float: right;
     display: inline-block;
 }
@@ -50,14 +51,36 @@
 }
 
 .cover__letter {
-    font-size: 15vw;
     display: inline-block;
     line-height: 0.9;
     letter-spacing: -1vw;
+
+    .cover--3 &,
+    .cover--4 &,
+    .cover--5 & {
+        font-size: 28vw;
+    }
+
+    .cover--6 & {
+        font-size: 22vw;
+    }
+
+    .cover--7 & {
+        font-size: 19vw;
+    }
+
+    .cover--8 & {
+        font-size: 17vw;
+    }
+
+    .cover--9 & {
+        font-size: 16vw;
+    }
 }
 
 .cover__play {
     background-color: $c-white;
+    float: left;
     display: flex;
     width: fit-content;
 }
@@ -88,7 +111,7 @@
 }
 
 .cover__featuring {
-    font-size: 20px;
+    font-size: 2.5vw;
     white-space: nowrap;
     margin: 0;
     display: inline-block;
