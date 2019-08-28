@@ -1,10 +1,14 @@
 .logo {
     position: fixed;
     z-index: 5;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 20px;
 }
 
 .logo__link {
     color: $c-white;
+}
+
+.logo__image {
+    width: 8vw;
 }
