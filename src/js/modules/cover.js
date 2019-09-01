@@ -50,8 +50,7 @@ const renderCover = () => {
 
         const body = Bodies.rectangle(
             el.offsetLeft + (el.offsetWidth / 2), el.offsetTop + (el.offsetHeight / 2), el.offsetWidth, el.offsetHeight, {
-                mass: 200,
-                friction: 1
+                mass: 200
             }
         );
 
@@ -95,7 +94,7 @@ const renderCover = () => {
     setTimeout(() => {
         Render.stop(render);
         isRunning = false;
-    }, 10000);
+    }, 3000);
 }
 
 export default {
