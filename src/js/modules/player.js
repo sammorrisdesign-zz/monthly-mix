@@ -15,7 +15,6 @@ const bindings = () => {
 
 const subscriptions = () => {
     mediator.subscribe('ready', () => {
-        console.log('ready');
         document.querySelector('body').classList.add('is-ready');
     });
 

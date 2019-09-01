@@ -21,9 +21,10 @@
     width: 177.77777778vh;
     min-width: 100%;
     min-height: 56.25vw;
-    filter: grayscale(1);
+    filter: grayscale(1) brightness(1.5);
     opacity: 0;
     transition: opacity 1s linear;
+    transition-delay: 0.5s;
 
     .is-ready & {
         opacity: 1;

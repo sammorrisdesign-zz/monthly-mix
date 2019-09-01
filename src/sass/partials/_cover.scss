@@ -37,13 +37,10 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    transform: scale(0.9);
+    transform: scale(0.6);
     opacity: 0;
-    animation: scaleUp 0.5s linear forwards;
-}
 
-@keyframes scaleUp {
-    to {
+    .is-ready & {
         transform: scale(1);
         opacity: 1;
     }

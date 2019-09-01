@@ -1,7 +1,8 @@
 import helpers from './player-helpers';
 
 let youTubePlayer,
-    throttle = true;
+    throttle = true,
+    isFirst = true;
 
 const createYouTubeAPI = () => {
     const tag = document.createElement('script');
@@ -33,7 +34,6 @@ const createPlayer = () => {
 }
 
 const onReady = () => {
-    mediator.publish('ready');
     mediator.publish('play', helpers.getCurrentId());
 }
 
@@ -48,6 +48,11 @@ const onStateChange = event => {
                 throttle = true;
             }, 100);
         }
+    }
+
+    if (event.data === 1 && isFirst) {
+        mediator.publish('ready');
+        isFirst = false;
     }
 }
 

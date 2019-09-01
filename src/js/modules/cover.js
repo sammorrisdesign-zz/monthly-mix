@@ -8,7 +8,6 @@ const renderCover = () => {
     let isRunning = true;
     // module aliases
     const Engine = Matter.Engine,
-        Render = Matter.Render,
         World = Matter.World,
         Bodies = Matter.Bodies,
         Body = Matter.Body;
@@ -17,16 +16,17 @@ const renderCover = () => {
     const engine = Engine.create();
 
     // create a renderer
-    const render = Render.create({
-        element: document.querySelector('.cover'),
-        engine: engine,
-        options: {
-            height: window.innerHeight,
-            width: window.innerWidth,
-            wireframeBackground: 'transparent',
-            background: 'transparent'
-        }
-    });
+    // const Render = Matter.Render;
+    // const render = Render.create({
+    //     element: document.querySelector('.cover'),
+    //     engine: engine,
+    //     options: {
+    //         height: window.innerHeight,
+    //         width: window.innerWidth,
+    //         wireframeBackground: 'transparent',
+    //         background: 'transparent'
+    //     }
+    // });
 
     // add walls to the world
     World.add(engine.world, [
@@ -36,9 +36,6 @@ const renderCover = () => {
         Bodies.rectangle(window.innerWidth, window.innerHeight / 2, 100, window.innerHeight, { isStatic: true }),
         Bodies.rectangle(window.innerWidth / 14, 0, window.innerWidth / 5, window.innerWidth / 4, { isStatic: true })
     ]);
-
-    // run the engine
-    Engine.run(engine);
 
     // get all animatable elements and add them to the world
     const elements = document.querySelectorAll('.is-movable');
@@ -86,15 +83,16 @@ const renderCover = () => {
         }
     }
 
-    window.requestAnimationFrame(update);
-
     // run the renderer
-    Render.run(render);
+    mediator.subscribe('ready', () => {
+        Engine.run(engine);
+        window.requestAnimationFrame(update);
 
-    setTimeout(() => {
-        Render.stop(render);
-        isRunning = false;
-    }, 3000);
+        setTimeout(() => {
+            Engine.clear(engine);
+            isRunning = false;
+        }, 3000);
+    });
 }
 
 export default {
