@@ -13,8 +13,8 @@ $height: 72px;
 .controls__play {
     position: relative;
     height: 0;
-    padding-top: 8%;
-    width: 8%;
+    padding-top: 7%;
+    width: 7%;
     background-color: $c-blue;
 }
 
@@ -55,7 +55,7 @@ $height: 72px;
 
 .controls__track-artist,
 .controls__track-title {
-    margin: 0 0 0 14px;
+    margin: 0 0 0 1.5vw;
     color: $c-black;
     font-size: 2vw;
 }
@@ -74,10 +74,10 @@ $height: 72px;
 }
 
 .controls__skip {
-    width: 4%;
+    width: 3.5%;
     height: 0;
     position: relative;
-    padding-top: 8%;
+    padding-top: 7%;
     background-color: $c-light-grey;
     display: flex;
     flex-direction: column;
