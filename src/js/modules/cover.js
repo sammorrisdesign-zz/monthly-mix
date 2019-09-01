@@ -47,11 +47,11 @@ const renderCover = () => {
 
         const body = Bodies.rectangle(
             el.offsetLeft + (el.offsetWidth / 2), el.offsetTop + (el.offsetHeight / 2), el.offsetWidth, el.offsetHeight, {
-                density: 1
+                density: 100
             }
         );
 
-        Body.rotate(body, Math.random() * 1 - 0.5);
+        Body.rotate(body, Math.random() * 0.5 - 0.25);
         Body.setAngularVelocity(body, randomForce());
         // Body.applyForce(body, body.position, {
         //     x: randomForce(),
