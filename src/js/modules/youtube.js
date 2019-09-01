@@ -33,6 +33,7 @@ const createPlayer = () => {
 }
 
 const onReady = () => {
+    mediator.publish('ready');
     mediator.publish('play', helpers.getCurrentId());
 }
 

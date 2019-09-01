@@ -1,27 +1,31 @@
 $height: 72px;
 
 .controls {
-    margin-top: -$height;
+    margin-top: 0px;
     position: absolute;
     left: 0;
     right: 0;
     z-index: 3;
     display: flex;
-    height: $height;
     background-color: $c-black;
 }
 
 .controls__play {
     position: relative;
-    width: $height;
+    height: 0;
+    padding-top: 8%;
+    width: 8%;
     background-color: $c-blue;
 }
 
 .controls__play-icon {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+    margin: auto;
     flex-shrink: 0;
     flex-grow: 0;
     text-align: center;
@@ -53,7 +57,7 @@ $height: 72px;
 .controls__track-title {
     margin: 0 0 0 14px;
     color: $c-black;
-    font-size: 20px;
+    font-size: 2vw;
 }
 
 .controls__track-artist {
@@ -70,7 +74,10 @@ $height: 72px;
 }
 
 .controls__skip {
-    width: $height / 2;
+    width: 4%;
+    height: 0;
+    position: relative;
+    padding-top: 8%;
     background-color: $c-light-grey;
     display: flex;
     flex-direction: column;
@@ -78,14 +85,27 @@ $height: 72px;
 
 .controls__skip-prev,
 .controls__skip-next {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 50%;
+    width: 100%;
     text-align: center;
     color: $c-blue;
     box-sizing: border-box;
-    padding-top: 6px; // ToDo: remove this
+}
+
+.controls__skip-next {
+    top: 50%;
 }
 
 .controls__skip-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
     width: 30%;
 }
 
@@ -103,7 +123,7 @@ $height: 72px;
 
 .controls__subscribe-label,
 .controls__archive-label {
-    font-size: 20px;
+    font-size: 2vw;
     color: $c-white;
-    margin: 0 16px;
+    margin: 0 2vw;
 }
