@@ -54,12 +54,12 @@ const renderCover = () => {
             }
         );
 
-        Body.rotate(body, Math.random() * 1.5 - 0.75);
+        Body.rotate(body, Math.random() * 1 - 0.5);
         Body.setAngularVelocity(body, randomForce());
-        Body.applyForce(body, body.position, {
-            x: randomForce(),
-            y: randomForce()
-        });
+        // Body.applyForce(body, body.position, {
+        //     x: randomForce(),
+        //     y: randomForce()
+        // });
 
         el.id = body.id;
         bodies.push(body);
