@@ -1,11 +1,18 @@
 .controls {
     margin-top: 0px;
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
+    bottom: 0;
     z-index: 3;
     display: flex;
     background-color: $c-black;
+    transform: translate(0, 0);
+    transition: transform 0.3s linear;
+
+    .is-cover & {
+        transform: translate(0, -100vh);
+    }
 }
 
 .controls__play {

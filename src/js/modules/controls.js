@@ -1,6 +1,11 @@
 import helpers from './player-helpers';
 
 const bindings = () => {
+    document.querySelector('.js-cover').addEventListener('click', () => {
+        document.querySelector('body').classList.remove('is-cover');
+        mediator.publish('play', helpers.getCurrentId());
+    });
+
     document.querySelector('.js-play').addEventListener('click', () => {
         mediator.publish('toggle');
     });

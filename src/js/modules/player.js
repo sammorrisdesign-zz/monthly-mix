@@ -28,6 +28,7 @@ const subscriptions = () => {
         isPlaying = false;
         document.querySelector('body').classList.add('is-paused');
         document.querySelector('body').classList.remove('is-playing');
+        document.querySelector('body').classList.add('is-cover');
     })
 
     mediator.subscribe('toggle', () => {

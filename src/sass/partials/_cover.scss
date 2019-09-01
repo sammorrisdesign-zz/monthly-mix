@@ -3,7 +3,6 @@
     z-index: 4;
     width: 100%;
     height: 100vh;
-    margin-bottom: 100vh;
 }
 
 .cover canvas {
@@ -93,6 +92,17 @@
     display: flex;
     width: fit-content;
     margin: 4px;
+    cursor: pointer;
+
+    &:hover {
+        .cover__play-label {
+            color: $c-blue;
+        }
+
+        .cover__play-icon {
+            background-color: $c-blue;
+        }
+    }
 }
 
 .cover__play-icon {
@@ -130,4 +140,14 @@
     height: 100vh;
     mix-blend-mode: multiply;
     background-color: $c-blue;
+}
+
+.cover,
+.cover__bg {
+    transform: translate(0, 100vh);
+    transition: transform 0.3s linear;
+
+    .is-cover & {
+        transform: translate(0, 0);
+    }
 }
