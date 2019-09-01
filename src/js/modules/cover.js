@@ -1,5 +1,9 @@
 import Matter from 'matter-js';
 
+const randomForce = () => {
+    return Math.random() * 0.08 - 0.04;
+}
+
 const renderCover = () => {
     let isRunning = true;
     // module aliases
@@ -46,16 +50,16 @@ const renderCover = () => {
 
         const body = Bodies.rectangle(
             el.offsetLeft + (el.offsetWidth / 2), el.offsetTop + (el.offsetHeight / 2), el.offsetWidth, el.offsetHeight, {
-                frictionAir: 0.05,
-                mass: 20
+                mass: 200,
+                friction: 1
             }
         );
 
-        Body.rotate(body, Math.random() * 1 - 0.5);
-        Body.setAngularVelocity(body, Math.random() * 0.1 - 0.05);
+        Body.rotate(body, Math.random() * 1.5 - 0.75);
+        Body.setAngularVelocity(body, randomForce());
         Body.applyForce(body, body.position, {
-            x: Math.random() * 0.1 - 0.05,
-            y: Math.random() * 0.1 - 0.05
+            x: randomForce(),
+            y: randomForce()
         });
 
         el.id = body.id;
@@ -64,7 +68,7 @@ const renderCover = () => {
 
     World.add(engine.world, bodies);
 
-    engine.world.gravity.scale = 0.000001;
+    engine.world.gravity.scale = -0.000001;
 
     // translate canvas positions to css
     const update = () => {
@@ -91,7 +95,7 @@ const renderCover = () => {
     setTimeout(() => {
         Render.stop(render);
         isRunning = false;
-    }, 2000);
+    }, 10000);
 }
 
 export default {

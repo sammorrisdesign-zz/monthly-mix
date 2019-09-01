@@ -37,6 +37,16 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    transform: scale(0.9);
+    opacity: 0;
+    animation: scaleUp 0.5s linear forwards;
+}
+
+@keyframes scaleUp {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .cover__intro {
@@ -54,28 +64,28 @@
 .cover__letter {
     display: inline-block;
     line-height: 0.8;
-    letter-spacing: -1vw;
+    letter-spacing: -0.5vw;
 
     .cover--3 &,
     .cover--4 &,
     .cover--5 & {
-        font-size: 27vw;
+        font-size: 20vw;
     }
 
     .cover--6 & {
-        font-size: 21vw;
-    }
-
-    .cover--7 & {
         font-size: 18vw;
     }
 
-    .cover--8 & {
+    .cover--7 & {
         font-size: 16vw;
     }
 
-    .cover--9 & {
+    .cover--8 & {
         font-size: 15vw;
+    }
+
+    .cover--9 & {
+        font-size: 13vw;
     }
 }
 
@@ -84,6 +94,7 @@
     float: left;
     display: flex;
     width: fit-content;
+    margin: 4px;
 }
 
 .cover__play-icon {
