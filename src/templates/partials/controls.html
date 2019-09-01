@@ -12,6 +12,7 @@
             <h2 class='controls__track-artist'>Artist</h2>
             <h2 class='controls__track-title'>Title</h2>
         </div>
+        <img class='controls__track-image' src='/assets/images/play-grey.svg' />
         <select class='controls__track-list js-track-list'>
             {{#each tracks}}
                 <option value='{{ id }}' data-artist='{{ artist }}' data-title='{{ title }}'>{{ artist }} - {{ title }}</option>
