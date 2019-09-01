@@ -29,7 +29,8 @@ const renderCover = () => {
         Bodies.rectangle(window.innerWidth / 2, 0, window.innerWidth, 100, { isStatic: true }),
         Bodies.rectangle(0, window.innerHeight / 2, 100, window.innerHeight, { isStatic: true }),
         Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, 100, { isStatic: true }),
-        Bodies.rectangle(window.innerWidth, window.innerHeight / 2, 100, window.innerHeight, { isStatic: true })
+        Bodies.rectangle(window.innerWidth, window.innerHeight / 2, 100, window.innerHeight, { isStatic: true }),
+        Bodies.rectangle(window.innerWidth / 14, 0, window.innerWidth / 5, window.innerWidth / 4, { isStatic: true })
     ]);
 
     // run the engine
@@ -53,8 +54,8 @@ const renderCover = () => {
         Body.rotate(body, Math.random() * 1 - 0.5);
         Body.setAngularVelocity(body, Math.random() * 0.1 - 0.05);
         Body.applyForce(body, body.position, {
-            x: Math.random() * 0.2 - 0.1,
-            y: Math.random() * 0.2 - 0.1
+            x: Math.random() * 0.1 - 0.05,
+            y: Math.random() * 0.1 - 0.05
         });
 
         el.id = body.id;
@@ -90,7 +91,7 @@ const renderCover = () => {
     setTimeout(() => {
         Render.stop(render);
         isRunning = false;
-    }, 1000);
+    }, 2000);
 }
 
 export default {

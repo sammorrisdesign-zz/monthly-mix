@@ -48,33 +48,34 @@
 
 .cover__title {
     text-align: center;
+    margin: auto;
 }
 
 .cover__letter {
     display: inline-block;
-    line-height: 0.9;
+    line-height: 0.8;
     letter-spacing: -1vw;
 
     .cover--3 &,
     .cover--4 &,
     .cover--5 & {
-        font-size: 28vw;
+        font-size: 27vw;
     }
 
     .cover--6 & {
-        font-size: 22vw;
+        font-size: 21vw;
     }
 
     .cover--7 & {
-        font-size: 19vw;
+        font-size: 18vw;
     }
 
     .cover--8 & {
-        font-size: 17vw;
+        font-size: 16vw;
     }
 
     .cover--9 & {
-        font-size: 16vw;
+        font-size: 15vw;
     }
 }
 
@@ -86,27 +87,20 @@
 }
 
 .cover__play-icon {
-    position: relative;
-    width: 48px;
-    height: 48px;
+    padding: 1.2vw;
     background-color: $c-black;
 }
 
 .cover__play-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    width: 28px;
-    height: 28px;
+    width: 2.5vw;
+    display: block;
 }
 
 .cover__play-label {
     margin: 0;
+    font-size: 2.5vw;
     color: $c-black;
-    padding: 8px;
+    padding: 8px 16px;
     display: inline-block;
 }
 
@@ -115,10 +109,6 @@
     white-space: nowrap;
     margin: 0;
     display: inline-block;
-}
-
-.cover__featuring--intro {
-    color: $c-black;
 }
 
 .cover__bg {
