@@ -108,7 +108,7 @@ const update = () => {
 }
 
 const onResize = () => {
-    // do something to fix it. 
+    // do something to fix it.
 }
 
 const pauseAfter = length => {
