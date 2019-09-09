@@ -2,7 +2,9 @@ import helpers from './player-helpers';
 
 let youTubePlayer,
     throttle = true,
-    isFirst = true;
+    isInitialLoad = true,
+    isFirst = true,
+    loadedTime;
 
 const createYouTubeAPI = () => {
     const tag = document.createElement('script');
@@ -30,10 +32,11 @@ const createPlayer = () => {
             'onStateChange': onStateChange,
             'onError': onError
         }
-    })
+    });
 }
 
 const onReady = () => {
+    youTubePlayer.setVolume(0);
     mediator.publish('play', helpers.getCurrentId());
 }
 
@@ -50,9 +53,10 @@ const onStateChange = event => {
         }
     }
 
-    if (event.data === 1 && isFirst) {
+    if (event.data === 1 && isInitialLoad) {
         mediator.publish('ready');
-        isFirst = false;
+        loadedTime = new Date();
+        isInitialLoad = false;
     }
 }
 
@@ -66,6 +70,29 @@ const subscriptions = () => {
         const playingId = youTubePlayer.getVideoData().video_id;
 
         if (playingId === id) {
+            if (isFirst) {
+                // restart video if page loaded ages ago
+                const timeSinceLoad = new Date() - loadedTime;
+                if (timeSinceLoad > 10000) {
+                    youTubePlayer.seekTo(0);
+                }
+
+                // fade volume in for first play
+                let volume = 0;
+                const increaseVol = () => {
+                    volume = volume + 5;
+                    youTubePlayer.setVolume(volume);
+
+                    if (volume !== 100) {
+                        setTimeout(increaseVol, 100);
+                    }
+                }
+
+                increaseVol();
+
+                isFirst = false;
+            }
+
             youTubePlayer.playVideo();
         } else {
             youTubePlayer.loadVideoById({videoId: id});
