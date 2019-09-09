@@ -1,6 +1,7 @@
 import helpers from './player-helpers';
 
-let isPlaying = false;
+let isPlaying = false,
+    isFirst = true;
 
 const bindings = () => {
     let body = document.querySelector('body');
@@ -10,6 +11,13 @@ const bindings = () => {
 
         const event = new Event('play');
         document.querySelector('body').dispatchEvent(event);
+    });
+
+    body.addEventListener('keypress', e => {
+        e.preventDefault();
+        if (e.keyCode === 32) {
+            mediator.publish('toggle');
+        }
     });
 }
 
@@ -22,6 +30,12 @@ const subscriptions = () => {
         isPlaying = true;
         document.querySelector('body').classList.add('is-playing');
         document.querySelector('body').classList.remove('is-paused');
+
+        if (!isFirst) {
+            document.querySelector('body').classList.remove('is-cover');
+        }
+
+        isFirst = false;
     });
 
     mediator.subscribe('pause', () => {
