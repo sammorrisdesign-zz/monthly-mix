@@ -6,30 +6,35 @@ const Engine = Matter.Engine,
     Body = Matter.Body;
 
 let elements,
+    engine,
     bodies = [],
     isRunning = true;
+
+const isDebug = true;
 
 const randomForce = () => {
     return Math.random() * 0.08 - 0.04;
 }
 
 const renderCover = () => {
-    // create an engine
-    const engine = Engine.create();
+    // create engine and renderer
+    engine = Engine.create();
+    engine.world.gravity.scale = -0.000001;
 
-    // create a renderer
-    const Render = Matter.Render;
-    const render = Render.create({
-        element: document.querySelector('.cover'),
-        engine: engine,
-        options: {
-            height: window.innerHeight,
-            width: window.innerWidth,
-            wireframeBackground: 'transparent',
-            background: 'transparent'
-        }
-    });
-    Render.run(render);
+    if (isDebug) {
+        const Render = Matter.Render;
+        const render = Render.create({
+            element: document.querySelector('.cover'),
+            engine: engine,
+            options: {
+                height: window.innerHeight,
+                width: window.innerWidth,
+                wireframeBackground: 'transparent',
+                background: 'transparent'
+            }
+        });
+        Render.run(render);
+    }
 
     // add walls to the world
     World.add(engine.world, [
@@ -55,20 +60,12 @@ const renderCover = () => {
 
         Body.rotate(body, Math.random() * 0.5 - 0.25);
         Body.setAngularVelocity(body, randomForce());
-        // Body.applyForce(body, body.position, {
-        //     x: randomForce(),
-        //     y: randomForce()
-        // });
 
         el.id = body.id;
         bodies.push(body);
     });
 
     World.add(engine.world, bodies);
-
-    engine.world.gravity.scale = -0.000001;
-
-    // translate canvas positions to css
 
     // run the renderer
     mediator.subscribe('ready', () => {
@@ -110,6 +107,10 @@ const update = () => {
     }
 }
 
+const onResize = () => {
+    // do something to fix it. 
+}
+
 const pauseAfter = length => {
     setTimeout(() => {
         bodies.forEach(body => {
@@ -119,9 +120,16 @@ const pauseAfter = length => {
     }, length);
 }
 
+const bindings = () => {
+    window.addEventListener('resize', () => {
+        onResize();
+    })
+}
+
 export default {
     init: () => {
         renderCover();
+        bindings();
         subscriptions();
     }
 }
