@@ -3,7 +3,8 @@ import Matter from 'matter-js';
 const Engine = Matter.Engine,
     World = Matter.World,
     Bodies = Matter.Bodies,
-    Body = Matter.Body;
+    Body = Matter.Body,
+    Sleeping = Matter.Sleeping;
 
 let elements,
     engine,
@@ -11,7 +12,7 @@ let elements,
     isFirst = true,
     isRunning = true;
 
-const isDebug = false;
+const isDebug = true;
 
 const randomForce = reducedMovement => {
     if (reducedMovement) {
@@ -95,7 +96,6 @@ const update = () => {
     });
 
     if (isRunning) {
-        console.log('updating');
         window.requestAnimationFrame(update);
     }
 }
@@ -113,9 +113,10 @@ const bindings = () => {
 const subscriptions = () => {
     mediator.subscribe('pause', () => {
         bodies.forEach(body => {
-            body.isStatic = false;
-            Body.rotate(body, Math.random() * 0.5 - 0.25);
-            Body.setAngularVelocity(body, randomForce());
+            if (!body.isStatic) {
+                Sleeping.set(body, false);
+                Body.setAngularVelocity(body, randomForce());
+            }
         });
 
         isRunning = true;
