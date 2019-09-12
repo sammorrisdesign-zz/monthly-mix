@@ -33,6 +33,7 @@ const subscriptions = () => {
 
         if (!isFirst) {
             document.querySelector('body').classList.remove('is-cover');
+            document.querySelector('body').classList.remove('is-preview');
         }
 
         isFirst = false;
@@ -46,7 +47,12 @@ const subscriptions = () => {
     })
 
     mediator.subscribe('toggle', () => {
-        if (isPlaying) {
+        const isPreview = document.querySelector('body').classList.contains('is-preview');
+
+        if (isPreview) {
+            document.querySelector('body').classList.remove('is-preview');
+            mediator.publish('play', helpers.getCurrentId());
+        } else if (isPlaying) {
             mediator.publish('pause');
         } else {
             mediator.publish('play', helpers.getCurrentId());
