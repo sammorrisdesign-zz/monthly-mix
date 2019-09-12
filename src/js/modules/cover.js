@@ -12,8 +12,12 @@ let elements,
 
 const isDebug = false;
 
-const randomForce = () => {
-    return Math.random() * 0.06 - 0.03;
+const randomForce = reducedMovement => {
+    if (reducedMovement) {
+        return Math.random() * 0.03 - 0.015;
+    } else {
+        return Math.random() * 0.06 - 0.03;
+    }
 }
 
 const renderCover = () => {
@@ -58,8 +62,10 @@ const renderCover = () => {
             }
         );
 
+        const reduceMovement = el.classList.contains('cover__featuring') || el.classList.contains('cover__intro');
+
         Body.rotate(body, Math.random() * 0.5 - 0.25);
-        Body.setAngularVelocity(body, randomForce());
+        Body.setAngularVelocity(body, randomForce(reduceMovement));
 
         el.id = body.id;
         bodies.push(body);
@@ -81,7 +87,6 @@ const subscriptions = () => {
             body.isStatic = false;
             Body.rotate(body, Math.random() * 0.5 - 0.25);
             Body.setAngularVelocity(body, randomForce());
-
         });
 
         isRunning = true;
