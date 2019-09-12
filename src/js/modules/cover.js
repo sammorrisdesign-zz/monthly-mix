@@ -10,16 +10,16 @@ let elements,
     bodies = [],
     isRunning = true;
 
-const isDebug = true;
+const isDebug = false;
 
 const randomForce = () => {
-    return Math.random() * 0.08 - 0.04;
+    return Math.random() * 0.06 - 0.03;
 }
 
 const renderCover = () => {
     // create engine and renderer
     engine = Engine.create();
-    engine.world.gravity.scale = -0.000001;
+    engine.world.gravity.scale = 0;
 
     if (isDebug) {
         const Render = Matter.Render;
@@ -71,7 +71,7 @@ const renderCover = () => {
     mediator.subscribe('ready', () => {
         Engine.run(engine);
         window.requestAnimationFrame(update);
-        pauseAfter(3000);
+        pauseAfter(10000);
     });
 }
 
