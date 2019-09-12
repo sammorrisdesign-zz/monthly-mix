@@ -3,14 +3,19 @@ import Matter from 'matter-js';
 const Engine = Matter.Engine,
     World = Matter.World,
     Bodies = Matter.Bodies,
-    Body = Matter.Body;
+    Body = Matter.Body,
+    Events = Matter.Events,
+    Mouse = Matter.Mouse,
+    MouseConstraint = Matter.MouseConstraint;
 
 let elements,
+    mouse,
+    mouseConstraint,
     engine,
     bodies = [],
     isRunning = true;
 
-const isDebug = false;
+const isDebug = true;
 
 const randomForce = reducedMovement => {
     if (reducedMovement) {
@@ -23,7 +28,28 @@ const randomForce = reducedMovement => {
 const renderCover = () => {
     // create engine and renderer
     engine = Engine.create();
+    engine.enableSleeping = true;
     engine.world.gravity.scale = 0;
+
+    console.log(Mouse);
+    mouse = Mouse.create();
+    mouseConstraint = MouseConstraint.create(engine, {
+        mouse: mouse,
+        constraint: {
+            stiffness: 0.6,
+            length: 0,
+            angularStiffness: 0,
+            render: {
+                visible: false
+            }
+        }
+    });
+
+    Events.on(mouseConstraint, 'startdrag', e => {
+        console.log(e);
+    });
+
+    World.add(engine.world, mouseConstraint);
 
     if (isDebug) {
         const Render = Matter.Render;
@@ -40,14 +66,14 @@ const renderCover = () => {
         Render.run(render);
     }
 
-    // add walls to the world
-    World.add(engine.world, [
+    // add walls to bodies
+    bodies.push(
         Bodies.rectangle(window.innerWidth / 2, 0, window.innerWidth, 100, { isStatic: true }),
         Bodies.rectangle(0, window.innerHeight / 2, 100, window.innerHeight, { isStatic: true }),
         Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, 100, { isStatic: true }),
         Bodies.rectangle(window.innerWidth, window.innerHeight / 2, 100, window.innerHeight, { isStatic: true }),
         Bodies.rectangle(window.innerWidth / 14, 0, window.innerWidth / 5, window.innerWidth / 4, { isStatic: true })
-    ]);
+    );
 
     // get all animatable elements and add them to the world
     elements = document.querySelectorAll('.is-movable');
@@ -77,7 +103,6 @@ const renderCover = () => {
     mediator.subscribe('ready', () => {
         Engine.run(engine);
         window.requestAnimationFrame(update);
-        pauseAfter(10000);
     });
 }
 
@@ -91,7 +116,6 @@ const subscriptions = () => {
 
         isRunning = true;
         window.requestAnimationFrame(update);
-        pauseAfter(3000);
     });
 }
 
@@ -116,19 +140,14 @@ const onResize = () => {
     // do something to fix it.
 }
 
-const pauseAfter = length => {
-    setTimeout(() => {
-        bodies.forEach(body => {
-            body.isStatic = true;
-        });
-        isRunning = false;
-    }, length);
+const pause = length => {
+    isRunning = false;
 }
 
 const bindings = () => {
     window.addEventListener('resize', () => {
         onResize();
-    })
+    });
 }
 
 export default {
