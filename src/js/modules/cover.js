@@ -3,19 +3,15 @@ import Matter from 'matter-js';
 const Engine = Matter.Engine,
     World = Matter.World,
     Bodies = Matter.Bodies,
-    Body = Matter.Body,
-    Events = Matter.Events,
-    Mouse = Matter.Mouse,
-    MouseConstraint = Matter.MouseConstraint;
+    Body = Matter.Body;
 
 let elements,
-    mouse,
-    mouseConstraint,
     engine,
     bodies = [],
+    isFirst = true,
     isRunning = true;
 
-const isDebug = true;
+const isDebug = false;
 
 const randomForce = reducedMovement => {
     if (reducedMovement) {
@@ -30,26 +26,6 @@ const renderCover = () => {
     engine = Engine.create();
     engine.enableSleeping = true;
     engine.world.gravity.scale = 0;
-
-    console.log(Mouse);
-    mouse = Mouse.create();
-    mouseConstraint = MouseConstraint.create(engine, {
-        mouse: mouse,
-        constraint: {
-            stiffness: 0.6,
-            length: 0,
-            angularStiffness: 0,
-            render: {
-                visible: false
-            }
-        }
-    });
-
-    Events.on(mouseConstraint, 'startdrag', e => {
-        console.log(e);
-    });
-
-    World.add(engine.world, mouseConstraint);
 
     if (isDebug) {
         const Render = Matter.Render;
@@ -106,19 +82,6 @@ const renderCover = () => {
     });
 }
 
-const subscriptions = () => {
-    mediator.subscribe('pause', () => {
-        bodies.forEach(body => {
-            body.isStatic = false;
-            Body.rotate(body, Math.random() * 0.5 - 0.25);
-            Body.setAngularVelocity(body, randomForce());
-        });
-
-        isRunning = true;
-        window.requestAnimationFrame(update);
-    });
-}
-
 const update = () => {
     elements.forEach((el, i) => {
         let body = null;
@@ -132,6 +95,7 @@ const update = () => {
     });
 
     if (isRunning) {
+        console.log('updating');
         window.requestAnimationFrame(update);
     }
 }
@@ -140,13 +104,30 @@ const onResize = () => {
     // do something to fix it.
 }
 
-const pause = length => {
-    isRunning = false;
-}
-
 const bindings = () => {
     window.addEventListener('resize', () => {
         onResize();
+    });
+}
+
+const subscriptions = () => {
+    mediator.subscribe('pause', () => {
+        bodies.forEach(body => {
+            body.isStatic = false;
+            Body.rotate(body, Math.random() * 0.5 - 0.25);
+            Body.setAngularVelocity(body, randomForce());
+        });
+
+        isRunning = true;
+        window.requestAnimationFrame(update);
+    });
+
+    mediator.subscribe('play', () => {
+        if (isFirst) {
+            isFirst = false;
+        } else {
+            isRunning = false;
+        }
     });
 }
 
