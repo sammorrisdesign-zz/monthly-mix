@@ -127,16 +127,17 @@
     white-space: nowrap;
     margin: 0;
     padding: 4px;
+    pointer-events: none;
     display: inline-block;
+}
+
+.cover__featuring--track {
     cursor: pointer;
+    pointer-events: all;
 
     &:hover {
         color: $c-black;
     }
-}
-
-.cover__featuring--intro {
-    pointer-events: none;
 }
 
 .cover__bg {

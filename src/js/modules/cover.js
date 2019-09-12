@@ -125,6 +125,12 @@ const bindings = () => {
     window.addEventListener('resize', () => {
         onResize();
     });
+
+    document.querySelectorAll('.js-cover-track').forEach(el => {
+        el.addEventListener('click', e => {
+            mediator.publish('play', e.currentTarget.getAttribute('data-id'));
+        })
+    })
 }
 
 const subscriptions = () => {

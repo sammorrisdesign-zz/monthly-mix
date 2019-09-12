@@ -3,7 +3,10 @@ module.exports = {
         Object.keys(data).forEach(function(playlist) {
             data[playlist].featured = data[playlist].tracks.map((track, i) => {
                 if (i < 5) {
-                    return track.artist
+                    return {
+                        artist: track.artist,
+                        id: track.id
+                    }
                 } else {
                     return false;
                 }
