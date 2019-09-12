@@ -4,6 +4,8 @@ body {
     font-family: 'adelle-sans', sans-serif;
     font-weight: bold;
     background-color: $c-black;
+    height: 100%;
+    overflow: hidden;
 }
 
 a {
