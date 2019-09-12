@@ -12,7 +12,7 @@ let elements,
     isFirst = true,
     isRunning = true;
 
-const isDebug = true;
+const isDebug = false;
 
 const randomForce = reducedMovement => {
     if (reducedMovement) {
@@ -78,17 +78,25 @@ const renderCover = () => {
 
     // run the renderer
     mediator.subscribe('ready', () => {
+        bindings();
+        subscriptions();
         Engine.run(engine);
         window.requestAnimationFrame(update);
     });
 }
 
 const update = () => {
+    isRunning = false;
+
     elements.forEach((el, i) => {
         let body = null;
         bodies.forEach((b, id) => {
             if (b.id == el.id) {
                 body = b;
+            }
+
+            if (!b.isSleeping) {
+                isRunning = true;
             }
         });
 
@@ -100,8 +108,17 @@ const update = () => {
     }
 }
 
+let resizeTimer;
 const onResize = () => {
-    // do something to fix it.
+    document.querySelector('body').classList.remove('is-ready');
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        document.querySelector('body').classList.add('is-ready');
+        bodies = [];
+        renderCover();
+        Engine.run(engine);
+        window.requestAnimationFrame(update);
+    }, 500);
 }
 
 const bindings = () => {
@@ -135,7 +152,5 @@ const subscriptions = () => {
 export default {
     init: () => {
         renderCover();
-        bindings();
-        subscriptions();
     }
 }

@@ -36,11 +36,10 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    transform: scale(0.6);
     opacity: 0;
+    transition: opacity 0.3s linear;
 
     .is-ready & {
-        transform: scale(1);
         opacity: 1;
     }
 }
@@ -96,7 +95,7 @@
 
     &:hover {
         .cover__play-label {
-            color: $c-blue;
+            color: $c-black;
         }
 
         .cover__play-icon {
@@ -107,7 +106,7 @@
 
 .cover__play-icon {
     padding: 1.2vw;
-    background-color: $c-black;
+    background-color: $c-blue;
 }
 
 .cover__play-image {
@@ -118,7 +117,7 @@
 .cover__play-label {
     margin: 0;
     font-size: 2vw;
-    color: $c-black;
+    color: $c-blue;
     padding: 8px 16px;
     display: inline-block;
 }
@@ -129,6 +128,15 @@
     margin: 0;
     padding: 4px;
     display: inline-block;
+    cursor: pointer;
+
+    &:hover {
+        color: $c-black;
+    }
+}
+
+.cover__featuring--intro {
+    pointer-events: none;
 }
 
 .cover__bg {
