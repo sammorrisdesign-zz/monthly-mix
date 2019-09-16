@@ -79,42 +79,46 @@ const updateProgress = () => {
         const currentTime = youTubePlayer.getCurrentTime();
         const duration = youTubePlayer.getDuration();
         const percentage = currentTime / duration * 100;
-        document.querySelector('.controls__progression').setAttribute('style', 'width: ' + percentage + '%;')
-        setTimeout(updateProgress, 200);
+        document.querySelector('.controls__progression').setAttribute('style', 'width: ' + percentage + '%;');
+
+        setTimeout(updateProgress, 100);
     }
 }
 
 const subscriptions = () => {
     mediator.subscribe('play', id => {
         const playingId = youTubePlayer.getVideoData().video_id;
+        const isPreview = document.querySelector('body').classList.contains('is-preview')
 
         if (playingId === id) {
-            if (isFirst) {
-                // restart video if page loaded ages ago
-                const timeSinceLoad = new Date() - loadedTime;
-                if (timeSinceLoad > 10000) {
-                    youTubePlayer.seekTo(0);
-                }
-
-                // fade volume in for first play
-                let volume = 0;
-                const increaseVol = () => {
-                    volume = volume + 5;
-                    youTubePlayer.setVolume(volume);
-
-                    if (volume !== 100) {
-                        setTimeout(increaseVol, 100);
-                    }
-                }
-
-                increaseVol();
-
-                isFirst = false;
-            }
-
             youTubePlayer.playVideo();
         } else {
             youTubePlayer.loadVideoById({videoId: id});
+        }
+
+        if (isFirst) {
+            isFirst = false;
+        } else if (isPreview) {
+            // restart video if page loaded ages ago
+            const timeSinceLoad = new Date() - loadedTime;
+            if (timeSinceLoad > 10000) {
+                youTubePlayer.seekTo(0);
+            }
+
+            // fade volume in for first play
+            let volume = 0;
+            const increaseVol = () => {
+                volume = volume + 5;
+                youTubePlayer.setVolume(volume);
+
+                if (volume !== 100) {
+                    setTimeout(increaseVol, 100);
+                }
+            }
+
+            increaseVol();
+
+            isFirst = false;
         }
     });
 

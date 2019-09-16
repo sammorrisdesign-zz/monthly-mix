@@ -90,7 +90,6 @@
     top: 0;
     height: 100%;
     background-color: $c-blue;
-    transition: width 2s linear;
 }
 
 .controls__track-image {
@@ -143,6 +142,7 @@
     max-height: 60vh;
     overflow: scroll;
     box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
     transition: 0.15s linear transform;
     opacity: 0;
     transform: translateY(101%);
