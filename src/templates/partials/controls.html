@@ -8,11 +8,13 @@
         </div>
     </div>
     <div class='controls__track'>
-        <div class='controls__track-info'>
-            <h2 class='controls__track-artist'>Artist</h2>
-            <h2 class='controls__track-title'>Title</h2>
+        <div class='controls__track-display js-tracklist'>
+            <div class='controls__track-info'>
+                <h2 class='controls__track-artist'>Artist</h2>
+                <h2 class='controls__track-title'>Title</h2>
+            </div>
+            <img class='controls__track-image' src='/assets/images/play-grey.svg' />
         </div>
-        <img class='controls__track-image' src='/assets/images/play-grey.svg' />
         <select class='controls__select js-select'>
             {{#each tracks}}
                 <option value='{{ id }}' data-artist='{{ artist }}' data-title='{{ title }}'>{{ artist }} - {{ title }}</option>

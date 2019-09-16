@@ -21,6 +21,18 @@ const bindings = () => {
     document.querySelector('.js-select').addEventListener('change', () => {
         mediator.publish('play', helpers.getCurrentId());
     });
+
+    document.querySelector('.js-tracklist').addEventListener('click', () => {
+        toggleTracklist();
+    })
+}
+
+const toggleTracklist = () => {
+    if (document.querySelector('body').classList.contains('is-expanded')) {
+        document.querySelector('body').classList.remove('is-expanded');
+    } else {
+        document.querySelector('body').classList.add('is-expanded');
+    }
 }
 
 const subscriptions = () => {
