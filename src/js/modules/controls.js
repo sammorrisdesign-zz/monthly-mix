@@ -30,6 +30,7 @@ const bindings = () => {
 
     document.querySelectorAll('.js-track').forEach(el => {
         el.addEventListener('click', e => {
+            toggleTracklist();
             mediator.publish('play', e.currentTarget.getAttribute('data-id'));
         });
     });
@@ -54,7 +55,6 @@ const resetInactivityTimer = () => {
 }
 
 const hideControls = () => {
-    console.log('hiding controls');
     document.querySelector('.controls').classList.add('is-hidden');
 }
 
