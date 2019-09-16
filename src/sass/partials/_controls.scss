@@ -74,6 +74,11 @@
     transform: rotate(90deg);
     right: 2vw;
     width: 1vw;
+    transition: transform 0.15s linear;
+
+    .is-expanded & {
+        transform: rotate(-90deg);
+    }
 }
 
 .controls__track-artist,
@@ -125,26 +130,60 @@
 }
 
 .controls__tracklist-track {
+    position: relative;
     display: flex;
     padding: 0.5vw 0;
     margin: 0;
     border-bottom: 1px solid $c-white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $c-white;
+
+        .controls__tracklist-playing {
+            display: block;
+        }
+
+        .controls__tracklist-number {
+            opacity: 0;
+        }
+    }
 
     &.is-playing {
-        background-color: red;
+        pointer-events: none;
+        cursor: default;
+
+        .controls__tracklist-number {
+            opacity: 0;
+        }
+
+        .controls__tracklist-playing {
+            display: block;
+        }
     }
+}
+
+.controls__tracklist-playing {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 3%;
+    display: none;
 }
 
 .controls__tracklist-number {
     margin: 0;
     width: 5%;
     color: $c-black;
+    font-size: 2vw;
 }
 
 .controls__tracklist-artist {
     margin: 0 2% 0 0;
     width: 45%;
     color: $c-blue;
+    font-size: 2vw;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -154,6 +193,7 @@
     margin: 0;
     width: 48%;
     color: $c-black;
+    font-size: 2vw;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;

@@ -23,6 +23,7 @@
         <ul class='controls__tracklist'>
             {{#each tracks}}
                 <li class='controls__tracklist-track js-track' data-id='{{ id }}'>
+                    <img class='controls__tracklist-playing' src='/assets/images/play-grey.svg' />
                     <h2 class='controls__tracklist-number'>{{ @index }}</h2>
                     <h2 class='controls__tracklist-artist'>{{ artist }}</h2>
                     <h2 class='controls__tracklist-title'>{{ title }}</h2>
