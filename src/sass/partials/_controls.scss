@@ -13,6 +13,12 @@
     .is-cover & {
         transform: translate(0, -100vh);
     }
+
+    &.is-hidden {
+        @include mq(desktop) {
+            transform: translate(0, 100%);
+        }
+    }
 }
 
 .controls__play {

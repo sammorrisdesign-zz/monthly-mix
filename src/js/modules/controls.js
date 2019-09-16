@@ -1,5 +1,7 @@
 import helpers from './player-helpers';
 
+let inactivityTimer;
+
 const bindings = () => {
     document.querySelector('.js-cover').addEventListener('click', () => {
         document.querySelector('body').classList.remove('is-cover');
@@ -31,6 +33,29 @@ const bindings = () => {
             mediator.publish('play', e.currentTarget.getAttribute('data-id'));
         });
     });
+
+    document.querySelector('body').addEventListener('mousemove', e => {
+        if (e.target.classList.contains('video')) {
+            resetInactivityTimer();
+        } else {
+            clearTimeout(inactivityTimer);
+        }
+    });
+
+    document.querySelector('.video').addEventListener('mousemove', () => {
+        clearTimeout(inactivityTimer);
+    });
+}
+
+const resetInactivityTimer = () => {
+    document.querySelector('.controls').classList.remove('is-hidden');
+    clearTimeout(inactivityTimer);
+    inactivityTimer = setTimeout(hideControls, 5000);
+}
+
+const hideControls = () => {
+    console.log('hiding controls');
+    document.querySelector('.controls').classList.add('is-hidden');
 }
 
 const toggleTracklist = () => {
