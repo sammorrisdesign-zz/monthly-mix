@@ -63,11 +63,25 @@ const onStateChange = event => {
         loadedTime = new Date();
         isInitialLoad = false;
     }
+
+    if (event.data === 1) {
+        updateProgress();
+    }
 }
 
 const onError = () => {
     // This should maybe flag something to the listener?
     mediator.publish('play', helpers.getNextId());
+}
+
+const updateProgress = () => {
+    if (youTubePlayer.getPlayerState() === 1) {
+        const currentTime = youTubePlayer.getCurrentTime();
+        const duration = youTubePlayer.getDuration();
+        const percentage = currentTime / duration * 100;
+        document.querySelector('.controls__progression').setAttribute('style', 'width: ' + percentage + '%;')
+        setTimeout(updateProgress, 200);
+    }
 }
 
 const subscriptions = () => {
