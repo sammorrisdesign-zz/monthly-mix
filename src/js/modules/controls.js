@@ -42,7 +42,7 @@ const bindings = () => {
     })
 
     document.querySelector('body').addEventListener('mousemove', e => {
-        if (e.target.classList.contains('video')) {
+        if (e.target.classList.contains('video') && !document.querySelector('body').classList.contains('is-expanded')) {
             resetInactivityTimer();
         } else {
             clearTimeout(inactivityTimer);
