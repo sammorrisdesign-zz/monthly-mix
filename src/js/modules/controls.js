@@ -35,6 +35,12 @@ const bindings = () => {
         });
     });
 
+    document.querySelector('.video').addEventListener('click', e => {
+        if (document.querySelector('body').classList.contains('is-expanded')) {
+            toggleTracklist();
+        }
+    })
+
     document.querySelector('body').addEventListener('mousemove', e => {
         if (e.target.classList.contains('video')) {
             resetInactivityTimer();
