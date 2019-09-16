@@ -13,11 +13,20 @@
             <h2 class='controls__track-title'>Title</h2>
         </div>
         <img class='controls__track-image' src='/assets/images/play-grey.svg' />
-        <select class='controls__track-list js-track-list'>
+        <select class='controls__select js-select'>
             {{#each tracks}}
                 <option value='{{ id }}' data-artist='{{ artist }}' data-title='{{ title }}'>{{ artist }} - {{ title }}</option>
             {{/each }}
         </select>
+        <ul class='controls__tracklist'>
+            {{#each tracks}}
+                <li class='controls__tracklist-track' value='{{ id }}'>
+                    <h2 class='controls__tracklist-number'>{{ @index }}</h2>
+                    <h2 class='controls__tracklist-artist'>{{ artist }}</h2>
+                    <h2 class='controls__tracklist-title'>{{ title }}</h2>
+                </li>
+            {{/each}}
+        </ul>
     </div>
     <div class='controls__skip'>
         <div class='controls__skip-prev js-prev'>

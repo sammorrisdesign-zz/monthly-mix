@@ -81,7 +81,7 @@
     color: $c-blue;
 }
 
-.controls__track-list {
+.controls__select {
     position: absolute;
     top: 0;
     left: 0;
@@ -89,6 +89,50 @@
     height: 100%;
     opacity: 0;
     font-size: 2vw;
+}
+
+.controls__tracklist {
+    position: absolute;
+    width: 100%;
+    top: -60vh;
+    background-color: $c-light-grey;
+    list-style: none;
+    margin: 0;
+    padding: 0.5vw 1.5vw;
+    max-height: 60vh;
+    overflow: scroll;
+    box-sizing: border-box;
+}
+
+.controls__tracklist-track {
+    display: flex;
+    padding: 0.5vw 0;
+    margin: 0;
+    border-bottom: 1px solid $c-white;
+}
+
+.controls__tracklist-number {
+    margin: 0;
+    width: 5%;
+    color: $c-black;
+}
+
+.controls__tracklist-artist {
+    margin: 0;
+    width: 45%;
+    color: $c-blue;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.controls__tracklist-title {
+    margin: 0;
+    width: 50%;
+    color: $c-black;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .controls__skip {

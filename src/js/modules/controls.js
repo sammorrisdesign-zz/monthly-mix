@@ -18,16 +18,16 @@ const bindings = () => {
         mediator.publish('play', helpers.getNextId());
     });
 
-    document.querySelector('.js-track-list').addEventListener('change', () => {
+    document.querySelector('.js-select').addEventListener('change', () => {
         mediator.publish('play', helpers.getCurrentId());
     });
 }
 
 const subscriptions = () => {
     mediator.subscribe('play', id => {
-        document.querySelector('.controls__track-list').value = id;
+        document.querySelector('.controls__select').value = id;
 
-        const data = document.querySelector('.controls__track-list option:checked').dataset;
+        const data = document.querySelector('.controls__select option:checked').dataset;
         document.querySelector('.controls__track-artist').innerHTML = data.artist;
         document.querySelector('.controls__track-title').innerHTML = data.title;
     });
