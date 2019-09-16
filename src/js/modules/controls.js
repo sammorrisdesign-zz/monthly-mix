@@ -24,7 +24,13 @@ const bindings = () => {
 
     document.querySelector('.js-tracklist').addEventListener('click', () => {
         toggleTracklist();
-    })
+    });
+
+    document.querySelectorAll('.js-track').forEach(el => {
+        el.addEventListener('click', e => {
+            mediator.publish('play', e.currentTarget.getAttribute('data-id'));
+        });
+    });
 }
 
 const toggleTracklist = () => {
@@ -42,6 +48,11 @@ const subscriptions = () => {
         const data = document.querySelector('.controls__select option:checked').dataset;
         document.querySelector('.controls__track-artist').innerHTML = data.artist;
         document.querySelector('.controls__track-title').innerHTML = data.title;
+
+        if (document.querySelector('.controls__tracklist-track.is-playing')) {
+            document.querySelector('.controls__tracklist-track.is-playing').classList.remove('is-playing');
+        }
+        document.querySelector('.controls__tracklist-track[data-id="' + id  + '"]').classList.add('is-playing');
     });
 }
 
