@@ -44,7 +44,12 @@ const onStateChange = event => {
     if (event.data === 0) {
         // throttled because YT fires 'ended' event twice
         if (throttle) {
-            mediator.publish('play', helpers.getNextId());
+            if (document.querySelector('body').classList.contains('is-preview')) {
+                youTubePlayer.seekTo(0);
+            } else {
+                mediator.publish('play', helpers.getNextId());
+            }
+
             throttle = false;
 
             setTimeout(function() {
