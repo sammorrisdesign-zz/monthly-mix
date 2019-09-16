@@ -1,7 +1,8 @@
 import helpers from './player-helpers';
 
 let isPlaying = false,
-    isFirst = true;
+    isFirst = true,
+    defaultTitle;
 
 const bindings = () => {
     let body = document.querySelector('body');
@@ -34,7 +35,13 @@ const subscriptions = () => {
         if (!isFirst) {
             document.querySelector('body').classList.remove('is-cover');
             document.querySelector('body').classList.remove('is-preview');
+        } else {
+            defaultTitle = document.title;
         }
+
+        const currentTrack = document.querySelector('.controls__tracklist-track[data-id="' + id + '"');
+
+        document.title = currentTrack.querySelector('.controls__tracklist-artist').textContent + ' – ' + currentTrack.querySelector('.controls__tracklist-title').textContent + ' | ' + defaultTitle
 
         isFirst = false;
     });
