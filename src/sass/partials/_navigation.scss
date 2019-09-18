@@ -1,0 +1,25 @@
+.navigation {
+    margin-top: 0px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    transform: translate(0, 0);
+    transition: transform 0.3s linear, max-height 0.15s linear;
+    max-height: 7vw;
+
+    .is-cover & {
+        transform: translate(0, 100%);
+    }
+
+    .is-archiving & {
+        max-height: 19vw;
+    }
+
+    &.is-hidden {
+        @include mq(desktop) {
+            transform: translate(0, 100%);
+        }
+    }
+}

@@ -1,28 +1,6 @@
 .controls {
-    margin-top: 0px;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 3;
     display: flex;
     background-color: $c-black;
-    transform: translate(0, 0);
-    transition: transform 0.3s linear;
-
-    .is-cover & {
-        transform: translate(0, -100vh);
-    }
-
-    .is-archiving & {
-        transform: translate(0, -22vh);
-    }
-
-    &.is-hidden {
-        @include mq(desktop) {
-            transform: translate(0, 100%);
-        }
-    }
 }
 
 .controls__play {
@@ -148,7 +126,6 @@
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
     transition: 0.15s linear transform;
-    opacity: 0;
     transform: translateY(101%);
 
     .is-expanded & {

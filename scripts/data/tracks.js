@@ -45,7 +45,10 @@ module.exports = {
                 throw err;
             }
 
-            data.items.forEach(function(item) {
+            data.items.forEach(function(item, i) {
+                if (i === 0) {
+                    data.thumbnail = item.snippet.thumbnails.medium.url;
+                }
                 let track = meta.getTrackInfo(item.snippet);
                     track.id = item.snippet.resourceId.videoId;
                 tracks.push(track);

@@ -1,19 +1,8 @@
 .archive {
-    position: absolute;
-    z-index: 6;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+    z-index: 4;
     background-color: $c-black;
     overflow: scroll;
-    opacity: 0;
-    transform: translateY(101%);
-    transition: transform 0.3s linear;
-
-    .is-archiving & {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .archive__static {
@@ -37,6 +26,7 @@
     padding: 0;
     list-style: none;
     display: flex;
+    width: fit-content;
 }
 
 .archive__playlist {
