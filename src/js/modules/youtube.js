@@ -49,7 +49,6 @@ const onStateChange = event => {
                 loadedTime = new Date();
                 youTubePlayer.seekTo(0);
             } else {
-                isPreview = false;
                 mediator.publish('play', helpers.getNextId());
             }
 
@@ -90,6 +89,7 @@ const updateProgress = () => {
 
 const subscriptions = () => {
     mediator.subscribe('play', id => {
+        isPreview = false;
         const playingId = youTubePlayer.getVideoData().video_id;
 
         if (playingId === id) {
