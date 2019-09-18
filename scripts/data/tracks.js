@@ -15,7 +15,7 @@ module.exports = {
         Object.keys(data).forEach(function(playlist) {
             // Etag comparison only looks at changes to id, title and description. Not tracks within.
             // PlaylistItems has an Etag, maybe this is what we need
-            if (!oldData[playlist] || data[playlist].etag !== oldData[playlist].etag || playlist === 'September 2018') {
+            if (!oldData[playlist] || data[playlist].etag !== oldData[playlist].etag) {
                 console.log('Fetching new data for', playlist);
                 data[playlist].tracks = this.fetchTracksFromPlaylist(data[playlist]);
             } else {
@@ -46,9 +46,6 @@ module.exports = {
             }
 
             data.items.forEach(function(item, i) {
-                if (i === 0) {
-                    data.thumbnail = item.snippet.thumbnails.medium.url;
-                }
                 let track = meta.getTrackInfo(item.snippet);
                     track.id = item.snippet.resourceId.videoId;
                 tracks.push(track);

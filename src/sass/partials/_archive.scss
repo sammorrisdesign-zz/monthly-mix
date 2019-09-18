@@ -33,13 +33,14 @@
     position: relative;
     width: 10vw;
     height: 10vw;
-    background-color: $c-blue;
     margin-right: 1vw;
     flex-shrink: 0;
+    overflow: hidden;
 }
 
 .archive__playlist-link {
     position: absolute;
+    z-index: 3;
     top: 0;
     left: 0;
     right: 0;
@@ -64,4 +65,27 @@
             transform: rotate(-20deg + ($i * 4));
         }
     }
+}
+
+.archive__playlist-filter {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $c-blue;
+    mix-blend-mode: multiply;
+}
+
+.archive__playlist-image {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    left: -10vw;
+    right: -10vw;
+    margin: auto;
+    filter: grayscale(1) brightness(1.5);
 }

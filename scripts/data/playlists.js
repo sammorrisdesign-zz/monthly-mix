@@ -37,6 +37,7 @@ module.exports = {
                     month: playlist.snippet.title.split(' ')[0],
                     year: playlist.snippet.title.split(' ')[1],
                     description: playlist.snippet.description,
+                    thumbnail: playlist.snippet.thumbnails.medium.url,
                     etag: playlist.etag
                 }
             }.bind(this));
