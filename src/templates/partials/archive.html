@@ -1,0 +1,13 @@
+<div class='archive'>
+    <div class='archive__playlists-wrapper'>
+        <ul class='archive__playlists'>
+            {{#each archive}}
+                <li class='archive__playlist'>
+                    <a class='archive__playlist-link' href='/{{ handlise year }}/{{ handlise month }}'>
+                        <div class='archive__playlist-title'>{{{ charactersInForArchive month }}}<br />{{{ charactersInForArchive year }}}</div>
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

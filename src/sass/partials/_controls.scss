@@ -14,6 +14,10 @@
         transform: translate(0, -100vh);
     }
 
+    .is-archiving & {
+        transform: translate(0, -22vh);
+    }
+
     &.is-hidden {
         @include mq(desktop) {
             transform: translate(0, 100%);

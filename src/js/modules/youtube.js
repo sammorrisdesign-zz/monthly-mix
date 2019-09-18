@@ -3,6 +3,7 @@ import helpers from './player-helpers';
 let youTubePlayer,
     throttle = true,
     isInitialLoad = true,
+    isPreview = true,
     isFirst = true,
     loadedTime;
 
@@ -37,16 +38,18 @@ const createPlayer = () => {
 
 const onReady = () => {
     youTubePlayer.setVolume(0);
-    mediator.publish('play', helpers.getCurrentId());
+    youTubePlayer.loadVideoById({videoId: helpers.getCurrentId()});
 }
 
 const onStateChange = event => {
     if (event.data === 0) {
         // throttled because YT fires 'ended' event twice
         if (throttle) {
-            if (document.querySelector('body').classList.contains('is-preview')) {
+            if (isPreview) {
+                loadedTime = new Date();
                 youTubePlayer.seekTo(0);
             } else {
+                isPreview = false;
                 mediator.publish('play', helpers.getNextId());
             }
 
@@ -88,7 +91,6 @@ const updateProgress = () => {
 const subscriptions = () => {
     mediator.subscribe('play', id => {
         const playingId = youTubePlayer.getVideoData().video_id;
-        const isPreview = document.querySelector('body').classList.contains('is-preview')
 
         if (playingId === id) {
             youTubePlayer.playVideo();
@@ -97,8 +99,6 @@ const subscriptions = () => {
         }
 
         if (isFirst) {
-            isFirst = false;
-        } else if (isPreview) {
             // restart video if page loaded ages ago
             const timeSinceLoad = new Date() - loadedTime;
             if (timeSinceLoad > 10000) {

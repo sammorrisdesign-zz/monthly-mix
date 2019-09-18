@@ -13,6 +13,7 @@ module.exports = {
 
         Object.keys(data).forEach((key, i) => {
             const playlist = data[key];
+                playlist.archive = data;
             const location = `.build/${playlist.year}/${playlist.month.toLowerCase()}`;
             fs.mkdirsSync(location);
             fs.writeFileSync(location + '/index.html', template(playlist));
@@ -38,6 +39,18 @@ module.exports = {
             let characters = string.split('');
                 characters = characters.map(character => { return `<span class='is-movable cover__letter'>${character}</span>`});
             return characters.join('');
+        });
+
+        handlebars.registerHelper('charactersInForArchive', function(string) {
+            let characters = string.split('');
+                characters = characters.map(character => { return `<span class='letter letter--${Math.floor(Math.random() * 10)}'>${character}</span>`});
+            return characters.join('');
+        });
+
+        handlebars.registerHelper('handlise', function(string) {
+            if (string) {
+                return string.toLowerCase().replace(/ /g, '-');
+            }
         });
     },
 

@@ -1,0 +1,77 @@
+.archive {
+    position: absolute;
+    z-index: 6;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $c-black;
+    overflow: scroll;
+    opacity: 0;
+    transform: translateY(101%);
+    transition: transform 0.3s linear;
+
+    .is-archiving & {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.archive__static {
+    margin: 1vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.archive__title,
+.archive__close {
+    font-size: 2vw;
+    margin: 0;
+} 
+
+.archive__playlists-wrapper {
+    overflow: scroll;
+}
+
+.archive__playlists {
+    margin: 1vw;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.archive__playlist {
+    position: relative;
+    width: 10vw;
+    height: 10vw;
+    background-color: $c-blue;
+    margin-right: 1vw;
+    flex-shrink: 0;
+}
+
+.archive__playlist-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.5vw;
+    box-sizing: border-box;
+}
+
+.archive__playlist-title {
+    color: $c-white;
+    text-transform: uppercase;
+    font-size: 1.2vw;
+    line-height: 1.2;
+    letter-spacing: 0.2vw;
+
+    .letter {
+        display: inline-block;
+    }
+
+    @for $i from 0 through 9 {
+        .letter--#{$i} {
+            transform: rotate(-20deg + ($i * 4));
+        }
+    }
+}

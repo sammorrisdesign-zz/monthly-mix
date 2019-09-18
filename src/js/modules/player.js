@@ -1,8 +1,7 @@
 import helpers from './player-helpers';
 
 let isPlaying = false,
-    isFirst = true,
-    defaultTitle;
+    defaultTitle = document.title;
 
 const bindings = () => {
     let body = document.querySelector('body');
@@ -31,19 +30,11 @@ const subscriptions = () => {
         isPlaying = true;
         document.querySelector('body').classList.add('is-playing');
         document.querySelector('body').classList.remove('is-paused');
-
-        if (!isFirst) {
-            document.querySelector('body').classList.remove('is-cover');
-            document.querySelector('body').classList.remove('is-preview');
-        } else {
-            defaultTitle = document.title;
-        }
+        document.querySelector('body').classList.remove('is-cover');
 
         const currentTrack = document.querySelector('.controls__tracklist-track[data-id="' + id + '"');
 
         document.title = currentTrack.querySelector('.controls__tracklist-artist').textContent + ' – ' + currentTrack.querySelector('.controls__tracklist-title').textContent + ' | ' + defaultTitle
-
-        isFirst = false;
     });
 
     mediator.subscribe('pause', () => {
@@ -54,14 +45,12 @@ const subscriptions = () => {
     })
 
     mediator.subscribe('toggle', () => {
-        const isPreview = document.querySelector('body').classList.contains('is-preview');
-
-        if (isPreview) {
-            document.querySelector('body').classList.remove('is-preview');
-            mediator.publish('play', helpers.getCurrentId());
-        } else if (isPlaying) {
+        console.log(isPlaying);
+        if (isPlaying) {
+            console.log('pause it');
             mediator.publish('pause');
         } else {
+            console.log('play it');
             mediator.publish('play', helpers.getCurrentId());
         }
     })
