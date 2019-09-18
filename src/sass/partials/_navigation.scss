@@ -17,6 +17,10 @@
         max-height: 19vw;
     }
 
+    .is-subscribing & {
+        max-height: 20vw;
+    }
+
     &.is-hidden {
         @include mq(desktop) {
             transform: translate(0, 100%);

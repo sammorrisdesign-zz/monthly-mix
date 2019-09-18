@@ -32,6 +32,10 @@ const bindings = () => {
         toggleArchive();
     });
 
+    document.querySelector('.js-subscribe').addEventListener('click', () => {
+        toggleSubscribe();
+    })
+
     document.querySelectorAll('.js-track').forEach(el => {
         el.addEventListener('click', e => {
             toggleTracklist();
@@ -73,6 +77,14 @@ const toggleTracklist = () => {
         document.querySelector('body').classList.remove('is-expanded');
     } else {
         document.querySelector('body').classList.add('is-expanded');
+    }
+}
+
+const toggleSubscribe = () => {
+    if (document.querySelector('body').classList.contains('is-subscribing')) {
+        document.querySelector('body').classList.remove('is-subscribing');
+    } else {
+        document.querySelector('body').classList.add('is-subscribing');
     }
 }
 

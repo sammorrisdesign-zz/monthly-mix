@@ -3,6 +3,14 @@
     z-index: 4;
     background-color: $c-black;
     overflow: scroll;
+    max-height: 0;
+    transition: max-height 0.01s linear;
+    transition-delay: 0.2s;
+
+    .is-archiving & {
+        max-height: 20vw;
+        transition-delay: 0s;
+    }
 }
 
 .archive__static {

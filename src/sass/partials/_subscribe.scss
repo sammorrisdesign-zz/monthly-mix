@@ -1,0 +1,56 @@
+.subscribe {
+    position: relative;
+    z-index: 5;
+    background-color: $c-dark-grey;
+    padding: 1vw;
+
+    @include mq(desktop) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.subscribe__copy {
+    font-size: 2vw;
+    color: $c-white;
+    margin: 0;
+
+    @include mq(desktop) {
+        width: 65%;
+    }
+}
+
+.subscribe__form {
+    font-size: 2vw;
+}
+
+.subscribe__form-content {
+    display: flex;
+}
+
+.subscribe__form-input {
+    font-size: 2vw;
+    font-weight: bold;
+    border: 0;
+    padding: 0.5vw 1vw;
+    color: rgba($c-dark-grey, 0.5);
+    outline: none;
+
+    &.is-focused {
+        color: $c-black;
+    }
+}
+
+.subscribe__form-button {
+    -webkit-appearance: none;
+    font-size: 2vw;
+    font-weight: bold;
+    padding: 0.5vw 1vw;
+    border: 0;
+    color: $c-white;
+    background-color: $c-blue;
+
+    &:hover {
+        background-color: $c-dark-blue;
+    }
+}
