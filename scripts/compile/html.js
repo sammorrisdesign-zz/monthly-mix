@@ -57,7 +57,6 @@ module.exports = {
     registerPartials: function() {
         const partials = glob.readdirSync('src/templates/**/*.*');
 
-        
         partials.forEach(function(partial) {
             let name = partial;
             if (partial.includes('partials')) {
