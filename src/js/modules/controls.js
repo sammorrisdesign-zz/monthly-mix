@@ -1,5 +1,12 @@
 import helpers from './player-helpers';
 
+const body = document.querySelector('body');
+const options = {
+    'js-tracklist': 'is-expanded',
+    'js-subscribe': 'is-subscribing',
+    'js-archive': 'is-archiving'
+};
+
 let inactivityTimer;
 
 const bindings = () => {
@@ -24,33 +31,22 @@ const bindings = () => {
         mediator.publish('play', helpers.getCurrentId());
     });
 
-    document.querySelector('.js-tracklist').addEventListener('click', () => {
-        toggleTracklist();
-    });
-
-    document.querySelector('.js-archive').addEventListener('click', () => {
-        toggleArchive();
-    });
-
-    document.querySelector('.js-subscribe').addEventListener('click', () => {
-        toggleSubscribe();
-    })
-
     document.querySelectorAll('.js-track').forEach(el => {
         el.addEventListener('click', e => {
-            toggleTracklist();
+            clearNavigationStates();
             mediator.publish('play', e.currentTarget.getAttribute('data-id'));
         });
     });
 
     document.querySelector('.video').addEventListener('click', e => {
-        if (document.querySelector('body').classList.contains('is-expanded')) {
-            toggleTracklist();
+        if (Object.values(options).some(className => body.classList.contains(className))) {
+            clearNavigationStates();
         }
     })
 
-    document.querySelector('body').addEventListener('mousemove', e => {
-        if (e.target.classList.contains('video') && !document.querySelector('body').classList.contains('is-expanded')) {
+    body.addEventListener('mousemove', e => {
+        if (e.target.classList.contains('video') && !Object.values(options).some(className => body.classList.contains(className))) {
+            console.log('resetting');
             resetInactivityTimer();
         } else {
             clearTimeout(inactivityTimer);
@@ -63,37 +59,38 @@ const bindings = () => {
 }
 
 const resetInactivityTimer = () => {
-    document.querySelector('.controls').classList.remove('is-hidden');
+    document.querySelector('.navigation').classList.remove('is-hidden');
     clearTimeout(inactivityTimer);
     inactivityTimer = setTimeout(hideControls, 5000);
 }
 
 const hideControls = () => {
-    document.querySelector('.controls').classList.add('is-hidden');
+    document.querySelector('.navigation').classList.add('is-hidden');
 }
 
-const toggleTracklist = () => {
-    if (document.querySelector('body').classList.contains('is-expanded')) {
-        document.querySelector('body').classList.remove('is-expanded');
-    } else {
-        document.querySelector('body').classList.add('is-expanded');
-    }
+const clearNavigationStates = () => {
+    body.classList.remove(...Object.values(options));
 }
 
-const toggleSubscribe = () => {
-    if (document.querySelector('body').classList.contains('is-subscribing')) {
-        document.querySelector('body').classList.remove('is-subscribing');
-    } else {
-        document.querySelector('body').classList.add('is-subscribing');
-    }
-}
+const navigationStates = () => {
+    Object.keys(options).forEach(target => {
+        const targetClassName = options[target];
 
-const toggleArchive = () => {
-    if (document.querySelector('body').classList.contains('is-archiving')) {
-        document.querySelector('body').classList.remove('is-archiving');
-    } else {
-        document.querySelector('body').classList.add('is-archiving');
-    }
+        document.querySelector('.' + target).addEventListener('click', () => {
+            if (body.classList.contains(targetClassName)) {
+                body.classList.remove(targetClassName)
+            } else {
+                let timeUntilAdd = 0;
+                if (Object.values(options).some(className => body.classList.contains(className))) {
+                    clearNavigationStates();
+                    timeUntilAdd = 300;
+                }
+                setTimeout(() => {
+                    body.classList.add(targetClassName);
+                }, timeUntilAdd)
+            }
+        })
+    });
 }
 
 const subscriptions = () => {
@@ -115,5 +112,6 @@ export default {
     init: () => {
         bindings();
         subscriptions();
+        navigationStates();
     }
 }
