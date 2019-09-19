@@ -30,5 +30,12 @@ $months: (
         &.archive__playlist-filter {
             background-color: $color;
         }
+
+        .controls__skip-next svg,
+        .controls__skip-prev svg,
+        .controls__track-image svg,
+        .controls__tracklist-playing svg {
+            fill: $color;
+        }
     }
 }

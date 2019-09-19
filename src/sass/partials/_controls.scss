@@ -23,7 +23,14 @@
     flex-grow: 0;
     text-align: center;
     color: $c-white;
+    display: flex;
     opacity: 0;
+
+    svg {
+        display: block;
+        width: 100%;
+        fill: $c-white;
+    }
 }
 
 .controls__play-image {
@@ -165,6 +172,11 @@
     margin: auto;
     width: 3%;
     display: none;
+    height: fit-content;
+
+    svg {
+        display: block;
+    }
 }
 
 .controls__tracklist-number {
@@ -211,20 +223,20 @@
     height: 50%;
     width: 100%;
     box-sizing: border-box;
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 30%;
+    }
 }
 
 .controls__skip-next {
     top: 50%;
-}
-
-.controls__skip-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 30%;
 }
 
 .controls__subscribe,

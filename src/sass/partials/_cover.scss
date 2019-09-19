@@ -102,6 +102,12 @@
 
 .cover__play-icon {
     padding: 1.2vw;
+
+    svg {
+        width: 2vw;
+        display: block;
+        fill: $c-white;
+    }
 }
 
 .cover__play-image {
