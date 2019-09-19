@@ -8,12 +8,7 @@
     height: 0;
     padding-top: 7%;
     width: 7%;
-    background-color: $c-blue;
     transition: background 0.2s linear;
-
-    &:hover {
-        background-color: $c-dark-blue;
-    }
 }
 
 .controls__play-icon {
@@ -71,7 +66,6 @@
     left: 0;
     top: 0;
     height: 100%;
-    background-color: $c-blue;
 }
 
 .controls__track-image {
@@ -91,10 +85,6 @@
     margin: 0 0 0 1.5vw;
     color: $c-black;
     font-size: 2vw;
-}
-
-.controls__track-artist {
-    color: $c-blue;
 }
 
 .controls__select {
@@ -187,7 +177,6 @@
 .controls__tracklist-artist {
     margin: 0 2% 0 0;
     width: 45%;
-    color: $c-blue;
     font-size: 2vw;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -221,8 +210,6 @@
     left: 0;
     height: 50%;
     width: 100%;
-    text-align: center;
-    color: $c-blue;
     box-sizing: border-box;
 }
 
