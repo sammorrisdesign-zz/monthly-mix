@@ -31,6 +31,11 @@ $months: (
             background-color: $color;
         }
 
+        .cover__play:hover .cover__play-icon,
+        .controls__play:hover {
+            background-color: hover($color);
+        }
+
         .controls__skip-next svg,
         .controls__skip-prev svg,
         .controls__track-image svg,

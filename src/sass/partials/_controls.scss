@@ -9,6 +9,7 @@
     padding-top: 7%;
     width: 7%;
     transition: background 0.2s linear;
+    cursor: pointer;
 }
 
 .controls__play-icon {
@@ -57,6 +58,11 @@
     justify-content: center;
     flex-direction: column;
     background-color: $c-white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: hover($c-white);
+    }
 }
 
 .controls__progress {
@@ -210,9 +216,9 @@
     height: 0;
     position: relative;
     padding-top: 7%;
-    background-color: $c-light-grey;
     display: flex;
     flex-direction: column;
+    background-color: $c-light-grey;
 }
 
 .controls__skip-prev,
@@ -223,6 +229,8 @@
     height: 50%;
     width: 100%;
     box-sizing: border-box;
+    background-color: $c-light-grey;
+    cursor: pointer;
 
     svg {
         position: absolute;
@@ -232,6 +240,10 @@
         bottom: 0;
         margin: auto;
         width: 30%;
+    }
+
+    &:hover {
+        background-color: hover($c-light-grey);
     }
 }
 
@@ -245,10 +257,19 @@
     flex-direction: column;
     justify-content: center;
     background-color: $c-dark-grey;
+    cursor: pointer;
+
+    &:hover {
+        background-color: hover($c-dark-grey);
+    }
 }
 
 .controls__archive {
     background-color: $c-black;
+
+    &:hover {
+        background-color: hover($c-black);
+    }
 }
 
 .controls__subscribe-label,

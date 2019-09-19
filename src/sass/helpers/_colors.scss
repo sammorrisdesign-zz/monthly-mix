@@ -15,3 +15,8 @@ $c-red: #d8192b;
 $c-pink: #e6256c;
 $c-light-pink: #e4a4bb;
 $c-purple: #8b14a1;
+
+@function hover($color) {
+    $hoverColor: darken($color, 5%);
+    @return $hoverColor;
+}
