@@ -45,12 +45,9 @@ const subscriptions = () => {
     })
 
     mediator.subscribe('toggle', () => {
-        console.log(isPlaying);
         if (isPlaying) {
-            console.log('pause it');
             mediator.publish('pause');
         } else {
-            console.log('play it');
             mediator.publish('play', helpers.getCurrentId());
         }
     })

@@ -46,7 +46,6 @@ const bindings = () => {
 
     body.addEventListener('mousemove', e => {
         if (e.target.classList.contains('video') && !Object.values(options).some(className => body.classList.contains(className))) {
-            console.log('resetting');
             resetInactivityTimer();
         } else {
             clearTimeout(inactivityTimer);
