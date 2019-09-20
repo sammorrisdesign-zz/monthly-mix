@@ -27,13 +27,13 @@
         </select>
         <ul class='controls__tracklist'>
             {{#each tracks}}
-                <li class='controls__tracklist-track js-track' data-id='{{ id }}'>
+                <li class='controls__tracklist-track js-track' data-id='{{ id }}' itemprop='track' itemscope itemtype='http://schema.org/MusicRecording'>
                     <div class='controls__tracklist-playing'>
                         {{> icons/play }}
                     </div>
                     <h2 class='controls__tracklist-number'>{{ inc @index }}</h2>
-                    <h2 class='controls__tracklist-artist'>{{ artist }}</h2>
-                    <h2 class='controls__tracklist-title'>{{ title }}</h2>
+                    <h2 class='controls__tracklist-artist' itemprop='artist'>{{ artist }}</h2>
+                    <h2 class='controls__tracklist-title' itemprop='name'>{{ title }}</h2>
                 </li>
             {{/each}}
         </ul>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html itemscope itemtype='http://schema.org/MusicPlaylist'>
     <head>
         <title>The best new music from {{ title }} – Monthly Mix</title>
         <meta charset='utf-8' />
         <meta name='viewport' content='width=device-width initial-scale=1' />
         <meta http-equiv='X-UA_Compatible' content='IE=edge' />
-        <meta name='description' content='A playlist of the best music from {{ title }}. Featuring new tracks by {{#each tracks}}{{ artist }}, {{/each}}and more' />
+        <meta name='description' content='A playlist of the best music of {{ title }}. Featuring new tracks by {{#each tracks}}{{ artist }}, {{/each}}and more' />
         <meta name='keywords' content='new music, music, indie, hip-hop, altrap, alternative rap, playlist, interactive, music videos, vevo, newsletter'>
         <!-- ToDo: Set urls for non-home pages -->
         <link rel='canonical' href='http://www.monthly.mx/index.html' />
@@ -17,6 +17,8 @@
         <meta name='twitter:card' content='summary'>
         <meta name='twitter:site' content='@sammorrisdesign'>
         <meta name='robots' content='index, follow'>
+        <meta itemprop='name' content='Monthly Mix: The Best Music of {{ title }}'/>
+        <meta itemprop='numTracks' content='{{ tracks.length }}'/>
 
         <link rel='stylesheet' href='https://use.typekit.net/tiu5deg.css'>
         <link rel='stylesheet' href='/assets/css/main.css'>
