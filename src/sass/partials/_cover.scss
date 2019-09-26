@@ -22,7 +22,7 @@
     box-sizing: border-box;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
     opacity: 0;
     transition: opacity 0.3s linear;
