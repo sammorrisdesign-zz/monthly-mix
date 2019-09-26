@@ -13,7 +13,7 @@ let elements,
     isFirst = true,
     isRunning = true;
 
-const isDebug = false;
+const isDebug = true;
 
 const randomForce = reducedMovement => {
     if (reducedMovement) {
@@ -46,12 +46,13 @@ const renderCover = () => {
 
     // add walls to bodies
     const borderWidth = window.innerWidth / 50;
+    const logoWidth = window.innerWidth > 620 ? window.innerWidth / 8 : window.innerWidth / 4;
     bodies.push(
         Bodies.rectangle(window.innerWidth / 2, 0, window.innerWidth, borderWidth, { isStatic: true }),
         Bodies.rectangle(0, window.innerHeight / 2, borderWidth, window.innerHeight, { isStatic: true }),
         Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, borderWidth, { isStatic: true }),
         Bodies.rectangle(window.innerWidth, window.innerHeight / 2, borderWidth, window.innerHeight, { isStatic: true }),
-        Bodies.rectangle(window.innerWidth / 14, 0, window.innerWidth / 5, window.innerWidth / 4, { isStatic: true })
+        Bodies.rectangle(logoWidth / 2, logoWidth / 2, logoWidth, logoWidth, { isStatic: true })
     );
 
     // get all animatable elements and add them to the world

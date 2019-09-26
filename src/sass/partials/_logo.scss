@@ -1,26 +1,18 @@
 .logo {
     position: fixed;
     z-index: 5;
-    top: 4vw;
-    left: 4vw;
+    top: 2vw;
+    left: 3vw;
     text-transform: uppercase;
 
     @include mq(tablet) {
-        top: 2vw;
+        top: 1vw;
         left: 2vw;
     }
 }
 
 .logo__link {
     color: $c-white;
-}
-
-.logo__image {
-    width: 20vw;
-
-    @include mq(tablet) {
-        width: 10vw;
-    }
 }
 
 .logo__monthly {
