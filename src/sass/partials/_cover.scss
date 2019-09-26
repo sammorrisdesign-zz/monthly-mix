@@ -113,22 +113,32 @@
     display: block;
 }
 
+.cover__play-labels {
+    position: relative;
+    width: 17vw;
+}
+
 .cover__play-label {
-    margin: 0;
-    padding: 1vw 2vw;
+    position: absolute;
+    top: 48%;
+    left: 48%;
+    transform: translate(-50%, -50%);
     display: inline-block;
+    line-height: 1;
+    margin: 0;
+    white-space: nowrap;
 
     &--paused {
-        display: none;
+        opacity: 0;
     }
 
     .is-paused & {
         &--paused {
-            display: inline-block;
+            opacity: 1;
         }
 
         &--preview {
-            display: none;
+            opacity: 0;
         }
     }
 }
