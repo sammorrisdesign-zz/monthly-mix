@@ -16,7 +16,7 @@
 
 .loading__text {
     position: absolute;
-    top: 46%;
+    top: calc(50% - 6vw);
     width: 100%;
     text-align: center;
     text-transform: uppercase;
@@ -26,6 +26,7 @@
         display: inline-block;
         letter-spacing: 2vw;
         font-size: 8vw;
+        line-height: 1;
     }
 
     @for $i from 0 through 9 {

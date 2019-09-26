@@ -105,6 +105,10 @@ const subscriptions = () => {
         }
         document.querySelector('.controls__tracklist-track[data-id="' + id  + '"]').classList.add('is-playing');
     });
+
+    mediator.subscribe('pause', () => {
+        clearNavigationStates();
+    });
 }
 
 export default {
