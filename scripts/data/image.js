@@ -26,14 +26,6 @@ module.exports = {
             console.log('generating image for', playlist.title);
             ctx.drawImage(image, 0, 0, 1280, 720);
 
-            // convert image to duotone
-            ctx.globalCompositeOperation = 'lighten';
-            ctx.fillStyle = 'rgb(255, 255, 255)'
-            ctx.beginPath();
-            ctx.rect(0, 0, 1280, 720);
-            ctx.closePath();
-            ctx.fill();
-
             // convert image to grayscale
             const canvasData = ctx.getImageData(0, 0, 1280, 720);
             const data = canvasData.data;
