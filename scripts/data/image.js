@@ -29,24 +29,35 @@ module.exports = {
             // convert image to grayscale
             const canvasData = ctx.getImageData(0, 0, 1280, 720);
             const data = canvasData.data;
-            const arrayLength = 1280 * 720 * 4;
+            let gradient = [];
+            const maxValue = 255;
+            const from = this.getRGBColor('#000000');
+            const to = this.getRGBColor(colours[playlist.month.toLowerCase()]);
 
-            for (var i = arrayLength-1; i> 0; i-=4) {
-                let gray = 0.3 * data[i-3] + 0.59 * data[i-2] + 0.11 * data[i-1];
-                data[i-3] = gray;
-                data[i-2] = gray;
-                data[i-1] = gray;
+            console.log(data[1]);
+            for (var i = 0; i <= maxValue; i++) {
+                const intensityB = i;
+                const intensityA = maxValue - intensityB;
+                gradient[i] = {
+                    r: (intensityA*from.r + intensityB*to.r) / maxValue,
+                    g: (intensityA*from.g + intensityB*to.g) / maxValue,
+                    b: (intensityA*from.b + intensityB*to.b) / maxValue
+                }
             }
 
-            ctx.putImageData(canvasData, 0, 0);
+            for (var i = 0; i < data.length; i+=4) {
+                const redValue = data[i];
+                const greenValue = data[i+1];
+                const blueValue = data[i+2];
 
-            // convert image to duotone
-            ctx.globalCompositeOperation = 'multiply';
-            ctx.fillStyle = colours[playlist.month.toLowerCase()];
-            ctx.beginPath();
-            ctx.rect(0, 0, 1280, 720);
-            ctx.closePath();
-            ctx.fill();
+                data[i] = gradient[redValue].r;
+                data[i+1] = gradient[greenValue].g;
+                data[i+2] = gradient[blueValue].b;
+                data[i+3] = 255;
+            }
+
+            console.log(data[1]);
+            ctx.putImageData(canvasData, 0, 0);
 
             // write image
             const buffer = canvi.toBuffer('image/jpeg', { quality: 0.8 });
@@ -56,5 +67,17 @@ module.exports = {
         });
 
         require('deasync').loopWhile(function() { return isGeneratingImage; });
+    },
+
+    getRGBColor: function(hex) {
+        let colorValue;
+        hex = hex.substr(1);
+        colorValue = parseInt(hex, 16);
+
+        return {
+            r: colorValue >> 16,
+            g: (colorValue >> 8) & 255,
+            b: colorValue & 255
+        }
     }
 }
