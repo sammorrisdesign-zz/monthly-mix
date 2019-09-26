@@ -18,12 +18,12 @@ module.exports = {
             // PlaylistItems has an Etag, maybe this is what we need
             if (!oldData[playlist] || data[playlist].etag !== oldData[playlist].etag) {
                 console.log('Fetching new data for', playlist);
+                image.generateFor(data[playlist]);
                 data[playlist].tracks = this.fetchTracksFromPlaylist(data[playlist]);
             } else {
                 data[playlist].tracks = oldData[playlist].tracks;
                 fetched++;
             }
-            image.generateFor(data[playlist]);
         }.bind(this));
 
         require('deasync').loopWhile(function() {

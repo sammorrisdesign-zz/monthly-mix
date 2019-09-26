@@ -26,16 +26,16 @@ module.exports = {
             console.log('generating image for', playlist.title);
             ctx.drawImage(image, 0, 0, 1280, 720);
 
-            // convert image to grayscale
+            // create duotone gradient
             const canvasData = ctx.getImageData(0, 0, 1280, 720);
             const data = canvasData.data;
             let gradient = [];
-            const maxValue = 255;
+            const minValue = 0;
+            const maxValue = 200;
             const from = this.getRGBColor('#000000');
             const to = this.getRGBColor(colours[playlist.month.toLowerCase()]);
 
-            console.log(data[1]);
-            for (var i = 0; i <= maxValue; i++) {
+            for (var i = minValue; i <= maxValue; i++) {
                 const intensityB = i;
                 const intensityA = maxValue - intensityB;
                 gradient[i] = {
@@ -45,18 +45,29 @@ module.exports = {
                 }
             }
 
+            const offset = 256 - maxValue;
+
+            for (var i = 0; i <= offset; i++) {
+                if (offset / 4 > i) {
+                    gradient.unshift(gradient[0]);
+                } else {
+                    gradient.push(gradient[gradient.length - 1]);
+                }
+            }
+
+            // convert pixels to greyscale then map on to graident
             for (var i = 0; i < data.length; i+=4) {
                 const redValue = data[i];
                 const greenValue = data[i+1];
                 const blueValue = data[i+2];
+                let grey = Math.floor(0.3 * redValue + 0.59 * greenValue + 0.11 * blueValue); 
 
-                data[i] = gradient[redValue].r;
-                data[i+1] = gradient[greenValue].g;
-                data[i+2] = gradient[blueValue].b;
+                data[i] = gradient[grey].r;
+                data[i+1] = gradient[grey].g;
+                data[i+2] = gradient[grey].b;
                 data[i+3] = 255;
             }
 
-            console.log(data[1]);
             ctx.putImageData(canvasData, 0, 0);
 
             // write image
