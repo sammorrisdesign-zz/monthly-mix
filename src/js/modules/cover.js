@@ -8,6 +8,7 @@ const Engine = Matter.Engine,
 
 let elements,
     engine,
+    render,
     bodies = [],
     isFirst = true,
     isRunning = true;
@@ -30,7 +31,7 @@ const renderCover = () => {
 
     if (isDebug) {
         const Render = Matter.Render;
-        const render = Render.create({
+        render = Render.create({
             element: document.querySelector('.cover'),
             engine: engine,
             options: {
@@ -116,6 +117,13 @@ const onResize = () => {
     resizeTimer = setTimeout(() => {
         document.querySelector('body').classList.add('is-ready');
         bodies = [];
+
+        if (isDebug) {
+            render.canvas.remove();
+            render.canvas = null;
+            render.context = null;
+        }
+
         renderCover();
         Engine.run(engine);
         window.requestAnimationFrame(update);
