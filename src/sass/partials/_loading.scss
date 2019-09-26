@@ -1,0 +1,50 @@
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 19;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.4s linear;
+
+    .is-ready & {
+        opacity: 0;
+    }
+}
+
+.loading__text {
+    position: absolute;
+    top: 46%;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: $c-white;
+
+    .letter {
+        display: inline-block;
+        letter-spacing: 2vw;
+        font-size: 8vw;
+    }
+
+    @for $i from 0 through 9 {
+        .letter--#{$i} {
+            transform: rotate(-20deg + ($i * 4));
+        }
+
+        .letter:nth-of-type(#{$i}) {
+            animation: fade 3s linear infinite;
+            animation-delay: 1s + ($i / 10);
+        }
+    }
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 0;
+    } 
+    20%, 80% {
+        opacity: 1;
+    }
+}
