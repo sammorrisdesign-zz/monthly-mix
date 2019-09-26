@@ -7,22 +7,34 @@
     z-index: 3;
     transform: translate(0, 0);
     transition: transform 0.3s linear, max-height 0.15s linear;
-    max-height: 7vw;
+    max-height: 24vw;
+
+    @include mq(tablet) {
+        max-height: 7vw;
+    }
 
     .is-cover & {
         transform: translate(0, 102%);
     }
 
     .is-archiving & {
-        max-height: 19vw;
+        max-height: 51vw;
+
+        @include mq(tablet) {
+            max-height: 19vw;
+        }
     }
 
     .is-subscribing & {
-        max-height: 20vw;
+        max-height: 51vw;
+
+        @include mq(tablet) {
+            max-height: 20vw;
+        }
     }
 
     &.is-hidden {
-        @include mq(desktop) {
+        @include mq(tablet) {
             transform: translate(0, 100%);
         }
     }

@@ -13,7 +13,7 @@ let elements,
     isFirst = true,
     isRunning = true;
 
-const isDebug = true;
+const isDebug = false;
 
 const randomForce = reducedMovement => {
     if (reducedMovement) {

@@ -1,15 +1,21 @@
 .controls {
     display: flex;
+    flex-wrap: wrap;
     background-color: $c-black;
 }
 
 .controls__play {
     position: relative;
     height: 0;
-    padding-top: 7%;
-    width: 7%;
+    padding-top: 14%;
+    width: 14%;
     transition: background 0.2s linear;
     cursor: pointer;
+
+    @include mq(tablet) {
+        padding-top: 7%;
+        width: 7%;
+    }
 }
 
 .controls__play-icon {
@@ -47,7 +53,12 @@
 
 .controls__track {
     position: relative;
-    flex-grow: 2;
+    width: 79vw;
+
+    @include mq(tablet) {
+        width: auto;
+        flex-grow: 2;
+    }
 }
 
 .controls__track-display {
@@ -84,9 +95,14 @@
 .controls__track-image {
     position: absolute;
     transform: rotate(90deg);
-    right: 2vw;
-    width: 1vw;
+    right: 3vw;
+    width: 2vw;
     transition: transform 0.15s linear;
+
+    @include mq(tablet) {
+        width: 1vw;
+        right: 2vw;
+    }
 
     .is-expanded & {
         transform: rotate(-90deg);
@@ -128,6 +144,11 @@
     -webkit-overflow-scrolling: touch;
     transition: 0.15s linear transform;
     transform: translateY(101%);
+    display: none;
+
+    @include mq(tablet) {
+        display: block;
+    }
 
     .is-expanded & {
         opacity: 1;
@@ -207,13 +228,18 @@
 }
 
 .controls__skip {
-    width: 3.5%;
+    width: 7%;
     height: 0;
     position: relative;
-    padding-top: 7%;
+    padding-top: 14%;
     display: flex;
     flex-direction: column;
     background-color: $c-light-grey;
+
+    @include mq(tablet) {
+        width: 3.5%;
+        padding-top: 7%;
+    }
 }
 
 .controls__skip-prev,
@@ -248,6 +274,13 @@
 
 .controls__subscribe,
 .controls__archive {
+    @include mq($until: tablet) {
+        width: 50%;
+        padding: 2vw;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
     display: flex;
     flex-direction: column;
     justify-content: center;

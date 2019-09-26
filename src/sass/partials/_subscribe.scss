@@ -2,11 +2,12 @@
     position: relative;
     z-index: 5;
     background-color: $c-dark-grey;
-    padding: 1vw;
+    padding: 2vw;
 
     @include mq(desktop) {
         display: flex;
         align-items: center;
+        padding: 1vw;
     }
 }
 
@@ -21,14 +22,23 @@
 
 .subscribe__form-content {
     display: flex;
+
+    @include mq($until: tablet) {
+        margin: 2vw 0;
+    }
 }
 
 .subscribe__form-input {
     font-weight: bold;
+    font-family: 'adelle-sans';
     border: 0;
-    padding: 0.5vw 1vw;
+    padding: 1vw 2vw;
     color: rgba($c-dark-grey, 0.5);
     outline: none;
+
+    @include mq(tablet) {
+        padding: 0.5vw 1vw;
+    }
 
     &.is-focused {
         color: $c-black;
@@ -38,7 +48,12 @@
 .subscribe__form-button {
     -webkit-appearance: none;
     font-weight: bold;
-    padding: 0.5vw 1vw;
+    font-family: 'adelle-sans';
+    padding: 1vw 2vw;
     border: 0;
     color: $c-white;
+
+    @include mq(tablet) {
+        padding: 0.5vw 1vw;
+    }
 }
