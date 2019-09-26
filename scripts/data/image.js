@@ -72,6 +72,9 @@ module.exports = {
 
             // write image
             const buffer = canvi.toBuffer('image/jpeg', { quality: 0.8 });
+            if (!fs.existsSync('./.build/assets/images/')) {
+                fs.mkdirsSync('./.build/assets/images/');
+            }
             fs.writeFileSync('./.build/assets/images/' + playlist.title.toLowerCase().replace(/ /g, '-') + '.jpeg', buffer);
 
             isGeneratingImage = false;
