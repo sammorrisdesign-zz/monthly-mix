@@ -3,6 +3,7 @@
     z-index: 5;
     top: 4vw;
     left: 4vw;
+    text-transform: uppercase;
 
     @include mq(tablet) {
         top: 2vw;
@@ -19,5 +20,70 @@
 
     @include mq(tablet) {
         width: 10vw;
+    }
+}
+
+.logo__monthly {
+    transform: rotate(-10deg);
+    display: inline-block;
+}
+
+.logo__letter {
+    font-size: 9.5vw;
+    line-height: 1;
+    animation: 2s cubic-bezier(0.75, 0.75, 0.35, 1.6) infinite;
+    animation-play-state: paused;
+    display: inline-block;
+
+    .is-playing & {
+        animation-play-state: running;
+    }
+
+    @include mq(tablet) {
+        font-size: 4.75vw;
+    }
+
+    &--m {
+        animation-name: letter-m;
+        animation-delay: -1.4s;
+        margin-left: 0.25vw;
+    }
+
+    &--i {
+        animation-name: letter-i;
+        animation-delay: -1.2s;
+    }
+
+    &--x {
+        animation-name: letter-x;
+        animation-delay: -1s;
+    }
+}
+
+@keyframes letter-m {
+    0%, 40%, 100% {
+        transform: rotate(-5deg) translateY(10%);
+    }
+    20% {
+        transform: rotate(-5deg) translateY(0%);
+    }
+}
+
+
+@keyframes letter-i {
+    0%, 40%, 100% {
+        transform: rotate(3deg) translateY(10%);
+    }
+    20% {
+        transform: rotate(3deg) translateY(0%);
+    }
+}
+
+@keyframes letter-x {
+    0%, 40%, 100% {
+        transform: rotate(7deg) translateY(10%);
+    }
+    20% {
+        transform: rotate(7deg) translateY(0%);
     }
 }
