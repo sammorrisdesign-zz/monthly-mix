@@ -69,7 +69,7 @@ const renderCover = () => {
         );
 
         const reduceMovement = el.classList.contains('cover__featuring') || el.classList.contains('cover__intro');
-
+        Body.rotate(body, Math.random() * 0.5 - 0.25)
         Body.setAngularVelocity(body, randomForce(reduceMovement));
 
         el.id = body.id;
