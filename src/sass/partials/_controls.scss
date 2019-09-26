@@ -111,8 +111,15 @@
 
 .controls__track-artist,
 .controls__track-title {
-    margin: 0 0 0 1.5vw;
+    margin: 0 8vw 0 1.5vw;
     color: $c-black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include mq(tablet) {
+        margin-right: 5vw;
+    }
 }
 
 .controls__select {
