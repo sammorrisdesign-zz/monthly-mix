@@ -2,7 +2,7 @@ const keys = require('../../config.json');
 const youtube = require('youtube-api');
 
 let pageToken = null;
-let playlists = new Object();
+let playlists = new Array();
 let isFetching = true;
 
 module.exports = {
@@ -16,7 +16,18 @@ module.exports = {
 
         require('deasync').loopWhile(function() { return isFetching; });
 
-        return playlists;
+
+        playlists.sort((a,b) => {
+            return new Date(b.title) - new Date(a.title);
+        })
+
+        var playlistsObject = new Object();
+
+        playlists.forEach(playlist => {
+            playlistsObject[playlist.title] = playlist;
+        });
+
+        return playlistsObject;
     },
 
     fetchPlaylists: function() {
@@ -31,7 +42,7 @@ module.exports = {
             }
 
             data.items.forEach(function(playlist) {
-                playlists[playlist.snippet.title] = {
+                playlists.push({
                     id: playlist.id,
                     title: playlist.snippet.title,
                     month: playlist.snippet.title.split(' ')[0],
@@ -39,7 +50,7 @@ module.exports = {
                     description: playlist.snippet.description,
                     thumbnail: playlist.snippet.thumbnails.medium.url,
                     etag: playlist.etag
-                }
+                });
             }.bind(this));
 
             if (data.nextPageToken) {
