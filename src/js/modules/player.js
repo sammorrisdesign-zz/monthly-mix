@@ -24,6 +24,7 @@ const bindings = () => {
 const subscriptions = () => {
     mediator.subscribe('ready', () => {
         document.querySelector('body').classList.add('is-ready');
+        document.querySelector('body').classList.add('has-loaded');
     });
 
     mediator.subscribe('play', id => {

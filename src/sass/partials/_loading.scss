@@ -8,7 +8,7 @@
     pointer-events: none;
     opacity: 1;
 
-    .is-ready & {
+    .has-loaded & {
         opacity: 0;
     }
 }
