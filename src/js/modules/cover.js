@@ -12,7 +12,7 @@ let elements,
     isFirst = true,
     isRunning = true;
 
-const isDebug = false;
+const isDebug = true;
 
 const randomForce = reducedMovement => {
     if (reducedMovement) {
@@ -44,11 +44,12 @@ const renderCover = () => {
     }
 
     // add walls to bodies
+    const borderWidth = window.innerWidth / 50;
     bodies.push(
-        Bodies.rectangle(window.innerWidth / 2, 0, window.innerWidth, 100, { isStatic: true }),
-        Bodies.rectangle(0, window.innerHeight / 2, 100, window.innerHeight, { isStatic: true }),
-        Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, 100, { isStatic: true }),
-        Bodies.rectangle(window.innerWidth, window.innerHeight / 2, 100, window.innerHeight, { isStatic: true }),
+        Bodies.rectangle(window.innerWidth / 2, 0, window.innerWidth, borderWidth, { isStatic: true }),
+        Bodies.rectangle(0, window.innerHeight / 2, borderWidth, window.innerHeight, { isStatic: true }),
+        Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, borderWidth, { isStatic: true }),
+        Bodies.rectangle(window.innerWidth, window.innerHeight / 2, borderWidth, window.innerHeight, { isStatic: true }),
         Bodies.rectangle(window.innerWidth / 14, 0, window.innerWidth / 5, window.innerWidth / 4, { isStatic: true })
     );
 

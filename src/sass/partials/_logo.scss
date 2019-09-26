@@ -1,8 +1,13 @@
 .logo {
     position: fixed;
     z-index: 5;
-    top: 20px;
-    left: 20px;
+    top: 4vw;
+    left: 4vw;
+
+    @include mq(tablet) {
+        top: 2vw;
+        left: 2vw;
+    }
 }
 
 .logo__link {
@@ -10,5 +15,9 @@
 }
 
 .logo__image {
-    width: 10vw;
+    width: 20vw;
+
+    @include mq(tablet) {
+        width: 10vw;
+    }
 }

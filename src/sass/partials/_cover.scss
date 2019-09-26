@@ -30,7 +30,7 @@
 }
 
 .cover__content {
-    padding: 50px;
+    padding: 2vw;
     box-sizing: border-box;
     height: 100%;
     display: flex;
@@ -90,7 +90,7 @@
     float: left;
     display: flex;
     width: fit-content;
-    margin: 4px;
+    margin: 0.5vw;
     cursor: pointer;
 
     &:hover {
@@ -118,7 +118,7 @@
 .cover__play-label {
     margin: 0;
     font-size: 2vw;
-    padding: 8px 16px;
+    padding: 1vw 2vw;
     display: inline-block;
 
     &--paused {
