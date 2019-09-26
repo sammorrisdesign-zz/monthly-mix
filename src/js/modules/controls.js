@@ -1,4 +1,5 @@
 import helpers from './player-helpers';
+import analytics from './analytics';
 
 const body = document.querySelector('body');
 const options = {
@@ -12,19 +13,23 @@ let inactivityTimer;
 const bindings = () => {
     document.querySelector('.js-cover').addEventListener('click', () => {
         document.querySelector('body').classList.remove('is-cover');
+        analytics.send('cover');
         mediator.publish('play', helpers.getCurrentId());
     });
 
     document.querySelector('.js-play').addEventListener('click', () => {
         mediator.publish('toggle');
+        analytics.send('play button');
     });
 
     document.querySelector('.js-prev').addEventListener('click', () => {
         mediator.publish('play', helpers.getPreviousId());
+        analytics.send('prev');
     })
 
     document.querySelector('.js-next').addEventListener('click', () => {
         mediator.publish('play', helpers.getNextId());
+        analytics.send('next');
     });
 
     document.querySelector('.js-select').addEventListener('change', () => {
@@ -79,6 +84,8 @@ const navigationStates = () => {
             if (body.classList.contains(targetClassName)) {
                 body.classList.remove(targetClassName)
             } else {
+                analytics.send(target.replace('js-', ''));
+
                 let timeUntilAdd = 0;
                 if (Object.values(options).some(className => body.classList.contains(className))) {
                     clearNavigationStates();

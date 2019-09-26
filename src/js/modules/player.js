@@ -1,4 +1,5 @@
 import helpers from './player-helpers';
+import analytics from './analytics';
 
 let isPlaying = false,
     defaultTitle = document.title;
@@ -16,6 +17,7 @@ const bindings = () => {
     body.addEventListener('keypress', e => {
         if (e.keyCode === 32) {
             e.preventDefault();
+            analytics.send('space play');
             mediator.publish('toggle');
         }
     });
