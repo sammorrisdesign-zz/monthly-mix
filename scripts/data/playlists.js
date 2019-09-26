@@ -16,7 +16,6 @@ module.exports = {
 
         require('deasync').loopWhile(function() { return isFetching; });
 
-
         playlists.sort((a,b) => {
             return new Date(b.title) - new Date(a.title);
         })
@@ -49,6 +48,7 @@ module.exports = {
                     year: playlist.snippet.title.split(' ')[1],
                     description: playlist.snippet.description,
                     thumbnail: playlist.snippet.thumbnails.medium.url,
+                    cover: playlist.snippet.thumbnails.maxres ? playlist.snippet.thumbnails.maxres.url : playlist.snippet.thumbnails.standard.url,
                     etag: playlist.etag
                 });
             }.bind(this));
