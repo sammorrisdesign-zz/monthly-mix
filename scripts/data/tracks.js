@@ -1,6 +1,7 @@
 const keys = require('../../config.json');
 const oldData = require('../../data.json');
 const meta = require('./meta.js');
+const image = require('./image.js');
 const youtube = require('youtube-api');
 
 let fetched = 0;
@@ -22,6 +23,7 @@ module.exports = {
                 data[playlist].tracks = oldData[playlist].tracks;
                 fetched++;
             }
+            image.generateFor(data[playlist]);
         }.bind(this));
 
         require('deasync').loopWhile(function() {
