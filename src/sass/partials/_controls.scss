@@ -97,7 +97,6 @@
 .controls__track-title {
     margin: 0 0 0 1.5vw;
     color: $c-black;
-    font-size: 2vw;
 }
 
 .controls__select {
@@ -108,7 +107,6 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    font-size: 2vw;
 
     @include mq(desktop) {
         display: none;
@@ -189,13 +187,11 @@
     margin: 0;
     width: 5%;
     color: $c-black;
-    font-size: 2vw;
 }
 
 .controls__tracklist-artist {
     margin: 0 2% 0 0;
     width: 45%;
-    font-size: 2vw;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -205,7 +201,6 @@
     margin: 0;
     width: 48%;
     color: $c-black;
-    font-size: 2vw;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -274,7 +269,6 @@
 
 .controls__subscribe-label,
 .controls__archive-label {
-    font-size: 2vw;
     color: $c-white;
     margin: 0 2vw;
 }

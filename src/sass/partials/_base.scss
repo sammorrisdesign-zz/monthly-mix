@@ -8,6 +8,21 @@ body {
     overflow: hidden;
 }
 
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+input,
+select {
+    font-size: 4vw;
+
+    @include mq(tablet) {
+        font-size: 2vw;
+    }
+}
+
 a {
     text-decoration: none;
 }

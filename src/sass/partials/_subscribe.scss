@@ -11,7 +11,6 @@
 }
 
 .subscribe__copy {
-    font-size: 2vw;
     color: $c-white;
     margin: 0;
 
@@ -20,16 +19,11 @@
     }
 }
 
-.subscribe__form {
-    font-size: 2vw;
-}
-
 .subscribe__form-content {
     display: flex;
 }
 
 .subscribe__form-input {
-    font-size: 2vw;
     font-weight: bold;
     border: 0;
     padding: 0.5vw 1vw;
@@ -43,7 +37,6 @@
 
 .subscribe__form-button {
     -webkit-appearance: none;
-    font-size: 2vw;
     font-weight: bold;
     padding: 0.5vw 1vw;
     border: 0;
