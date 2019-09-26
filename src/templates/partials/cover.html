@@ -1,34 +1,32 @@
 <div class='cover__bg'></div>
 <div class='cover cover--{{{ count month }}}'>
-    <div class='cover__container'>
-        <div class='cover__content'>
-            <div class='cover__row'>
-                <h2 class='cover__intro is-movable'>The best music from the month of</h2>
-            </div>
-            <div class='cover__row'>
-                <h1 class='cover__title'>
-                    {{{ charactersIn month }}}
-                </h1>
-            </div>
-            <div class='cover__row cover__row--3'>
-                <div class='cover__play is-movable js-cover'>
-                    <div class='cover__play-icon'>
-                        {{> icons/play }}
-                    </div>
-                    <h3 class='cover__play-label cover__play-label--preview'>Start playlist</h3>
-                    <h3 class='cover__play-label cover__play-label--paused'>Resume playlist</h3>
+    <div class='cover__content'>
+        <div class='cover__row'>
+            <h2 class='cover__intro is-movable'>The best music from the month of</h2>
+        </div>
+        <div class='cover__row'>
+            <h1 class='cover__title'>
+                {{{ charactersIn month }}}
+            </h1>
+        </div>
+        <div class='cover__row cover__row--3'>
+            <div class='cover__play is-movable js-cover'>
+                <div class='cover__play-icon'>
+                    {{> icons/play }}
                 </div>
-                <h1 class='cover__title'>
-                    {{{ charactersIn year }}}
-                </h1>
+                <h3 class='cover__play-label cover__play-label--preview'>Start playlist</h3>
+                <h3 class='cover__play-label cover__play-label--paused'>Resume playlist</h3>
             </div>
-            <div class='cover__row cover__row--4'>
-                <h3 class='cover__featuring is-movable'>Featuring new music by</h3>
-                {{#each featured}}
-                    <h3 class='cover__featuring cover__featuring--track js-cover-track is-movable' data-id='{{ id }}'>{{ artist }}</h3>
-                {{/each}}
-                <h3 class='cover__featuring is-movable'>and more</h3>
-            </div>
+            <h1 class='cover__title'>
+                {{{ charactersIn year }}}
+            </h1>
+        </div>
+        <div class='cover__row cover__row--4'>
+            <h3 class='cover__featuring is-movable'>Featuring new music by</h3>
+            {{#each featured}}
+                <h3 class='cover__featuring cover__featuring--track js-cover-track is-movable' data-id='{{ id }}'>{{ artist }}</h3>
+            {{/each}}
+            <h3 class='cover__featuring is-movable'>and more</h3>
         </div>
     </div>
 </div>
