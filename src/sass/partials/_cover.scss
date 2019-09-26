@@ -100,12 +100,20 @@
 }
 
 .cover__play-icon {
-    padding: 1.2vw;
+    padding: 2vw;
+
+    @include mq(tablet) {
+        padding: 1.4vw;
+    }
 
     svg {
-        width: 2vw;
+        width: 4vw;
         display: block;
         fill: $c-white;
+
+        @include mq(tablet) {
+            width: 2vw;
+        }
     }
 }
 
