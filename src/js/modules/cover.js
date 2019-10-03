@@ -64,8 +64,8 @@ const renderCover = () => {
 
         const body = Bodies.rectangle(
             el.offsetLeft + (el.offsetWidth / 2), el.offsetTop + (el.offsetHeight / 2), el.offsetWidth, el.offsetHeight, {
-                density: 0.001,
-                mass: 0.002
+                density: 0.002,
+                mass: 0.5
             }
         );
 
