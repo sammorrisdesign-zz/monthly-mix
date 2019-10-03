@@ -35,7 +35,7 @@ const subscriptions = () => {
         document.querySelector('body').classList.remove('is-paused');
         document.querySelector('body').classList.remove('is-cover');
 
-        const currentTrack = document.querySelector('.controls__tracklist-track[data-id="' + id + '"');
+        const currentTrack = document.querySelector('.controls__tracklist-track[data-id="' + id + '"]');
 
         document.title = currentTrack.querySelector('.controls__tracklist-artist').textContent + ' – ' + currentTrack.querySelector('.controls__tracklist-title').textContent + ' | ' + defaultTitle
     });
