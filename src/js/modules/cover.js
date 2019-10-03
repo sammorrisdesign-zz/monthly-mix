@@ -17,9 +17,9 @@ const isDebug = false;
 
 const randomForce = reducedMovement => {
     if (reducedMovement) {
-        return Math.random() * 0.03 - 0.015;
+        return Math.random() * 0.01 - 0.005;
     } else {
-        return Math.random() * 0.05 - 0.025;
+        return Math.random() * 0.02 - 0.01;
     }
 }
 
@@ -64,13 +64,16 @@ const renderCover = () => {
 
         const body = Bodies.rectangle(
             el.offsetLeft + (el.offsetWidth / 2), el.offsetTop + (el.offsetHeight / 2), el.offsetWidth, el.offsetHeight, {
-                density: 100
+                density: 0.001,
+                mass: 0.002
             }
         );
 
         const reduceMovement = el.classList.contains('cover__featuring') || el.classList.contains('cover__intro');
-        Body.rotate(body, Math.random() * 0.5 - 0.25)
-        Body.setAngularVelocity(body, randomForce(reduceMovement));
+        Body.rotate(body, Math.random() * 0.3 - 0.15);
+        if (!el.classList.contains('cover__play')) {
+            Body.setAngularVelocity(body, randomForce(reduceMovement));
+        }
 
         el.id = body.id;
         bodies.push(body);
