@@ -5,6 +5,8 @@ const data = require('../../data.json');
 
 module.exports = {
     init: function() {
+        const email = fs.readFileSync('./src/templates/email.html', 'utf8');
+        const emailTemplate = handlebars.compile(email);
         const html = fs.readFileSync('./src/templates/main.html', 'utf8');
         const template = handlebars.compile(html);
 
@@ -20,6 +22,7 @@ module.exports = {
 
             if (i === 0) {
                 fs.writeFileSync('.build/index.html', template(playlist));
+                fs.writeFileSync('.build/email.html', emailTemplate(playlist));
             }
         });
 
@@ -46,6 +49,25 @@ module.exports = {
                 characters = characters.map(character => { return `<span class='letter letter--${Math.floor(Math.random() * 10)}'>${character}</span>`});
             return characters.join('');
         });
+
+        handlebars.registerHelper('colour', function(month) {
+            const colours = {
+                'january': '#0d0df4',
+                'february': '#1a9ef2',
+                'march': '#66e0c8',
+                'april': '#19e479',
+                'may': '#b6df12',
+                'june': '#ffc333',
+                'july': '#e6711b',
+                'august': '#d8192b',
+                'september': '#e6256c',
+                'october': '#e4a4bb',
+                'november': '#e4a4bb',
+                'december': '#4c20c9'
+            };
+
+            return colours[month.toLowerCase()];
+        })
 
         handlebars.registerHelper('handlise', function(string) {
             if (string) {
