@@ -34,24 +34,29 @@
 }
 
 .archive__playlists {
-    margin: 1vw;
+    margin: 3vw;
     padding: 0;
     list-style: none;
     display: flex;
     width: fit-content;
+
+    @include mq(tablet) {
+        margin: 1vw;
+    }
 }
 
 .archive__playlist {
     position: relative;
     width: 25vw;
     height: 25vw;
-    margin-right: 1vw;
+    margin-right: 3vw;
     flex-shrink: 0;
     overflow: hidden;
 
     @include mq(tablet) {
         width: 10vw;
         height: 10vw;
+        margin-right: 1vw;
     }
 }
 
@@ -95,7 +100,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-
     mix-blend-mode: multiply;
 }
 

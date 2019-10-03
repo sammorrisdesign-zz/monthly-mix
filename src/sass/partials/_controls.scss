@@ -283,7 +283,7 @@
 .controls__archive {
     @include mq($until: tablet) {
         width: 50%;
-        padding: 2vw;
+        padding: 3vw;
         box-sizing: border-box;
         text-align: center;
     }

@@ -18,7 +18,7 @@
     }
 
     .is-archiving & {
-        max-height: 51vw;
+        max-height: 56vw;
 
         @include mq(tablet) {
             max-height: 19vw;
@@ -26,7 +26,7 @@
     }
 
     .is-subscribing & {
-        max-height: 51vw;
+        max-height: 56vw;
 
         @include mq(tablet) {
             max-height: 20vw;
