@@ -37,6 +37,7 @@ const createPlayer = () => {
 }
 
 const onReady = () => {
+    youTubePlayer.mute();
     youTubePlayer.setVolume(0);
     youTubePlayer.loadVideoById({videoId: helpers.getCurrentId()});
 }
@@ -116,6 +117,7 @@ const subscriptions = () => {
                 }
             }
 
+            youTubePlayer.unMute();
             increaseVol();
 
             isFirst = false;
