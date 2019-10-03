@@ -23,6 +23,20 @@
         .button:hover .button__label {
             background-color: #e7e7e7 !important;
         }
+
+        @media screen and (max-width: 480px) {
+            .large-label {
+                font-size: 16px !important;
+            }
+
+            .button__icon {
+                width: 20px !important;
+            }
+
+            p {
+                font-size: 14px !important;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://use.typekit.net/tiu5deg.css">
 </head>
@@ -38,17 +52,19 @@
         </tr>
     </table>
 
-    <table align="center" cellspacing="0" width="100%" style="border-spacing: 10px 0; color: #ffffff; text-align: center; font-size: 14px; font-family: 'Adelle Sans', sans-serif; border-collapse: collapse;">
+    <table align="center" cellspacing="0" width="100%" style="border-spacing: 10px 0; color: #ffffff; text-align: center; font-size: 14px; font-family: 'adelle-sans', sans-serif; border-collapse: collapse;">
         <tr>
             <td style="padding: 5px;"></td>
             <td width='600' style='background-color: {{ colour month }}; padding: 10px;'>
                 <table>
-                <td width="200px" style="max-width: 200px;">
-                    <a href="http://www.monthly.mx" target="_blank" style="color: {{ colour month }};text-decoration: underline;"><img src="http://www.monthly.mx/assets/images/logo.png" alt="" border="0" style="margin: 0; padding: 0;width: 120px; display: block;" class="image"></a>
-                </td>
-                <td width="400px" style="font-size: 24px; line-height: .7; vertical-align: bottom; max-width: 400px; text-align: right; vertical-align: bottom;">
-                    <a href="http://www.monthly.mx/{{ year }}/{{ handlise month }}" target="_blank" style="color: #ffffff; text-decoration: none;">{{ title }}</a>
-                </td>
+                    <tr>
+                        <td width="200px" style="max-width: 200px;">
+                            <a href="http://www.monthly.mx" target="_blank" style="color: {{ colour month }};text-decoration: underline;"><img src="http://www.monthly.mx/assets/images/logo.png" alt="" border="0" style="margin: 0; padding: 0;width: 120px; display: block;" class="image"></a>
+                        </td>
+                        <td width="400px" class='large-label' style="font-size: 24px; line-height: .7; vertical-align: bottom; max-width: 400px; text-align: right; font-weight: bold; vertical-align: bottom;">
+                            <a href="http://www.monthly.mx/{{ year }}/{{ handlise month }}" target="_blank" style="color: #ffffff; text-decoration: none;">{{ title }}</a>
+                        </td>
+                    </tr>
                 </table>
              </td>
             <td style="padding: 5px;"></td>
@@ -73,10 +89,12 @@
             <td width='600px' style='max-width: 620px;'>
                 <a class='button' href="http://www.monthly.mx/{{ year }}/{{ handlise month }}" target="_blank" style="color: {{ colour month }};text-decoration: none; font-weight: bold; font-family: 'adelle-sans', sans-serif;">
                     <table align='center' cellpadding='0' cellspacing='0'>
-                        <td style='padding: 14px; background-color: {{ colour month }};'>
-                            <img style='width: 32px;' src='http://www.monthly.mx/assets/images/play.png' />
-                        </td>
-                        <td class='button__label' style='font-size: 24px; border: {{ colour month }} 1px solid; border-left: 0; background-color: #ffffff; padding: 0 10px;'>Listen to {{ month }}'s playlist</td>
+                        <tr>
+                            <td style='padding: 14px; background-color: {{ colour month }};'>
+                                <img class='button__icon' style='width: 32px;' src='http://www.monthly.mx/assets/images/play.png' />
+                            </td>
+                            <td class='button__label large-label' style='font-size: 24px; border: {{ colour month }} 1px solid; border-left: 0; background-color: #ffffff; padding: 0 10px; font-weight: bold; font-family: "adelle-sans", sans-serif;'>Listen to {{ month }}'s playlist</td>
+                        </tr>
                     </table>
                 </a>
             </td>
@@ -104,12 +122,14 @@
         <tr>
             <td style="padding: 5px;"></td>
             <td width='600px' style='max-width: 620px; padding:0 10px 10px; background-color: #ffffff;'>
-                <a class='button' href="http://www.monthly.mx/{{ year }}/{{ handlise month }}" target="_blank" style="color: {{ colour month }};text-decoration: none; font-weight: bold; font-family: 'adelle-sans', sans-serif;">
+                <a class='button' href="http://www.monthly.mx/{{ year }}/{{ handlise month }}" target="_blank" style="color: {{ colour month }};text-decoration: none;">
                     <table align='center' cellpadding='0' cellspacing='0'>
-                        <td style='padding: 14px; background-color: {{ colour month }};'>
-                            <img style='width: 32px;' src='http://www.monthly.mx/assets/images/play.png' />
-                        </td>
-                        <td class='button__label' style='font-size: 24px; border: {{ colour month }} 1px solid; border-left: 0; background-color: #ffffff; padding: 0 10px;'>Listen to {{ month }}'s playlist</td>
+                        <tr>
+                            <td style='padding: 14px; background-color: {{ colour month }};'>
+                                <img class='button__icon' style='width: 32px;' src='http://www.monthly.mx/assets/images/play.png' />
+                            </td>
+                            <td class='button__label large-label' style='font-size: 24px; border: {{ colour month }} 1px solid; border-left: 0; background-color: #ffffff; padding: 0 10px; font-weight: bold; font-family: "adelle-sans", sans-serif;'>Listen to {{ month }}'s playlist</td>
+                        </tr>
                     </table>
                 </a>
             </td>
