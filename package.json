@@ -13,7 +13,7 @@
     "start": "node scripts/compile.js && node scripts/local.js",
     "data": "node scripts/data.js",
     "fresh-data": "rm data.json && node scripts/data.js",
-    "deploy": "node scripts/compile.js && node scripts/compress.js"
+    "deploy": "rm -rf .build && node scripts/compile.js && node scripts/compress.js && node scripts/deploy.js"
   },
   "homepage": "https://github.com/sammorrisdesign/monthly-mix",
   "devDependencies": {
@@ -35,6 +35,7 @@
     "rollup-plugin-commonjs": "^10.0.2",
     "rollup-plugin-node-resolve": "^5.2.0",
     "sass-mq": "^5.0.1",
+    "ssh2-sftp-client": "^4.2.0",
     "uglifycss": "0.0.29",
     "youtube-api": "^2.0.10"
   },
