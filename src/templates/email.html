@@ -16,9 +16,8 @@
             font-weight: normal;
         }
 
-        a {
-            color:{{ colour month }};
-            text-decoration:underline;
+        a:hover {
+            border-bottom: 1px solid #222 !important;
         }
 
         .button:hover .button__label {
@@ -33,7 +32,7 @@
         <tr>
             <td style="padding: 5px;"></td>
             <td width='600' style='padding: 10px; color: #222; font-family: "adelle-sans", sans-serif; font-size: 12px; text-align: center;'>
-                Having problems reading this? <a href="http://www.monthly.mx/{{ year }}/{{ month }}" target="_blank" style="color: {{ colour month }};text-decoration: underline; ">View playlist on Monthly Mix</a>
+                Having problems reading this? <a href="http://www.monthly.mx/{{ year }}/{{ month }}" target="_blank" style="color: {{ colour month }};text-decoration: none; border-bottom: 1px solid {{ colour month }};">View playlist on Monthly Mix</a>
             </td>
             <td style="padding: 5px;"></td>
         </tr>
@@ -48,7 +47,7 @@
                     <a href="http://www.monthly.mx" target="_blank" style="color: {{ colour month }};text-decoration: underline;"><img src="/assets/images/logo.png" alt="" border="0" style="margin: 0; padding: 0;width: 120px; display: block;" class="image"></a>
                 </td>
                 <td width="400px" style="font-size: 24px; line-height: .7; vertical-align: bottom; max-width: 400px; text-align: right; vertical-align: bottom;">
-                    {{ title }}
+                    <a href="http://www.monthly.mx/{{ year }}/{{ month }}" target="_blank" style="color: #ffffff; text-decoration: none;">{{ title }}</a>
                 </td>
                 </table>
              </td>
@@ -60,7 +59,7 @@
         <tr width="600">
             <td style="padding: 5px;"></td>
             <td width="620px" style="max-width: 620px;">
-                <a href="http://www.monthly.mx/{{ year }}/{ handlise{ month }}" target="_blank" style="color: {{ colour month }};text-decoration: underline;">
+                <a href="http://www.monthly.mx/{{ year }}/{ handlise{ month }}" target="_blank" style="color: {{ colour month }}; text-decoration: none; border-bottom: 1px solid {{ colour month }};">
                     <img src="./assets/images/{{ handlise month }}-{{ handlise year }}.jpeg" alt="" border="0" style="margin: 0; padding: 0;width: 100%; display: block;" class="image">
                 </a>
             </td>
@@ -90,7 +89,7 @@
             <td style="padding: 5px;"></td>
             <td width="600px" style="max-width: 600px; background-color: #ffffff; padding: 50px 10px 0px 10px; font-family: 'adelle-sans', sans-serif; color: #222222; border-collapse: collapse;">
                 <p>Hey Monthly Mixers
-                <p>It’s a new month which means a new Monthly Mix. Here’s <a href="http://www.monthly.mx/{{ year }}/{{ handlise month }}" style='color: {{ colour month }}' target="_blank" >the playlist of the best new music from {{ title }}</a>. It features {{#each featured}}{{ artist }}, {{/each}} and much more.
+                <p>It’s a new month which means a new Monthly Mix. Here’s <a href="http://www.monthly.mx/{{ year }}/{{ handlise month }}" style='color: {{ colour month }}; text-decoration: none; border-bottom: 1px solid {{ colour month }};' target="_blank" >the playlist of the best new music from {{ title }}</a>. It features {{#each featured}}{{ artist }}, {{/each}} and much more.
                 {{#if description}}
                     <p>{{ description }}</p>
                 {{/if}}
@@ -124,9 +123,9 @@
                 <table border="0" cellpadding="0" cellspacing="0" id="canspamBar">
                     <tr>
                         <td align="center" valign="top" style="color:#606060; color: #222; font-family: 'adelle-sans', sans-serif; font-size: 12px; line-height:150%; padding-right:20px; padding-bottom:5px; padding-left:20px; text-align:center;">
-                            This email was sent to <a href="mailto:*|EMAIL|*" target="_blank" style="color: #404040 !important;text-decoration: underline;">*|EMAIL|*</a>
+                            This email was sent to <a href="mailto:*|EMAIL|*" target="_blank" style="color: #222222 !important;text-decoration: none; border-bottom: 1px solid {{ colour month }};">*|EMAIL|*</a>
                             <br>
-                            <a href="*|UNSUB|*" style="color: #404040 !important;text-decoration: underline;">Unsubscribe</a> | <a href="*|UPDATE_PROFILE|*" style="color: #404040 !important;text-decoration: underline;">Change email address</a>
+                            <a href="*|UNSUB|*" style="color: #222222 !important; text-decoration: none; border-bottom: 1px solid {{ colour month }};">Unsubscribe</a> | <a href="*|UPDATE_PROFILE|*" style="color: #222222 !important; text-decoration: none; border-bottom: 1px solid {{ colour month }};">Change email address</a>
                             <br>
                             <br>
                             *|REWARDS|*
