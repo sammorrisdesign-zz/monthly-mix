@@ -12,7 +12,7 @@ const colours = {
     'august': '#d8192b',
     'september': '#e6256c',
     'october': '#e4a4bb',
-    'november': '#e4a4bb',
+    'november': '#8b14a1',
     'december': '#4c20c9'
 }
 
